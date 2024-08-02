@@ -21,7 +21,7 @@ The bootcamp covered a wide range of topics including Python/SQL programming, da
 
 Throughout the bootcamp, I gained proficiency in SQL and Python, including libraries such as Pandas and Scikit-learn for data manipulation and machine learning. I also learned about big data technologies like Hadoop and AWS and explored advanced machine learning concepts such as neural networks, embeddings, and ensemble learning.
 
-In addition to technical skills, I further developed my problem-solving and communication abilities, especially regarding translating data insights into meaningful business findings. 
+Aside from technical skills, I further developed my problem-solving and communication abilities, especially regarding translating data insights into meaningful business findings. 
 
 
 ## Future Plans
