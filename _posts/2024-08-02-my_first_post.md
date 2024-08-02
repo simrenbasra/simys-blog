@@ -29,7 +29,7 @@ Aside from technical skills, I further developed my problem-solving and communic
 Since completing the bootcamp, I’ve been working on some personal projects to build out my portfolio. For an overview of my projects, please visit my [GitHub Profile](https://github.com/simrenbasra).
 Currently, I’m focused on refining the skills I have learnt and ensuring I have a solid foundation in data science. In the coming month, I will be looking for junior data scientist opportunities where I can apply all the skills I have developed and contribute to a team.
 
-I am excited to see where my journey into data science leads. Although I’ve found parts to be challenging, I’m pleased to have found a career path that excites me as much as data science does. Every project I complete is enjoyable, and I look forward to having the opportunity to do this every day!
+I am excited to see where my journey into data science leads. Although I’ve found parts to be challenging, I’m pleased to have found a career path that excites me as much as data science does. Every project I complete is enjoyable and look forward to having the opportunity to do this every day!
 
 
 
