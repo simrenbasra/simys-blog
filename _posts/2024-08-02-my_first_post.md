@@ -18,7 +18,9 @@ I wanted a bootcamp with in-person teaching since I tend learn better in a class
 ## Bootcamp Experience
 
 The bootcamp covered a wide range of topics including Python/SQL programming, data wrangling, big data, machine learning and data visualisation. A key part of the bootcamp was completing a self-directed project to tie together concepts learnt. For my project, I chose to do a computer vision project and developed a machine learning model for interpreting sign language. I will be uploading a separate blog post to cover this project in further detail! 
+
 Throughout the bootcamp, I gained proficiency in SQL and Python, including libraries such as Pandas and Scikit-learn for data manipulation and machine learning. I also learned about big data technologies like Hadoop and AWS and explored advanced machine learning concepts such as neural networks, embeddings, and ensemble learning.
+
 In addition to technical skills, I further developed my problem-solving and communication abilities, especially regarding translating data insights into meaningful business findings. 
 
 
