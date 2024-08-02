@@ -1,6 +1,6 @@
 ---
 title: "From Zero to Data Hero"
-date: 02-08-2024
+date: 2024-08-02
 ---
 
 Introduction
