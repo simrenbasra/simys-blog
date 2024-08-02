@@ -24,5 +24,11 @@ Throughout the bootcamp, I gained proficiency in SQL and Python, including libra
 In addition to technical skills, I further developed my problem-solving and communication abilities, especially regarding translating data insights into meaningful business findings. 
 
 
+## Future Plans
+
+Since completing the bootcamp, I’ve been working on some personal projects to build out my portfolio. For an overview of my projects, please visit my GitHub profile.
+Currently, I’m focused on refining the skills I have learnt and ensuring I have a solid foundation in data science. In the coming month, I will be looking for junior data scientist opportunities where I can apply all the skills I have developed and contribute to a team.
+I am excited to see where my journey into data science leads. Although I’ve found parts to be challenging, I’m pleased to have discovered a career path that excites me as much as data science does. Every project I complete is enjoyable, and I can’t wait to start my career where I get to do this every day!
+
 
 
