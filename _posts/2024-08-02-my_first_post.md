@@ -3,9 +3,9 @@ title: "From Zero to Data Hero"
 date: 2024-08-02
 ---
 
-## Introduction
+Hi, my name is Simren! 
 
-Hi, my name is Simren! I recently transitioned from a career as a software development consultant in fintech to pursue my passion for data science. With a background in computer science and an interest in knowing more about the world of data, I decided to do a three-month intensive bootcamp to jumpstart my journey into data science.
+I recently transitioned from a career as a software development consultant in fintech to pursue my passion for data science. With a background in computer science and an interest in knowing more about the world of data, I decided to do a three-month intensive bootcamp to jumpstart my journey into data science.
 
 ## My Background
 
