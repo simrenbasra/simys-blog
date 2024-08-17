@@ -14,6 +14,6 @@ title: Simy's Data Bytes
 
 ### Upcoming Posts
 
-- **🏅 Olympics:** Data insights from Olympics 2024&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**(expected: 21/08/24)**
+- **🏅 Olympics:** Data insights from Olympics 2024&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**(expected: 21/08/24)**
 - **👐 Sign-Lingual:** My Machine Learning Translator Model for ASL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**(expected: 23/08/24)**
 
