@@ -14,5 +14,5 @@ title: Simy's Data Bytes
 
 ### Upcoming Posts
 
-- **🏅 Olympics:** Data insights from Olympics 2024 [21/08/24]
-- **👐 Sign-Lingual:** My Machine Learning Translator Model for ASL [23/08/24]
+- **🏅 Olympics:** Data insights from Olympics 2024                     **(EXP: 21/08/24)**
+- **👐 Sign-Lingual:** My Machine Learning Translator Model for ASL     **(EXP: 23/08/24)**
