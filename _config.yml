@@ -1,2 +1,3 @@
 theme: minima
-baseurl: ""
+baseurl: "/simys-blog" # This is crucial for correct path resolution
+url: "https://simrenbasra.github.io" # Base URL of your GitHub Pages site
