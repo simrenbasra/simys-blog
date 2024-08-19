@@ -2,6 +2,8 @@
 title: Simy's Data Bytes
 ---
 
+Welcome!
+
 In this blog, you will find a variety of content related to data science and personal projects:
 
 - **📖 Tutorials:** Step-by-step guides on data science concepts and techniques.
