@@ -13,9 +13,6 @@ In this blog, you will find a variety of content related to data science and per
 ## Upcoming Posts
 
 Here are some of the upcoming posts you can look forward to:
-
-- **🏅 Olympics:** Data insights from the Olympics 2024  
-  **(Expected: 21/08/24)**
   
 - **👐 Sign-Lingual:** My Machine Learning Translator Model for ASL  
   **(Expected: 23/08/24)**
