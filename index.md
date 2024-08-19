@@ -2,7 +2,6 @@
 title: Simy's Data Bytes
 ---
 
-## Welcome to My Blog! 🎉
 
 ### What You’ll Find Here
 
