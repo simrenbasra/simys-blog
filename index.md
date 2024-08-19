@@ -1,5 +1,6 @@
 ---
 title: Home
+show_title: false
 ---
 
 ## Welcome to My Blog! 🎉
