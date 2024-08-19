@@ -8,7 +8,7 @@ In this blog, you will find a variety of content related to data science and per
 - **💻 Project Showcases:** Detailed write-ups of personal projects.
 - **💡 Insights & Reflections:** Analysis and commentary on data trends and topics.
 
-### Upcoming Posts
+## **Upcoming Posts**
 
 Here are some of the upcoming posts you can look forward to:
 
