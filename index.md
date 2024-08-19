@@ -1,4 +1,8 @@
-# Welcome to My Blog! 🎉
+---
+title:
+---
+
+## Welcome to My Blog! 🎉
 
 ### What You’ll Find Here
 
