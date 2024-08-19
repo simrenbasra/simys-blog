@@ -1,6 +1,5 @@
 ---
-title: Home
-show_title: false
+title: Simy's Data Bytes
 ---
 
 ## Welcome to My Blog! 🎉
