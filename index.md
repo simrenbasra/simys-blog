@@ -4,6 +4,11 @@ title: Simy's Data Bytes
 
 Welcome!
 
+ 
+<div style="text-align: center;">
+  <img src="{{ site.baseurl }}/assets/images/cover_photo.JPG" alt="Photo" style="max-width: 100%; height: auto; margin: 20px 0;">
+</div>
+
 In this blog, you will find a variety of content related to data science and personal projects:
 
 - **📖 Tutorials:** Step-by-step guides on data science concepts and techniques.
@@ -12,7 +17,7 @@ In this blog, you will find a variety of content related to data science and per
 
 ## Upcoming Posts
 
-Here are some of the upcoming posts you can look forward to:
+Here are some of the upcoming posts:
   
 - **👐 Sign-Lingual:** My Machine Learning Translator Model for ASL  
   **(Expected: 23/08/24)**
