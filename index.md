@@ -5,8 +5,9 @@ title: Simy's Data Bytes
 Welcome!
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/images/cover_photo.JPG" alt="Photo" style="max-width: 80%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/images/cover_photo.JPG" alt="Photo" style="max-width: 50%; height: auto; margin: 20px 0;">
 </div>
+
 
 In this blog, you will find a variety of content related to data science and personal projects:
 
