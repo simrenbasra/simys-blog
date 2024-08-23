@@ -20,7 +20,7 @@ In this blog, I will be posting:
 
 Here are some of the upcoming posts:
   
-- **👐 Sign-Lingual:** Exploring some computer vision techniques I used to build my machine learning model for sign language recognition. I’ll break down how I developed different models, starting from a baseline logistic regression and progressing through various approaches, including transfer learning. I’ll explain the concepts behind each method and how they led to selecting the most effective model for sign language detection.
+**👐 Sign-Lingual:** Exploring some computer vision techniques I used to build my machine learning model for sign language recognition. I’ll break down how I developed different models, starting from a baseline logistic regression and progressing through various approaches, including transfer learning. I’ll explain the concepts behind each method and how they led to selecting the most effective model for sign language detection.
 
 **(Expected: 26/08/24)**
 
