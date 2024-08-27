@@ -13,6 +13,12 @@ As part of the BrainStation bootcamp I attended, each student was tasked with cr
 
 Sign-Lingual is a sign language recognition tool designed to translate American Sign Language (ASL) using deep learning techniques. 
 
+<br>
+
+-----
+
+<br>
+
 ## Defining project scope 
 
 At first, it was overwhelming to consider all the potential directions for this project. I initially struggled with where to start. To tackle the task, I found it helpful to first envision the model’s core functionality. The ideal app would facilitate two-way communication: from signer to non-signer and vice versa.
@@ -28,6 +34,12 @@ For simplicity, I decided to focus on the first communication path: enabling sig
 </div>
   
 The core functionality of the app involves capturing a real-time image of an ASL letter. The app then uses a machine learning model to return a prediction of that ASL letter. Of course, there's a lot more happening behind the scenes so let’s dive into the details!
+
+<br>
+
+-----
+
+<br>
 
 ## Data Overview
 
@@ -63,7 +75,7 @@ To implement data augmentation, I used Keras, a deep learning library. Keras has
 
 **Note:** Only a randomly selected subset of images undergo augmentation, this is controlled by the parameters the user enters. This ensures variation is introduced into the dataset without over confusing the model during training.
 
-Example:
+**Example:**
 
 <div style="text-align: center;">
   <img src="{{ site.baseurl }}/assets/sign-lingual/data_aug_example.png" alt="Data Augmentation Example" style="max-width: 100%; height: auto; margin: 20px 0;">
@@ -121,12 +133,24 @@ Data splitting involves separating the dataset into subsets to ensure effective 
 
   - The test set were a portion of the real-world images I captured using Teachable Machine. 
   - Used to do final model evaluations testing each model’s ability to classify real-world images.
-    
+
+<br>
+
+-----
+
+<br>
+
 ## Modelling Approach
 
 In this project, I explored a series of modelling techniques commonly used for image recognition starting with simpler methods and progressing towards more complex approaches. This helped me to understand the fundamentals concepts of image processing as well as how advanced models can be used to improve model performance.
 
 In this section, I will outline the different approaches:
+
+<br>
+
+-----
+
+<br>
 
 ## Baseline Logistic Regression
 
@@ -163,6 +187,12 @@ The difference in results emphasises the limitations of the baseline model. Logi
 
 To address these limitations, the next step involves using feature extraction methods. Unlike raw pixel values, which can be highly sensitive to noise, feature extraction methods focus on extracting more meaningful features such as edges and textures from the images. By providing the model with more meaningful features, it becomes better at handling noise.
 
+<br>
+
+-----
+
+<br>
+
 ## Logistic Regression with Feature Extraction
 
 After discussing the limitations of using raw pixel data in logistic regression, the next step was to enhance the model's performance using feature extraction methods discussed earlier. Instead of training the logistic regression model on a flattened array of raw pixel values, the model is now trained on feature vectors.
@@ -192,6 +222,12 @@ Performance of the model with feature extraction on non-augmented data remains h
 The real advantage of feature extraction is seen in the model's performance with augmented data. The model with feature extraction outperforms the baseline model, demonstrating its improved ability to cope with noise by helping the model better differentiate between important features and irrelevant noise. This makes the model less susceptible to noise introduced by data augmentation improving its performance.
 
 While feature extraction offers benefits to model performance, we must extract features manually and this requires some knowledge to do this correctly. Again, it is possible that some patterns are overlooked and missed. To address this, it would be best to use automated methods such as deep learning techniques, where relevant features are learnt directly from the data. The next step was to explore Convolutional Neural Networks (CNNs) and how they automatically learn and extract features from images.  
+
+<br>
+
+-----
+
+<br>
 
 ## Convolutional Neural Networks (CNN)
 
@@ -298,6 +334,12 @@ The drop in training accuracy suggests that augmentation introduced variability 
 
 CNN works by learning features from a given dataset and then uses these features to classify images. While this has proved to be the most effective method so far in terms of performance with augmented and non-augmented data, it would be interesting to assess the performance of pre-trained models. Pre-trained models are trained on very large and diverse image datasets. We can leverage features the model has already learnt and fine tune the model for sign-language recognition. Since pre-trained models have encountered a broad range of images during their initial training, they are better equipped to handle variations in data making them more robust.
 
+<br>
+
+-----
+
+<br>
+
 ## Transfer Learning
 
 Transfer learning is a technique in machine learning where a pre-trained model is adapted and fine-tuned to a complete a given task. Instead of training a model from scratch, transfer learning leverages knowledge the pre-trained model has from its initial training and applies it to a specific task.
@@ -346,6 +388,12 @@ Top-up training with additional data did not improve on the training or validati
 
 It looks like VGG has outperformed all other models in its ability to classify images, deal with augmented data and real-world images. With a larger and more diverse dataset, it is possible that the ResNet-50 model could perform better than VGG-16. This is an area worth exploring in the future as increasing the dataset size might allow ResNet-50 to leverage its deeper architecture and residual blocks more effectively.
 
+<br>
+
+-----
+
+<br>
+
 ## Model Selection and Deployment
 
 So far, from all the models we have explored, the VGG-16 model stands out as the most effective for real-time prediction. Its robust performance in handling augmented and real-world images makes it the ideal choice for deployment.
@@ -363,6 +411,12 @@ The next step was to reformat the captured images to match the input dimensions 
 Initially, I used TensorFlow’s tf.image.resize function to adjust the image dimensions. However, this approach either stretched the image or added black padding when I set the preserve aspect ratio parameter to True.
 
 To resolve this, I needed to crop the image before resizing it. After several attempts and failing to find a suitable TensorFlow function, I manually calculated the aspect ratio to perform cropping and resizing separately. Although this solution worked, it introduced a new issue: if the user was not positioned correctly in the frame, the cropped image may not capture their full hand. To address this, I printed a preview of the cropped image to ensure the user is in frame.
+
+<br>
+
+-----
+
+<br>
 
 ## What’s next?
 
