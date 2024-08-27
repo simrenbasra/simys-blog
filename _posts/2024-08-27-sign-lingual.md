@@ -5,7 +5,9 @@ date: 2024-08-27
 
 At the start of the year, I was on a train heading back home from London. As is often the case with many train journeys in the UK, there was a route disruption that led to the destination being a few stops earlier than originally planned.
 
-During the disruption, I noticed a passenger who was hard of hearing struggling to understand the onboard announcements. In that moment, I realised the challenges that people with hearing impairments still face today, despite all the technological advancements we've made. It was then that I thought: *'What if there was an app that could help signers and non-signers communicate more easily?'*
+During the disruption, I noticed a passenger who was hard of hearing struggling to understand the onboard announcements. In that moment, I realised the challenges that people with hearing impairments still face today, despite all the technological advancements we've made. It was then that I thought: 
+
+***What if there was an app that could help signers and non-signers communicate more easily?***
 
 As part of the BrainStation bootcamp I attended, each student was tasked with creating a real-world project that could be solved using machine learning methods. I saw this as a perfect opportunity to develop a tool that could make a meaningful impact, introducing: Sign-Lingual.
 
