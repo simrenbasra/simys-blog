@@ -132,7 +132,7 @@ The initial approach involved logistic regression where each pixel represented a
 
 We can think of the problem as a simple classification task. The model ‘learns’ particular arrangements of differing pixel intensities for each letter. When performing classification, the model inspects the given image to identify specific arrangements and make a letter prediction.
 
-*So, what exactly is the model learning?*
+***So, what exactly is the model learning?***
 
 To uncover what the model is learning for each letter, I created a function that plots the mean image of a given letter next to the letter’s odds ratio. This allows us to gain an understanding into the model’s classification process and provides an insight into what is happening behind the scenes.
 
@@ -144,7 +144,7 @@ Let’s look at letter A as an example:
  
 The darker areas in the right image highlight areas of significance for letter A. These areas correspond to higher odds ratios, meaning the pixel intensities in these areas are the mode defining for classifying a letter as A. Looking at the image on the left, we can see that the darker areas correspond to the curling of the fingers, the opening of the palm and edges of the closed fist – all of which are key features the model uses to classify an image as letter A.
 
-*Results*
+**Results**
 
 The results table below compares the performance of the baseline logistic regression model with and without data augmentation. As mentioned earlier, data augmentation of images was used to introduce some variability into the dataset and to assess how well the model handles noise.
 
@@ -165,17 +165,19 @@ To address these limitations, the next step involves using feature extraction me
 
 After discussing the limitations of using raw pixel data in logistic regression, the next step was to enhance the model's performance using feature extraction methods discussed earlier. Instead of training the logistic regression model on a flattened array of raw pixel values, the model is now trained on feature vectors.
 
-*Results*
+**Results**
 
 The tables below compare the performance of the baseline logistic regression to the logistic regression model with feature extraction for both non-augmented and augmented data.
 
 **Without data augmentation:**
+
 |                  | Logistic Regression Model  | Logistic Regression Model with Feature Extraction |
 |------------------|----------------------------|---------------------------------------------------|
 | Train Score      | 99.99                      | 99.03                                             |
 | Validation Score | 99.99                      | 98.86                                             |
 
 **With data augmentation:**
+
 |                  | Logistic Regression Model  | Logistic Regression Model with Feature Extraction |
 |------------------|----------------------------|---------------------------------------------------|
 | Train Score      | 31.72                      | 48.11                                             |
@@ -193,7 +195,7 @@ While feature extraction offers benefits to model performance, we must extract f
 
 CNNs are a type of neural network designed specifically for image/video processing. CNNs mimic the way we as humans process image data as they too can recognise patterns and shapes in images. Unlike traditional neural networks, CNNs include convolutional layers that detect features such as shapes and edges, enabling automatic feature extraction from raw data.
 
-*How do CNNs recognises shapes/objects in images?*
+***How do CNNs recognises shapes/objects in images?***
 
 Let’s start with an example.
 
@@ -238,7 +240,7 @@ Since the MNIST dataset I was working with is relatively small compared to typic
 
 Filters, also referred to as kernels, are typically a 3 by 3 grid of weights used by CNNs convolutional layers to detect features in the input image. These weights are initially set randomly and are adjusted during the learning process through backpropagation to minimise the model's loss. Each image detects a particular feature with the first few filters detecting simple features like edges. The deeper we go into the network the more complex these features will be. 
 
-*How filters work:*
+***How filters work:***
 
 Each filter slides over the input image, this process is called convolution. At each position, the filter’s weights are multiplied with the pixels of the image, the results of the multiplications are added to produce a single value for that position. 
 
@@ -251,7 +253,7 @@ In my CNN, the first convolutional layer contains 32 filters each detecting simp
 
 To gain deeper insights into kernels and feature maps, I created a function to visualise the kernels and their outputs for a given convolution layer. This function provides insight into how kernels extract and highlight features from specific letters in the MNIST dataset.
 
-*Convolution Layer 1 Output – Kernel 13*
+**Convolution Layer 1 Output – Kernel 13**
 
 <div style="text-align: center;">
   <img src="{{ site.baseurl }}/assets/sign-lingual/layer_1_output.png" alt="Conv Layer 1 Output" style="max-width: 100%; height: auto; margin: 20px 0;">
@@ -259,7 +261,7 @@ To gain deeper insights into kernels and feature maps, I created a function to v
 
 By looking at the weights of kernel 14, we can gain valuable insights into the features it detects. Darker regions signify larger weights suggesting these regions represent patterns which the filter is searching for in the input image. This kernel has identified patterns related to the curled fingers of the hand and edges, suggesting that it plays a crucial role in distinguishing between open and closed hand signs.
 
-*Convolution Layer 2 Output – Kernel 2*
+**Convolution Layer 2 Output – Kernel 2**
 
 <div style="text-align: center;">
   <img src="{{ site.baseurl }}/assets/sign-lingual/layer_2_output.png" alt="Conv Layer 2 Output" style="max-width: 100%; height: auto; margin: 20px 0;">
@@ -268,20 +270,20 @@ By looking at the weights of kernel 14, we can gain valuable insights into the f
 Here we can see the second layer kernels are harder to interpret when compared to the input image. The reason for this is that these kernels are applied to the output of the previous convolution layer.
 Kernels in the second layer have learnt to detect more abstract patterns often from combining the output of the previous convolutional layer. The deeper the convolutional layers get, the more abstract and complex the features become making it more challenging in terms of interpretability.
 
-*Results*
+**Results**
 
 |                  | CNN        | CNN with augmentation |
 |------------------|------------|-----------------------|
 | Train Score      | 99.30      | 79.89                 |
 | Validation Score | 99.26      | 92.78                 |
 
-Base CNN Model: 
+**Base CNN Model:**
 
 The base CNN model achieved high results, with a training accuracy of 99.30% and a validation accuracy of 99.26%. 
 
 These scores indicate that the model effectively learned from the MNIST sign language dataset and demonstrated strong ability to generalise as seen by the minimal difference between training and validation scores.
 
-CNN Model with Augmentation: 
+**CNN Model with Augmentation: **
 
 Accuracy scores show a reduced performance compared to the base CNN model, with training accuracy dropping to 79.89% and validation accuracy at 92.78%. 
 
@@ -299,15 +301,15 @@ The input image dimensions for these models were 64 by 64 pixels and included al
 
 The process of transfer learning for both models was the same:
 
-1.	MNIST Dataset: The first stage involved fine-tuning the pre-trained models using the MNIST dataset. This initial fine-tuning adapts the model to recognise patterns relevant to this specific dataset.
-2.	Augmented Dataset: Fine-tuning was performed using the augmented images from the MNIST dataset. This step helps the models adapt to variations introduced through data augmentation, such as rotations and distortions.
-3.	Teachable Machine Images: Top-up training using images captured from Teachable Machine. In this process, I froze all layers apart from last few fully connected layers, training only these layers. The purpose of this was to refine the models on images with real-world variations that are not present in the MNIST data.
+**1.	MNIST Dataset:** The first stage involved fine-tuning the pre-trained models using the MNIST dataset. This initial fine-tuning adapts the model to recognise patterns relevant to this specific dataset.
+**2.	Augmented Dataset:** Fine-tuning was performed using the augmented images from the MNIST dataset. This step helps the models adapt to variations introduced through data augmentation, such as rotations and distortions.
+**3.	Teachable Machine Images:** Top-up training using images captured from Teachable Machine. In this process, I froze all layers apart from last few fully connected layers, training only these layers. The purpose of this was to refine the models on images with real-world variations that are not present in the MNIST data.
    
 **ResNet-50**
 
 ResNet-50 is a deep CNN with 50 layers. ResNet-50 utilises residual blocks and skip connections both of which allow the model to be 50 layers deep while still maintaining high performance - I will provide further detail on how residual blocks work in a future post.
 
-*Results*
+**Results**
 
 |                  | ResNet     | ResNet with augmentation | ResNet Top Up Trained  |
 |------------------|------------|--------------------------|------------------------|
@@ -322,7 +324,7 @@ The most significant drop in performance occurred during top-up training with im
 
 VGG-16 is a deep convolutional neural network with 16 layers: 13 convolutional layers and 3 fully connected layers. It uses a block-based structure where each block includes several convolutional layers followed by max pooling. This design helps the network maintain its depth while preserving image dimensions, enhancing feature extraction and overall performance.
 
-*Results*
+**Results**
 
 |                  | VGG Model     | VGG with Augmented Data | VGG Top Up Trained |
 |------------------|---------------|-------------------------|--------------------|
@@ -341,7 +343,7 @@ So far, from all the models we have explored, the VGG-16 model stands out as the
 
 To productionise the VGG-16 model, I used Streamlit - a tool for creating interactive web apps. 
 
-*How to productise a model using Streamlit*
+***How to productise a model using Streamlit***
 
 Firstly, I saved the VGG-16 model after top-up training as a .h5 file, which is the recommended format for Keras models.
 
