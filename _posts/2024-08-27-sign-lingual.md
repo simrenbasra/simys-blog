@@ -128,7 +128,7 @@ In this project, I explored a series of modelling techniques commonly used for i
 
 In this section, I will outline the different approaches:
 
-**Baseline Logistic Regression**
+## Baseline Logistic Regression
 
 The initial approach involved logistic regression where each pixel represented a single independent feature. For a greyscale image of 28 by 28 pixels, there are 784 independent features. Each feature corresponds to a single pixel’s intensity.
 
@@ -163,7 +163,7 @@ The difference in results emphasises the limitations of the baseline model. Logi
 
 To address these limitations, the next step involves using feature extraction methods. Unlike raw pixel values, which can be highly sensitive to noise, feature extraction methods focus on extracting more meaningful features such as edges and textures from the images. By providing the model with more meaningful features, it becomes better at handling noise.
 
-**Logistic Regression with Feature Extraction**
+## Logistic Regression with Feature Extraction
 
 After discussing the limitations of using raw pixel data in logistic regression, the next step was to enhance the model's performance using feature extraction methods discussed earlier. Instead of training the logistic regression model on a flattened array of raw pixel values, the model is now trained on feature vectors.
 
@@ -193,7 +193,7 @@ The real advantage of feature extraction is seen in the model's performance with
 
 While feature extraction offers benefits to model performance, we must extract features manually and this requires some knowledge to do this correctly. Again, it is possible that some patterns are overlooked and missed. To address this, it would be best to use automated methods such as deep learning techniques, where relevant features are learnt directly from the data. The next step was to explore Convolutional Neural Networks (CNNs) and how they automatically learn and extract features from images.  
 
-**Convolutional Neural Networks (CNN)**
+## Convolutional Neural Networks (CNN)
 
 CNNs are a type of neural network designed specifically for image/video processing. CNNs mimic the way we as humans process image data as they too can recognise patterns and shapes in images. Unlike traditional neural networks, CNNs include convolutional layers that detect features such as shapes and edges, enabling automatic feature extraction from raw data.
 
@@ -221,7 +221,7 @@ If we break down these features, all the listed objects are made up of the follo
 
 CNNs follow a similar process but in reverse. Instead of starting with a complete object (a house), CNNs begin by detecting basic elements such as lines and edges. These elements form more complex shapes like the windows and roof. Through the layers of the network, these simple elements combine to produce more complex shapes and eventually the network progresses and learns enough to identify the full object like the house.
 
-## CNN Architecture
+**CNN Architecture**
 
 Brief outline of the CNN I built for my project:
 
@@ -238,7 +238,7 @@ Since the MNIST dataset I was working with is relatively small compared to typic
 **5.	Fully Connected Layer 2:** Building on the output of first fully connected layer, fine-tuning it before classification.
 **6.	Output Layer:** The final layer outputs the model’s predictions, classifying the input image as a single letter.
    
-## Filters/Kernels
+**Filters/Kernels**
 
 Filters, also referred to as kernels, are typically a 3 by 3 grid of weights used by CNNs convolutional layers to detect features in the input image. These weights are initially set randomly and are adjusted during the learning process through backpropagation to minimise the model's loss. Each image detects a particular feature with the first few filters detecting simple features like edges. The deeper we go into the network the more complex these features will be. 
 
@@ -251,7 +251,7 @@ The feature map of the first convolution layer is passed as input to the second,
 
 In my CNN, the first convolutional layer contains 32 filters each detecting simple features. The second convolutional layer contains 64 filters, these filters detect more complex features building on the output of the first convolutional layer.
 
-## Inspecting CNN’s layers
+**Inspecting CNN’s layers**
 
 To gain deeper insights into kernels and feature maps, I created a function to visualise the kernels and their outputs for a given convolution layer. This function provides insight into how kernels extract and highlight features from specific letters in the MNIST dataset.
 
