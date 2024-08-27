@@ -146,7 +146,7 @@ Let’s look at letter A as an example:
  
 The darker areas in the right image highlight areas of significance for letter A. These areas correspond to higher odds ratios, meaning the pixel intensities in these areas are the mode defining for classifying a letter as A. Looking at the image on the left, we can see that the darker areas correspond to the curling of the fingers, the opening of the palm and edges of the closed fist – all of which are key features the model uses to classify an image as letter A.
 
-**Results**
+### Results
 
 The results table below compares the performance of the baseline logistic regression model with and without data augmentation. As mentioned earlier, data augmentation of images was used to introduce some variability into the dataset and to assess how well the model handles noise.
 
@@ -167,7 +167,7 @@ To address these limitations, the next step involves using feature extraction me
 
 After discussing the limitations of using raw pixel data in logistic regression, the next step was to enhance the model's performance using feature extraction methods discussed earlier. Instead of training the logistic regression model on a flattened array of raw pixel values, the model is now trained on feature vectors.
 
-**Results**
+### Results
 
 The tables below compare the performance of the baseline logistic regression to the logistic regression model with feature extraction for both non-augmented and augmented data.
 
@@ -221,7 +221,7 @@ If we break down these features, all the listed objects are made up of the follo
 
 CNNs follow a similar process but in reverse. Instead of starting with a complete object (a house), CNNs begin by detecting basic elements such as lines and edges. These elements form more complex shapes like the windows and roof. Through the layers of the network, these simple elements combine to produce more complex shapes and eventually the network progresses and learns enough to identify the full object like the house.
 
-**CNN Architecture**
+### CNN Architecture
 
 Brief outline of the CNN I built for my project:
 
@@ -232,13 +232,18 @@ Brief outline of the CNN I built for my project:
 Since the MNIST dataset I was working with is relatively small compared to typical image datasets, I decided on a simple convolutional neural network (CNN) with six layers. The structure of the network is as follows:
 
 **1.	Input Layer:** This layer receives the images as input.
+
 **2.	Convolutional Layer 1:** The first convolutional layer applies filters to detect basic features such as edges.
+
 **3.	Convolutional Layer 2:** The second convolutional layer builds on the features detected by the first layer, recognising more complex patterns and shapes.
+
 **4.	Fully Connected Layer 1:** This layer begins to combine the detected features from convolutional layers to gain an understanding of the overall image.
+
 **5.	Fully Connected Layer 2:** Building on the output of first fully connected layer, fine-tuning it before classification.
+
 **6.	Output Layer:** The final layer outputs the model’s predictions, classifying the input image as a single letter.
    
-**Filters/Kernels**
+### Filters/Kernels
 
 Filters, also referred to as kernels, are typically a 3 by 3 grid of weights used by CNNs convolutional layers to detect features in the input image. These weights are initially set randomly and are adjusted during the learning process through backpropagation to minimise the model's loss. Each image detects a particular feature with the first few filters detecting simple features like edges. The deeper we go into the network the more complex these features will be. 
 
@@ -251,7 +256,7 @@ The feature map of the first convolution layer is passed as input to the second,
 
 In my CNN, the first convolutional layer contains 32 filters each detecting simple features. The second convolutional layer contains 64 filters, these filters detect more complex features building on the output of the first convolutional layer.
 
-**Inspecting CNN’s layers**
+### Inspecting CNN’s layers
 
 To gain deeper insights into kernels and feature maps, I created a function to visualise the kernels and their outputs for a given convolution layer. This function provides insight into how kernels extract and highlight features from specific letters in the MNIST dataset.
 
@@ -272,7 +277,7 @@ By looking at the weights of kernel 14, we can gain valuable insights into the f
 Here we can see the second layer kernels are harder to interpret when compared to the input image. The reason for this is that these kernels are applied to the output of the previous convolution layer.
 Kernels in the second layer have learnt to detect more abstract patterns often from combining the output of the previous convolutional layer. The deeper the convolutional layers get, the more abstract and complex the features become making it more challenging in terms of interpretability.
 
-**Results**
+### Results
 
 |                  | CNN        | CNN with augmentation |
 |------------------|------------|-----------------------|
@@ -309,11 +314,11 @@ The process of transfer learning for both models was the same:
 
 **3.	Teachable Machine Images:** Top-up training using images captured from Teachable Machine. In this process, I froze all layers apart from last few fully connected layers, training only these layers. The purpose of this was to refine the models on images with real-world variations that are not present in the MNIST data.
    
-**ResNet-50**
+### ResNet-50
 
 ResNet-50 is a deep CNN with 50 layers. ResNet-50 utilises residual blocks and skip connections both of which allow the model to be 50 layers deep while still maintaining high performance - I will provide further detail on how residual blocks work in a future post.
 
-**Results**
+#### Results
 
 |                  | ResNet     | ResNet with augmentation | ResNet Top Up Trained  |
 |------------------|------------|--------------------------|------------------------|
@@ -324,11 +329,11 @@ Initially, the ResNet-50 model scored high accuracy with a training score of 99.
 
 The most significant drop in performance occurred during top-up training with images from Teachable Machine, where the training score fell to 70.60% and the validation score to 68.53%. This suggests that the model's ability to adapt to real-world variations was limited, likely due to the relatively small size of the dataset – only ~600 images per class. This dataset size may not provide enough data for the deeper layers of ResNet-50 to effectively learn which impacts the model's performance.
 
-**VGG-16**
+### VGG-16
 
 VGG-16 is a deep convolutional neural network with 16 layers: 13 convolutional layers and 3 fully connected layers. It uses a block-based structure where each block includes several convolutional layers followed by max pooling. This design helps the network maintain its depth while preserving image dimensions, enhancing feature extraction and overall performance.
 
-**Results**
+#### Results
 
 |                  | VGG Model     | VGG with Augmented Data | VGG Top Up Trained |
 |------------------|---------------|-------------------------|--------------------|
