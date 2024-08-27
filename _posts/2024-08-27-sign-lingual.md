@@ -23,7 +23,7 @@ For simplicity, I decided to focus on the first communication path: enabling sig
 
 <div style="text-align: center;">
   <img src="{{ site.baseurl }}/assets/sign-lingual/graphic_design_phone.png" alt="App design" style="max-width: 100%; height: auto; margin: 20px 0;">
-</div
+</div>
   
 The core functionality of the app involves capturing a real-time image of an ASL letter. The app then uses a machine learning model to return a prediction of that ASL letter. Of course, there's a lot more happening behind the scenes so let’s dive into the details!
 
