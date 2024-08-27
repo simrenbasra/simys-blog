@@ -5,7 +5,7 @@ title: Simy's Data Bytes
 Welcome to my blog!
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/images/cover_photo.jpg" alt="Photo" style="max-width: 50%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/index/cover_photo.jpg" alt="Photo" style="max-width: 50%; height: auto; margin: 20px 0;">
 </div>
 
 My name is Simy and I’m new to data science! After completing a data science bootcamp, I’m excited to apply the skills I’ve gained as I dive the world of data. I’ll be exploring data insights, tackling projects, learning as I go, all while sharing my journey along the way. 
