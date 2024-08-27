@@ -1,5 +1,5 @@
 ---
-title: "Sign-Lingual: From Pixels to Predictions 👐 "
+title: "💻 Sign-Lingual: From Pixels to Predictions 👐 "
 date: 2024-08-27
 ---
 
