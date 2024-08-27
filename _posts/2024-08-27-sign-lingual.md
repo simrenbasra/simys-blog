@@ -14,7 +14,16 @@ Sign-Lingual is a sign language recognition tool designed to translate American 
 ## Defining project scope 
 
 At first, it was overwhelming to consider all the potential directions for this project. I initially struggled with where to start. To tackle the task, I found it helpful to first envision the model’s core functionality. The ideal app would facilitate two-way communication: from signer to non-signer and vice versa.
+
+<div style="text-align: center;">
+  <img src="{{ site.baseurl }}/assets/sign-lingual/method_overview.png" alt="Method Overview" style="max-width: 100%; height: auto; margin: 20px 0;">
+</div>
+
 For simplicity, I decided to focus on the first communication path: enabling signers to communicate with non-signers. This approach allowed me to create a rough mock-up of what I wanted to build.
+
+<div style="text-align: center;">
+  <img src="{{ site.baseurl }}/assets/sign-lingual/graphic_design_phone.png" alt="App design" style="max-width: 100%; height: auto; margin: 20px 0;">
+</div
   
 The core functionality of the app involves capturing a real-time image of an ASL letter. The app then uses a machine learning model to return a prediction of that ASL letter. Of course, there's a lot more happening behind the scenes so let’s dive into the details!
 
@@ -51,8 +60,13 @@ In this project, data augmentation was applied to the training set only. By doin
 To implement data augmentation, I used Keras, a deep learning library. Keras has an ImageDataGenerator class which performs augmentation in real time. Given a set of images, the class will apply random transformations on the images. 
 
 **Note:** Only a randomly selected subset of images undergo augmentation, this is controlled by the parameters the user enters. This ensures variation is introduced into the dataset without over confusing the model during training.
+
 Example:
- 
+
+<div style="text-align: center;">
+  <img src="{{ site.baseurl }}/assets/sign-lingual/data_aug_example.png" alt="Data Augmentation Example" style="max-width: 100%; height: auto; margin: 20px 0;">
+</div>
+
 Flipped the image horizontally, this augmentation technique is particularly useful in sign language as it accounts for signs with either the left or right hand. 
 
 Here is a list of augmentation I applied using ImageDataGenerator:
@@ -84,11 +98,8 @@ For the Sign-Lingual project, I applied the following feature extraction methods
 **Colour Histogram**
 -	Shows the distribution of colours within an image.
 -	Helps to identify and differentiate between signs based on colour variations.
--	
+  
 After applying these methods, each image is now represented as a feature vector, where different parts of the vector come from each extraction method above. By representing images as feature vectors, the model can focus on specific patterns and details during training. This manual extraction process helps the model to better identify subtle differences that might be overlooked when using raw pixel data alone, leading to improved performance and accuracy in predictions.
-
-The outputs of these feature extraction methods can be seen below:
-
 
 ## Data Splitting
 
@@ -126,6 +137,10 @@ We can think of the problem as a simple classification task. The model ‘learns
 To uncover what the model is learning for each letter, I created a function that plots the mean image of a given letter next to the letter’s odds ratio. This allows us to gain an understanding into the model’s classification process and provides an insight into what is happening behind the scenes.
 
 Let’s look at letter A as an example:
+
+<div style="text-align: center;">
+  <img src="{{ site.baseurl }}/assets/sign-lingual/log_reg_odds_ratio.png" alt="Odds Ratio - A" style="max-width: 100%; height: auto; margin: 20px 0;">
+</div>
  
 The darker areas in the right image highlight areas of significance for letter A. These areas correspond to higher odds ratios, meaning the pixel intensities in these areas are the mode defining for classifying a letter as A. Looking at the image on the left, we can see that the darker areas correspond to the curling of the fingers, the opening of the palm and edges of the closed fist – all of which are key features the model uses to classify an image as letter A.
 
@@ -183,10 +198,22 @@ CNNs are a type of neural network designed specifically for image/video processi
 Let’s start with an example.
 
 Imagine a house - you probably picture something like this:
+
+<div style="text-align: center;">
+  <img src="{{ site.baseurl }}/assets/sign-lingual/overview_house.png" alt="House" style="max-width: 100%; height: auto; margin: 20px 0;">
+</div>
  
 We as humans see a house and can identify features of the house such as windows, a door, a roof and a chimney. 
 
+<div style="text-align: center;">
+  <img src="{{ site.baseurl }}/assets/sign-lingual/house_objects.png" alt="House objects" style="max-width: 100%; height: auto; margin: 20px 0;">
+</div>
+
 If we break down these features, all the listed objects are made up of the following lines:
+
+<div style="text-align: center;">
+  <img src="{{ site.baseurl }}/assets/sign-lingual/object_lines.png" alt="House object lines" style="max-width: 100%; height: auto; margin: 20px 0;">
+</div>
 
 CNNs follow a similar process but in reverse. Instead of starting with a complete object (a house), CNNs begin by detecting basic elements such as lines and edges. These elements form more complex shapes like the windows and roof. Through the layers of the network, these simple elements combine to produce more complex shapes and eventually the network progresses and learns enough to identify the full object like the house.
 
@@ -194,7 +221,10 @@ CNNs follow a similar process but in reverse. Instead of starting with a complet
 
 Brief outline of the CNN I built for my project:
 
- 
+<div style="text-align: center;">
+  <img src="{{ site.baseurl }}/assets/sign-lingual/cnn_overview.png" alt="CNN overview" style="max-width: 100%; height: auto; margin: 20px 0;">
+</div>
+
 Since the MNIST dataset I was working with is relatively small compared to typical image datasets, I decided on a simple convolutional neural network (CNN) with six layers. The structure of the network is as follows:
 
 1.	Input Layer: This layer receives the images as input.
@@ -222,11 +252,19 @@ In my CNN, the first convolutional layer contains 32 filters each detecting simp
 To gain deeper insights into kernels and feature maps, I created a function to visualise the kernels and their outputs for a given convolution layer. This function provides insight into how kernels extract and highlight features from specific letters in the MNIST dataset.
 
 *Convolution Layer 1 Output – Kernel 13*
- 
+
+<div style="text-align: center;">
+  <img src="{{ site.baseurl }}/assets/sign-lingual/layer_1_output.png" alt="Conv Layer 1 Output" style="max-width: 100%; height: auto; margin: 20px 0;">
+</div>
+
 By looking at the weights of kernel 14, we can gain valuable insights into the features it detects. Darker regions signify larger weights suggesting these regions represent patterns which the filter is searching for in the input image. This kernel has identified patterns related to the curled fingers of the hand and edges, suggesting that it plays a crucial role in distinguishing between open and closed hand signs.
 
 *Convolution Layer 2 Output – Kernel 2*
- 
+
+<div style="text-align: center;">
+  <img src="{{ site.baseurl }}/assets/sign-lingual/layer_2_output.png" alt="Conv Layer 2 Output" style="max-width: 100%; height: auto; margin: 20px 0;">
+</div>
+
 Here we can see the second layer kernels are harder to interpret when compared to the input image. The reason for this is that these kernels are applied to the output of the previous convolution layer.
 Kernels in the second layer have learnt to detect more abstract patterns often from combining the output of the previous convolutional layer. The deeper the convolutional layers get, the more abstract and complex the features become making it more challenging in terms of interpretability.
 
@@ -281,6 +319,8 @@ Initially, the ResNet-50 model scored high accuracy with a training score of 99.
 The most significant drop in performance occurred during top-up training with images from Teachable Machine, where the training score fell to 70.60% and the validation score to 68.53%. This suggests that the model's ability to adapt to real-world variations was limited, likely due to the relatively small size of the dataset – only ~600 images per class. This dataset size may not provide enough data for the deeper layers of ResNet-50 to effectively learn which impacts the model's performance.
 
 **VGG-16**
+
+VGG-16 is a deep convolutional neural network with 16 layers: 13 convolutional layers and 3 fully connected layers. It uses a block-based structure where each block includes several convolutional layers followed by max pooling. This design helps the network maintain its depth while preserving image dimensions, enhancing feature extraction and overall performance.
 
 *Results*
 
