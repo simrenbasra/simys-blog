@@ -47,11 +47,25 @@ To begin my project, I chose to work with the MNIST Sign Language dataset, avail
 
 As the project progressed, I expanded my dataset to include some real-life, coloured images captured using Teachable Machine. For each letter, there are 600 images. As like the MNIST dataset, there is no data for letters ‘J’ and ‘Z’. The purpose of this addition was to enhance the model’s ability to generalise to images with various augmentations. I will cover the specifics how I captured and used these real-life images in the sections to come.
 
+<br>
+
+-----
+
+<br>
+
+
 ## Data Preparation
 
 As with any data science project, preparing the data is a crucial step before modelling can begin. The same applies for image data. Image data processing involves some unique techniques compared to traditional data.  
 
 **Note:** Below are all the different types of data preparation I carried out, bear in mind not all models required all these steps to be taken.
+
+<br>
+
+-----
+
+<br>
+
 
 ## Resizing/Reshaping
 
@@ -59,11 +73,25 @@ The MNIST dataset consists of 28x28 pixel images, totalling 784 pixels per image
 
 For real-world images captured using Teachable Machine, the images were reshaped to 64x64 pixels. This higher resolution allows for more detail and context, which can improve the model's performance. However, this comes with a trade-off: increased computational requirements. As a result, expanding the resolution beyond 64x64 pixels was not feasible, as the training time for the transfer learning models increased exponentially.
 
+<br>
+
+-----
+
+<br>
+
+
 ## Scaling
 
 Pixel values range from 0 (black) to 255 (white), scaling pixels to a range of 0 to 1 ensures all features (pixels) contribute evenly to the model’s training. This leads to an improvement in the model’s performance and prevents any biases towards the larger pixel values.
 
 In neural networks, scaling is also important due to the activation functions which perform better when input values are within a normalised range. Proper scaling allows the network to be more consistent and balanced when updating the weights during training.
+
+<br>
+
+-----
+
+<br>
+
 
 ## Data Augmentation
 
@@ -95,6 +123,13 @@ Here is a list of augmentation I applied using ImageDataGenerator:
 | zoom_range.             | 0.2    | Zooms in and out of images so model can recognise signs when hands are of different sizes/further/closer. |
 | horizontal_flip          | True | To mimic opposite hand, if original image is left hand, we can flip the image to show right hand|
 
+<br>
+
+-----
+
+<br>
+
+
 ## Feature Extraction with HOG and LBP
 
 Feature extraction describes the process of manually extracting meaningful features from raw image data to transform it into a more compact, reduced set of features. This process simplifies data by reducing its dimensionality while preserving only the important parts of the images.
@@ -114,6 +149,13 @@ For the Sign-Lingual project, I applied the following feature extraction methods
 -	Helps to identify and differentiate between signs based on colour variations.
   
 After applying these methods, each image is now represented as a feature vector, where different parts of the vector come from each extraction method above. By representing images as feature vectors, the model can focus on specific patterns and details during training. This manual extraction process helps the model to better identify subtle differences that might be overlooked when using raw pixel data alone, leading to improved performance and accuracy in predictions.
+
+<br>
+
+-----
+
+<br>
+
 
 ## Data Splitting
 
