@@ -229,12 +229,12 @@ Brief outline of the CNN I built for my project:
 
 Since the MNIST dataset I was working with is relatively small compared to typical image datasets, I decided on a simple convolutional neural network (CNN) with six layers. The structure of the network is as follows:
 
-1.	Input Layer: This layer receives the images as input.
-2.	Convolutional Layer 1: The first convolutional layer applies filters to detect basic features such as edges.
-3.	Convolutional Layer 2: The second convolutional layer builds on the features detected by the first layer, recognising more complex patterns and shapes.
-4.	Fully Connected Layer 1: This layer begins to combine the detected features from convolutional layers to gain an understanding of the overall image.
-5.	Fully Connected Layer 2: Building on the output of first fully connected layer, fine-tuning it before classification.
-6.	Output Layer: The final layer outputs the model’s predictions, classifying the input image as a single letter.
+**1.	Input Layer:** This layer receives the images as input.
+**2.	Convolutional Layer 1:** The first convolutional layer applies filters to detect basic features such as edges.
+**3.	Convolutional Layer 2:** The second convolutional layer builds on the features detected by the first layer, recognising more complex patterns and shapes.
+**4.	Fully Connected Layer 1:** This layer begins to combine the detected features from convolutional layers to gain an understanding of the overall image.
+**5.	Fully Connected Layer 2:** Building on the output of first fully connected layer, fine-tuning it before classification.
+**6.	Output Layer:** The final layer outputs the model’s predictions, classifying the input image as a single letter.
    
 ## Filters/Kernels
 
@@ -283,7 +283,7 @@ The base CNN model achieved high results, with a training accuracy of 99.30% and
 
 These scores indicate that the model effectively learned from the MNIST sign language dataset and demonstrated strong ability to generalise as seen by the minimal difference between training and validation scores.
 
-**CNN Model with Augmentation: **
+**CNN Model with Augmentation:**
 
 Accuracy scores show a reduced performance compared to the base CNN model, with training accuracy dropping to 79.89% and validation accuracy at 92.78%. 
 
@@ -302,7 +302,9 @@ The input image dimensions for these models were 64 by 64 pixels and included al
 The process of transfer learning for both models was the same:
 
 **1.	MNIST Dataset:** The first stage involved fine-tuning the pre-trained models using the MNIST dataset. This initial fine-tuning adapts the model to recognise patterns relevant to this specific dataset.
+
 **2.	Augmented Dataset:** Fine-tuning was performed using the augmented images from the MNIST dataset. This step helps the models adapt to variations introduced through data augmentation, such as rotations and distortions.
+
 **3.	Teachable Machine Images:** Top-up training using images captured from Teachable Machine. In this process, I froze all layers apart from last few fully connected layers, training only these layers. The purpose of this was to refine the models on images with real-world variations that are not present in the MNIST data.
    
 **ResNet-50**
