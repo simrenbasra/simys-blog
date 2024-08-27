@@ -1,5 +1,5 @@
 ---
-title: "💻| Sign-Lingual: From Pixels to Predictions 👐 "
+title: "Sign-Lingual: From Pixels to Predictions 👐 "
 date: 2024-08-27
 ---
 
@@ -344,7 +344,7 @@ To gain deeper insights into kernels and feature maps, I created a function to v
   <img src="{{ site.baseurl }}/assets/sign-lingual/layer_1_output.png" alt="Conv Layer 1 Output" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
-By looking at the weights of kernel 14, we can gain valuable insights into the features it detects. Darker regions signify larger weights suggesting these regions represent patterns which the filter is searching for in the input image. This kernel has identified patterns related to the curled fingers of the hand and edges, suggesting that it plays a crucial role in distinguishing between open and closed hand signs.
+By looking at the weights of kernel 13, we can gain valuable insights into the features it detects. Darker regions signify larger weights suggesting these regions represent patterns which the filter is searching for in the input image. This kernel has identified patterns related to the curled fingers of the hand and edges, suggesting that it plays a crucial role in distinguishing between open and closed hand signs.
 
 **Convolution Layer 2 Output – Kernel 2**
 
