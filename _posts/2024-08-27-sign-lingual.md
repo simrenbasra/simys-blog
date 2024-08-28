@@ -94,7 +94,7 @@ In neural networks, scaling is also important due to the activation functions wh
 
 ## Data Augmentation
 
-Data augmentation describes the process of adding ‘noise’ into your data to simulate conditions faced in the real-world. For image data, this process includes techniques such as rotating, flipping, and cropping images. These transformations help create a more diverse set of training data, making the model more robust and capable of generalising to new, unseen images.
+Data augmentation describes the process of adding ‘noise’ into your data to simulate conditions faced in the real-world. For image data, this process includes techniques such as rotating, flipping and cropping images. These transformations help create a more diverse set of training data, making the model more robust and capable of generalising to new, unseen images.
 
 In this project, data augmentation was applied to the training set only. By doing so, the model was exposed to a variety of image augmentation during training in attempt to improve its ability to handle different scenarios in the real world. The validation set images were not augmented, allowing us to evaluate the model's performance on unaltered images. This ensures that the model’s ability to generalise to real-world data is assessed rather than its ability to cope with artificially created noise in images. 
 
