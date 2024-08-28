@@ -24,15 +24,15 @@ Sign-Lingual is a sign language recognition tool designed to translate American 
 At first, it was overwhelming to consider all the potential directions for this project. I initially struggled with where to start. To tackle the task, I found it helpful to first envision the model’s core functionality. The ideal app would facilitate two-way communication: from signer to non-signer and vice versa.
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/sign-lingual/method_overview.png" alt="Method Overview" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/sign-lingual/graphic_design_phone.png" alt="App design" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 For simplicity, I decided to focus on the first communication path: enabling signers to communicate with non-signers. This approach allowed me to create a rough mock-up of what I wanted to build.
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/sign-lingual/graphic_design_phone.png" alt="App design" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/sign-lingual/method_overview.png" alt="Method Overview" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
-  
+
 The core functionality of the app involves capturing a real-time image of an ASL letter. The app then uses a machine learning model to return a prediction of that ASL letter. Of course, there's a lot more happening behind the scenes so let’s dive into the details!
 
 <br>
@@ -304,7 +304,7 @@ CNNs follow a similar process but in reverse. Instead of starting with a complet
 Brief outline of the CNN I built for my project:
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/sign-lingual/cnn_overview.png" alt="CNN overview" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/sign-lingual/cnn_template.png" alt="CNN overview" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 Since the MNIST dataset I was working with is relatively small compared to typical image datasets, I decided on a simple convolutional neural network (CNN) with six layers. The structure of the network is as follows:
