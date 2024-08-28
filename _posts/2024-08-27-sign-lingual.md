@@ -282,7 +282,7 @@ Let’s start with an example.
 Imagine a house - you probably picture something like this:
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/sign-lingual/overview_house.png" alt="House" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/sign-lingual/house.png" alt="House" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
  
 We as humans see a house and can identify features of the house such as windows, a door, a roof and a chimney. 
