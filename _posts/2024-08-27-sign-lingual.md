@@ -158,7 +158,7 @@ After applying these methods, each image is now represented as a feature vector,
 
 ## Data Splitting
 
-Data splitting involves separating the dataset into subsets to ensure effective model training and model evaluation. For my project, I split data into three subsets:
+Data splitting involves separating the dataset into subsets to ensure effective model training and evaluation. For my project, I split data into three subsets:
 
 **1.	Training Set**
    
