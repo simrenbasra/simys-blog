@@ -453,6 +453,12 @@ Initially, I used TensorFlow’s tf.image.resize function to adjust the image di
 
 To resolve this, I needed to crop the image before resizing it. After several attempts and failing to find a suitable TensorFlow function, I manually calculated the aspect ratio to perform cropping and resizing separately. Although this solution worked, it introduced a new issue: if the user was not positioned correctly in the frame, the cropped image may not capture their full hand. To address this, I printed a preview of the cropped image to ensure the user is in frame.
 
+***Mini Demo***
+
+<div style="position: relative; padding-bottom: 64.74820143884892%; height: 0;">
+  <iframe src="https://www.loom.com/embed/67a59bbb12a14ca7baa12f914df14dd8?sid=7114ae3d-2e8d-4b97-8591-a00f9fea0be9" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+</div>
+
 <br>
 
 -----
