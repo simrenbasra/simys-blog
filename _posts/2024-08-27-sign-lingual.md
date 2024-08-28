@@ -463,7 +463,7 @@ To resolve this, I needed to crop the image before resizing it. After several at
 
 Looking ahead, there are several improvements I could make to this project.
 
-One key area of focus is refining the production of the app. Currently, I am using Streamlit to deploy a web app for real-time image capture and prediction. While this approach works well, it requires users to have the python file downloaded and access to the trained VGG-16 model. To make the app more accessible, I should look into000 using APIs to deploy my model. Using something like Fast API allows users to interact with the model without needing to download or manage code themselves.
+One key area of focus is refining the deploymeny of my model. Currently, I am using Streamlit to deploy a web app for real-time image capture and prediction. While this approach works well, it requires users to have the python file downloaded and access to the trained VGG-16 model. To make the app more accessible, I should look into000 using APIs to deploy my model. Using something like Fast API allows users to interact with the model without needing to download or manage code themselves.
 
 Another development I can make is to predict complete words instead of predicting individual letters. To make this a possibility, requires implementing a continuous image capture loop. I will investigate if this can be done using OpenCV library. 
 
