@@ -20,8 +20,10 @@ In this blog, I will be posting:
 
 Here are some of the upcoming posts:
   
-**Sign-Lingual 👐:** Exploring some computer vision techniques I used to build my machine learning model for sign language recognition. I’ll break down how I developed different models, starting from a baseline logistic regression and progressing through various approaches, including transfer learning. I’ll explain the concepts behind each method and how they led to selecting the most effective model for sign language detection.
-
-**(Expected: 26/08/24)**
+**ResNets Unlocked: A Deep Dive into Residual Networks 🔗**
+Exploring the inner workings of Residual Networks and how ResNets are different to traditional neural networks. 
+ 
+**Time Flies When You’re Analysing Data: An Introduction to Timeseries ⏳**
+An introduction to the core concepts of time series analysis. From the basics of handling time-stamped data to exploring advanced forecasting models, I’ll break down how each approach contributes to understanding and predicting trends.
 
 Feel free to explore the content and stay tuned for more updates!
