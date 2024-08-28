@@ -278,7 +278,7 @@ CNNs are a type of neural network designed specifically for image/video processi
 
 Let’s start with an example.
 
-Imagine a house - you probably picture something like this:
+Imagine a house:
 
 <div style="text-align: center;">
   <img src="{{ site.baseurl }}/assets/sign-lingual/house.png" alt="House" style="max-width: 100%; height: auto; margin: 20px 0;">
