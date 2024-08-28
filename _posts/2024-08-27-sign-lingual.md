@@ -469,4 +469,5 @@ One key area of focus is refining the production of the app. Currently, I am usi
 Another development I can make is to predict complete words instead of predicting individual letters. To make this a possibility, requires implementing a continuous image capture loop. I will investigate if this can be done using OpenCV library. 
 
 Additionally, reaching out to sign language communities and experts would be a useful step for further development. Engaging with signers will provide valuable insights into common misunderstandings allowing me to assess if the model replicates these issues. This feedback will guide fine-tuning and adjustments to improve the model’s accuracy.
+
 Finally, addressing the issue of backgrounds in images is another important step. Currently, the model’s performance can be affected by varying backgrounds. To deal with this, I plan to investigate methods for background removal using OpenCV before images are fed into the model.
