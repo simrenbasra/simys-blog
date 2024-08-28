@@ -21,9 +21,11 @@ In this blog, I will be posting:
 Here are some of the upcoming posts:
   
 **ResNets Unlocked: A Deep Dive into Residual Networks 🔗**
+
 Exploring the inner workings of Residual Networks and how ResNets are different to traditional neural networks. 
  
 **Time Flies When You’re Analysing Data: An Introduction to Timeseries ⏳**
+
 An introduction to the core concepts of time series analysis. From the basics of handling time-stamped data to exploring advanced forecasting models, I’ll break down how each approach contributes to understanding and predicting trends.
 
 Feel free to explore the content and stay tuned for more updates!
