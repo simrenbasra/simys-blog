@@ -45,8 +45,7 @@ The core functionality of the app involves capturing a real-time image of an ASL
 
 To begin my project, I chose to work with the MNIST Sign Language dataset, available via openML. This dataset was ideal for multiple reasons: the images are well centered, feature a clear background and have minimal augmentation making it a suitable benchmark to start with. Each letter in the dataset has approximately 1400 images, providing a solid foundation for training. However, it's important to note that the dataset does not include data for the letters 'J' and 'Z' since these letters involve moving parts, which static images in the dataset cannot capture. Its simplicity made it a good starting point for me especially since this was my first image recognition project. 
 
-As the project progressed, I expanded my dataset to include some real-life, coloured images captured using Teachable Machine. For each letter, there are 600 images. As like the MNIST dataset, there is no data for letters ‘J’ and ‘Z’. The purpose of this addition was to enhance the model’s ability to generalise to images with various augmentations. I will cover the specifics how I captured and used these real-life images in the sections to come.
-
+As the project progressed, I expanded my dataset to include some real-life, coloured images captured using Teachable Machine. For each letter, there are 600 images. As like the MNIST dataset, there is no data for letters ‘J’ and ‘Z’. The purpose of this addition was to enhance the model’s ability to generalise to images with various augmentations. 
 <br>
 
 -----
