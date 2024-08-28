@@ -459,6 +459,15 @@ To resolve this, I needed to crop the image before resizing it. After several at
   <iframe src="https://www.loom.com/embed/67a59bbb12a14ca7baa12f914df14dd8?sid=7114ae3d-2e8d-4b97-8591-a00f9fea0be9" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
+<div style="position: relative; padding-bottom: 64.74820143884892%; height: 0;">
+  <iframe id="loom-video" src="https://www.loom.com/embed/67a59bbb12a14ca7baa12f914df14dd8?sid=7114ae3d-2e8d-4b97-8591-a00f9fea0be9" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+</div>
+<script>
+  // Example: This will not work for Loom as it has cross-origin restrictions
+  document.getElementById('loom-video').contentWindow.postMessage('{"method":"setVolume", "value":0}', '*');
+</script>
+
+
 <br>
 
 -----
