@@ -23,11 +23,11 @@ Sign-Lingual is a sign language recognition tool designed to translate American 
 
 At first, it was overwhelming to consider all the potential directions for this project. I initially struggled with where to start. To tackle the task, I found it helpful to first envision the model’s core functionality. The ideal app would facilitate two-way communication: from signer to non-signer and vice versa.
 
+For simplicity, I decided to focus on the first communication path: enabling signers to communicate with non-signers. This approach allowed me to create a rough mock-up of what I wanted to build.
+
 <div style="text-align: center;">
   <img src="{{ site.baseurl }}/assets/sign-lingual/graphic_design_phone.png" alt="App design" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
-
-For simplicity, I decided to focus on the first communication path: enabling signers to communicate with non-signers. This approach allowed me to create a rough mock-up of what I wanted to build.
 
 <div style="text-align: center;">
   <img src="{{ site.baseurl }}/assets/sign-lingual/method_overview.png" alt="Method Overview" style="max-width: 100%; height: auto; margin: 20px 0;">
