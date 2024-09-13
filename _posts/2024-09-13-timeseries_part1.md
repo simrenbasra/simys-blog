@@ -86,7 +86,23 @@ Simply apply the seasonal_decompose function from the statsmodels package to the
 
 ***Seasonal Trend Decomposition Results:***
 
- 
+Since the dataset spans over 5 years, assessing seasonality and recent trends visually can be challenging. To address this, I reduced the date range to the past year. This made it easier to identify and analyse seasonal patterns and trend.
+
+<div style="text-align: center;">
+  <img src="{{ site.baseurl }}/assets/timeseries/decomposition.png" alt="Seasonal Trend Decomposition Results" style="max-width: 100%; height: auto; margin: 20px 0;">
+</div>
+
+**Trend Plot**
+Throughout the year, there is a clear upward trend in stock prices for Microsoft suggesting solid company growth. 
+
+**Seasonal Plot**
+Now able to see the seasanlity of data, data seems to follow a weekly cycle. Data appears to peak every Wednesday and dip each Tuesday.
+
+**Residual Plot**
+The residual plot should show randomness with no obvious patterns. This indicates that the seasonality and trend components have effectively captured patterns in the data, leaving the residuals as random noise. 
+
+Although the variance in the residuals is not constant and shows some fluctuations, there are no clear patterns. This suggests that the model has performed reasonably well but may still be missing some patterns in the data.
+
 **Stationary Data**
 
 For accurate forecasting, time series models require stationary data. Stationary data means that the data's mean and variance remain constant over time. This is important because many forecasting models, like machine learning models, assume that all data follows the same distribution.
@@ -127,10 +143,17 @@ Plotting the time series data and inspecting it for signs of non-stationarity. K
 
 Below is a plot comparing the original timeseries with the timeseries after applying boxcox transformation and seasonal differencing (with a seasonal period of 7).
 
+<div style="text-align: center;">
+  <img src="{{ site.baseurl }}/assets/timeseries/stationary_vs_original.png" alt="Stationary data vs Original Data" style="max-width: 100%; height: auto; margin: 20px 0;">
+</div>
 
+This plot compares the original timeseries with the stationary time series. The original timeseries shows trends and seasonality in the data. In contrast, the stationary timeseries has been transformed to remove these trends and seasonality, resulting in a more stable mean and variance. By comparing the two, it is clear how the transformation done above has standardised the data, making it more suitable for forecasting.
 
 I find it best to use both methods to ensure the data is stationary before moving to forecasting. 
 
+In this first part of the series, I have covered the fundamentals of time series analysis, including data preparation, cleaning and ensuring the data is stationary.
+
+In Part 2, I will explore various forecasting techniques, including baseline methods, exponential smoothing and ARIMA. I'll also evaluate their performance and see how they stack up against each other in forecasting close prices.
 
 
 
