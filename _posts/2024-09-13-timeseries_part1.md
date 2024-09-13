@@ -59,7 +59,7 @@ For this project, I decided to work with Microsoft (MSFT) stock data spanning th
 
 **Focus of the Project:** For this project, my focus is on forecasting the Close Price of Microsoft stock for the next 7 days.
 
-<br><br>
+<br>
 
 ## Data Preparation
 
@@ -156,8 +156,6 @@ This plot compares the original timeseries with the stationary time series. The 
 
 I find it best to use both methods to ensure the data is stationary before moving to forecasting. 
 
-<br>
------
 <br>
 
 ## Summary
