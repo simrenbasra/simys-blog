@@ -16,8 +16,6 @@ In this blog post, I’ll share my experiences with forecasting stock data, incl
 Given the unpredictability of stock data, I was not expecting great results. For me, this project was more about expanding and pushing my understanding of timeseries.
 
 <br>
------
-<br>
 
 ## Basics of TimeSeries
 
@@ -42,8 +40,6 @@ The date column must be set as the index of the dataset. This ensures all data i
 There must be no missing dates in the dataset. Missing dates can lead to errors and skewed results in your analysis, affecting the accuracy of your findings.
 
 <br>
------
-<br>
 
 ## Data Overview
 
@@ -63,9 +59,7 @@ For this project, I decided to work with Microsoft (MSFT) stock data spanning th
 
 **Focus of the Project:** For this project, my focus is on forecasting the Close Price of Microsoft stock for the next 7 days.
 
-<br>
------
-<br>
+<br><br>
 
 ## Data Preparation
 
