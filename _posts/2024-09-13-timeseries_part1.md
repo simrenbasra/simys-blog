@@ -77,11 +77,11 @@ Other methods to populate missing values could have been used, but for stock dat
 
 With a clean dataset, the next step was to perform Seasonal Trend Decomposition. This process is key in understanding timeseries data, it breaks data down into three components:
 
-***Trend:*** Shows the long-term direction of the data, showing whether it is generally increasing, decreasing or remaining stable over time.
+**Trend:** Shows the long-term direction of the data, showing whether it is generally increasing, decreasing or remaining stable over time.
 
-***Seasonality:*** Shows repeating short-term patterns that occur at regular intervals like daily, weekly or monthly cycles.
+**Seasonality:** Shows repeating short-term patterns that occur at regular intervals like daily, weekly or monthly cycles.
 
-***Residuals:*** Represents random noise that cannot be explained by the trend or seasonality, often referred to as ‘white noise’.
+**Residuals:** Represents random noise that cannot be explained by the trend or seasonality, often referred to as ‘white noise’.
 
 Breaking the data down into these components allows for greater understanding of the data and gives insight into how best to forecast data. 
 
@@ -111,7 +111,7 @@ In this example, the variance in the residuals is not constant and shows some fl
 
 For accurate forecasting, timeseries models require stationary data. Stationary data means that the data's mean and variance remain constant over time. This is important because many forecasting models, like machine learning models, assume that all data follows the same distribution.
 
-***How to Make Data Stationary?***
+***How to make data stationary***
 
 **Variance**
 
