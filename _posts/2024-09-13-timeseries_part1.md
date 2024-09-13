@@ -16,9 +16,7 @@ In this blog post, I’ll share my experiences with forecasting stock data, incl
 Given the unpredictability of stock data, I was not expecting great results. For me, this project was more about expanding and pushing my understanding of timeseries.
 
 <br>
-
 -----
-
 <br>
 
 ## Basics of TimeSeries
@@ -44,9 +42,7 @@ The date column must be set as the index of the dataset. This ensures all data i
 There must be no missing dates in the dataset. Missing dates can lead to errors and skewed results in your analysis, affecting the accuracy of your findings.
 
 <br>
-
 -----
-
 <br>
 
 ## Data Overview
@@ -68,14 +64,12 @@ For this project, I decided to work with Microsoft (MSFT) stock data spanning th
 **Focus of the Project:** For this project, my focus is on forecasting the Close Price of Microsoft stock for the next 7 days.
 
 <br>
-
 -----
-
 <br>
 
 ## Data Preparation
 
-#### Data Cleaning
+### Data Cleaning
 
 On inspecting the data, I found the dates were not continuous. There were missing dates for non-trading days such as weekends and US bank holidays. As mentioned earlier, one key concept of time series analysis is having a complete and continuous date range.
 
@@ -85,7 +79,7 @@ By re-indexing, I introduced null values into my dataset for these added dates s
 
 Other methods to populate missing values could have been used, but for stock data linear interpolation seemed the most appropriate. It preserves the trend seen in the data and avoids introducing any sudden jumps or drops.
 
-**Seasonal Trend Decomposition**
+### Seasonal Trend Decomposition
 
 With a clean dataset, the next step was to perform Seasonal Trend Decomposition. This process is key in understanding time series data, it breaks data down into three components:
 
@@ -120,7 +114,7 @@ The residual plot should show randomness with no obvious patterns. This indicate
 
 Although the variance in the residuals is not constant and shows some fluctuations, there are no clear patterns. This suggests that the model has performed reasonably well but may still be missing some patterns in the data.
 
-**Stationary Data**
+### Stationary Data
 
 For accurate forecasting, time series models require stationary data. Stationary data means that the data's mean and variance remain constant over time. This is important because many forecasting models, like machine learning models, assume that all data follows the same distribution.
 
@@ -169,9 +163,7 @@ This plot compares the original timeseries with the stationary time series. The 
 I find it best to use both methods to ensure the data is stationary before moving to forecasting. 
 
 <br>
-
 -----
-
 <br>
 
 ## Summary
