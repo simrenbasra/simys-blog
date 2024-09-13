@@ -1,5 +1,5 @@
 ---
-title: "Breaking down Timeseries: Unpacking the Basics 🕰️"
+title: "Breaking down TimeSeries: Unpacking the Basics 🕰️"
 date: 2024-09-13
 ---
 
@@ -9,7 +9,7 @@ The idea of predicting the future seemed like a daunting task, full of complex e
 
 So, why not take on a challenge that felt as unpredictable as timeseries itself: forecasting stock prices. If I could analyse something as complex as stock data, it would not only help me conquer my fear of timeseries but will also deepen my understanding.
 
-And so began my journey into the world of time series forecasting.
+And so began my journey into the world of timeseries forecasting.
 
 In this blog post, I’ll share my experiences with forecasting stock data, including the various methods and modelling techniques I used, as well as how I evaluated their performance.
 
@@ -65,7 +65,7 @@ For this project, I decided to work with Microsoft (MSFT) stock data spanning th
 
 ### Data Cleaning
 
-On inspecting the data, I found the dates were not continuous. There were missing dates for non-trading days such as weekends and US bank holidays. As mentioned earlier, one key concept of time series analysis is having a complete and continuous date range.
+On inspecting the data, I found the dates were not continuous. There were missing dates for non-trading days such as weekends and US bank holidays. As mentioned earlier, one key concept of timeseries analysis is having a complete and continuous date range.
 
 To address this issue, I re-indexed my dataset to cover the full range of dates, ensuring that every single day within the selected period was included - even if no trading occurred on that day.
 
@@ -143,7 +143,7 @@ The output includes the p-value, if this value is less than 0.05 (adjustable thr
 
 **2. Visualisation** 
 
-Plotting the time series data and inspecting it for signs of non-stationarity. Key indicators include trends, seasonality and changing variance.
+Plotting the timeseries data and inspecting it for signs of non-stationarity. Key indicators include trends, seasonality and changing variance.
 
 Below is a plot comparing the original timeseries with the timeseries after applying boxcox transformation and seasonal differencing (with a seasonal period of 7).
 
@@ -151,7 +151,7 @@ Below is a plot comparing the original timeseries with the timeseries after appl
   <img src="{{ site.baseurl }}/assets/timeseries/stationary_vs_original.png" alt="Stationary data vs Original Data" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
-This plot compares the original timeseries with the stationary time series. The original timeseries shows trends and seasonality in the data. In contrast, the stationary timeseries has been transformed to remove these trends and seasonality, resulting in a more stable mean and variance. By comparing the two, it is clear how the transformation done above has standardised the data, making it more suitable for forecasting.
+This plot compares the original timeseries with the stationary timeseries. The original timeseries shows trends and seasonality in the data. In contrast, the stationary timeseries has been transformed to remove these trends and seasonality, resulting in a more stable mean and variance. By comparing the two, it is clear how the transformation done above has standardised the data, making it more suitable for forecasting.
 
 I find it best to use both methods to ensure the data is stationary before moving to forecasting. 
 
