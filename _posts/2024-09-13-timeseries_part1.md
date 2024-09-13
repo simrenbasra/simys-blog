@@ -37,7 +37,7 @@ The date column must be set as the index of the dataset. This ensures all data i
 
 **2.	Complete Date Range**
 
-There must be no missing dates in the dataset. Missing dates can lead to errors and skewed results in your analysis, affecting the accuracy of your findings.
+There must be no missing dates in the dataset. Missing dates can lead to errors and skewed results in your analysis, affecting the accuracy of findings.
 
 <br>
 
@@ -57,7 +57,7 @@ For this project, I decided to work with Microsoft (MSFT) stock data spanning th
 | Low       | Lowest price reached during the trading day           |
 | Volume    | Number of shares traded during the day                |
 
-**Focus of the Project:** For this project, my focus is on forecasting the Close Price of Microsoft stock for the next 7 days.
+**Focus of the Project:** For this project, my focus is forecasting the Close Price of Microsoft stock for the next 7 days.
 
 <br>
 
@@ -69,13 +69,13 @@ On inspecting the data, I found the dates were not continuous. There were missin
 
 To address this issue, I re-indexed my dataset to cover the full range of dates, ensuring that every single day within the selected period was included - even if no trading occurred on that day.
 
-By re-indexing, I introduced null values into my dataset for these added dates since the stock market doesn't trade on weekends and holidays, the data for these days didn’t exist. To correct this, I applied linear interpolation. which estimates the missing values by assuming a linear relationship between the stock prices before and after the missing dates.
+By re-indexing, I introduced null values into my dataset for these added dates since the stock market doesn't trade on weekends and holidays, the data for these days didn’t exist. To correct this, I applied linear interpolation which estimates the missing values by assuming a linear relationship between the stock prices before and after the missing dates.
 
 Other methods to populate missing values could have been used, but for stock data linear interpolation seemed the most appropriate. It preserves the trend seen in the data and avoids introducing any sudden jumps or drops.
 
 ### Seasonal Trend Decomposition
 
-With a clean dataset, the next step was to perform Seasonal Trend Decomposition. This process is key in understanding time series data, it breaks data down into three components:
+With a clean dataset, the next step was to perform Seasonal Trend Decomposition. This process is key in understanding timeseries data, it breaks data down into three components:
 
 ***Trend:*** Shows the long-term direction of the data, showing whether it is generally increasing, decreasing or remaining stable over time.
 
@@ -87,11 +87,11 @@ Breaking the data down into these components allows for greater understanding of
 
 ***How do we do this?***
 
-Simply apply the seasonal_decompose function from the statsmodels package to the data. This function breaks the time series into three components: trend, seasonal and residual, which you can then examine individually.
+Simply apply the seasonal_decompose function from the statsmodels package to the data. This function breaks the timeseries into three components: trend, seasonal and residual, which can then be examined individually.
 
 **Results:**
 
-Since the dataset spans over 5 years, assessing seasonality and recent trends visually can be challenging. To address this, I reduced the date range to the past year. This made it easier to identify and analyse seasonal patterns and trend.
+Since the dataset spans over 5 years, assessing seasonality and recent trends visually was challenging. To address this, I reduced the date range to the past year. This made it easier to identify and analyse seasonal patterns and trend.
 
 <div style="text-align: center;">
   <img src="{{ site.baseurl }}/assets/timeseries/decomposition.png" alt="Seasonal Trend Decomposition Results" style="max-width: 100%; height: auto; margin: 20px 0;">
@@ -105,12 +105,11 @@ Now able to see the seasanlity of data, data seems to follow a weekly cycle. Dat
 
 **Residual Plot**
 The residual plot should show randomness with no obvious patterns. This indicates that the seasonality and trend components have effectively captured patterns in the data, leaving the residuals as random noise. 
-
-Although the variance in the residuals is not constant and shows some fluctuations, there are no clear patterns. This suggests that the model has performed reasonably well but may still be missing some patterns in the data.
+In this example, the variance in the residuals is not constant and shows some fluctuations, there are no clear patterns. This suggests that the model has performed reasonably well but may still be missing some patterns in the data.
 
 ### Stationary Data
 
-For accurate forecasting, time series models require stationary data. Stationary data means that the data's mean and variance remain constant over time. This is important because many forecasting models, like machine learning models, assume that all data follows the same distribution.
+For accurate forecasting, timeseries models require stationary data. Stationary data means that the data's mean and variance remain constant over time. This is important because many forecasting models, like machine learning models, assume that all data follows the same distribution.
 
 ***How to Make Data Stationary?***
 
@@ -118,9 +117,9 @@ For accurate forecasting, time series models require stationary data. Stationary
 
 To make the variance constant, you can either take the log transformation or apply box-cox transform. 
 
--	Log Transformation: Used when data is multiplicative meaning the variance increases as the trend increases. Log transformations squeeze the data to a logarithmic scale stabilising the variance.
+-	**Log Transformation:** Used when data is multiplicative meaning the variance increases as the trend increases. Log transformations squeeze the data to a logarithmic scale stabilising the variance.
   
--	Box-Cox Transformation: Can normalise both mean and variance of data. It can be applied using the boxcox function from scipy.stats. 
+-	**Box-Cox Transformation:** Can normalise both mean and variance of data. It can be applied using the boxcox function from scipy.stats. 
 
 **Mean**
 
@@ -160,9 +159,9 @@ I find it best to use both methods to ensure the data is stationary before movin
 
 ## Summary
 
-In this first part of the series, I have covered the fundamentals of time series analysis, including data preparation, cleaning and ensuring the data is stationary.
+In this first part of the series, I have covered the fundamentals of timeseries analysis, including data preparation, cleaning and ensuring the data is stationary.
 
-In Part 2, I will explore various forecasting techniques, including baseline methods, exponential smoothing and ARIMA. I'll also evaluate their performance and see how they stack up against each other in forecasting close prices.
+In Part 2, I will explore various forecasting techniques including baseline methods, exponential smoothing and ARIMA. I'll also evaluate their performance and see how they compare in forecasting close prices.
 
 
 
