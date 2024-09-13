@@ -15,18 +15,25 @@ In this blog post, I’ll share my experiences with forecasting stock data, incl
 
 Given the unpredictability of stock data, I was not expecting great results. For me, this project was more about expanding and pushing my understanding of timeseries.
 
-**Basics of TimeSeries** 
+<br>
 
-***What exactly is TimeSeries?***
+-----
+
+<br>
+
+## Basics of TimeSeries
 
 First, let’s start with a simple example.
 
-Imagine a coffee shop tracks the number of customers visiting each day. Over time, patterns emerge in the data. For instance, the shop might notice that the number of customers peaks in the mornings and decreases in the afternoons. Or perhaps weekends are busier than weekdays.
+Imagine a coffee shop tracks the number of customers visiting each day. Over time, patterns emerge in the data. For example, the shop might notice that the number of customers peaks in the mornings and decreases in the afternoons. Or perhaps weekends are busier than weekdays.
+
 By looking at these patterns, the coffee shop can make data-driven decisions like staffing more employees during busy hours or launching promotions when foot traffic is typically lower.
+
+***What exactly is TimeSeries?***
 
 A timeseries is a collection of data points recorded at regular intervals over time. It helps reveal patterns and trends in historical data, which can then be used to make predictions about future events. This approach is widely used across many industries to forecast demand, detect anomalies and optimise business decision-making.
 
-Key Concepts of TimeSeries:
+**Key Concepts of TimeSeries:**
 
 **1.	DateTime Index**
 
@@ -36,11 +43,17 @@ The date column must be set as the index of the dataset. This ensures all data i
 
 There must be no missing dates in the dataset. Missing dates can lead to errors and skewed results in your analysis, affecting the accuracy of your findings.
 
-**Data Overview**
+<br>
+
+-----
+
+<br>
+
+## Data Overview
 
 For this project, I decided to work with Microsoft (MSFT) stock data spanning the past five years. This data was sourced from Yahoo Finance (yfinance) and is recorded at a daily frequency. 
 
-Data Dictionary:
+**Data Dictionary:**
 
 |           | Description                                           |
 |-----------|-------------------------------------------------------|
@@ -52,13 +65,17 @@ Data Dictionary:
 | Low       | Lowest price reached during the trading day           |
 | Volume    | Number of shares traded during the day                |
 
-Focus of the Project:
+**Focus of the Project:** For this project, my focus is on forecasting the Close Price of Microsoft stock for the next 7 days.
 
-For this project, my focus is on forecasting the Close Price of Microsoft stock for the next 7 days. This is as the Close price is the most reliable indicator of a stock’s value at the end of a trading day. 
+<br>
 
-**Data Preparation** 
+-----
 
-***Data Cleaning***
+<br>
+
+## Data Preparation
+
+**Data Cleaning**
 
 On inspecting the data, I found the dates were not continuous. There were missing dates for non-trading days such as weekends and US bank holidays. As mentioned earlier, one key concept of time series analysis is having a complete and continuous date range.
 
@@ -84,7 +101,7 @@ Breaking the data down into these components allows for greater understanding of
 
 Simply apply the seasonal_decompose function from the statsmodels package to the data. This function breaks the time series into three components: trend, seasonal and residual, which you can then examine individually.
 
-***Seasonal Trend Decomposition Results:***
+**Results:**
 
 Since the dataset spans over 5 years, assessing seasonality and recent trends visually can be challenging. To address this, I reduced the date range to the past year. This made it easier to identify and analyse seasonal patterns and trend.
 
@@ -121,15 +138,15 @@ To make the variance constant, you can either take the log transformation or app
 
 To make the mean constant, you can apply differencing to the data. Differencing involves subtracting the previous value from the current value and helps to remove both trend and seasonality from the data. There are two types of differencing you can apply:
 
-**1.	First-Order:** Subtracting previous value from the current value, this removes the trend in the data.
+**1.First-Order:** Subtracting previous value from the current value, this removes the trend in the data.
 
-**2.	Seasonal:** Subtracts value from the same season in a previous cycle, this removes seasonal patterns in the data. For instance, for this project we know the seasonality is 7 days (as seen from seasonal trend decomposition), you would subtract the close price from the same day of the previous week.
+**2.Seasonal:** Subtracts value from the same season in a previous cycle, this removes seasonal patterns in the data. For instance, for this project we know the seasonality is 7 days (as seen from seasonal trend decomposition), you would subtract the close price from the same day of the previous week.
 
 **Testing for Stationarity**
 
 To check if data is stationary, you can use the following methods:
 
-**1.	Augmented Dickey-Fuller (ADF) Test:**
+**1. Augmented Dickey-Fuller (ADF) Test:**
 
 Statistical test to determine if timeseries data is stationary where the null hypothesis of ADF test is that the data is non-stationary. 
 
@@ -137,7 +154,7 @@ You can use the adf function from the statsmodels package in Python to perform t
 
 The output includes the p-value, if this value is less than 0.05 (adjustable threshold) then the null hypothesis can be rejected and the data is likely to be stationary. If the p-value is greater, we fail to reject the null hypothesis and the data is likely to be non-stationary.
 
-**2.	Visualisation** 
+**2. Visualisation** 
 
 Plotting the time series data and inspecting it for signs of non-stationarity. Key indicators include trends, seasonality and changing variance.
 
@@ -150,6 +167,14 @@ Below is a plot comparing the original timeseries with the timeseries after appl
 This plot compares the original timeseries with the stationary time series. The original timeseries shows trends and seasonality in the data. In contrast, the stationary timeseries has been transformed to remove these trends and seasonality, resulting in a more stable mean and variance. By comparing the two, it is clear how the transformation done above has standardised the data, making it more suitable for forecasting.
 
 I find it best to use both methods to ensure the data is stationary before moving to forecasting. 
+
+<br>
+
+-----
+
+<br>
+
+## Summary
 
 In this first part of the series, I have covered the fundamentals of time series analysis, including data preparation, cleaning and ensuring the data is stationary.
 
