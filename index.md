@@ -24,10 +24,12 @@ Here are some of the upcoming posts:
 
 Exploring the inner workings of Residual Networks and how ResNets are different to traditional neural networks. 
  
-**Time Flies When You’re Analysing Data: An Introduction to Timeseries ⏳**
+**Breaking down Timeseries: Series⏳**
 
-An introduction to the core concepts of time series analysis. From the basics of handling time-stamped data to exploring advanced forecasting models, I’ll break down how each approach contributes to understanding and predicting trends.
+An introduction to the core concepts of time series analysis. From the basics of handling time-stamped data to exploring advanced forecasting models, I’ll break down how each approach contributes to understanding and predicting trends. To be released in three parts:
 
-**Expected: 13/09/24**
+  - Unpacking the Basics
+  - Forecasting
+  - Modelling
 
 Feel free to explore the content and stay tuned for more updates!
