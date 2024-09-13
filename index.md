@@ -26,10 +26,9 @@ Exploring the inner workings of Residual Networks and how ResNets are different 
  
 **Breaking down Timeseries⏳**
 
-An introduction to the core concepts of time series analysis. From the basics of handling time-stamped data to exploring advanced forecasting models, I’ll break down how each approach contributes to understanding and predicting trends. To be released in three parts:
+An introduction to the core concepts of time series analysis. From the basics of handling time-stamped data to exploring advanced forecasting models, I’ll break down how each approach contributes to understanding and predicting trends. To be released in two parts:
 
   - Unpacking the Basics
   - Forecasting
-  - Modelling
 
 Feel free to explore the content and stay tuned for more updates!
