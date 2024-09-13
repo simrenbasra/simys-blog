@@ -1,5 +1,5 @@
 ---
-title: "Breaking down Timeseries: Part 1 – Unpacking the Basics 🕰️"
+title: "Breaking down Timeseries: Unpacking the Basics 🕰️"
 date: 2024-09-13
 ---
 
