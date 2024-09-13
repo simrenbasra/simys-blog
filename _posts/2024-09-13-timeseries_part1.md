@@ -75,7 +75,7 @@ For this project, I decided to work with Microsoft (MSFT) stock data spanning th
 
 ## Data Preparation
 
-**Data Cleaning**
+#### Data Cleaning
 
 On inspecting the data, I found the dates were not continuous. There were missing dates for non-trading days such as weekends and US bank holidays. As mentioned earlier, one key concept of time series analysis is having a complete and continuous date range.
 
