@@ -24,7 +24,7 @@ Here are some of the upcoming posts:
 
 Exploring the inner workings of Residual Networks and how ResNets are different to traditional neural networks. 
  
-**Breaking down Timeseries⏳**
+**Breaking Down TimeSeries⏳**
 
 An introduction to the core concepts of time series analysis. From the basics of handling time-stamped data to exploring advanced forecasting models, I’ll break down how each approach contributes to understanding and predicting trends. To be released in two parts:
 
