@@ -25,13 +25,13 @@ To address this, we can use the TimeSeriesSplit function from scikit learn's mod
 
 **How TimeSeriesSplit Works**
 
-1. **Initialisation:** Pass number of splits as a parameter. For example, if you set n_splits=5, TimeSeriesSplit creates 5 different training and test sets.
+**Initialisation:** Pass number of splits as a parameter. For example, if you set n_splits=5, TimeSeriesSplit creates 5 different training and test sets.
 
 <div style="text-align: center;">
   <img src="{{ site.baseurl }}/assets/timeseries/tscv.png" alt="TimeSeries Split Code" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
  
-2. **Splitting Process:**
+**Splitting Process:**
    
   - *First Split:* Train on the initial segment of the data and test on the subsequent segment.
     
