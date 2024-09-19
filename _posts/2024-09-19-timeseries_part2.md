@@ -31,8 +31,7 @@ To address this, we can use the TimeSeriesSplit function from scikit learn's mod
   <img src="{{ site.baseurl }}/assets/timeseries/tscv.png" alt="TimeSeries Split Code" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
  
-
-2.	**Splitting Process:**
+2. **Splitting Process:**
    
   - *First Split:* Train on the initial segment of the data and test on the subsequent segment.
     
