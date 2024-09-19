@@ -308,13 +308,139 @@ Auto-ARIMA automatically selects the optimal model components through a grid-sea
 
 **Results**
 
+**ARIMA Results**
 
+| Fold | MSE         | MAE        | RMSE       | MAPE      |
+|------|-------------|------------|------------|-----------|
+| 1    | 751.96      | 24.81      | 27.42      | 11.29     |
+| 2    | 961.98      | 26.47      | 31.02      | 8.80      |
+| 3    | 5933.87     | 68.23      | 77.03      | 28.01     |
+| 4    | 5795.96     | 68.25      | 76.13      | 21.35     |
+| 5    | 421.41      | 16.67      | 20.53      | 3.95      |
+
+Fold 5 represents the best performance among all folds in terms of evalutaion metrics(see above), so only be looking into the graph and model summary for fold 5.
+
+<div style="text-align: center;">
+  <img src="{{ site.baseurl }}/assets/timeseries/ARIMA_F5.png" alt="ARIMA fold 5" style="max-width: 100%; height: auto; margin: 20px 0;">
+</div>
+
+**Model Parameters:**
+
+- **p (Autoregressive Term): 0**, model does not use past values in the series to forecast future values, main focus of model appears to be recent errors.
+  
+- **d (Differencing Order): 1**, one level of differencing needed to make data stationary.
+  
+- **q (Moving Average Term): 1**, model uses influence of previous day's error to adjust forecasted values.
+
+**Moving Average L1 Coefficient:** -0.0616, indicates a slight overestimate and so the model adjusts predictions downwards slightly to compensate.
+
+**SARIMA Results**
+
+| Fold | MSE         | MAE        | RMSE       | MAPE      |
+|------|-------------|------------|------------|-----------|
+| 1    | 751.96      | 24.81      | 27.42      | 11.29     |
+| 2    | 700.31      | 22.55      | 26.46      | 7.50      |
+| 3    | 5933.87     | 68.23      | 77.03      | 28.01     |
+| 4    | 5761.69     | 67.97      | 75.91      | 21.25     |
+| 5    | 553.84      | 19.11      | 23.53      | 4.53      |
+
+Again, only looking at graph and model summary for fold 5, the best performing fold.
+
+<div style="text-align: center;">
+  <img src="{{ site.baseurl }}/assets/timeseries/SARIMA_F5.png" alt="SARIMA fold 5" style="max-width: 100%; height: auto; margin: 20px 0;">
+</div>
+
+**Non-Seasonal Orders:**
+
+- **p: 1**, model using value of 1 previous day to predict the next value
+  
+- **d: 1**, one level of differencing to make data stationary
+  
+- **q: 0**, no influence on models previous error
+
+**Seasonal Orders:**
+
+- **P: 2**, includes 2 previous seasons (a week) to make forecasts.
+
+- **D: 0**, no seasonal differencing required, data must already be stationary from non-seasonal differencing.
+  
+- **Q: 1**, model uses error of previous week prediction to adjusts forecasts.
+  
+- **s: 7**, seasonlity of 7 days patterns repeat each week.
+
+**Non-Seasonal Coefficients:** 
+
+- **AR.L1 (Autoregressive term): -0.0541**, suggests an increase/decrease in price seen in previous day leads to decrease/increase of forecasted value.
+
+- **MA.L1 (Moving Average term):None**, no moving average terms used for the non-seasonal component as q = 0
+
+**Seasonal Coefficients:** 
+
+- **AR.S.L7: 0.6219**, positive coefficient meaning an increase in the price a week a go leads to an increase in forecasted value 7 days later.
+  
+- **AR.S.L14: -0.0965**, means negative effect from two weeks ago, i.e. increase in price two weeks ago leads to a decreases in forecasted value.
+  
+- **MA.S.L7:  -0.5649**, indicates an overestimate 7 days ago and so the model adjusts predictions downwards to correct.
+
+**SARIMAX Results**
+
+| Fold | MSE         | MAE        | RMSE       | MAPE      |
+|------|-------------|------------|------------|-----------|
+| 1    | 870.00      | 26.65      | 29.50      | 12.11     |
+| 2    | 682.69      | 22.30      | 26.13      | 7.42      |
+| 3    | 6055.94     | 68.91      | 77.82      | 28.29     |
+| 4    | 5762.29     | 67.97      | 75.91      | 21.25     |
+| 5    | 542.69      | 18.93      | 23.30      | 4.49      |
+
+Again, only looking at results for fold 5.
+
+<div style="text-align: center;">
+  <img src="{{ site.baseurl }}/assets/timeseries/SARIMAX_F5.png" alt="SARIMAX fold 5" style="max-width: 100%; height: auto; margin: 20px 0;">
+</div>
+
+**Non-Seasonal Orders:**
+
+- **p: 1**, no autoregressive terms used in the model.
+  
+- **d: 1**, one level of differencing to make data stationary.
+  
+- **q: 0**, model uses influence of previous day's error to adjust forecasted values.
+
+**Seasonal Orders:**
+
+- **P: 2**, includes 2 previous seasons (a week) to make forecasts.
+  
+- **D: 0**, no seasonal differencing required, data must already be stationary from non-seasonal differencing.
+  
+- **Q: 1**, model uses error of previous week prediction to adjusts forecasts.
+  
+- **s: 7**, seasonlity of 7 days patterns repeat each week.Í
+
+**Non-Seasonal Coefficients:** 
+
+- **MA.L1 (Moving Average term): -0.0554**, indicates a slight adjustment downward in forecasts due to errors from the previous day.
+
+**Seasonal Coefficients:** 
+
+- **AR.S.L7: 0.6218** – A positive coefficient suggesting that an increase in the price from one week ago leads to a higher forecasted value.
+  
+- **AR.S.L14: -0.0961** – A negative coefficient indicating that an increase in price two weeks ago results in a decrease in the forecasted value.
+  
+- **MA.S.L7: -0.5653** – A negative coefficient shows that if there was an overestimate 7 days ago, the model adjusts the forecast downward to correct for this.
+
+**Exogenous Variables Coefficients:**
+
+- **interest rate: -0.1824**, showing a strong negative effect on the forecast. Higher interest rates are associated with lower forecasted values, this makes sense since increased interest rates generally slow market activity and potentially lower stock prices.
+
+- **Volume: -1.589e-09**, a very small negative effect on the forecast, volumne has hardly any effect on the forecasted value. This suggests trading volumne does not have a strong impact on the stock price.
+
+- **5 Day Moving Avg: 0.5153**, shows a strong positive effect on the forecast. A higher 5 day average tends to lead to a substantial increase in the forecasted value, this makes sense as a higher rolling average over the past five days indicates an upward trend in prices, which would lead to higher forecasted values.
 
 <br>
 
 ## Challenges of this Project
 
-For me, this project has been particularly challenging. While I have developed a solid understanding of timeseries analysis and forecasting , working with a highly volatile dataset, was difficult. Stocks are heavily influenced by unpredictable events, which adds a layer of complexity to the forecasting process.
+For me, this project has been particularly challenging. While I have developed a solid understanding of timeseries analysis and forecasting, working with a highly volatile dataset was difficult. Stocks are heavily influenced by unpredictable events, which adds a layer of complexity to the forecasting process.
 
 For instance, let’s take a look at the Close price over the last five years for Microsoft.
 
@@ -322,13 +448,17 @@ For instance, let’s take a look at the Close price over the last five years fo
   <img src="{{ site.baseurl }}/assets/timeseries/overall_graph.png" alt="msft stock overall" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
-In March 2020, there is a significant drop in stock prices due to the COVID-19 pandemic which led to economic uncertainty and market decline. At the start of 2023, Microsoft’s partnership with OpenAI caused a notable increase in their stock price. Events like this are not predictable. Since timeseries forecasting relies heavily on historical data, accurately predicting such market movements is very difficult. As a result, despite using advanced forecasting methods, I was still unable to get accurate predictions.
+In March 2020, there is a significant drop in stock prices due to the COVID-19 pandemic which led to economic uncertainty and market decline. At the start of 2023, Microsoft’s partnership with OpenAI caused a notable increase in their stock price. Events like this are not predictable. Since timeseries forecasting relies heavily on historical data, accurately predicting such events is very difficult. As a result, despite using advanced forecasting methods, I was still unable to get accurate predictions.
 
 To better improve on the work I have done, here are some potential next steps I could take:
 
-Feature Engineering: I have performed feature engineering to a degree when thinking of some exogenous variables to include for SARIMAX forecasting. To take this further it may be better to predict a feature which is not Close price. For example, predicting whether a stockholder would see a return on their investment could simplify the forecasting process and make it more manageable.
+**Feature Engineering**
 
-Advanced Models: To explore even more complex methods, such as XGBoost or LSTMs (Long Short-Term Memory networks). While these models may offer improved forecasts, the enhancement might be marginal compared to the increase in model complexity.
+I have performed feature engineering to a degree when thinking of some exogenous variables to include for SARIMAX forecasting. To take this further it may be better to predict a feature which is not Close price. For example, predicting whether a stockholder would see a return on their investment could simplify the forecasting process and make it more manageable.
+
+**Advanced Models**
+
+To explore even more complex methods, such as XGBoost or LSTMs (Long Short-Term Memory networks). While these models may offer improved forecasts, the enhancement might be marginal compared to the increase in model complexity.
 
 Overall, while the current models provide valuable insights, revisiting this project in the future with the above considerations could lead to more accurate results.
 
@@ -340,8 +470,7 @@ In this post, I’ve explored different forecasting method and evaluated their p
 
 Despite the challenges, I’m definitely more confident in my skills now. I’m looking forward to diving into another time series project in the future - hopefully with a less volatile dataset!
 
-
-If you want to see the full project, including detailed insights and code, you can check out the GitHub repository here. Note that since I used Plotly for most graphs, they don’t appear in GitHub since they are interactive. To view them, you’ll need to clone the repository and run the code locally in a Python environment (see requirements.txt). For static images of the plots, please refer to the docs folder in the repository.
+If you want to see the full project, including detailed insights and code, you can check out the GitHub repository **[here](https://github.com/simrenbasra/timeseries)**. Note that since I used Plotly for most graphs, they don’t appear in GitHub since they are interactive. To view them, you’ll need to clone the repository and run the code locally in a Python environment (see requirements.txt). For static images of the plots, please refer to the docs folder in the repository.
 
 
 
