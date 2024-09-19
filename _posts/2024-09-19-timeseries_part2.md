@@ -254,7 +254,9 @@ The number of lags outside the shaded significance region guides the selection o
 
 For differencing (d), use the Augmented Dickey-Fuller (ADF) test to determine how many times you need to difference the data to make it stationary.
 
-## SARIMA (Seasonal AutoRegressive Integrated Moving Average)
+<br>
+
+### SARIMA (Seasonal AutoRegressive Integrated Moving Average)
 
 SARIMA builds on ARIMA by adding a seasonal component to handle repeating patterns in data. SARIMA includes all the components of ARIMA (AR, I, MA) but adds:
 
@@ -278,8 +280,9 @@ SARIMA is useful when the data has regular patterns (like monthly or quarterly s
 
 - **Seasonal Parameters (P, D, Q, S):** Add seasonal elements to the ACF and PACF plots to assess orders. Define S based on the length of the seasonal cycle observed.
 
+<br>
 
-## SARIMAX (Seasonal AutoRegressive Integrated Moving Average with eXogenous variables)
+### SARIMAX (Seasonal AutoRegressive Integrated Moving Average with eXogenous variables)
 
 SARIMAX extends SARIMA to include exogenous variables, that might influence the timeseries. This model helps when other external factors can affect the forecasted value.
 
@@ -298,6 +301,8 @@ For example, for stock data, I added 5-day moving average of Close price, tradin
   
 - **Exogenous Variables (X):** Choose relevant external factors that could improve model performance, this requires domain knowledge.
 
+<br>
+
 ## Auto-ARIMA
 
 Typically, you can import ARIMA, SARIMA or SARIMAX from the statsmodel library in python and pass in the required paramters seen above.After instantiating the model, you fit it to your data and then generate forecasts.
@@ -306,7 +311,9 @@ In my project, I used Auto-ARIMA to automate the selection of ARIMA model parame
 
 Auto-ARIMA automatically selects the optimal model components through a grid-search-like approach. It evaluates different parameter combinations to achieve the most accurate forecasts. It's worth noting that while Auto-ARIMA automates the order selection, the concepts of ARIMA models remain the same.
 
-### ARIMA Results**
+<br>
+
+### ARIMA Results
 
 | Fold | MSE         | MAE        | RMSE       | MAPE      |
 |------|-------------|------------|------------|-----------|
@@ -331,6 +338,8 @@ Fold 5 represents the best performance among all folds in terms of evalutaion me
 - **q (Moving Average Term): 1**, model uses influence of previous day's error to adjust forecasted values.
 
 **Moving Average L1 Coefficient:** -0.0616, indicates a slight overestimate and so the model adjusts predictions downwards slightly to compensate.
+
+<br>
 
 ### SARIMA Results
 
@@ -379,6 +388,8 @@ Again, only looking at graph and model summary for fold 5, the best performing f
 - **AR.S.L14: -0.0965**, means negative effect from two weeks ago, i.e. increase in price two weeks ago leads to a decreases in forecasted value.
   
 - **MA.S.L7:  -0.5649**, indicates an overestimate 7 days ago and so the model adjusts predictions downwards to correct.
+
+<br>
 
 ### SARIMAX Results
 
