@@ -91,7 +91,7 @@ Predicts future values by calculating the mean of all past observed values. This
 Assumes the last observed value is the next future value. Again, this method is easy to implement and does capture part of the trend however fails to capture the direction of the trend and seasonality.
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/timeseries/naive_F5t.png" alt="Baseline: Naive" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/timeseries/naive_F5.png" alt="Baseline: Naive" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 **Seasonal Naive Method**
@@ -153,7 +153,7 @@ Extends Simple Exponential Smoothing by adding a trend component, so forecasts a
   <img src="{{ site.baseurl }}/assets/timeseries/double_exp_smooth_F5.png" alt="Exp Smooth: Double" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
-**Holt-Winters Seasonal Model (Triple Exponential Smoothing):** 
+**Holt Winter's Seasonal Model (Triple Exponential Smoothing):** 
 
 Builds on Holt’s Linear model by adding a seasonal component, allowing forecasts to account for both trends and recurring seasonal patterns.
 
@@ -298,7 +298,7 @@ For example, for stock data, I added 5-day moving average of Close price, tradin
   
 - **Exogenous Variables (X):** Choose relevant external factors that could improve model performance, this requires domain knowledge.
 
-**Auto-ARIMA**
+## Auto-ARIMA
 
 Typically, you can import ARIMA, SARIMA or SARIMAX from the statsmodel library in python and pass in the required paramters seen above.After instantiating the model, you fit it to your data and then generate forecasts.
 
@@ -306,9 +306,7 @@ In my project, I used Auto-ARIMA to automate the selection of ARIMA model parame
 
 Auto-ARIMA automatically selects the optimal model components through a grid-search-like approach. It evaluates different parameter combinations to achieve the most accurate forecasts. It's worth noting that while Auto-ARIMA automates the order selection, the concepts of ARIMA models remain the same.
 
-**Results**
-
-**ARIMA Results**
+### ARIMA Results**
 
 | Fold | MSE         | MAE        | RMSE       | MAPE      |
 |------|-------------|------------|------------|-----------|
@@ -334,7 +332,7 @@ Fold 5 represents the best performance among all folds in terms of evalutaion me
 
 **Moving Average L1 Coefficient:** -0.0616, indicates a slight overestimate and so the model adjusts predictions downwards slightly to compensate.
 
-**SARIMA Results**
+### SARIMA Results
 
 | Fold | MSE         | MAE        | RMSE       | MAPE      |
 |------|-------------|------------|------------|-----------|
@@ -382,7 +380,7 @@ Again, only looking at graph and model summary for fold 5, the best performing f
   
 - **MA.S.L7:  -0.5649**, indicates an overestimate 7 days ago and so the model adjusts predictions downwards to correct.
 
-**SARIMAX Results**
+### SARIMAX Results
 
 | Fold | MSE         | MAE        | RMSE       | MAPE      |
 |------|-------------|------------|------------|-----------|
