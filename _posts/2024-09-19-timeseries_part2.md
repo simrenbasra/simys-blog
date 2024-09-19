@@ -1,3 +1,4 @@
+
 ---
 title: "Breaking Down TimeSeries: Forecasting 📈"
 date: 2024-09-19
@@ -96,7 +97,7 @@ Assumes the last observed value is the next future value. Again, this method is 
 
 **Seasonal Naive Method**
 
-Predicts the next value to be the same as the last observed value from the same seasonal period. For example, if the data shows a weekly pattern, it will use the value from the same day last week as the forecast. This method captures seasonal patterns in the data well but fails to incorporate the trend into its predcitions.
+Predicts the next value to be the same as the last observed value from the same seasonal period. For example, if the data shows a weekly pattern, it will use the value from the same day last week as the forecast. This method captures seasonal patterns in the data well but fails to incorporate the trend into its predictions.
 
 <div style="text-align: center;">
   <img src="{{ site.baseurl }}/assets/timeseries/snaive_F5.png" alt="Baseline: Seasonal Naive" style="max-width: 100%; height: auto; margin: 20px 0;">
@@ -207,7 +208,7 @@ Overall, the model's forecasts are effectively horizontal lines across the folds
 | 4    | 4011.14     | 56.86      | 63.33      | 17.80     | 0.958           | 0.0             | 0.0                |
 | 5    | 728.41      | 21.61      | 26.99      | 5.10      | 0.969           | 0.000005        | 0.0                |
 
-The smoothing_level ranges from 0.731 to 0.969, indicating that the model places a high weight on recent data points. The smoothing_trend values are very low, between 0.0 and 0.000005, suggesting minimal emphasis to trend changes. The smoothing_seasonal paramter is also very low suggesting seasonality in the data is very weak.
+The smoothing_level ranges from 0.731 to 0.969, indicating that the model places a high weight on recent data points. The smoothing_trend values are very low, between 0.0 and 0.000005, suggesting minimal emphasis to trend changes. The smoothing_seasonal parameter is also very low suggesting seasonality in the data is very weak.
 
 Overall, Holt-Winters’ method shows some improvement by capturing trends in forecasts. However, the very low seasonal parameter values suggest that the method may not effectively capture weak seasonality in the data. The model’s focus on recent data, combined with its limited treatment of trends and seasonality limits its effectiveness in handling variability.
 
@@ -305,7 +306,7 @@ For example, for stock data, I added 5-day moving average of Close price, tradin
 
 ## Auto-ARIMA
 
-Typically, you can import ARIMA, SARIMA or SARIMAX from the statsmodel library in python and pass in the required paramters seen above.After instantiating the model, you fit it to your data and then generate forecasts.
+Typically, you can import ARIMA, SARIMA or SARIMAX from the statsmodel library in python and pass in the required parameters seen above. After instantiating the model, you fit it to your data and then generate forecasts.
 
 In my project, I used Auto-ARIMA to automate the selection of ARIMA model parameters. This was due to the challenges I had when manually identifying the best parameters for forecasting using the ACF and PACF plots. Stock data has complex patterns that are difficult to interpret, making the process of selecting the right order challenging.
 
@@ -323,7 +324,7 @@ Auto-ARIMA automatically selects the optimal model components through a grid-sea
 | 4    | 5795.96     | 68.25      | 76.13      | 21.35     |
 | 5    | 421.41      | 16.67      | 20.53      | 3.95      |
 
-Fold 5 represents the best performance among all folds in terms of evalutaion metrics(see above), so only be looking into the graph and model summary for fold 5.
+Fold 5 represents the best performance among all folds in terms of evaluation metrics (see above), so only be looking into the graph and model summary for fold 5.
 
 <div style="text-align: center;">
   <img src="{{ site.baseurl }}/assets/timeseries/ARIMA_F5.png" alt="ARIMA fold 5" style="max-width: 100%; height: auto; margin: 20px 0;">
@@ -373,7 +374,7 @@ Again, only looking at graph and model summary for fold 5, the best performing f
   
 - **Q: 1**, model uses error of previous week prediction to adjusts forecasts.
   
-- **s: 7**, seasonlity of 7 days patterns repeat each week.
+- **s: 7**, seasonality of 7 days patterns repeat each week.
 
 **Non-Seasonal Coefficients:** 
 
@@ -423,7 +424,7 @@ Again, only looking at results for fold 5.
   
 - **Q: 1**, model uses error of previous week prediction to adjusts forecasts.
   
-- **s: 7**, seasonlity of 7 days patterns repeat each week.Í
+- **s: 7**, seasonality of 7 days patterns repeat each week.
 
 **Non-Seasonal Coefficients:** 
 
@@ -441,7 +442,7 @@ Again, only looking at results for fold 5.
 
 - **interest rate: -0.1824**, showing a strong negative effect on the forecast. Higher interest rates are associated with lower forecasted values, this makes sense since increased interest rates generally slow market activity and potentially lower stock prices.
 
-- **Volume: -1.589e-09**, a very small negative effect on the forecast, volumne has hardly any effect on the forecasted value. This suggests trading volumne does not have a strong impact on the stock price.
+- **Volume: -1.589e-09**, a very small negative effect on the forecast, volume has hardly any effect on the forecasted value. This suggests trading volume does not have a strong impact on the stock price.
 
 - **5 Day Moving Avg: 0.5153**, shows a strong positive effect on the forecast. A higher 5 day average tends to lead to a substantial increase in the forecasted value, this makes sense as a higher rolling average over the past five days indicates an upward trend in prices, which would lead to higher forecasted values.
 
