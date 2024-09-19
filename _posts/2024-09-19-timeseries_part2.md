@@ -28,7 +28,7 @@ To address this, we can use the TimeSeriesSplit function from scikit learn's mod
 1. **Initialisation:** Pass number of splits as a parameter. For example, if you set n_splits=5, TimeSeriesSplit creates 5 different training and test sets.
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/timeseries/ts_cv.png" alt="TimeSeries Split Code" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/timeseries/tscv.png" alt="TimeSeries Split Code" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
  
 
@@ -41,7 +41,7 @@ To address this, we can use the TimeSeriesSplit function from scikit learn's mod
 Below is a graphical representation of the splitting for each fold:
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/timeseries/graph_ts_split.png" alt="Graph of TimeSeriesSplit" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/timeseries/timeseries_split.png" alt="Graph of TimeSeriesSplit" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 <br>
@@ -83,7 +83,7 @@ Let’s look at each method in detail:
 Predicts future values by calculating the mean of all past observed values. This a straightforward method and easy to implement but is limited as it fails to capture the trend and seasonality in the data.
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/timeseries/mean_forecast.png" alt="Baseline: Mean" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/timeseries/mean_F5.png" alt="Baseline: Mean" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 **Naive Method**
@@ -91,7 +91,7 @@ Predicts future values by calculating the mean of all past observed values. This
 Assumes the last observed value is the next future value. Again, this method is easy to implement and does capture part of the trend however fails to capture the direction of the trend and seasonality.
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/timeseries/naive_forecast.png" alt="Baseline: Naive" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/timeseries/naive_F5t.png" alt="Baseline: Naive" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 **Seasonal Naive Method**
@@ -99,7 +99,7 @@ Assumes the last observed value is the next future value. Again, this method is 
 Predicts the next value to be the same as the last observed value from the same seasonal period. For example, if the data shows a weekly pattern, it will use the value from the same day last week as the forecast. This method captures seasonal patterns in the data well but fails to incorporate the trend into its predcitions.
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/timeseries/snaive_forecast.png" alt="Baseline: Seasonal Naive" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/timeseries/snaive_F5.png" alt="Baseline: Seasonal Naive" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 **Drift Method**
@@ -107,7 +107,7 @@ Predicts the next value to be the same as the last observed value from the same 
 Predicts future values by extending the trend line that is formed between the first and last data points observed in the training data. It assumes the trend in the training data will continue. This method captures the direction of the trend but not the seasonality.
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/timeseries/drift_forecast.png" alt="Baseline: Drift" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/timeseries/drift_F5.png" alt="Baseline: Drift" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 **Comparing Baseline Forecasts**
@@ -142,7 +142,7 @@ There are three Exponential Smoothing methods that can be applied to the data, a
 This method is used for data with no obvious trend or seasonality. It averages past data by giving greater weight to most recent data and progressively less weight to past data points. This is done using a smoothing parameter which controls the influence recent data has on the forecast.
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/timeseries/simple_exp_smooth.png" alt="Exp Smooth: Simple" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/timeseries/simple_exp_smooth_F5.png" alt="Exp Smooth: Simple" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 **Holt’s Linear Trend Model (Double Exponential Smoothing):**
@@ -150,7 +150,7 @@ This method is used for data with no obvious trend or seasonality. It averages p
 Extends Simple Exponential Smoothing by adding a trend component, so forecasts account for both the level (baseline average) and the direction (trend) of the data.
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/timeseries/double_exp_smooth.png" alt="Exp Smooth: Double" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/timeseries/double_exp_smooth_F5.png" alt="Exp Smooth: Double" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 **Holt-Winters Seasonal Model (Triple Exponential Smoothing):** 
@@ -158,7 +158,7 @@ Extends Simple Exponential Smoothing by adding a trend component, so forecasts a
 Builds on Holt’s Linear model by adding a seasonal component, allowing forecasts to account for both trends and recurring seasonal patterns.
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/timeseries/triple_exp_smooth.png" alt="Baseline: Triple" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/timeseries/triple_exp_smooth_F5.png" alt="Baseline: Triple" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 **Comparison of Exponential Smoothing Methods**
@@ -445,7 +445,7 @@ For me, this project has been particularly challenging. While I have developed a
 For instance, let’s take a look at the Close price over the last five years for Microsoft.
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/timeseries/overall_graph.png" alt="msft stock overall" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/timeseries/MFST_overall.png" alt="msft stock overall" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 In March 2020, there is a significant drop in stock prices due to the COVID-19 pandemic which led to economic uncertainty and market decline. At the start of 2023, Microsoft’s partnership with OpenAI caused a notable increase in their stock price. Events like this are not predictable. Since timeseries forecasting relies heavily on historical data, accurately predicting such events is very difficult. As a result, despite using advanced forecasting methods, I was still unable to get accurate predictions.
