@@ -31,7 +31,7 @@ The first step in web scraping is to assess the robots.txt file of the website y
 To access the robots.txt file, simply go to the base URL of the website and append `/robots.txt`, like this:
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/sound-decisions/thumbnail.png" alt="Thumbnail from Unsplash" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/sound-decisions/robots_txt.png" alt="Robots_txt" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div> 
 
 After reviewing the file for Amazon, scraping individual customer reviews was not allowed. This slightly changed the scope of my project since I initially was planning to carry out sentiment analysis on those reviews. 
