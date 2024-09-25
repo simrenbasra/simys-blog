@@ -4,6 +4,8 @@ date: 2024-09-25
 thumbnail: /../assets/sound-decisions/thumbnail.png
 ---
 
+![Thumbnail Description](/../assets/sound-decisions/thumbnail.png)
+
 Lately, I've been on the hunt for a new pair of headphones. Instead of spending countless hours searching online for the best pair, I decided to put my data science skills to good use!
 
 To begin, I scraped data from Amazon to create a dataset of headphone products that I could analyse to find the perfect pair.
