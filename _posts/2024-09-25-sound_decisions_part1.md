@@ -10,7 +10,7 @@ To begin, I scraped data from Amazon to create a dataset of headphone products t
 In this blog post, I’ll share how I tackled web scraping, discuss why it’s such a valuable tool and explain the steps I took to clean the data. This will be the first post in a series where I’ll be sharing my journey in finding the perfect headphones.
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/sound-decisions/thumbnail.jpg" alt="Thumbnail from Unsplash" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/sound-decisions/thumbnail.png" alt="Thumbnail from Unsplash" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div> 
 
 <br>
