@@ -1,7 +1,6 @@
 ---
 title: "Sound Decisions: Data Scraping and Cleaning 🎧"
 date: 2024-09-25
-thumbnail: /../assets/sound-decisions/thumbnail.png
 ---
 
 <div style="text-align: center;">
