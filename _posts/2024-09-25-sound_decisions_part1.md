@@ -3,15 +3,15 @@ title: "Sound Decisions: Data Scraping and Cleaning 🎧"
 date: 2024-09-25
 ---
 
-<div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/sound-decisions/thumbnail.jpg" alt="Thumbnail from Unsplash" style="max-width: 100%; height: auto; margin: 20px 0;">
-</div> 
-
 Lately, I've been on the hunt for a new pair of headphones. Instead of spending countless hours searching online for the best pair, I decided to put my data science skills to good use!
 
 To begin, I scraped data from Amazon to create a dataset of headphone products that I could analyse to find the perfect pair.
 
 In this blog post, I’ll share how I tackled web scraping, discuss why it’s such a valuable tool and explain the steps I took to clean the data. This will be the first post in a series where I’ll be sharing my journey in finding the perfect headphones.
+
+<div style="text-align: center;">
+  <img src="{{ site.baseurl }}/assets/sound-decisions/thumbnail.jpg" alt="Thumbnail from Unsplash" style="max-width: 100%; height: auto; margin: 20px 0;">
+</div> 
 
 <br>
 
