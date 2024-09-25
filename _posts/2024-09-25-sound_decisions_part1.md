@@ -1,10 +1,11 @@
 ---
 title: "Sound Decisions: Data Scraping and Cleaning 🎧"
 date: 2024-09-25
-thumbnail: /../assets/sound-decisions/thumbnail.jpg
 ---
 
-![Thumbnail Description](/../assets/sound-decisions/thumbnail.jpg)
+<div style="text-align: center;">
+  <img src="{{ site.baseurl }}/assets/sound-decisions/thumbnail.jpg" alt="Thumbnail from Unsplash" style="max-width: 100%; height: auto; margin: 20px 0;">
+</div> 
 
 Lately, I've been on the hunt for a new pair of headphones. Instead of spending countless hours searching online for the best pair, I decided to put my data science skills to good use!
 
