@@ -7,6 +7,11 @@ In Part 1 of the Sound Decisions series, I introduced web scraping, discussed it
 
 In this post, I’ll showcase an interactive dashboard built using Tableau to better visualise the data. I’ll also explore some further insights to better understand the data before moving on to building a recommendation system.
 
+
+<div style="text-align: center;">
+  <img src="{{ site.baseurl }}/assets/sound-decisions/Screenshot 2024-10-03 at 11.56.58.png" alt="Univariate: Price" style="max-width: 100%; height: auto; margin: 20px 0;">
+</div>
+
 <br>
 
 ## Dashboard
