@@ -56,6 +56,8 @@ To better visualise the scraped data, I created an interactive dashboard. The go
 </script>
 
 
+<br>
+
 ### KPI’s
 
 **Total Products**
