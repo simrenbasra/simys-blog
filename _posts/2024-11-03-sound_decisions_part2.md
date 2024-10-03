@@ -55,7 +55,7 @@ To better visualise the scraped data, I created an interactive dashboard. The go
 
 **Total Products**
 
-This KPI displays the total number of headphones in the dataset, giving us an idea on the overall scope of the scraped data. After scraping 50 pages on Amazon, I collected data on 472 different headphone products which should give a fair representation of the headphone market.
+This KPI displays the total number of headphones in the dataset, giving us an idea on the overall scope of the scraped data. After scraping 50 pages on Amazon, I collected data on 478 different headphone products which should give a fair representation of the headphone market.
 
 **Average Price**
 
@@ -162,7 +162,7 @@ See more of a balanced split between headphones with microphones and those witho
 <div style="text-align: center;">
   <img src="{{ site.baseurl }}/assets/sound-decisions/uni_gaming.png" alt="Univariate: Gaming" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
-Strong class imbalance for gaming-specific headphones, in the dataset there were less than 30 products featuring 'gaming' in their descriptions. 
+Strong class imbalance for gaming-specific headphones, in the dataset there are only 30 products featuring 'gaming' in their descriptions. 
 
 **Colour:**
 
