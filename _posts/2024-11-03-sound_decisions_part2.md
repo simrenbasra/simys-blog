@@ -50,7 +50,6 @@ To better visualise the scraped data, I created an interactive dashboard. The go
   vizElement.parentNode.insertBefore(scriptElement, vizElement);
 </script>
 
-
 <br>
 
 ### KPI’s
@@ -114,7 +113,7 @@ The price distribution is skewed to the right, which means there is a higher con
 To handle this skewness and normalise the distribution, I applied a log transformation to price. This step is important as the next phase of the project involves modelling. Many models work under the assumption that all data points follow a similar distribution. Normalising the price feature will help improve the model’s performance and accuracy.
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/sound-decisions/hist_price_transfromed.png" alt="Univariate: Price Transformed" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/sound-decisions/hist_price_transformed.png" alt="Univariate: Price Transformed" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 Applying the log transformation has made the distribution of price more normal. Moving forward, I will use the log-transformed price instead of the original price.
