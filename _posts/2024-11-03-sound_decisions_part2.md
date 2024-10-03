@@ -114,7 +114,7 @@ The price distribution is skewed to the right, which means there is a higher con
 To handle this skewness and normalise the distribution, I applied a log transformation to price. This step is important as the next phase of the project involves modelling. Many models work under the assumption that all data points follow a similar distribution. Normalising the price feature will help improve the model’s performance and accuracy.
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/sound-decisions/hist_price_trans.png" alt="Univariate: Price Transformed" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/sound-decisions/hist_price_transfromed.png" alt="Univariate: Price Transformed" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 Applying the log transformation has made the distribution of price more normal. Moving forward, I will use the log-transformed price instead of the original price.
@@ -130,7 +130,7 @@ The ratings data is skewed to the left, showing that most headphones receive hig
 **Is Prime:**
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/sound-decisions/uni_prime.png" alt="Univariate: Prime" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/sound-decisions/uni_is_prime.png" alt="Univariate: Prime" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 There is a clear class imbalance, with most headphones being eligible for Amazon Prime. Since this feature is so common in the dataset, it may not add much value in differentiating between products within the recommendation model. However, I think Prime eligibility still is an important feature to users, so I will keep this feature in the model.
@@ -138,7 +138,7 @@ There is a clear class imbalance, with most headphones being eligible for Amazon
 **Wireless:**
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/sound-decisions/uni_wireless.png" alt="Univariate: Wireless" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/sound-decisions/uni_is_wireless.png" alt="Univariate: Wireless" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 There is a more balanced split between wired and wireless headphones in the data. Given that some users may prefer the convenience of wireless headphones, including this feature in the recommendation system is a good idea.
@@ -146,7 +146,7 @@ There is a more balanced split between wired and wireless headphones in the data
 **Noise Cancelling:**
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/sound-decisions/uni_noise_can.png" alt="Univariate: Noise Cancelling" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/sound-decisions/uni_noise_cancelling.png" alt="Univariate: Noise Cancelling" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 There is a strong class imbalance with noise-cancelling headphones, as most headphones in the dataset do not have this feature. While this could potentially bias recommendations towards non-noise-cancelling options, I'm building a content-based recommendation system. This method allows users to specify their preferences, and the model should prioritise relevant products regardless of imbalances.
@@ -154,7 +154,7 @@ There is a strong class imbalance with noise-cancelling headphones, as most head
 **Microphone:**
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/sound-decisions/uni_mic.png" alt="Univariate: Microphone" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/sound-decisions/uni_microphone.png" alt="Univariate: Microphone" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 See more of a balanced split between headphones with microphones and those without. Headphones with microphones are useful for work or gaming purposes, this is something I can incorporate into my recommendation system. 
@@ -162,7 +162,7 @@ See more of a balanced split between headphones with microphones and those witho
 **Gaming:**
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/sound-decisions/uni_gaming.png" alt="Univariate: Gaming" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/sound-decisions/uni_is_gaming.png" alt="Univariate: Gaming" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 Strong class imbalance for gaming-specific headphones, in the dataset there are only 30 products featuring 'gaming' in their descriptions. 
 
