@@ -215,7 +215,6 @@ Users who value sound quality or are wanting headphones for working purpose are 
 
 **Microphone:**
 
-
 <div style="text-align: center;">
   <img src="{{ site.baseurl }}/assets/sound-decisions/multi_mic.png" alt="Multivariate: Microphone Cancelling" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
