@@ -185,7 +185,7 @@ For the pair plot below I only selected the following numerical fields in the da
 rating, transformed price and battery life. This type of plot, created using the Seaborn library, helps visualise any relationships or correlations that may exist between these features.
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/sound-decisions/multi_pair.png" alt="Multivariate: Pair Plot" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/sound-decisions/pair_plot.png" alt="Multivariate: Pair Plot" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 It is clear there are no strong linear correlations between the features. This suggests that these features are independent to each other.
