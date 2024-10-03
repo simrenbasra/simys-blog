@@ -100,7 +100,7 @@ After gaining insights from the Tableau dashboard, I carried out a more detailed
 
 Note: I will only discuss the graphs and insights that provide the most value, for all insights please refer to the project repository (to be provided when project is complete). 
 
-### Univariate Analysis
+## Univariate Analysis
 
 **Price:**
 
@@ -177,9 +177,9 @@ The most frequently colours are black, blue and pink. To simplify the dataset fo
 
 Since a large number of headphones do not have a specified colour, I will need to consider how to incorporate this into my recommender system. One possibility could be allowing users to select "no preference" for colour.
 
-### Multivariate Analysis
+## Multivariate Analysis
 
-#### Pair Plot 
+### Pair Plot 
 
 For the pair plot below I only selected the following numerical fields in the dataset: 
 rating, transformed price and battery life. This type of plot, created using the Seaborn library, helps visualise any relationships or correlations that may exist between these features.
@@ -192,7 +192,7 @@ It is clear there are no strong linear correlations between the features. This s
 
 This lack of correlation may stem from the limitations of creating a dataset through web scraping. Amazon may have algorithms that influence which products are displayed in search results, potentially introducing biases into the dataset. 
 
-#### Box Plots of Boolean Features Against Price
+### Box Plots of Boolean Features Against Price
 
 **Is Prime:**
 
@@ -220,14 +220,13 @@ Users who value sound quality or are wanting headphones for working purpose are 
 
 Interestingly, headphones with microphones tend to be slightly cheaper than those without. This suggests that maybe other features may have greater impact on the price than the presence of a microphone itself.
 
-#### Correlation of all Features with Price
-
+### Correlation of all Features with Price
 
 <div style="text-align: center;">
   <img src="{{ site.baseurl }}/assets/sound-decisions/corr_with_price.png" alt="Price Correlation" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
-**Key Insights:**
+#### Key Insights:
 
 **Is Prime:** 
 
