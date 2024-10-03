@@ -104,7 +104,7 @@ Note: I will only discuss the graphs and insights that provide the most value, f
 **Price:**
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/sound-decisions/uni_price.png" alt="Univariate: Price" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/sound-decisions/hist_price.png" alt="Univariate: Price" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 The price distribution is skewed to the right, which means there is a higher concentration of lower priced headphones. Given that I scraped data from 50 pages of search results, this skewness likely reflects the broader market of headphones on Amazon. 
@@ -112,7 +112,7 @@ The price distribution is skewed to the right, which means there is a higher con
 To handle this skewness and normalise the distribution, I applied a log transformation to price. This step is important as the next phase of the project involves modelling. Many models work under the assumption that all data points follow a similar distribution. Normalising the price feature will help improve the model’s performance and accuracy.
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/sound-decisions/uni_price_trans.png" alt="Univariate: Price Transformed" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/sound-decisions/hist_price_trans.png" alt="Univariate: Price Transformed" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 Applying the log transformation has made the distribution of price more normal. Moving forward, I will use the log-transformed price instead of the original price.
@@ -120,7 +120,7 @@ Applying the log transformation has made the distribution of price more normal. 
 **Rating:**
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/sound-decisions/uni_rating.png" alt="Univariate: Rating" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/sound-decisions/hist_rating.png" alt="Univariate: Rating" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 The ratings data is skewed to the left, showing that most headphones receive high ratings from users. I’ve decided not to transform this feature as it reflects genuine user satisfaction. As stated above, models do perform better with normally distributed features however since I plan to build a recommender system, I thought it best to keep the ratings as they are. 
@@ -167,7 +167,7 @@ Strong class imbalance for gaming-specific headphones, in the dataset there were
 **Colour:**
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/sound-decisions/uni_colour.png" alt="Univariate: Colour" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/sound-decisions/hist_colour.png" alt="Univariate: Colour" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 The graph shows the distribution of headphone colours in the dataset. Many headphones lack colour in their product descriptions, likely because this detail is usually included on individual product pages that were not scraped. 
