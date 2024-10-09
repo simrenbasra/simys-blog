@@ -20,8 +20,7 @@ In this blog, I will be posting:
 
 Here are some of the upcoming posts:
   
-**ResNets Unlocked: A Deep Dive into Residual Networks 🔗**
+**🕸️👻🎃 Something Spooky 🎃👻🕸️**
 
-Exploring the inner workings of Residual Networks and how ResNets are different to traditional neural networks. 
+In my next project, I’ll be exploring Halloween themed tweets to uncover interesting insights. I’ll analyse the sentiment and popular themes/trends leading up to October 31st. Keep an eye out for some spoky data findings!
 
-Feel free to explore the content and stay tuned for more updates!
