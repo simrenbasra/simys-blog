@@ -20,7 +20,7 @@ In this blog, I will be posting:
 
 Here are some of the upcoming posts:
   
-**🕸️👻🎃 Something Spooky 🎃👻🕸️**
+**🕯️👻🎃 Something Spooky 🎃👻🕯**
 
 In my next project, I’ll be exploring Halloween themed tweets to uncover interesting insights. I’ll analyse the sentiment and popular themes/trends leading up to October 31st. Keep an eye out for some spoky data findings!
 
