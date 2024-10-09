@@ -11,7 +11,7 @@ So, why not take on a challenge that felt as unpredictable as timeseries itself:
 
 And so began my journey into the world of timeseries forecasting.
 
-In this blog post, I’ll share my experiences with forecasting stock data, including the various methods and modelling techniques I used, as well as how I evaluated their performance.
+In this blog series, I’ll share my experiences with forecasting stock data, including the various methods and modelling techniques I used, as well as how I evaluated their performance.
 
 Given the unpredictability of stock data, I was not expecting great results. For me, this project was more about expanding and pushing my understanding of timeseries.
 
