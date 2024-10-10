@@ -51,7 +51,7 @@ To better visualise the scraped data, I created an interactive dashboard. The go
 </script>
 
 
-<div class="tableau-dashboard-container" style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+<div class="tableau-dashboard-container" style="text-align: center;">>
   <div class='tableauPlaceholder' id='viz1727950517780' style='position: relative'>
     <noscript>
       <a href='#'><img alt='Dashboard' src='https://public.tableau.com/static/images/he/headphone_dashboard/Dashboard/1_rss.png' style='border: none' /></a>
