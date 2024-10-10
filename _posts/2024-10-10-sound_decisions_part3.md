@@ -5,22 +5,23 @@ date: 2024-10-10
 
 In the previous post of the Sound Decision series, I explored key insights gathered from the EDA and explained the steps I took to optimise the dataset for a recommender system. As a quick recap, here’s a breakdown of the dataset I’m working with:
 
-| Index                   | Description                               |
-|-------------------------|-------------------------------------------|
-| Product ID              | Unique ID for the product                 |
-| Description             | Brief details about the product            |
-| Price                   | Price of the product                       |
-| Rating                  | Average user rating out of 5              |
-| Is Prime                | Indicates Prime eligibility                |
-| Wireless                | Indicates wireless capability               |
-| Noise Cancelling        | Indicates noise-cancelling feature         |
-| Battery Life            | Duration of battery life                   |
-| Microphone              | Presence of a microphone                   |
-| Over Ear                | Over-ear design                            |
-| Gaming                  | Suitability for gaming                     |
-| Foldable                | Ability to fold for portability            |
-| price_trans             | Transformed price                          |
-| Colour_{colour}         | Multiple colour options (encoded)          |        
+| Column            | Description |
+|--------------------|-------|
+| Product ID        | Product ASIN code |
+| Description        | Product description      |
+| Price              | Product price      |
+| Rating             | Product rating on a scale of 1 to 5    |
+| Is Prime           | Binary field showing prime eligibility |
+| Wireless           | Binary field indicating if product is wireless |
+| Noise Cancelling   |  Binary field indicating if product is noise cancelling |
+| Colour             |  Product colour     |
+| Battery Life       | Product battery life in hours    |
+| Microphone         | Binary field indicating if product has a microphone |
+| Over Ear           | Binary field indicating if product is over-ear|
+| Foldable           | Binary field indicating if product is foldable |
+| Gaming             | Suitability for gaming                     |
+| price_trans        | Transformed price                          |
+| Colour_{colour}    | Multiple colour options (encoded)          |        
 
 *Note: There is a column for each colour in the dataset, I have not included it in the data dictionary above as it will make the table too large.*
 
