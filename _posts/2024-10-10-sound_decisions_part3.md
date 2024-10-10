@@ -25,7 +25,7 @@ In the previous post of the Sound Decision series, I explored key insights gathe
 
 *Note: There is a column for each colour in the dataset, I have not included it in the data dictionary above as it will make the table too large.*
 
-There are a few discrepancies in the data between this post and the previous one. Some data issues became clear when building the recommender system. I re-ran the scraping script and did some additional cleaning and processing to address these problems.
+There are a few discrepancies in the data between this post and the first one. Some data issues became clear when building the recommender system. I re-ran the scraping script and did some additional cleaning and processing to address these problems.
 
 In this post, I will discuss what a recommender system, how it works and walk through the steps to build one. I'll also be showcasing a Streamlit app I built which allows users to input their preferences and receive personalised headphone recommendations.
 
@@ -111,8 +111,9 @@ To calculate similarity scores, I passed the newly combined data into the `cosin
 
 The next step was to build a function that generates product recommendations based on the calculated similarity scores and a product ID. This function takes two input parameters: 
 
-•	**product_ID:** Product to make recommendations off.
-•	**similarities:** Matrix similarity scores computed in the previous step.
+-	**product_ID:** Product to make recommendations off.
+
+-	**similarities:** Matrix similarity scores computed in the previous step.
 
 The function begins by getting the index of the given product ID to access the corresponding row in the similarity matrix to retrieve the similarity scores related to that product. A new dataframe is then created to hold both product IDs and their associated similarity scores, ensuring that the data reflects only the scores of products in relation to the given product ID.
 
