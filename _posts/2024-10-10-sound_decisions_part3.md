@@ -52,11 +52,11 @@ The two most popular types of recommender systems are:
 
 To start with, I built a content-based recommender system using features of the headphones in my dataset. Below are the steps I followed to create this content-based recommender:
 
-#### Data Quality Check:
+#### **Data Quality Check:**
 
 Conducted a quick 4-eyes check on the data after completing EDA. This step allowed me to check the quality of data and refamiliarise myself with the dataset.
 
-#### TF-IDF Vectorisation on Product Description
+#### **TF-IDF Vectorisation on Product Description**
 
 Previously in the project, I used regular expression to extract as many features as possible from the product description column. This was done with the intention of building a system that would allow users to filter products based on their preferences.
 
@@ -80,7 +80,7 @@ Below is a bar chart showing the most common terms across the dataset:
   
 - Popularity of phrases like 'hifi stereo' and 'deep bass' suggests importance of audio quality. 
 
-#### Adding Other Features to the Recommender
+#### **Adding Other Features to the Recommender**
 
 The next step was to look at the data and see if there were any columns that could be useful in recommendations. 
 
@@ -100,13 +100,13 @@ Before adding these features to the TD-IDF data, I scaled them using a Min Max S
 
 Now, the dataset I am working with contains TF-IDF scores of the tokens along with the scaled features mentioned above.
 
-#### Calculating Cosine Similarity
+#### **Calculating Cosine Similarity**
 
 Now that all products are represented as vectors, I could calculate the cosine similarity between pairs of products. 
 
 To calculate similarity scores, I passed the newly combined data into the `cosine_similarity` function from `sklearn.metrics.pairwise` library. This function compares each vector in the data against all others in a pairwise manner. The output of the function is a matrix of scores ranging from 0 to 1. A result closer to 1 indicates perfect similarity, while a result of 0 shows no similarity at all. This similarity matrix becomes the foundation for the recommender system.
 
-#### Creating Recommender Function 
+#### **Creating Recommender Function** 
 
 The next step was to build a function that generates product recommendations based on the calculated similarity scores and a product ID. This function takes two input parameters: 
 
@@ -117,7 +117,7 @@ The function begins by getting the index of the given product ID to access the c
 
 Finally, the DataFrame is sorted in descending order by similarity score and the top five most similar products are returned.
 
-#### Adding in Collaborative Filtering
+#### **Adding in Collaborative Filtering**
 
 To make this recommender even better, I added in some collaborative filtering using the average user rating of products. To do this, I added in the following formula below:
 
@@ -138,7 +138,7 @@ After researching hybrid recommender systems and consulting ChatGPT, I used this
 
 I also inlcuded the alpha parameter in my Streamlit app, to allow users to experiment with its value to see how it affects the recommendations given. 
 
-#### Testing and Evaluation
+#### **Testing and Evaluation**
 
 One key problem in the evaluation process for this project was the lack of user data. As mentioned earlier, the dataset I worked contained no individual user data. This made it challenging to evaluate the performance of the recommender systems. 
 
