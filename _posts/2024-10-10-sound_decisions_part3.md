@@ -33,7 +33,7 @@ In this post, I will discuss what a recommender system, how it works and walk th
 
 ## Recommender Systems
 
-**What is a recommender system**
+**What is a recommender system?**
 
 You have probably come across a recommender system without even realising it. One of the most well-known examples is Netflix: an online platform for streaming movies and TV shows. 
 
