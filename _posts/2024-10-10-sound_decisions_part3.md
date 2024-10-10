@@ -14,7 +14,6 @@ In the previous post of the Sound Decision series, I explored key insights gathe
 | Is Prime           | Binary field showing prime eligibility |
 | Wireless           | Binary field indicating if product is wireless |
 | Noise Cancelling   |  Binary field indicating if product is noise cancelling |
-| Colour             |  Product colour     |
 | Battery Life       | Product battery life in hours    |
 | Microphone         | Binary field indicating if product has a microphone |
 | Over Ear           | Binary field indicating if product is over-ear|
