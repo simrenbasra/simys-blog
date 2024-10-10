@@ -58,7 +58,7 @@ Conducted a quick 4-eyes check on the data after completing EDA. This step allow
 
 #### **TF-IDF Vectorisation on Product Description**
 
-Previously in the project, I used regular expression to extract as many features as possible from the product description column. This was done with the intention of building a system that would allow users to filter products based on their preferences.
+Previously in the project, I used regular expressions to extract as many features as possible from the product description column. This was done with the intention of building a system that would allow users to filter products based on their preferences.
 
 For the recommender, I applied Term Frequency-Inverse Document Frequency (TF-IDF) to the product description column. TF-IDF is commonly used in content-based recommenders, particularly when there are text-based columns in the data. This is as TF-IDF splits text data into tokens (which can be single words or phrases) and values each token’s importance relative to all product descriptions. 
 
@@ -114,7 +114,7 @@ The next step was to build a function that generates product recommendations bas
 
 -	**similarities:** Matrix similarity scores computed in the previous step.
 
-The function begins by getting the index of the given product ID to access the corresponding row in the similarity matrix to retrieve the similarity scores related to that product. A new dataframe is then created to hold both product IDs and their associated similarity scores, ensuring that the data reflects only the scores of products in relation to the given product ID.
+The function begins by getting the index of the given product ID to access the corresponding row in the similarity matrix to retrieve the similarity scores related to that product. A new dataframe is then created to hold product IDs and their associated similarity scores, ensuring that the data reflects only the scores of products in relation to the given product ID.
 
 Finally, the DataFrame is sorted in descending order by similarity score and the top five most similar products are returned.
 
@@ -167,15 +167,15 @@ Below is a demo that showcases the features of the web app and the output of the
 
 While working on this project, I faced the following challenges: 
 
-**Data Limitations from Scraping:**
+**Data Limitations from Scraping**
 
-One of the main challenges I encountered was the lack of user data in the scraped dataset. There were no individual user ratings or reviews, which made it difficult to create truly personalised recommendations based on user preferences. Additionally, I was restricted to extracting features only from product descriptions due to the limitations in the robots.txt file. This proved challenging because the descriptions were often inconsistent, making it harder to extract useful information using regular expressions. In hindsight, using more complex NLP methods could have produced better results.
+One of the main challenges I encountered was the lack of user data in the scraped dataset. There were no individual user ratings or reviews, which made it difficult to create truly personalised recommendations. Additionally, I was restricted to extracting features only from product descriptions due to the limitations in the robots.txt file. This proved challenging because the descriptions were often inconsistent, making it harder to extract useful information using regular expressions. In hindsight, using more complex NLP methods could have produced better results.
 
-**Real-World Data Challenges:**
+**Real-World Data Challenges**
 
 Scraping data often results in messy datasets that require cleaning and preprocessing. Nearly half of the dataset had missing average user ratings. I decided to drop these rows rather than impute the missing values, as I wanted to avoid introducing bias and preserve data authenticity, though I'm not entirely sure this was the best decision. By doing so, I significantly reduced the amount of data available, which likely limited the variety of headphones the recommender system could choose from.
 
-**Deployment Challenges with Streamlit:**
+**Deployment Challenges with Streamlit**
 
 I initially attempted to deploy my app publicly using Streamlit and GitHub workflows. Unfortunately, I could not get this to work and ran out of time. My goal was to make the web app accessible without users cloning my entire project. The best approach would be to explore Flask or FastAPI. Moving forward, I plan to spend some time understanding the best practices for deploying applications. Perhaps in the future, I will write a blog post on deploying machine learning solutions to help others who face the same issue!
 
@@ -185,11 +185,11 @@ I initially attempted to deploy my app publicly using Streamlit and GitHub workf
 
 As I worked on this project, I spotted a few ways to make it better. Unfortunately, I ran out of time and couldn’t implement these changes, but I definitely plan to tackle them in the future:
 
-**Feedback Loop:**
+**Feedback Loop**
 
-To implement a feedback loop for users in order refine the recommendations made. This would work by collecting data on whether users liked or disliked the recommended products. By incorporating this information into the recommender, I could build out user profiles an allowing the recommender to learn and adapt to user's preferences better.
+To implement a feedback loop for users in order refine the recommendations made. This would work by collecting data on whether users liked or disliked the recommended products. By incorporating this information into the recommender, I could build out user profiles allowing the recommender to learn and adapt to user's preferences better.
 
-**Connecting to the Amazon API:**
+**Connecting to the Amazon API**
 
 The aim of this project was to gather data from Amazon using web scraping techniques and make recommendations based on the scraped data. However, on analysing the scraped data, there were some clear limitations. To address this in the future, I plan to explore the possibility of connecting to Amazon's API. This would allow me to gather additional information on headphones, such as images or more detailed descriptions.
 
