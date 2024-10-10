@@ -2,7 +2,7 @@
 title: Simy's Data Bytes
 ---
 
-Welcome to my blog!
+## Welcome to my blog!
 
 <div style="text-align: center;">
   <img src="{{ site.baseurl }}/assets/index/cover_photo.jpg" alt="Photo" style="max-width: 50%; height: auto; margin: 20px 0;">
