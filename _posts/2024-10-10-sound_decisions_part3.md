@@ -124,7 +124,6 @@ To make this recommender even better, I added in some collaborative filtering us
 
 $$
 \text{Combined Score} = \alpha \times \text{Cosine Similarity} + (1 - \alpha) \times \text{Normalised Rating}
-
 $$
 
 **Formula Breakdown:**
