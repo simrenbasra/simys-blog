@@ -39,7 +39,7 @@ You have probably come across a recommender system without even realising it. On
 
 Whenever you log in, Netflix suggests content that most aligns with your ‘profile’. This could be a trending series or some movies similar to those you’ve previously watched. 
 
-*But how exactly does it work?*
+***But how exactly does it work?***
 
 A recommender system suggests items based on patterns and trends found in historical data. It analyses user preferences and behaviour to recommend products that are likely to be of interest for a given user.
 
