@@ -3,7 +3,7 @@ title: "Sound Decisions: Recommender System 🧩"
 date: 2024-10-10
 ---
 
-In the previous post of the Sound Decision series, I explored key insights gathered from the EDA and explained the steps I took to optimise the dataset for a recommender system. As a quick recap, here’s a breakdown of the dataset I’m working with:
+In the previous post of the Sound Decisions series, I explored key insights gathered from the EDA and explained the steps I took to optimise the dataset for a recommender system. As a quick recap, here’s a breakdown of the dataset I’m working with:
 
 | Column            | Description |
 |--------------------|-------|
