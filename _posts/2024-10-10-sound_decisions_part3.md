@@ -123,6 +123,9 @@ Finally, the DataFrame is sorted in descending order by similarity score and the
 
 To make this recommender even better, I added in some collaborative filtering using the average user rating of products. To do this, I added in the following formula below:
 
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
 $$
 \text{Combined Score} = \alpha \times \text{Cosine Similarity} + (1 - \alpha) \times \text{Normalised Rating}
 $$
