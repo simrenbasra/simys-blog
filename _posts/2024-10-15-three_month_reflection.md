@@ -15,11 +15,11 @@ Looking back at my first project, I felt quite uneasy. I was used to working fro
 
 So far in my projects and blog, I have tried to work on a mix of data topics. With each project, I have tried to show a different skill or explore something different. 
 
-## Most Enjoyable Project
+**Most Enjoyable Project**
 
 I still think the Sign-Lingual project was the most fun for me to complete. I enjoyed how the project started using simple logistic regression on images and progressed to using more complex ideas like transfer learning. This approach allowed me to fully understand concepts as the project developed.
 
-## Most Challenging Project
+**Most Challenging Project**
 
 The Time Series project must be the most challenging one for me. Completing it was fairly trying. I faced a lot of unknowns, from handling the volatility of stock data to selecting models for forecasting. This project taught me the value of pushing through challenges. Each hurdle has deepened my understanding and given me new skills when approaching complex problems.
 
