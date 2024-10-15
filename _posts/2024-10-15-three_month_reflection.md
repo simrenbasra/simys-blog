@@ -25,11 +25,7 @@ The Time Series project must be the most challenging one for me. Completing it w
 
 ## Challenges
 
-### Writing
-
 Writing has been a great area of growth for me. While it takes several drafts to get things just right, I've learned that clear communication is a key skill, especially in data roles. 
-
-### Balancing Other Commitments 
 
 One of the biggest challenges I've faced is balancing my personal projects, blog and job searching with my personal life. Data science is something I enjoy, but I’ve found myself getting so absorbed in it that I unintentionally neglect hobbies and social plans.
 
