@@ -31,15 +31,15 @@ The goal is for the trick-or-treater to find the most optimal path to escape, co
   <img src="{{ site.baseurl }}/assets/trick-or-retreat/Env_layout.png" alt="Environment Set Up" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
-#### **Rewards and Penalties**
+#### **Key**
 
-🍬 **Candy**
+🍬 **Candy:**
 Each candy the trick-or-treater collects earns a positive reward of 10 points.
 
-👻 **Ghost**
+👻 **Ghost:**
 Each ghost the trick-or-treater encounters results in a penalty of -10 points.
 
-🚪 **Exit Door**
+🚪 **Exit Door:**
 Success of exiting the mansion, the trick-or-treater receives the largest reward of 20 points.
 
 🏃 **Trick-or-Treater**
