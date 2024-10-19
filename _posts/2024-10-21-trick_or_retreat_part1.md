@@ -44,7 +44,7 @@ Success of exiting the mansion, the trick-or-treater receives the largest reward
 
 <br>
 
-## **Reinforcement Learning **
+## **Reinforcement Learning**
 
 Let’s start with a simple example!
 
