@@ -54,7 +54,7 @@ Success of exiting the mansion, the trick-or-treater receives the largest reward
 
 <br>
 
-# **Reinforcement Learning**
+## **Reinforcement Learning**
 
 Let’s start with a simple example!
 
@@ -180,7 +180,7 @@ Another challenge is that training RL agents can take a long time, especially in
 
 <br>
 
-# **Application to Trick or ReTreat**
+## **Application to Trick or ReTreat**
 
 Let’s see how the above information can be applied to my project:
 
@@ -222,7 +222,7 @@ Over time, the trick-or-treater collects data from its actions and uses feedback
 
 <br>
 
-# **Summary**
+## **Summary**
 
 In this post, I introduced my next project Trick or ReTreat. I discussed the basics of Reinforcement Learning highlighting its differing approach to traditional machine learning methods.
 
