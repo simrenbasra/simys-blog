@@ -25,24 +25,21 @@ In this scenario, the **trick-or-treater** can move in four directions: **up**, 
 
 The goal is for the **trick-or-treater **to find the most **optimal path** to escape, collecting as many candies as they can while avoiding the ghosts lurking in the mansion!
 
-#### Visualisation
+#### **Visualisation**
 
 <div style="text-align: center;">
   <img src="{{ site.baseurl }}/assets/trick-or-retreat/Env_layout.png" alt="Environment Set Up" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
-#### Rewards and Penalties
+#### **Rewards and Penalties**
 
 **🍬 Candy**
-
 Each candy the trick-or-treater collects earns a **positive reward** of **10 points**.
 
 **👻 Ghost**
-
 Each ghost the trick-or-treater encounters results in a **penalty** of **-10 points**.
 
 **🚪 Exit**
-
 Success of exiting the mansion, the trick-or-treater receives the largest **reward** of **20 points**.
 
 <br>
@@ -57,7 +54,7 @@ Imagine teaching a dog to sit. Each time the dog sits, it receives a **treat** a
 
 **Reinforcement learning** models learn by **trial and error**, adjusting actions taken based on **feedback** given. Unlike other machine learning models, these models explore, make mistakes and get better at making decisions over time. Just like in real-life learning, it's all about experience!
 
-####What is Reinforcement Learning?
+#### **What is Reinforcement Learning?**
 
 **Reinforcement Learning (RL)** is a type of **machine learning** where a model learns through **interactions** and **feedback**. Instead of being explicitly told which actions to take, the model **explores** different actions to find ones which get the highest **rewards**.
 
@@ -81,7 +78,7 @@ While RL does share some similarities to **unsupervised learning**, like the abs
   
 -	**EPISODE:** A sequence of actions starting from the initial state and continuing until the agent reaches the final state where the agent completes the scenario goal.
 
-#### How RL works
+#### **How RL works**
 
 As stated earlier, the objective of a RL model is to **maximise the reward** through **trial and error**. Below is a simple explanation as to how it does this. In the coming posts I will go into more detail about how I created my RL model for my project.
 
@@ -108,13 +105,13 @@ For each state, the agent evaluates the reward received and **updates its policy
 
 The agent continues to take actions in different states. Over time, it updates its policy based on the rewards it receives, balancing the **exploration** of new actions with the **exploitation** of known high-reward actions. To find the most rewarding actions, the agent must balance this **exploration exploitation trade-off**.
 
-#### Exploration vs. Exploitation
+#### **Exploration vs. Exploitation**
 
 Initially, the agent explores a lot to gather knowledge about the different states of the environment and their rewards. The exploration is needed to better understand the environment and to find the rewarding actions. However, as the agent learns more, it must start to exploit the best actions it has found. Finding the right balance between these two is important. The agent should take advantage of known high-reward actions, but it should also occasionally explore to ensure it doesn’t miss out on better opportunities.
 
 To maintain the balance between exploration and exploitation, strategies like **epsilon decay** are used. **Epsilon decay** starts with a high epsilon value, which represents the exploration rate, allowing the agent to explore its environment. Over time the epsilon value gradually decreases, encouraging the agent to focus more on exploiting actions that received high rewards in the past. This transition from exploration to exploitation helps the agent optimise its decisions while still leaving opportunity to explore new actions. 
 
-##### Action-Value Methods
+##### **Action-Value Methods**
 
 In the diagram above, I have shown what a policy update looks like. After the agent takes an action, it adjusts the chances of selecting that action in the future depending on the reward received. 
 
@@ -156,7 +153,7 @@ In greedy algorithms, the agent always chooses the action with the highest estim
 
 This method strikes a better balance between exploration and exploitation. The agent mostly chooses the action with the highest estimated reward (exploitation) but occasionally picks a random action (exploration) to explore new possibilities. The probability of choosing a random action is controlled by a small value called epsilon. As discussed earlier, epsilon decay is a strategy that falls under this category.
 
-#### Limitations
+#### **Limitations**
 Despite the progressive approach of RL, it has its limitations. 
 
 Most of RL models assume a deterministic environment where the future states depend on the current state. However, this isn't always true in real-life where random events occur. In my project, this limitation isn’t much of an issue since I'm working in a simulated environment.
@@ -169,15 +166,15 @@ Another challenge is that training RL agents can take a long time, especially in
 
 Let’s see how the above information can be applied to my project:
 
--	**AGENT:** Our trick-or-treater, who is learning how to escape the haunted mansion.
+- **AGENT:** Our trick-or-treater, who is learning how to escape the haunted mansion.
   
--	**ENVIRONMENT:** The 5 by 5 grid of the mansion where each square contains either a candy, a ghost, an exit door or is empty.
+- **ENVIRONMENT:** The 5 by 5 grid of the mansion where each square contains either a candy, a ghost, an exit door or is empty.
 
--	**ACTION:** The trick-or-treater is limited to four directions: up, down, left or right moving one square at a time.
+- **ACTION:** The trick-or-treater is limited to four directions: up, down, left or right moving one square at a time.
   
--	**STATE:** Current position of trick-or-treater on the grid, in this case it would be grid coordinates.
+- **STATE:** Current position of trick-or-treater on the grid, in this case it would be grid coordinates.
   
--	**REWARD:** When the trick-or-treater moves to a square with candy, they earn 10 points as a reward. If they step into a ghost's square, they lose 10 points as a penalty. Reaching the exit door is the ultimate goal and so earns a larger reward of 20 points.
+- **REWARD:** When the trick-or-treater moves to a square with candy, they earn 10 points as a reward. If they step into a ghost's square, they lose 10 points as a penalty. Reaching the exit door is the ultimate goal and so earns a larger reward of 20 points.
 
 #### Learning Process
 
