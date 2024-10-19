@@ -42,6 +42,8 @@ Each ghost the trick-or-treater encounters results in a penalty of -10 points.
 🚪 **Exit Door**
 Success of exiting the mansion, the trick-or-treater receives the largest reward of 20 points.
 
+🏃 **Trick-or-Treater**
+
 <br>
 
 ## **Reinforcement Learning**
@@ -166,7 +168,7 @@ Another challenge is that training RL agents can take a long time, especially in
 
 <br>
 
-## Application to Trick or ReTreat
+## **Application to Trick or ReTreat**
 
 Let’s see how the above information can be applied to my project:
 
