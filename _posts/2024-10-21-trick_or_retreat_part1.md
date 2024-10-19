@@ -1,6 +1,6 @@
 ---
 title: "Trick or ReTreat: An Introduction to Reinforcement Learning 🎃"
-date: 2024-10-21
+date: 2024-10-19
 ---
 
 Originally, I had another Halloween project in mind: **Trick or Tweet**. The aim was to perform **sentiment analysis** on Halloween themed tweets collected using X’s API. Unfortunately, due to the limits of a basic account, I was unable to search and retrieve tweets using the API. This led me to brainstorm a new Halloween themed project, introducing **Trick or ReTreat**!
