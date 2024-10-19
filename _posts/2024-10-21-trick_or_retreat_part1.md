@@ -128,7 +128,9 @@ This is the simplest method used in cases where environments aren’t too comple
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
-**Expected Reward for Action A** = \(\frac{\text{Total Reward for Action A}}{\text{Number of Times Action A was Taken}}\)
+$$
+\text{Expected Estimate for Action A} = \(\frac{\text{Total Reward for Action A}}{\text{Number of Times Action A was Taken}}\)
+$$
 
 In other words, this method averages all past rewards for action A.
 
