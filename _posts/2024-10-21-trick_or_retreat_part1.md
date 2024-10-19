@@ -19,7 +19,7 @@ This post will be the first in a series. In Part 1, I will outline the details o
 
 <br>
 
-# Game Introduction
+## Game Introduction
 
 Welcome to the haunted mansion of Trick or ReTreat!
 
