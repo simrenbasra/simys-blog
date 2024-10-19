@@ -13,6 +13,10 @@ In this project, my goal is to develop a reinforcement learning model where a tr
 	
 This post will be the first in a series. In Part 1, I will outline the details of the game and introduce key concepts of reinforcement learning. 
 
+<br>  
+
+-----  
+
 <br>
 
 ## **Game Introduction**
@@ -43,6 +47,10 @@ Each ghost the trick-or-treater encounters results in a penalty of -10 points.
 Success of exiting the mansion, the trick-or-treater receives the largest reward of 20 points.
 
 🏃 **Trick-or-Treater**
+
+<br>  
+
+-----  
 
 <br>
 
@@ -166,6 +174,10 @@ Most of RL models assume a deterministic environment where the future states dep
 
 Another challenge is that training RL agents can take a long time, especially in complex environments. The more there is to explore and exploit, the longer it takes for the agent to learn optimal actions. Finding the right balance between exploration and exploitation is needed but can be tricky to find.
 
+<br>  
+
+-----  
+
 <br>
 
 ## **Application to Trick or ReTreat**
@@ -203,6 +215,10 @@ Based on the feedback, the trick-or-treater updates its policy. If the reward fo
 **Repeating the Process:**
 
 Over time, the trick-or-treater collects data from its actions and uses feedback to better understand the environment. It learns to identify and favour actions that maximise rewards. This allows the trick-or-treater to optimise its path to escape while collecting as many candies as possible.
+
+<br>  
+
+-----  
 
 <br>
 
