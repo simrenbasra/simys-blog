@@ -1,6 +1,6 @@
 ---
 title: "Sound Decisions: EDA 🔍"
-date: 2024-10-03
+date: 2024-09-25
 ---
 
 In Part 1 of the Sound Decisions series, I introduced web scraping, discussed its relevance and demonstrated how to scrape data. I also walked through the process of cleaning the scraped data and extracting features from product descriptions to enhance the dataset. 
