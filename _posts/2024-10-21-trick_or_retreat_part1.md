@@ -3,15 +3,15 @@ title: "Trick or ReTreat: An Introduction to Reinforcement Learning 🎃"
 date: 2024-10-19
 ---
 
-Originally, I had another Halloween project in mind: **Trick or Tweet**. The aim was to perform sentiment analysis on Halloween themed tweets collected using X’s API. Unfortunately, due to the limits of a basic account, I was unable to search and retrieve tweets using the API. This led me to brainstorm a new Halloween themed project, introducing **Trick or ReTreat**!
+Originally, I had another Halloween project in mind, **Trick or Tweet**. The aim was to perform sentiment analysis on Halloween themed tweets collected using X’s API. Unfortunately, due to the limits of a basic account, I was unable to search and retrieve tweets using the API. This led me to brainstorm a new Halloween themed project ... **Trick or ReTreat**!
 
 <div style="text-align: center;">
   <img src="{{ site.baseurl }}/assets/trick-or-retreat/Halloween.png" alt="Halloween" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
-In this project, my goal is to develop a reinforcement learning model where a trick-or-treater must escape a haunted mansion, avoiding ghosts and collecting treats along the way. This is my first project using reinforcement learning and am excited to see where it takes me!
+In this project, my goal is to develop a reinforcement learning model where a trick-or-treater must escape a haunted mansion, avoiding ghosts and collecting treats along the way. This is my first project using reinforcement learning and I'm excited to see where it takes me!
 	
-This post will be the first in a series. In Part 1, I will outline the details of the game and introduce key concepts of reinforcement learning. 
+In Part 1 of this Halloween series, I will outline the details of the game and introduce key concepts of reinforcement learning. 
 
 <br>  
 
@@ -21,13 +21,13 @@ This post will be the first in a series. In Part 1, I will outline the details o
 
 ## **Game Introduction**
 
-Welcome to the haunted mansion of Trick or ReTreat!
+Welcome to the haunted mansion!
 
-I’ve designed a 5x5 grid where each square contains either a piece of candy, a ghost, the exit door or is empty. 
+I’ve designed a 5x5 grid where each square is either empty or contains a piece of candy, a ghost, the exit door or the trick-or-treater. 
 
-In this scenario, the trick-or-treater can move in four directions: up, down, left and right - limited to moving one square at a time. The game ends when they find the exit door of the haunted mansion. 
+The trick-or-treater can move in four directions: up, down, left and right and is limited to moving one square at a time. The game ends when they find the exit door of the haunted mansion. 
 
-The goal is for the trick-or-treater to find the most optimal path to escape, collecting as many candies as they can while avoiding the ghosts lurking in the mansion!
+The goal is for the trick-or-treater to find the optimal path to escape, collecting as many candies as they can while avoiding the ghosts haunting the mansion!
 
 ### **Visualisation**
 
@@ -46,7 +46,8 @@ Each ghost the trick-or-treater encounters results in a penalty of -10 points.
 🚪 **Exit Door:**
 Success of exiting the mansion, the trick-or-treater receives the largest reward of 20 points.
 
-🏃 **Trick-or-Treater**
+🏃 **Trick-or-Treater:**
+Tasked with escaping the haunted mansion.
 
 <br>  
 
@@ -90,7 +91,7 @@ While RL does share some similarities to unsupervised learning, like the absence
 
 ### **How RL works**
 
-As stated earlier, the objective of a RL model is to maximise the reward through trial and error. Below is a simple explanation as to how it does this. In the coming posts I will go into more detail about how I created my RL model for my project.
+As stated earlier, the objective of a RL model is to maximise the reward through trial and error. Below is a simple explanation as to how it does this. In the coming posts, I will go into more detail about how I created the RL model for my project.
 
 
 <div style="text-align: center;">
@@ -109,7 +110,7 @@ After taking an action, the environment moves to a new state (State 1) and in th
 
 For each state, the agent evaluates the reward received and updates its policy. As seen in the table, after moving “up” and getting a reward in State 0, the probability of choosing the “up” action in State 0 increases from 0.25 to 0.40. The update to probabilities shows the agent is now starting to focus on actions that have given higher rewards, here we say the agent is exploiting its previous actions.
 
-**Note:** This update is specific to State 0. If the agent moves to State 1, the probabilities of actions will be different. Any rewards from actions taken there will results in an update to  State 1's policy.
+**Note:** This update is specific to State 0. If the agent moves to State 1, the probabilities of actions will be different. Any rewards from actions taken there will result in an update to State 1's policy.
 
 **Step 4: Repeat Process**
 
@@ -119,7 +120,7 @@ The agent continues to take actions in different states. Over time, it updates i
 
 Initially, the agent explores a lot to gather knowledge about the different states of the environment and their rewards. The exploration is needed to better understand the environment and to find the rewarding actions. However, as the agent learns more, it must start to exploit the best actions it has found. Finding the right balance between these two is important. The agent should take advantage of known high-reward actions, but it should also occasionally explore to ensure it doesn’t miss out on better opportunities.
 
-To maintain the balance between exploration and exploitation, strategies like epsilon decay are used. Epsilon decay starts with a high epsilon value, which represents the exploration rate, allowing the agent to explore its environment. Over time the epsilon value gradually decreases, encouraging the agent to focus more on exploiting actions that received high rewards in the past. This transition from exploration to exploitation helps the agent optimise its decisions while still leaving opportunity to explore new actions. 
+To maintain the balance between exploration and exploitation, strategies like epsilon decay are used. Epsilon decay starts with a high epsilon value, which represents the exploration rate, allowing the agent to explore its environment. Over time, the epsilon value gradually decreases, encouraging the agent to focus more on exploiting actions that received high rewards in the past. This transition from exploration to exploitation helps the agent optimise its decisions while still leaving opportunity to explore new actions. 
 
 ### **Action-Value Methods**
 
@@ -133,7 +134,7 @@ In this post, I will focus on two primary methods used for calculating action va
 
 **1. Sample Average Method**
 
-This is the simplest method used in cases where environments aren’t too complex. In this approach, the agent waits until an episode is complete before updating its estimates. 
+This is the simplest method used in cases where the environment is not too complex. In this approach, the agent waits until an episode is complete before updating its estimates. 
 
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -156,7 +157,7 @@ While I have focused on these two methods for now, it’s important to note that
 
 ### **Action Selection**
 
-With the action values calculated, the next step is to use them to choose the best action. In this section I will explore the two categories of action selection methods:
+With the action values calculated, the next step is to use them to choose the best action. In this section, I will explore the two categories of action selection methods:
 
 **1. Greedy Action Selection**
 
@@ -186,13 +187,13 @@ Let’s see how the above information can be applied to my project:
 
 - **AGENT**: Our trick-or-treater, who is learning how to escape the haunted mansion.
   
-- **ENVIRONMENT**: The 5 by 5 grid of the mansion where each square contains either a candy, a ghost, an exit door or is empty.
+- **ENVIRONMENT**: The 5x5 grid of the mansion where each square contains either a candy, a ghost, an exit door or is empty.
 
-- **ACTION**: The trick-or-treater is limited to four directions: up, down, left or right moving one square at a time.
+- **ACTION**: The trick-or-treater is limited to four directions: up, down, left or right, moving one square at a time.
   
 - **STATE**: Current position of trick-or-treater on the grid, in this case it would be grid coordinates.
   
-- **REWARD**: When the trick-or-treater moves to a square with candy, they earn 10 points as a reward. If they step into a ghost's square, they lose 10 points as a penalty. Reaching the exit door is the ultimate goal and so earns a larger reward of 20 points.
+- **REWARD**: When the trick-or-treater moves to a square with a candy, they earn 10 points as a reward. If they step into a ghost's square, they lose 10 points as a penalty. Reaching the exit door is the ultimate goal and so earns a larger reward of 20 points.
 
 ### **Learning Process**
 
@@ -206,7 +207,7 @@ Initially, the trick-or-treater randomly chooses to move up, down, left or right
 
 **Feedback:**
 
-After moving, the trick-or-treater receives feedback based on the square they land on. If they find candy, they earn 10 points; if they find a ghost, they lose 10 points.
+After moving, the trick-or-treater receives feedback based on the square they land on; if they find candy they earn 10 points, if they find a ghost they lose 10 points.
 
 **Policy Update:**
 
@@ -224,7 +225,7 @@ Over time, the trick-or-treater collects data from its actions and uses feedback
 
 ## **Summary**
 
-In this post, I introduced my next project Trick or ReTreat. I discussed the basics of Reinforcement Learning highlighting its differing approach to traditional machine learning methods.
+In this post, I introduced my latest project **Trick or ReTreat**. I discussed the basics of Reinforcement Learning, highlighting its differing approach to traditional machine learning methods.
 
 As we progress to building the RL model in Part 2, I’ll dive deeper into the details of reinforcement learning.
 
