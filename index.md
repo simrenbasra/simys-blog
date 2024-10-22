@@ -12,7 +12,11 @@ Hey there! I’m Simy and I believe that data can be fun for everyone! After fin
 
 ## Upcoming Posts
   
-### **🕯️👻🎃 Trick or Tweet 🎃👻🕯**
+### Trick or Retreat 🍬 🏃 👻 
 
-In my next project, I’ll be exploring Halloween themed tweets to uncover interesting insights. I’ll analyse the sentiment and popular themes/trends leading up to October 31st. Keep an eye out for some spoOoOoky data insights!
+In my next project, I’ll be using Reinforcement Learning to create a model where a trick-or-treater must escape a haunted mansion!
+
+The trick-or-treater will learn strategies through trial and error, aiming to find the optimal path to escape while avoiding ghosts and gathering as many treats as possible.
+
+Leading up to Halloween, I'll be sharing updates on the model’s progress!
 
