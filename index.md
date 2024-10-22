@@ -12,7 +12,7 @@ Hey there! I’m Simy and I believe that data can be fun for everyone! After fin
 
 ## Upcoming Posts
   
-### Trick or Retreat 🍬 🏃 👻 
+### **Trick or ReTreat 🍬 🏃 👻** 
 
 In my next project, I’ll be using Reinforcement Learning to create a model where a trick-or-treater must escape a haunted mansion!
 
