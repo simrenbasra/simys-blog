@@ -12,6 +12,10 @@ Hey, I’m Simy and I believe that data can be fun for everyone!
 
 After finishing a data science bootcamp, I’m excited to dive into the world of data and uncover some cool insights. I’ll be sharing my journey as I tackle projects, learn new things and show how exciting data can be!
 
+<br>
+----
+<br>
+
 ## Upcoming Posts
   
 ### **Trick or ReTreat 🍬 🏃 👻** 
