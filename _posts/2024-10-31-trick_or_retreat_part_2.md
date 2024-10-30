@@ -7,21 +7,27 @@ So far, I have introduced the basic concepts of Reinforcement Learning and outli
 
 In this post, I will discuss commonly used libraries in Reinforcement Learning: OpenAI's Gym and Stable Baselines3. I'll share my first demo of training the Lunar Lander using OpenAI's Gym.
 
-## OpenAI Gymnasium 
+<br>
+
+---
+
+<br> 
+
+## **OpenAI Gymnasium** 
 
 In this project, I will use OpenAI’s Gymnasium library to build and train my reinforcement learning agent for **Trick or ReTreat**. It is a common library to use in reinforcement learning. 
 
 To get familiar with Gymnasium, I began by experimenting with its pre-defined environments. This approach helped me gain a solid understanding before diving into creating a custom environment for **Trick or ReTreat**. To start, I will give a brief introduction to OpenAI’s Gymnasium, summarising its documentation.
 
-### Environments
+### **Environments**
 
 Thinking back to the previous post, an environment represents everything an agent interacts with. This includes the various states, the actions the agent can take and the placement of rewards. Let’s see how we can represent this using OpenAI’s Gymnasium.
 
-#### Initialising Environments
+### **Initialising Environments**
 
 To use pre-defined environments from Open AI, initialisation is quite simple and can be done by calling `make()` function. 
 
-#### How to Interact with the Environment
+### **How to Interact with the Environment**
 
 Environments are a class in Gymnasium, below is a list of functions I used along with a description:
 
@@ -65,6 +71,13 @@ Environments are a class in Gymnasium, below is a list of functions I used along
   
 -	This includes closing all rendering windows.
 
+<br>
+
+---
+
+<br> 
+
+
 ## Spaces
 
 Spaces define the format of actions and observations. This means that they describe the types of actions the agent can perform and the types of observations the agent can receive from the environment. 
@@ -107,13 +120,19 @@ The main types of spaces are:
 
 These are the basic spaces but there are others for more complex environments.
 
-## Stable Baselines3
+<br>
+
+---
+
+<br>
+
+## **Stable Baselines3**
 
 After watching many tutorials, I noticed that a lot of people use the Stable Baselines3 library. 
 
 Stable Baselines3 is a library for reinforcement learning designed to work with OpenAI Gym environments. It simplifies the process of setting up, training and evaluating RL agents. In the example below of my first attempt in using RL, I am using Stable Baselines3.
 
-### Wrappers
+### **Wrappers**
 
 Wrappers are templates used to modify the functionality of environments without changing the original environment setup. For example, if you want to change rewards or reshape observations, you can do this using a wrapper instead of having to re-create the environment.
 
@@ -121,13 +140,20 @@ There are various types of wrappers depending on the specific changes or functio
 
 While you can use wrappers directly from OpenAI Gym, the wrappers in Stable Baselines3 are simpler and more effective. They are specifically designed to enhance the training process of RL agents.
 
-#### Vectorised Environments 
+#### **Vectorised Environments **
 	
 One of the most commonly used wrappers in Stable Baselines3 is the vectorised environment wrapper. These wrappers allow you to manage multiple instances of an environment simultaneously. It allows the agent to interact on multiple states of the environment at the same time leading to faster training and greater diversity in the experiences gathered by the agent.
 
 In the demo below, I used `DummyVecEnv` to run multiple instances of the Lunar Lander environment.
 
-## Lunar Lander
+<br>
+
+---
+
+<br> 
+
+
+## **Lunar Lander**
 
 The Lunar Lander environment is a classic control reinforcement learning task where an agent must successfully land on a landing pad while managing its speed, angle and engine thrust.
 
@@ -137,7 +163,7 @@ The Lunar Lander environment is a classic control reinforcement learning task wh
 
 Below is an overview of agent’s action space, observation space, rewards and episode end conditions.
 
-### Action Space
+### **Action Space**
 
 The agent can take one of four discrete actions:
 
@@ -149,7 +175,7 @@ The agent can take one of four discrete actions:
 
 -	**3:** Fire the right engine
 
-### Observation Space
+### **Observation Space**
 
 The observation space is defined as a box with the following bounds:
 
@@ -177,7 +203,8 @@ The observation vector contains the following elements:
 
 **8.	Right Leg Contact:** 1 if the right leg is in contact with the ground, 0 otherwise.
 
-### Reward Structure
+
+### **Reward Structure**
 
 The goal of the agent is to land between the two flags. Rewards are given based on the following criteria:
 
@@ -197,7 +224,7 @@ The goal of the agent is to land between the two flags. Rewards are given based 
   
 -	A reward above 200 points indicates good landing and performance of the agent.
 
-### Episode End Conditions
+### **Episode End Conditions**
 
 An episode can end in two ways:
 
@@ -205,11 +232,11 @@ An episode can end in two ways:
 
 -	**Termination:** The episode terminates if the lander crashes, goes out of bounds or becomes asleep.
 
-### Random Action Selection 
+### **Random Action Selection **
 
 To start, I explored the effects of the agent randomly selecting actions from its action space to see how the agent performs. This helped me familiarise myself with using OpenAI Gym and Stable Baselines3. I limited the number of steps to 1000 to avoid lengthy runtimes.
 
-#### Code Snippets
+#### **Code Snippets**
 
 Setting up Lunar Lander Environment using `gym.make()`, setting `render_mode` as human to get visual output.
 
@@ -223,7 +250,7 @@ Testing the agent with random actions, I am using max_steps and episode paramete
   <img src="{{ site.baseurl }}/assets/trick-or-retreat/rand_code.png" alt="Random Action Code" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
-#### Results
+#### **Results**
 
 I collected the total rewards per episode (capped at 1000), below are the results:
 
@@ -237,17 +264,17 @@ I collected the total rewards per episode (capped at 1000), below are the result
 
 It's clear that the performance was poor, as all scores are negative. The agent fails to achieve the task through random actions, highlighting the need for training to better understand its environment.
 
-### Visualisation
+### **Visualisation**
 
 <video width="640" height="480" controls>
-    <source src="{{ site.baseurl }}/assets/trick-or-retreat/rand_action.m4v" type="video/x-m4v">
+    <source src="{{ site.baseurl }}/assets/trick-or-retreat/rand_action.mp4" type="video/mp4"
     Your browser does not support the video tag.
 </video>
 
 It is clear actions taken by the agent show no purpose, the agent struggles to control itself as it travels down towards the ground.
 
 
-### Proximal Policy Optimisation Algorithm 
+### **Proximal Policy Optimisation Algorithm** 
 
 After exploring the Lunar Lander environment through random action selection, I wanted to improve the agent's performance through training. 
 
@@ -259,7 +286,7 @@ PPO is a policy-based algorithm meaning it learns a policy by optimising probabi
 
 After the first episode, the agent builds a policy based on its observations of the environment. In the following episodes, the agent continues to collect observations while recording the rewards associated with each action taken. PPO calculates the reward for each action and compares it to the expected outcome (previous episode results). Using these comparisons, PPO updates the action probabilities to increase the likelihood of taking actions that receive higher rewards. If the difference between the old and new action probabilities is too drastic, PPO uses ‘clipping’ to ensure stable learning.
 
-#### Code Snippets
+#### **Code Snippets**
 
 Before I train the agent, I first vectorise the environment to create four parallel instances of the environment. This allows faster training as the agent can explore multiple states at the same time. I decided not to render the training environment to avoid the added computational cost as visual inspection of training isn’t really needed.
 
@@ -294,7 +321,7 @@ To evaluate the model’s performance, I use `evaluate_policy`. This is a Stable
 
 The results show the agent achieves a strong average reward of 249 across 10 episodes, indicating the success at learning and completing the task. Standard deviation of 34 suggests some variability across the episodes’ scores, ideally the standard deviation should be a bit lower to show more consistency in the agent’s performance.
 
-#### Testing Results
+#### **Testing Results**
 
 After training the model, I tested its performance over 10 episodes. Here are the results:
 
@@ -314,7 +341,7 @@ After training the model, I tested its performance over 10 episodes. Here are th
 Overall, agent shows a much stronger performance with most scores above 200.
 There are some low and even negative scores which may suggest the agent struggled in certain scenarios. 
 
-### Visualisation 
+### **Visualisation **
 
 <video width="640" height="480" controls>
     <source src="{{ site.baseurl }}/assets/trick-or-retreat/trained_agent.mp4" type="video/mp4">
@@ -323,7 +350,13 @@ There are some low and even negative scores which may suggest the agent struggle
 
 Clear improvement in the agent’s performance after training.
 
-## Summary
+<br>
+
+---
+
+<br> 
+
+## **Summary**
 
 So far, I have covered the basics of reinforcement learning and demonstrated how to train agents using OpenAI’s Gymnasium and Stable Baselines3, applying the PPO algorithm in the Lunar Lander environment. While PPO worked well overall, there were a few cases where the agent's performance was inconsistent, with some episodes scoring lower than expected.
 
