@@ -230,7 +230,7 @@ An episode can end in two ways:
 
 -	**Termination:** The episode terminates if the lander crashes, goes out of bounds or becomes asleep.
 
-#### **Random Action Selection **
+#### **Random Action Selection**
 
 To start, I explored the effects of the agent randomly selecting actions from its action space to see how the agent performs. This helped me familiarise myself with using basic concepts of both libraries. I limited the number of steps to 1000 to avoid lengthy runtimes.
 
