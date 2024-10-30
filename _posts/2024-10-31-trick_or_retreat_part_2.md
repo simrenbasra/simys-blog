@@ -1,6 +1,6 @@
 ---
 title: "Trick or ReTreat: Implementing Reinforcement Learning 👻"
-date: 2024-10-31
+date: 2024-10-30
 ---
 
 So far, I have introduced the basic concepts of Reinforcement Learning and outlined the environment and rules for my Reinforcement Learning game, **Trick or ReTreat**.
