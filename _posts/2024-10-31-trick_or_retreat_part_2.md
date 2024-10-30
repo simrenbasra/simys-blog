@@ -326,7 +326,7 @@ The results show the agent achieves a strong average reward of 249 across 10 epi
 
 After training the model, I tested its performance over 10 episodes. Here are the results:
 
-| Episode Number | Score            |
+| Episode        | Score            |
 |----------------|------------------|
 | 1              | 17.01            |
 | 2              | 262.80           |
