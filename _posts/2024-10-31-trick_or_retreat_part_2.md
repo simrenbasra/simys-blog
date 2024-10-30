@@ -75,8 +75,7 @@ Environments are a class in Gymnasium, below is a list of functions I used along
 
 ---
 
-
-
+<br>
 
 ## Spaces
 
