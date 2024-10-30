@@ -75,7 +75,7 @@ Environments are a class in Gymnasium, below is a list of functions I used along
 
 ---
 
-<br> 
+
 
 
 ## Spaces
@@ -131,8 +131,6 @@ These are the basic spaces but there are others for more complex environments.
 After watching many tutorials, I noticed that a lot of people use the Stable Baselines3 library. 
 
 Stable Baselines3 is a library for reinforcement learning designed to work with OpenAI Gym environments. It simplifies the process of setting up, training and evaluating RL agents. In the example below of my first attempt in using RL, I am using Stable Baselines3.
-
-<br> 
 
 #### **Wrappers**
 
@@ -269,10 +267,12 @@ It's clear that the performance was poor, as all scores are negative. The agent 
 
 It is clear actions taken by the agent show no purpose, the agent struggles to control itself as it travels down towards the ground.
 
-<video width="640" height="480" controls>
-    <source src="{{ site.baseurl }}/assets/trick-or-retreat/rand_actions.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-</video>
+<div style="text-align: center;">
+    <video width="640" height="480" controls>
+        <source src="{{ site.baseurl }}/assets/trick-or-retreat/rand_actions.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
 
 <br>
 
@@ -347,10 +347,12 @@ There are some low and even negative scores which may suggest the agent struggle
 
 Clear improvement in the agent’s performance after training.
 
-<video width="640" height="480" controls>
-    <source src="{{ site.baseurl }}/assets/trick-or-retreat/trained_agent.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-</video>
+<div style="text-align: center;">
+    <video width="640" height="480" controls>
+        <source src="{{ site.baseurl }}/assets/trick-or-retreat/trained_agent.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
 
 <br>
 
