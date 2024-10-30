@@ -3,9 +3,9 @@ title: "Trick or ReTreat: Implementing Reinforcement Learning 👻"
 date: 2024-10-30
 ---
 
-So far, I have introduced the basic concepts of Reinforcement Learning and outlined the environment and rules for my Reinforcement Learning game, **Trick or ReTreat**.
+So far, I have introduced the basic concepts of Reinforcement Learning (RL) and outlined the environment and rules for my RL project, **Trick or ReTreat**.
 
-In this post, I will discuss commonly used libraries in Reinforcement Learning: OpenAI's Gym and Stable Baselines3. I'll share my first demo of training the Lunar Lander using OpenAI's Gym.
+In this post, I’ll explore two key libraries in RL: OpenAI's Gym and Stable Baselines3, both of which streamline the process of building and training RL agents. I’ll also showcase two demos within the same environment: one showing an agent taking random actions and another after training the agent.
 
 <br>
 
@@ -13,57 +13,57 @@ In this post, I will discuss commonly used libraries in Reinforcement Learning: 
 
 <br> 
 
-## OpenAI Gymnasium 
+## OpenAI's Gym 
 
-In this project, I will use OpenAI’s Gymnasium library to build and train my reinforcement learning agent for **Trick or ReTreat**. It is a common library to use in reinforcement learning. 
+In this project, I will use OpenAI’s Gymnasium library (a branch of the original Gym library) to build and train my reinforcement learning agent for **Trick or ReTreat**. It is a common library to use in reinforcement learning. 
 
-To get familiar with Gymnasium, I began by experimenting with its pre-defined environments. This approach helped me gain a solid understanding before diving into creating a custom environment for **Trick or ReTreat**. To start, I will give a brief introduction to OpenAI’s Gymnasium, summarising its documentation.
+To get familiar with Gymnasium, I began by experimenting with its pre-defined environments. This approach helped me gain a solid understanding before diving into creating a custom environment for **Trick or ReTreat**. To start, I'll give a brief introduction to Gymnasium, summarising its key features and functions based on its documentation.
 
 #### **Environments**
 
-Thinking back to the previous post, an environment represents everything an agent interacts with. This includes the various states, the actions the agent can take and the placement of rewards. Let’s see how we can represent this using OpenAI’s Gymnasium.
+Thinking back to the previous post, an environment represents everything an agent interacts with. This includes the various states, the actions the agent can take and the placement of rewards. Let’s see how we can represent this in OpenAI’s Gymnasium.
 
 **Initialising Environments**
 
-To use pre-defined environments from Open AI, initialisation is quite simple and can be done by calling `make()` function. 
+Using pre-defined environments from Gymnasium is fairly straightforward - simply call `make()` function to initialise an environment. 
 
-**How to Interact with the Environment**
+**Interacting with the Environment**
 
-Environments are a class in Gymnasium, below is a list of functions I used along with a description:
+In Gymnasium, environments are represented as classes. Below is an overview of key functions for interacting with these environments
 
 **1.	reset()**
    
--	Resets environment to an initial state
+-	Resets environment to its initial state.
   
--	Needed before running `step()`
+-	Must be called before running `step()` to start a new episode.
   
--	Initial state of environments usually have randomness to ensure exploring, the randomness can be controlled by the `seed` parameter
+-	Initial state of environments usually have randomness to ensure exploring, the randomness can be controlled by the `seed` parameter.
 
 **2.	step()**
    
--	Input: Action, A, agent takes
+-	Input: The action A that the agent takes.
   
 -	Returns the following:
   
-    -	New state (called observation).
+    - New State (called observation): Environment's new state after taking action A.
       
-    - Reward for taking action A.
+    - Reward: The reward received for taking action A.
       
-    - Boolean value for terminated which is True if agent has reached a goal or completed the task.
+    - Terminated: A Boolean indicating whether the agent has reached a goal or completed the task
       
-    - Boolean value for truncated which is True if the episode ends due to a step limit or other reasons
+    - Truncated: A Boolean that is True if the episode ends due to step limits or other specified conditions.
       
-    - Dictionary of additional information useful for debugging or analysis.
+    - Info: A dictionary of additional information, useful for debugging or analysis.
 
 **3.	render()**
    
 -	To help visualise what the agent observes in the environment.
   
--	`render_mode` is most commonly set to:
+-	`render_mode` is commonly set to:
 
-    - `rgb_array`: Returns image of environment as (x, y, 3).
+    - `rgb_array`: Returns an image of the environment as an array of shape (x, y, 3).
       
-    - `human`: Displays environment for real time viewing.
+    - `human`: Displays environment for real time.
       
 **4.	close()**
    
@@ -79,15 +79,15 @@ Environments are a class in Gymnasium, below is a list of functions I used along
 
 ## Spaces
 
-Spaces define the format of actions and observations. This means that they describe the types of actions the agent can perform and the types of observations the agent can receive from the environment. 
+Spaces define the format of actions and observations. They describe the types of actions the agent can perform and the types of observations the agent can receive from the environment. 
 
-An environment must define two types of spaces:
+Each environment must have the following two types of spaces defined:
 
 **1.	action_space:** Represents all the possible actions an agent can take.
    
 **2.	observation_space:** Represents all possible states that the environment can return to the agent.
 
-Each of these spaces has specific types.
+Each of these spaces must be defined with a type.
 
 #### **Different Types of Spaces**
 
@@ -129,21 +129,21 @@ These are the basic spaces but there are others for more complex environments.
 
 After watching many tutorials, I noticed that a lot of people use the Stable Baselines3 library. 
 
-Stable Baselines3 is a library for reinforcement learning designed to work with OpenAI Gym environments. It simplifies the process of setting up, training and evaluating RL agents. In the example below of my first attempt in using RL, I am using Stable Baselines3.
+Stable Baselines3 is a library for RL, specifically designed to work with OpenAI Gym environments. It simplifies the process of setting up, training and evaluating RL agents. In the example below, I'll share my  first attempt at using RL with Stable Baselines3.
 
 #### **Wrappers**
 
-Wrappers are templates used to modify the functionality of environments without changing the original environment setup. For example, if you want to change rewards or reshape observations, you can do this using a wrapper instead of having to re-create the environment.
+Wrappers are templates used to modify the functionality of environments without changing the original environment setup. For instance, if you want to change rewards or reshape some observations, you can do this using a wrapper instead of having to re-create the environment.
 
 There are various types of wrappers depending on the specific changes or functionalities you need from the environment.
 
-While you can use wrappers directly from OpenAI Gym, the wrappers in Stable Baselines3 are simpler and more effective. They are specifically designed to enhance the training process of RL agents.
+While you can use wrappers directly from Gymnasium, the wrappers in Stable Baselines3 are simpler and more effective. They are designed to enhance the training process of RL agents.
 
 **Vectorised Environments**
 	
-One of the most commonly used wrappers in Stable Baselines3 is the vectorised environment wrapper. These wrappers allow you to manage multiple instances of an environment simultaneously. It allows the agent to interact on multiple states of the environment at the same time leading to faster training and greater diversity in the experiences gathered by the agent.
+One of the most commonly used wrappers in Stable Baselines3 is the vectorised environment wrapper. These wrappers allow you to manage multiple instances of an environment at the same time. It allows the agent to interact on multiple states of the environment simultaneously leading to faster training and greater diversity in the agnet's experiences.
 
-In the demo below, I used `DummyVecEnv` to run multiple instances of the Lunar Lander environment.
+In the demo below, I used `DummyVecEnv` to run four instances of the Lunar Lander environment.
 
 <br>
 
@@ -164,7 +164,7 @@ Below is an overview of agent’s action space, observation space, rewards and e
 
 #### **Action Space**
 
-The agent can take one of four discrete actions:
+The agent can take any of the following four discrete actions:
 
 -	**0:** Do nothing
 
@@ -196,11 +196,11 @@ The observation vector contains the following elements:
 
 **5.	Angle of Lander:** The current angle of the lander.
 
-**6.	Angular Velocity:** The rate of rotation of the lander (how tilted it is).
+**6.	Angular Velocity:** The rotation speed of the lander.
 
-**7.	Left Leg Contact:** 1 if the left leg is in contact with the ground, 0 otherwise.
+**7.	Left Leg Contact:** 1 if the left leg is in contact with the ground, 0 if not.
 
-**8.	Right Leg Contact:** 1 if the right leg is in contact with the ground, 0 otherwise.
+**8.	Right Leg Contact:** 1 if the right leg is in contact with the ground, 0 if not.
 
 #### **Reward Structure**
 
@@ -232,7 +232,7 @@ An episode can end in two ways:
 
 #### **Random Action Selection **
 
-To start, I explored the effects of the agent randomly selecting actions from its action space to see how the agent performs. This helped me familiarise myself with using OpenAI Gym and Stable Baselines3. I limited the number of steps to 1000 to avoid lengthy runtimes.
+To start, I explored the effects of the agent randomly selecting actions from its action space to see how the agent performs. This helped me familiarise myself with using basic concepts of both libraries. I limited the number of steps to 1000 to avoid lengthy runtimes.
 
 #### **Code Snippets**
 
@@ -279,7 +279,7 @@ It is clear actions taken by the agent show no purpose, the agent struggles to c
 
 After exploring the Lunar Lander environment through random action selection, I wanted to improve the agent's performance through training. 
 
-Stable Baselines3 documentation is very thorough and provides a list of all available RL algorithms. In the end, I chose Proximal Policy Optimization (PPO) because it is relatively simple to understand and quite stable. 
+Stable Baselines3 documentation is very thorough and provides a list of all available RL algorithms for training. In the end, I chose Proximal Policy Optimisation (PPO) because it is relatively simple to understand and quite stable. 
 
 **What is PPO?**
  
@@ -297,7 +297,7 @@ Before I train the agent, I first vectorise the environment to create four paral
 
 I set the log path to better understand the training metrics in TensorBoard later on.
 
-I then initialised my model with PPO using the MLP policy (default policy). MLP policy is a simple neural network structure of fully connected layers. It takes in environment observations and outputs actions. There are other policies that can be used, but for this demo MLP policy seemed the best choice since the Lunar Lander environment isn’t too complex 
+I then initialised my model with PPO using the MLP policy (default policy). MLP policy is a simple neural network structure of fully connected layers, it takes in environment observations and outputs actions. Essentially, this policy performs updates using a neural network to help the agent 'learn'. There are other policies that can be used, but for this demo MLP policy seemed the best choice since the Lunar Lander environment isn’t too complex. 
 
 <div style="text-align: center;">
   <img src="{{ site.baseurl }}/assets/trick-or-retreat/ppo_1.png" alt="PPO 1" style="max-width: 100%; height: auto; margin: 20px 0;">
@@ -320,7 +320,7 @@ To evaluate the model’s performance, I use `evaluate_policy`. This is a Stable
   <img src="{{ site.baseurl }}/assets/trick-or-retreat/eval_result.png" alt="PPO results" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div> 
 
-The results show the agent achieves a strong average reward of 249 across 10 episodes, indicating the success at learning and completing the task. Standard deviation of 34 suggests some variability across the episodes’ scores, ideally the standard deviation should be a bit lower to show more consistency in the agent’s performance.
+The results show the agent achieves a strong average reward of 249 across 10 episodes, indicating the success at learning and completing the task. Standard deviation of 34 suggests some variability in the episode scores, ideally the standard deviation should be a bit lower to show more consistency in the agent’s performance.
 
 #### **Testing Results**
 
