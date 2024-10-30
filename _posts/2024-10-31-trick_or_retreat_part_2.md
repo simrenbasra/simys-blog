@@ -317,7 +317,7 @@ There are some low and even negative scores which may suggest the agent struggle
 ### Visualisation 
 
 <video width="640" height="480" controls>
-    <source src="{{ site.baseurl }}/assets/trick-or-retreat/trained_agent.mov" type="video/quicktime">
+    <source src="{{ site.baseurl }}/assets/trick-or-retreat/trained_agent.mp4" type="video/mp4">
     Your browser does not support the video tag.
 </video>
 
