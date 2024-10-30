@@ -132,7 +132,7 @@ In the demo below, I used `DummyVecEnv` to run multiple instances of the Lunar L
 The Lunar Lander environment is a classic control reinforcement learning task where an agent must successfully land on a landing pad while managing its speed, angle and engine thrust.
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/trick-or-retreat/lunar_lander.png" alt="Lunar Lander" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/trick-or-retreat/lunar_lander_img.png" alt="Lunar Lander" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 Below is an overview of agent’s action space, observation space, rewards and episode end conditions.
