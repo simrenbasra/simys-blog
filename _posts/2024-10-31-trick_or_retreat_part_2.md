@@ -19,7 +19,7 @@ In this project, I will use OpenAI’s Gymnasium library to build and train my r
 
 To get familiar with Gymnasium, I began by experimenting with its pre-defined environments. This approach helped me gain a solid understanding before diving into creating a custom environment for **Trick or ReTreat**. To start, I will give a brief introduction to OpenAI’s Gymnasium, summarising its documentation.
 
-### **Environments**
+### Environments
 
 Thinking back to the previous post, an environment represents everything an agent interacts with. This includes the various states, the actions the agent can take and the placement of rewards. Let’s see how we can represent this using OpenAI’s Gymnasium.
 
@@ -90,7 +90,9 @@ An environment must define two types of spaces:
 
 Each of these spaces has specific types.
 
-#### Different Types of Spaces
+<br> 
+
+### Different Types of Spaces
 
 The main types of spaces are:
 
@@ -267,9 +269,10 @@ It's clear that the performance was poor, as all scores are negative. The agent 
 ### **Visualisation**
 
 <video width="640" height="480" controls>
-    <source src="{{ site.baseurl }}/assets/trick-or-retreat/rand_actions.mp4" type="video/mp4"
+    <source src="{{ site.baseurl }}/assets/trick-or-retreat/rand_actions.mp4" type="video/mp4">
     Your browser does not support the video tag.
 </video>
+
 
 It is clear actions taken by the agent show no purpose, the agent struggles to control itself as it travels down towards the ground.
 
