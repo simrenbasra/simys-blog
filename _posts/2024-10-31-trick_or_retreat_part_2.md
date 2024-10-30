@@ -192,7 +192,7 @@ The goal of the agent is to land between the two flags. Rewards are given based 
 -	Firing the side engines incurs a penalty of -0.03 points each time (indicated by red dots in the rendering).
   
 -	Firing the main engine incurs a larger penalty of -0.3 points each time.
--
+
 -	An additional reward of +100 points is given for a safe landing, while crashing results in a penalty of -100 points.
   
 -	A reward above 200 points indicates good landing and performance of the agent.
