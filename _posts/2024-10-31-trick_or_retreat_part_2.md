@@ -13,7 +13,7 @@ In this post, I will discuss commonly used libraries in Reinforcement Learning: 
 
 <br> 
 
-## **OpenAI Gymnasium** 
+## OpenAI Gymnasium 
 
 In this project, I will use OpenAI’s Gymnasium library to build and train my reinforcement learning agent for **Trick or ReTreat**. It is a common library to use in reinforcement learning. 
 
@@ -23,11 +23,11 @@ To get familiar with Gymnasium, I began by experimenting with its pre-defined en
 
 Thinking back to the previous post, an environment represents everything an agent interacts with. This includes the various states, the actions the agent can take and the placement of rewards. Let’s see how we can represent this using OpenAI’s Gymnasium.
 
-### **Initialising Environments**
+#### **Initialising Environments**
 
 To use pre-defined environments from Open AI, initialisation is quite simple and can be done by calling `make()` function. 
 
-### **How to Interact with the Environment**
+#### **How to Interact with the Environment**
 
 Environments are a class in Gymnasium, below is a list of functions I used along with a description:
 
@@ -126,7 +126,7 @@ These are the basic spaces but there are others for more complex environments.
 
 <br>
 
-## **Stable Baselines3**
+## Stable Baselines3
 
 After watching many tutorials, I noticed that a lot of people use the Stable Baselines3 library. 
 
@@ -153,7 +153,7 @@ In the demo below, I used `DummyVecEnv` to run multiple instances of the Lunar L
 <br> 
 
 
-## **Lunar Lander**
+## Lunar Lander
 
 The Lunar Lander environment is a classic control reinforcement learning task where an agent must successfully land on a landing pad while managing its speed, angle and engine thrust.
 
@@ -267,7 +267,7 @@ It's clear that the performance was poor, as all scores are negative. The agent 
 ### **Visualisation**
 
 <video width="640" height="480" controls>
-    <source src="{{ site.baseurl }}/assets/trick-or-retreat/rand_action.mp4" type="video/mp4"
+    <source src="{{ site.baseurl }}/assets/trick-or-retreat/rand_actions.mp4" type="video/mp4"
     Your browser does not support the video tag.
 </video>
 
@@ -356,7 +356,7 @@ Clear improvement in the agent’s performance after training.
 
 <br> 
 
-## **Summary**
+## Summary
 
 So far, I have covered the basics of reinforcement learning and demonstrated how to train agents using OpenAI’s Gymnasium and Stable Baselines3, applying the PPO algorithm in the Lunar Lander environment. While PPO worked well overall, there were a few cases where the agent's performance was inconsistent, with some episodes scoring lower than expected.
 
