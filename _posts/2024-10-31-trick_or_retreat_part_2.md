@@ -19,9 +19,7 @@ In this project, I will use OpenAI’s Gymnasium library to build and train my r
 
 To get familiar with Gymnasium, I began by experimenting with its pre-defined environments. This approach helped me gain a solid understanding before diving into creating a custom environment for **Trick or ReTreat**. To start, I will give a brief introduction to OpenAI’s Gymnasium, summarising its documentation.
 
-<br> 
-
-### Environments
+#### **Environments**
 
 Thinking back to the previous post, an environment represents everything an agent interacts with. This includes the various states, the actions the agent can take and the placement of rewards. Let’s see how we can represent this using OpenAI’s Gymnasium.
 
@@ -92,9 +90,7 @@ An environment must define two types of spaces:
 
 Each of these spaces has specific types.
 
-<br> 
-
-### Different Types of Spaces
+#### **Different Types of Spaces**
 
 The main types of spaces are:
 
@@ -169,9 +165,7 @@ The Lunar Lander environment is a classic control reinforcement learning task wh
 
 Below is an overview of agent’s action space, observation space, rewards and episode end conditions.
 
-<br>
-
-### **Action Space**
+#### **Action Space**
 
 The agent can take one of four discrete actions:
 
@@ -183,9 +177,7 @@ The agent can take one of four discrete actions:
 
 -	**3:** Fire the right engine
 
-<br>
-
-### **Observation Space**
+#### **Observation Space**
 
 The observation space is defined as a box with the following bounds:
 
@@ -213,9 +205,7 @@ The observation vector contains the following elements:
 
 **8.	Right Leg Contact:** 1 if the right leg is in contact with the ground, 0 otherwise.
 
-<br>
-
-### **Reward Structure**
+#### **Reward Structure**
 
 The goal of the agent is to land between the two flags. Rewards are given based on the following criteria:
 
@@ -235,9 +225,7 @@ The goal of the agent is to land between the two flags. Rewards are given based 
   
 -	A reward above 200 points indicates good landing and performance of the agent.
 
-<br>
-
-### **Episode End Conditions**
+#### **Episode End Conditions**
 
 An episode can end in two ways:
 
@@ -245,13 +233,9 @@ An episode can end in two ways:
 
 -	**Termination:** The episode terminates if the lander crashes, goes out of bounds or becomes asleep.
 
-<br>
-
-### **Random Action Selection **
+#### **Random Action Selection **
 
 To start, I explored the effects of the agent randomly selecting actions from its action space to see how the agent performs. This helped me familiarise myself with using OpenAI Gym and Stable Baselines3. I limited the number of steps to 1000 to avoid lengthy runtimes.
-
-<br>
 
 #### **Code Snippets**
 
@@ -267,8 +251,6 @@ Testing the agent with random actions, I am using max_steps and episode paramete
   <img src="{{ site.baseurl }}/assets/trick-or-retreat/rand_code.png" alt="Random Action Code" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
-<br>
-
 #### **Results**
 
 I collected the total rewards per episode (capped at 1000), below are the results:
@@ -283,18 +265,14 @@ I collected the total rewards per episode (capped at 1000), below are the result
 
 It's clear that the performance was poor, as all scores are negative. The agent fails to achieve the task through random actions, highlighting the need for training to better understand its environment.
 
-<br>
-
 #### **Visualisation**
+
+It is clear actions taken by the agent show no purpose, the agent struggles to control itself as it travels down towards the ground.
 
 <video width="640" height="480" controls>
     <source src="{{ site.baseurl }}/assets/trick-or-retreat/rand_actions.mp4" type="video/mp4">
     Your browser does not support the video tag.
 </video>
-
-<br>
-
-It is clear actions taken by the agent show no purpose, the agent struggles to control itself as it travels down towards the ground.
 
 <br>
 
@@ -309,8 +287,6 @@ Stable Baselines3 documentation is very thorough and provides a list of all avai
 PPO is a policy-based algorithm meaning it learns a policy by optimising probability of taking high rewarding actions. PPO makes gradual, controlled updates to the policy, so the agent doesn’t make drastic changes all at once.
 
 After the first episode, the agent builds a policy based on its observations of the environment. In the following episodes, the agent continues to collect observations while recording the rewards associated with each action taken. PPO calculates the reward for each action and compares it to the expected outcome (previous episode results). Using these comparisons, PPO updates the action probabilities to increase the likelihood of taking actions that receive higher rewards. If the difference between the old and new action probabilities is too drastic, PPO uses ‘clipping’ to ensure stable learning.
-
-<br>
 
 #### **Code Snippets**
 
@@ -347,8 +323,6 @@ To evaluate the model’s performance, I use `evaluate_policy`. This is a Stable
 
 The results show the agent achieves a strong average reward of 249 across 10 episodes, indicating the success at learning and completing the task. Standard deviation of 34 suggests some variability across the episodes’ scores, ideally the standard deviation should be a bit lower to show more consistency in the agent’s performance.
 
-<br>
-
 #### **Testing Results**
 
 After training the model, I tested its performance over 10 episodes. Here are the results:
@@ -369,16 +343,14 @@ After training the model, I tested its performance over 10 episodes. Here are th
 Overall, agent shows a much stronger performance with most scores above 200.
 There are some low and even negative scores which may suggest the agent struggled in certain scenarios. 
 
-<br>
+#### **Visualisation**
 
-#### **Visualisation **
+Clear improvement in the agent’s performance after training.
 
 <video width="640" height="480" controls>
     <source src="{{ site.baseurl }}/assets/trick-or-retreat/trained_agent.mp4" type="video/mp4">
     Your browser does not support the video tag.
 </video>
-
-Clear improvement in the agent’s performance after training.
 
 <br>
 
