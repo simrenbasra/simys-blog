@@ -240,7 +240,7 @@ It's clear that the performance was poor, as all scores are negative. The agent 
 ### Visualisation
 
 <video width="640" height="480" controls>
-    <source src="{{ site.baseurl }}/assets/trick-or-retreat/rand_actions.mov" type="video/quicktime">
+    <source src="{{ site.baseurl }}/assets/trick-or-retreat/rand_action.m4v" type="video/x-m4v">
     Your browser does not support the video tag.
 </video>
 
