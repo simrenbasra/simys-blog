@@ -5,7 +5,7 @@ date: 2024-10-31
 
 So far, I have introduced the basic concepts of Reinforcement Learning (RL) and outlined the environment and rules for my RL project, **Trick or ReTreat**.
 
-In this post, I’ll explore two key libraries in RL: OpenAI's Gym and Stable Baselines3, both of which streamline the process of building and training RL agents. Using Lunar Lander environment, I'll showcase two demos: one showing an agent taking random actions and another after training the agent. 
+In this post, I’ll explore two key libraries in RL: OpenAI's Gym and Stable Baselines3, both of which streamline the process of building and training RL agents. Using the Lunar Lander environment, I'll showcase two demos: one showing an agent taking random actions and another after training the agent. 
 
 <br>
 
