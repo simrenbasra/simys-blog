@@ -129,7 +129,7 @@ These are the basic spaces but there are others for more complex environments.
 
 After watching many tutorials, I noticed that a lot of people use the Stable Baselines3 library. 
 
-Stable Baselines3 is a library for RL, specifically designed to work with OpenAI Gym environments. It simplifies the process of setting up, training and evaluating RL agents. In the example below, I'll share my  first attempt at using RL with Stable Baselines3.
+Stable Baselines3 is a library for RL, specifically designed to work with OpenAI Gym environments. It simplifies the process of setting up, training and evaluating RL agents. In the example below, I'll share my first attempt at using RL with Stable Baselines3.
 
 #### **Wrappers**
 
@@ -141,7 +141,7 @@ While you can use wrappers directly from Gymnasium, the wrappers in Stable Basel
 
 **Vectorised Environments**
 	
-One of the most commonly used wrappers in Stable Baselines3 is the vectorised environment wrapper. These wrappers allow you to manage multiple instances of an environment at the same time. It allows the agent to interact on multiple states of the environment simultaneously leading to faster training and greater diversity in the agnet's experiences.
+One of the most commonly used wrappers in Stable Baselines3 is the vectorised environment wrapper. These wrappers allow you to manage multiple instances of an environment at the same time. It allows the agent to interact on multiple states of the environment simultaneously leading to faster training and greater diversity in the agent's experiences.
 
 In the demo below, I used `DummyVecEnv` to run four instances of the Lunar Lander environment.
 
@@ -295,7 +295,7 @@ Before I train the agent, I first vectorise the environment to create four paral
   <img src="{{ site.baseurl }}/assets/trick-or-retreat/vec_env.png" alt="Vec Environment SetUp" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
-I set the log path to better understand the training metrics in TensorBoard later on.
+I set the log path to better understand the training metrics in TensorBoard later.
 
 I then initialised my model with PPO using the MLP policy (default policy). MLP policy is a simple neural network structure of fully connected layers, it takes in environment observations and outputs actions. Essentially, this policy performs updates using a neural network to help the agent 'learn'. There are other policies that can be used, but for this demo MLP policy seemed the best choice since the Lunar Lander environment isn’t too complex. 
 
