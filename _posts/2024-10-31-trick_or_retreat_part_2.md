@@ -264,7 +264,7 @@ It's clear that the performance was poor, as all scores are negative. The agent 
 
 #### **Visualisation**
 
-It is clear actions taken by the agent show no purpose, the agent struggles to control itself as it travels down towards the ground.
+Actions taken by the agent show no purpose, the agent struggles to control itself as it travels down towards the ground.
 
 <div style="text-align: center;">
     <video width="640" height="480" controls>
