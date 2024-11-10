@@ -245,7 +245,7 @@ Setting up Lunar Lander Environment using `gym.make()`, setting `render_mode` as
 Testing the agent with random actions, I am using max_steps and episode parameters to control run time. Since using random action selection, the agent may take a long time to complete the task.
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/trick-or-retreat/rand_code.png" alt="Random Action Code" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/trick-or-retreat/rand_method.png" alt="Random Action Code" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 #### **Results**
