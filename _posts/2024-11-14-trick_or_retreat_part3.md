@@ -1,5 +1,5 @@
 ---
-title: "Trick Or ReTreat: Custom Reinforcement Learning Environment - Phase 1 🏃"
+title: "Trick Or ReTreat: Building a Custom Environment - Phase 1 🏃"
 date: 2024-11-14
 ---
 
