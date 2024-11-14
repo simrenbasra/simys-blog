@@ -371,7 +371,7 @@ The primary purpose of this testing phase was to ensure that the rendering and e
 
 <div style="text-align: center;">
     <video width="640" height="480" controls>
-        <source src="{{ site.baseurl }}/assets/trick-or-retreat/phase_1/simple_env.mp4" type="video/mp4">
+        <source src="{{ site.baseurl }}/assets/trick-or-retreat/phase_1/simple_env_test.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
 </div>
