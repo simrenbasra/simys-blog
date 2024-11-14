@@ -345,7 +345,7 @@ To better inspect the training progress and performance of the agent, I took rol
   <img src="{{ site.baseurl }}/assets/trick-or-retreat/phase_1/reward_graph.png" alt="reward_graph" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
-Since the task completion reward is set to 1 for success and 0 for failure, the reward graph from the training logs appears as a horizontal line. I as I progress to a more complex environment adding more rewards and penalties, this graph will look different. 
+Since the task completion reward is set to 1 for success and 0 for failure, the reward graph from the training logs appears as a horizontal line. As I progress to a more complex environment adding more rewards and penalties, this graph will look different. 
 
 **Episode Length**
 
