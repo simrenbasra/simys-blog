@@ -96,7 +96,7 @@ Please refer to earlier posts for a more detailed explanation of these types and
 
 After looking at several articles and tutorials, I decided to use Pygame for rendering the grid-based environment, as it offers flexibility and ease of use.
 
-When the render_mode is set to 'human', Pygame is initialized. The screen size is set to 800x800 pixels, and the size of each grid cell is calculated based on the total screen size and the grid size.
+When the render_mode is set to 'human', Pygame is initialised. The screen size is set to 800x800 pixels, and the size of each grid cell is calculated based on the total screen size and the grid size.
 
 #### **`_get_obs`: Returning Observations**
 
@@ -271,7 +271,7 @@ To close the Pygame rendering window.
   <img src="{{ site.baseurl }}/assets/trick-or-retreat/phase_1/register_1.png" alt="register_1" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
-This line of code registers the custom environment with Gym so Gym can now recognize and load it like any other pre-built environment.
+This line of code registers the custom environment with Gym so Gym can now recognise and load it like any other pre-built environment.
 
 - `id` = 'Haunted_Mansion-v1': Name to give your environment.
 
@@ -287,7 +287,7 @@ Now I have built my custom environment, I moved to the training of my agent.
 
 ## Training
 
-To train the agent, I used the same approach as with the Lunar Lander by implementing the Proximal Policy Optimization (PPO) algorithm from Stable Baselines 3.
+To train the agent, I used the same approach as with the Lunar Lander by implementing the Proximal Policy Optimisation (PPO) algorithm from Stable Baselines 3.
 
 #### **Environment Set Up**
 
