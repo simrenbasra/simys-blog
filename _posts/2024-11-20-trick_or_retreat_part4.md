@@ -161,7 +161,7 @@ The Q-table may look something like this:
 | ...   | ...  | ...  | ...  | ...   |
 
 
-#### **How Q-learning Works? **
+#### **How Q-learning Works?**
 
 Below are the steps of the Q-learning algorithm:
 
@@ -233,9 +233,9 @@ The current (old) Q-value for the state action pair $$(s,a)$$.
 
 The learning rate $$\alpha$$, controls how much controls how much the agent updates its Q-value. A higher $$\alpha$$ means the agent will give more weight to the most recent experience, a lower value means the agent will rely more on its past experiences. Values lie between 0 and 1:
 
-    - If $$\alpha$$ is close to 1, the agent quickly adjusts its Q-values but this could cause instability in learning if set too high.
+  - If $$\alpha$$ is close to 1, the agent quickly adjusts its Q-values but this could cause instability in learning if set too high.
   
-    - If $$\alpha$$ is close to 0, the agent updates its Q-values more slowly leading to more stable learning.
+  - If $$\alpha$$ is close to 0, the agent updates its Q-values more slowly leading to more stable learning.
 
 - **$$\text{reward}$$**
 
@@ -245,9 +245,9 @@ Reward the agene receives for taking action a, referred to as immediate reward.
 
 The discount factor $$\gamma$$ controls how much future rewards influence the agent's action selection. Values lie between 0 and 1:
 
-    - If $$\gamma$$ is close to 1, the agent places more importance on long-term rewards as much as immediate rewards.
-  
-    - If $$\gamma$$ is close to 0, the agent places less importance on long-term rewards and focuses more on immediate rewards.
+  - If $$\gamma$$ is close to 1, the agent places more importance on long-term rewards as much as immediate rewards.
+
+  - If $$\gamma$$ is close to 0, the agent places less importance on long-term rewards and focuses more on immediate rewards.
 
 - **$$\max Q(s', a')$$**
     
@@ -259,11 +259,17 @@ In Q-learning the assumption is made that the agent will choose the best possibl
 
 We can think of this like an error term, it shows the difference between the new value of Q-value and old Q-value and we use this to update the old Q-value:
     
-    - if the values is positive then this means the current q-value of state s and action a is too low.
-  
-    - if the values is negative then this means the current q-value of state s and action a is too high.
-      
-#### **Implementing Q-learning**
+  - if the values is positive then this means the current q-value of state s and action a is too low.
+
+  - if the values is negative then this means the current q-value of state s and action a is too high.
+
+<br>
+
+----
+
+<br>
+
+## **Implementing Q-learning**
 
 Before diving into the implementation of Q-learning, I thought it would be best to first explain the reasoning behind the parameter values I’ve selected:
 
@@ -285,7 +291,9 @@ Starting with an epsilon value of 1.0 ensures that the agent explores its enviro
 
 Below is a code snippet showing how I implemented Q-learning for this project. The comments in the code highlight each step of the process.
 
-**Setting up Q-Table:**
+#### **Setting up Q-Table:**
+
+Following code shows how to set up and initialise Q-Table to zeros:
 
 <div style="text-align: center;">
   <img src="{{ site.baseurl }}/assets/trick-or-retreat/phase_2/init_q_table_1.png" alt="init_q_table 1 " style="max-width: 100%; height: auto; margin: 20px 0;">
@@ -393,14 +401,22 @@ Another candy that the agent must learn to collect while also keeping an eye on 
   
 -	(3,1): The highest Q-value is for moving Down, reinforcing the idea that the agent is focusing on reaching the exit.
 
-#### Testing 
 
+<br>
+
+----
+
+<br>
+
+## Testing 
 <div style="text-align: center;">
     <video width="640" height="480" controls>
         <source src="{{ site.baseurl }}/assets/trick-or-retreat/phase_2/Q_learning_test.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
 </div>
+
+
 
 In the video, you can see the agent’s actions and see how the Q-values discussed above influences its decisions!
 
