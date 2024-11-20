@@ -7,6 +7,12 @@ Having successfully built and trained an agent in a simple environment with a si
 
 I’ll also explain the concept of Q-learning, how I implemented it to train the agent and share a video of the agent’s performance after training.
 
+<br>
+
+-----
+
+<br>
+
 ## Reframing the Agent’s Objective 
 
 <div style="text-align: center;">
@@ -16,6 +22,7 @@ I’ll also explain the concept of Q-learning, how I implemented it to train the
 In Phase 1, the agent's task was simple; find and reach the exit door. But now, with the addition of ghosts and candies, the agent not only needs to find and reach the exit, but also:
 
 -	Avoid the ghosts
+  
 -	Collect as many candies as possible
 
 **Environment Features:**
@@ -40,7 +47,13 @@ The reward logic is now more complex:
   
 -	**Step Penalty:** A small penalty of 0.01 for each action that doesn’t lead to the target. This penalty is set low to avoid discouraging exploration, which is needed during the early stages of Q-learning.
 
-## Custom Environment Updates  
+<br>
+
+-----
+
+<br>
+
+## Custom Environment Updates
 
 To add the ghosts and candies into the environment, I made the following changes to these methods of my environment class:
 
@@ -74,7 +87,7 @@ To add the ghosts and candies into the environment, I made the following changes
   <img src="{{ site.baseurl }}/assets/trick-or-retreat/phase_2/reset.png" alt="reset - phase 2" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
-- Ensured that the candies are placed back in the environment at the start of each new episode. 
+- Ensure candies are placed back in the environment at the start of each new episode. 
 
 #### **4)_get_obs: Return State of Environment**
 
@@ -94,11 +107,17 @@ To add the ghosts and candies into the environment, I made the following changes
 
 **Note:** I’ve only included code snippets for the parts of the environment where I made changes. For the full methods of the class, please refer to my [GitHub](https://github.com/simrenbasra) repository for the Trick Or Treat project (to be uploaded on completing the project).
 
+<br>
+
+-----
+
+<br>
+
 ## Training with Q-learning
 
 In this section, I share how I trained the agent using Q-learning. While I also implemented PPO for comparison, this blog post will focus only on Q-learning. For a comparison between Q-learning and PPO, you can visit my [GitHub](https://github.com/simrenbasra) to access notebooks.
 
-#### Recap of Reinforcement Learning (RL)
+#### **Recap of Reinforcement Learning (RL)**
 
 RL is a type of machine learning where an agent learns to make decisions based on interactions with its environment. The agent learns through feedback on the actions it takes, updating its policy to maximise total rewards per episode. 
 
@@ -106,7 +125,7 @@ Since the environment is more complex, I thought it best to use Q-learning to tr
 
 Let’s take a closer look at Q-learning to see how it works and how it can be implemented!
 
-#### What is Q-learning?
+#### **What is Q-learning?**
 
 Q-learning is a type of reinforcement learning where, instead of learning a policy, the agent builds a Q-table. This table stores Q-values which represent the 'goodness' of taking a particular action from a given state, based on the expected rewards. Over time, the agent updates these Q-values through its observations, gradually improving its ability to make decisions.
 
@@ -141,7 +160,8 @@ The Q-table may look something like this:
 | (0,0) | 0.00 | 0.75 | 0.00 | 0.75  |
 | ...   | ...  | ...  | ...  | ...   |
 
-#### How Q-learning Works? 
+
+#### **How Q-learning Works? **
 
 Below are the steps of the Q-learning algorithm:
 
@@ -187,54 +207,55 @@ For me, this formula was quite confusing. So, I’ve have broken it down below i
 
 The agent repeats these steps until it reaches the goal and completes the task.
 
-#### Formula Breakdown
+#### **Formula Breakdown**
 
 $$
 Q_{\text{new}}(s, a) = Q_{\text{old}}(s, a) + \alpha \cdot \left( \text{reward} + \gamma \cdot  \max Q(s', a') - Q_{\text{old}}(s, a) \right)
 $$
 
-
 The following formula is used to update the Q-values in the Q-table:
 
-$Q_{\text{new}}(s, a) = Q_{\text{old}}(s, a) + \alpha \cdot \left( \text{reward} + \gamma \cdot  \max Q(s', a') - Q_{\text{old}}(s, a) \right)$
-
-------
+$$
+Q_{\text{new}}(s, a) = Q_{\text{old}}(s, a) + \alpha \cdot \left( \text{reward} + \gamma \cdot  \max Q(s', a') - Q_{\text{old}}(s, a) \right)
+$$
 
 **Formula Explained:**
 
-
-- **$Q_{\text{new}}(s, a)$**
+- **$$Q_{\text{new}}(s, a)$$**
     
-The new Q-value for the state action pair $(s,a)$.
+The new Q-value for the state action pair $$(s,a)$$.
   
-- **$Q_{\text{old}}(s, a)$**
+- **$$Q_{\text{old}}(s, a)$$**
     
-The current (old) Q-value for the state action pair $(s,a)$.
+The current (old) Q-value for the state action pair $$(s,a)$$.
 
-- **$\alpha$**
+- **$$\alpha$$**
 
-The learning rate $\alpha$, controls how much controls how much the agent updates its Q-value. A higher $\alpha$ means the agent will give more weight to the most recent experience, a lower value means the agent will rely more on its past experiences. Values lie between 0 and 1:
+The learning rate $$\alpha$$, controls how much controls how much the agent updates its Q-value. A higher $$\alpha$$ means the agent will give more weight to the most recent experience, a lower value means the agent will rely more on its past experiences. Values lie between 0 and 1:
 
-    - If $\alpha$ is close to 1, the agent quickly adjusts its Q-values but this could cause instability in learning if set too high.
-    - If $\alpha$ is close to 0, the agent updates its Q-values more slowly leading to more stable learning.
+    - If $$\alpha$$ is close to 1, the agent quickly adjusts its Q-values but this could cause instability in learning if set too high.
+  
+    - If $$\alpha$$ is close to 0, the agent updates its Q-values more slowly leading to more stable learning.
 
-- **$\text{reward}$**
+- **$$\text{reward}$$**
 
 Reward the agene receives for taking action a, referred to as immediate reward.
 
-- **$\gamma$**
+- **$$\gamma$$**
 
-The discount factor $\gamma$ controls how much future rewards influence the agent's action selection. Values lie between 0 and 1:
+The discount factor $$\gamma$$ controls how much future rewards influence the agent's action selection. Values lie between 0 and 1:
 
-    - If $\gamma$ is close to 1, the agent places more importance on long-term rewards as much as immediate rewards.
-    - If $\gamma$ is close to 0, the agent places less importance on long-term rewards and focuses more on immediate rewards.
+    - If $$\gamma$$ is close to 1, the agent places more importance on long-term rewards as much as immediate rewards.
+  
+    - If $$\gamma$$ is close to 0, the agent places less importance on long-term rewards and focuses more on immediate rewards.
 
-- **$\max Q(s', a')$**
+- **$$\max Q(s', a')$$**
     
 The maximum Q-value out of all possible actions available from the next state.
+
 In Q-learning the assumption is made that the agent will choose the best possible action in the future in order to maximise its reward.
     
-- **Error Term: $\alpha \cdot \left( \text{reward} + \gamma \cdot  \max_{a'} Q(s', a') - Q_{\text{old}}(s, a) \right)$**
+- **Error Term: $$\alpha \cdot \left( \text{reward} + \gamma \cdot  \max_{a'} Q(s', a') - Q_{\text{old}}(s, a) \right)$$**
 
 We can think of this like an error term, it shows the difference between the new value of Q-value and old Q-value and we use this to update the old Q-value:
     
@@ -242,7 +263,7 @@ We can think of this like an error term, it shows the difference between the new
   
     - if the values is negative then this means the current q-value of state s and action a is too high.
       
-#### Implementing Q-learning
+#### **Implementing Q-learning**
 
 Before diving into the implementation of Q-learning, I thought it would be best to first explain the reasoning behind the parameter values I’ve selected:
 
@@ -271,11 +292,11 @@ Below is a code snippet showing how I implemented Q-learning for this project. T
 </div>
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/trick-or-retreat/phase_2/init_q_table_1.png" alt="init_q_table 2" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/trick-or-retreat/phase_2/init_q_table_2.png" alt="init_q_table 2" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/trick-or-retreat/phase_2/init_q_table_1.png" alt="init_q_table 3" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/trick-or-retreat/phase_2/init_q_table_3.png" alt="init_q_table 3" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 **Q-learning Algorithm:**
@@ -300,39 +321,27 @@ Despite these improvements, there is still significant noise throughout training
 
 To understand and ensure the agent has correctly identified rewards and penalties, let’s take a look at the Q-table after training. To do this, I will take a look at the Q-values for coordinates surrounding all rewards/penalties to see what action the most likely is to take. 
 
-To make things easier to visualise, below is an image of the environment labelled with grid coordinates. I have also put the states surrounding rewards/penalties in bold in the Q-table to make them stand out. 
+To make things easier to visualise, below is an image of the environment labelled with grid coordinates. I have also only included states surronding rewards/penalties, for the full Q-table please visit the notebooks on my GitHub.
 
 **Q-Table**
 
-| x\y  | Right       | Down        | Left        | Up          |
+| x,y  | Right       | Down        | Left        | Up          |
 |------|-------------|-------------|-------------|-------------|
-| 0, 0 | 868.948505  | 801.713118  | 788.139236  | 775.397908  |
-| 0, 1 | 878.050514  | 817.312714  | 802.145500  | 779.661864  |
-| 0, 2 | 888.168911  | 815.579343  | 828.079372  | 809.865236  |
-| 0, 3 | 881.940608  | 799.157026  | 804.573570  | 810.873803  |
-| 0, 4 | 872.664834  | 795.715265  | 802.332308  | 808.016983  |
-| 1, 0 | 879.457904  | 837.735528  | 788.837746  | 837.958433  |
-| 1, 1 | 850.329095  | 888.646618  | 834.261407  | 833.916278  |
-| **1, 2** | **898.339397**  | 853.946836  | 851.868359  | 844.924496  |
-| 1, 3 | 892.314672  | 847.313511  | 845.672361  | 863.640215  |
-| **1, 4** | 826.755382  | 833.318023  | 816.587151  | **882.851914** |
-| **2, 0** | **889.013584**  | 852.770221  | 836.772617  | 844.737672  |
-| **2, 1** | 829.508097  | **896.996317**  | 824.613841  | 826.097483  |
-| 2, 2 | 892.545410  | 866.629807  | 865.555597  | 861.344995  |
-| **2, 3** | **901.587616**  | 853.005231  | 856.767189  | 871.075641  |
-| 2, 4 | 909.436879  | 830.381987  | 822.648928  | 846.149747  |
-| 3, 0 | 850.587517  | 883.310686  | 851.899892  | 847.641661  |
-| **3, 1** | 851.459695  | **892.505529**  | 868.825547  | 860.689521  |
-| **3, 2** | 862.197133  | **901.773882** | 879.004504  | 869.598686  |
-| 3, 3 | 897.150130  | 911.086275  | 881.634694  | 883.229472  |
-| **3, 4** | **920.452735**  | 901.876677  | 866.197932  | 891.033779  |
-| **4, 0** | 814.447182  | 819.636694  | **887.955279** | 820.563501  |
-| **4, 1** | 814.995657  | 820.727337  | **882.425660**  | 820.630816  |
-| 4, 2 | 825.698628  | 908.930945  | 845.201922  | 830.588101  |
-| **4, 3** | 870.760765  | **919.599819**  | 861.267063  | 839.077761  |
-| 4, 4 | 857.407713  | 837.721308  | 909.630371  | 809.653754  |
+| 1, 2 | **898.339397**  | 853.946836  | 851.868359  | 844.924496  |
+| 1, 4 | 826.755382  | 833.318023  | 816.587151  | **882.851914** |
+| 2, 0 | **889.013584**  | 852.770221  | 836.772617  | 844.737672  |
+| 2, 1 | 829.508097  | **896.996317**  | 824.613841  | 826.097483  |
+| 2, 3 | **901.587616**  | 853.005231  | 856.767189  | 871.075641  |
+| 3, 1 | 851.459695  | **892.505529**  | 868.825547  | 860.689521  |
+| 3, 2 | 862.197133  | **901.773882** | 879.004504  | 869.598686  |
+| 3, 4 | **920.452735**  | 901.876677  | 866.197932  | 891.033779  |
+| 4, 0 | 814.447182  | 819.636694  | **887.955279** | 820.563501  |
+| 4, 1 | 814.995657  | 820.727337  | **882.425660**  | 820.630816  |
+| 4, 3 | 870.760765  | **919.599819**  | 861.267063  | 839.077761  |
 
-**Env:**
+
+
+**Environment:**
 
 <div style="text-align: center;">
   <img src="{{ site.baseurl }}/assets/trick-or-retreat/phase_2/env_labelled.png" alt="env_labelled" style="max-width: 100%; height: auto; margin: 20px 0;">
@@ -342,8 +351,6 @@ To make things easier to visualise, below is an image of the environment labelle
 
 The exit door is the largest reward in the environment and the agent should have learnt to prioritise this location.
 
-Surrounding Cells:
-
 -	(4,3): The highest Q-value is for moving Down. This makes sense since moving down brings the agent closer to the exit.
   
 -	(3,4): The highest Q-value is for the Right action, reflecting the path towards the exit at (4,4).
@@ -351,8 +358,6 @@ Surrounding Cells:
 **(4, 2) Ghost 1 [-25]**
 
 The agent must learn to avoid ghosts as an encounter with a ghost results in a penalty of -25.
-
-Surrounding Cells:
 
 -	(4,1): The highest Q-valueis for moving Left, indicating that the agent has learned to avoid the ghost at (4,2) by stepping left.
   
@@ -362,8 +367,6 @@ Surrounding Cells:
 
 Similarly, the agent needs to avoid the second ghost.
 
-Surrounding Cells:
-
 -	(1,4): The highest Q-value is for moving Up, showing that the agent knows to avoid the ghost at (2,4) by moving upward.
   
 -	(2,3): The highest Q-value is for moving Left, towards the exit door, demonstrating the agent's understanding of prioritising rewards over penalties.
@@ -371,8 +374,6 @@ Surrounding Cells:
 **(2, 2) Candy 1 [+15]**
 
 The agent learns to collect candies, which provide a smaller but valuable reward.
-
-Surrounding Cells:
 
 -	(2,1): The highest Q-value is for moving Down, which is a path that leads towards the candy at (2,2).
   
@@ -385,8 +386,6 @@ Surrounding Cells:
 **(3, 0) Candy 2 [+15]**
 
 Another candy that the agent must learn to collect while also keeping an eye on the long-term goal.
-
-Surrounding Cells:
 
 -	(2,0): The highest Q-value is for Right. The agent has successfully learned to collect the candy from this state. The second-highest Q-value is Down towards the door.
   
