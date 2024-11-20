@@ -398,7 +398,7 @@ Surrounding Cells:
 
 <div style="text-align: center;">
     <video width="640" height="480" controls>
-        <source src="{{ site.baseurl }}/assets/trick-or-retreat/phase_1/Q_learning_test.mp4" type="video/mp4">
+        <source src="{{ site.baseurl }}/assets/trick-or-retreat/phase_2/Q_learning_test.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
 </div>
