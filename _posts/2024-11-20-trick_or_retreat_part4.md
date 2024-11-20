@@ -313,9 +313,15 @@ Following code shows how to set up and initialise Q-Table to zeros:
   <img src="{{ site.baseurl }}/assets/trick-or-retreat/phase_2/q_learning algo.png" alt="q learning algorithm" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
-#### Evaluation
+<br>
 
-**Rewards in Training**
+----
+
+<br>
+
+## Evaluation
+
+#### **Rewards in Training**
 
 <div style="text-align: center;">
   <img src="{{ site.baseurl }}/assets/trick-or-retreat/phase_2/reward_graph.png" alt="reward graph" style="max-width: 100%; height: auto; margin: 20px 0;">
@@ -325,7 +331,7 @@ Overall, the trend shows an improvement in the agent’s performance across epis
 
 Despite these improvements, there is still significant noise throughout training. While the rewards stabilise over time, they never fully smooth out. This is likely because epsilon is never fully decayed, meaning the agent continues to take some random actions.
 
-#### Q-Table Post-Training**
+#### **Q-Table Post-Training**
 
 To understand and ensure the agent has correctly identified rewards and penalties, let’s take a look at the Q-table after training. To do this, I will take a look at the Q-values for coordinates surrounding all rewards/penalties to see what action the most likely is to take. 
 
@@ -346,7 +352,6 @@ To make things easier to visualise, below is an image of the environment labelle
 | 4, 0 | 814.447182  | 819.636694  | **887.955279** | 820.563501  |
 | 4, 1 | 814.995657  | 820.727337  | **882.425660**  | 820.630816  |
 | 4, 3 | 870.760765  | **919.599819**  | 861.267063  | 839.077761  |
-
 
 
 **Environment:**
@@ -416,13 +421,19 @@ Another candy that the agent must learn to collect while also keeping an eye on 
     </video>
 </div>
 
-
+<br>
 
 In the video, you can see the agent’s actions and see how the Q-values discussed above influences its decisions!
 
 From observing the agent in the environment post-training, the agent is performing as expected. The main objective is for the agent to reach the exit door and avoid the ghosts. If there are candies on the way, the agent should collect them but the main priority is to reach the exit door. 
 
-#### Possible Improvements
+<br>
+
+----
+
+<br>
+
+## Possible Improvements
 
 Two things I could have done to further improve on this RL:
 
