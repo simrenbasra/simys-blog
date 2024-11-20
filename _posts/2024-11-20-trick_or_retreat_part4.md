@@ -125,6 +125,8 @@ Since the environment is more complex, I thought it best to use Q-learning to tr
 
 Let’s take a closer look at Q-learning to see how it works and how it can be implemented!
 
+<br>
+
 #### **What is Q-learning?**
 
 Q-learning is a type of reinforcement learning where, instead of learning a policy, the agent builds a Q-table. This table stores Q-values which represent the 'goodness' of taking a particular action from a given state, based on the expected rewards. Over time, the agent updates these Q-values through its observations, gradually improving its ability to make decisions.
@@ -160,6 +162,7 @@ The Q-table may look something like this:
 | (0,0) | 0.00 | 0.75 | 0.00 | 0.75  |
 | ...   | ...  | ...  | ...  | ...   |
 
+<br>
 
 #### **How Q-learning Works?**
 
@@ -207,6 +210,8 @@ For me, this formula was quite confusing. So, I’ve have broken it down below i
 
 The agent repeats these steps until it reaches the goal and completes the task.
 
+<br> 
+
 #### **Formula Breakdown**
 
 $$
@@ -221,15 +226,15 @@ $$
 
 **Formula Explained:**
 
-- **$$Q_{\text{new}}(s, a)$$**
+**$$Q_{\text{new}}(s, a)$$**
     
 The new Q-value for the state action pair $$(s,a)$$.
   
-- **$$Q_{\text{old}}(s, a)$$**
+**$$Q_{\text{old}}(s, a)$$**
     
 The current (old) Q-value for the state action pair $$(s,a)$$.
 
-- **$$\alpha$$**
+**$$\alpha$$**
 
 The learning rate $$\alpha$$, controls how much controls how much the agent updates its Q-value. A higher $$\alpha$$ means the agent will give more weight to the most recent experience, a lower value means the agent will rely more on its past experiences. Values lie between 0 and 1:
 
@@ -237,11 +242,11 @@ The learning rate $$\alpha$$, controls how much controls how much the agent upda
   
   - If $$\alpha$$ is close to 0, the agent updates its Q-values more slowly leading to more stable learning.
 
-- **$$\text{reward}$$**
+**$$\text{reward}$$**
 
 Reward the agene receives for taking action a, referred to as immediate reward.
 
-- **$$\gamma$$**
+**$$\gamma$$**
 
 The discount factor $$\gamma$$ controls how much future rewards influence the agent's action selection. Values lie between 0 and 1:
 
@@ -249,13 +254,13 @@ The discount factor $$\gamma$$ controls how much future rewards influence the ag
 
   - If $$\gamma$$ is close to 0, the agent places less importance on long-term rewards and focuses more on immediate rewards.
 
-- **$$\max Q(s', a')$$**
+**$$\max Q(s', a')$$**
     
 The maximum Q-value out of all possible actions available from the next state.
 
 In Q-learning the assumption is made that the agent will choose the best possible action in the future in order to maximise its reward.
     
-- **Error Term: $$\alpha \cdot \left( \text{reward} + \gamma \cdot  \max_{a'} Q(s', a') - Q_{\text{old}}(s, a) \right)$$**
+**Error Term: $$\alpha \cdot \left( \text{reward} + \gamma \cdot  \max_{a'} Q(s', a') - Q_{\text{old}}(s, a) \right)$$**
 
 We can think of this like an error term, it shows the difference between the new value of Q-value and old Q-value and we use this to update the old Q-value:
     
@@ -307,7 +312,9 @@ Following code shows how to set up and initialise Q-Table to zeros:
   <img src="{{ site.baseurl }}/assets/trick-or-retreat/phase_2/init_q_table_3.png" alt="init_q_table 3" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
-**Q-learning Algorithm:**
+<br>
+
+#### **Q-learning Algorithm:**
 
 <div style="text-align: center;">
   <img src="{{ site.baseurl }}/assets/trick-or-retreat/phase_2/q_learning algo.png" alt="q learning algorithm" style="max-width: 100%; height: auto; margin: 20px 0;">
@@ -330,6 +337,8 @@ Following code shows how to set up and initialise Q-Table to zeros:
 Overall, the trend shows an improvement in the agent’s performance across episodes as training progresses. This is likely due to the shift from exploration to exploitation as epsilon decays. Early in training, the agent explores randomly, leading to high variability in rewards and large penalties. As training progresses, the agent starts exploiting its learned Q-values, resulting in higher rewards. Towards the end of training, the agent’s performance starts to plateau as fewer updates are made to the Q-table, and it begins to converge.
 
 Despite these improvements, there is still significant noise throughout training. While the rewards stabilise over time, they never fully smooth out. This is likely because epsilon is never fully decayed, meaning the agent continues to take some random actions.
+
+<br>
 
 #### **Q-Table Post-Training**
 
