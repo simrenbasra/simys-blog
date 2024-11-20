@@ -214,17 +214,11 @@ The agent repeats these steps until it reaches the goal and completes the task.
 
 #### **Formula Breakdown**
 
-$$
-Q_{\text{new}}(s, a) = Q_{\text{old}}(s, a) + \alpha \cdot \left( \text{reward} + \gamma \cdot  \max Q(s', a') - Q_{\text{old}}(s, a) \right)
-$$
-
 The following formula is used to update the Q-values in the Q-table:
 
 $$
 Q_{\text{new}}(s, a) = Q_{\text{old}}(s, a) + \alpha \cdot \left( \text{reward} + \gamma \cdot  \max Q(s', a') - Q_{\text{old}}(s, a) \right)
 $$
-
-**Formula Explained:**
 
 **$$Q_{\text{new}}(s, a)$$**
     
