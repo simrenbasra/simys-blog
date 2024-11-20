@@ -268,7 +268,7 @@ We can think of this like an error term, it shows the difference between the new
 
 <br>
 
-## **Implementing Q-learning**
+## Implementing Q-learning
 
 Before diving into the implementation of Q-learning, I thought it would be best to first explain the reasoning behind the parameter values I’ve selected:
 
@@ -447,6 +447,12 @@ Including the agent's distance to candies and ghosts in the training could allow
 **Increasing Reward for Collecting More Candies:**
 
 Increasing the reward for each additional candy the agent collects could incentivise the agent to collect more candies. While this was outside of the scope of the original project, it could be something worth adding as I progress to the final environment (Phase 3). 
+
+<br>
+
+----
+
+<br>
 
 ## Summary
 
