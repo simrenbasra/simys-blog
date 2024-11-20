@@ -67,7 +67,7 @@ To add the ghosts and candies into the environment, I made the following changes
   
 -	For Phase 2, all ghosts and candies are static and the agent is the only moving part in the environment.
 
-#### **2). `step`:  Updating Environment After Action is Take**
+#### **2). `step`:  Updating Environment After Action is Taken**
 
 <div style="text-align: center;">
   <img src="{{ site.baseurl }}/assets/trick-or-retreat/phase_2/step.png" alt="step - phase 2" style="max-width: 100%; height: auto; margin: 20px 0;">
