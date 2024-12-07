@@ -122,7 +122,7 @@ First let’s take a look at the main concepts:
   
 -	Each interaction with the environment is stored as a tuple:
   
-  _(current state, action taken, reward, next state)_
+    _(current state, action taken, reward, next state)_
   
 -	The Replay Buffer has a fixed size (parameter to be set by the user), training only begins once enough experiences are stored.
 
@@ -150,7 +150,7 @@ First let’s take a look at the main concepts:
 
 -	The loss between the Q-values predicted by the Policy Network and the target Q-values is calculated:
 
- 		$$ \text{Loss} = (Q_{\text{policy}}(s, a) - Q_{\text{target}}(s, a))^2 $$
+ 	$$ \text{Loss} = (Q_{\text{policy}}(s, a) - Q_{\text{target}}(s, a))^2 $$
 
 -	This loss is then backpropagated through the Policy Network to adjust the weights.
 
@@ -166,7 +166,7 @@ First let’s take a look at the main concepts:
 
 <br>
 
-#### Diagram 
+#### **Diagram **
 
 This is an overview of how I understand DQNs work:
 
@@ -232,7 +232,7 @@ To implement Deep Q-Networks for my environment, I decided to use the Stable Bas
 
 If you’re interested in seeing my attempt to build the DQN from scratch, I've included it in the Appendix of the final environment [notebook](https://github.com/simrenbasra/Trick_Or_ReTreat/tree/main/notebooks/02_custom_env_setup).
 
-#### **Step 1: Create a vectorised environment **
+#### **Step 1: Create a vectorised environment**
 
 <div style="text-align: center;">
   <img src="{{ site.baseurl }}/assets/trick-or-retreat/phase_3/impl_step_1.png" alt="impl 1" style="max-width: 100%; height: auto; margin: 20px 0;">
