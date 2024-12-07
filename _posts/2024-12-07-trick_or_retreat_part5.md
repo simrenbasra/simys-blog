@@ -168,7 +168,7 @@ $$
 
 <br>
 
-#### **Diagram **
+#### **Diagram**
 
 This is an overview of how I understand DQNs work:
 
