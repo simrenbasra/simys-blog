@@ -152,6 +152,7 @@ First let’s take a look at the main concepts:
 
  	$$ \text{Loss} = (Q_{\text{policy}}(s, a) - Q_{\text{target}}(s, a))^2 $$
 
+
 -	This loss is then backpropagated through the Policy Network to adjust the weights.
 
 **Note:** The target network’s weights stay fixed during backpropagation and are periodically updated from the policy network. This ensures the policy network has a stable point of reference during training.
