@@ -150,8 +150,9 @@ First let’s take a look at the main concepts:
 
 -	The loss between the Q-values predicted by the Policy Network and the target Q-values is calculated:
 
- 	$$ \text{Loss} = (Q_{\text{policy}}(s, a) - Q_{\text{target}}(s, a))^2 $$
-
+$$ 
+\text{Loss} = (Q_{\text{policy}}(s, a) - Q_{\text{target}}(s, a))^2 
+$$
 
 -	This loss is then backpropagated through the Policy Network to adjust the weights.
 
