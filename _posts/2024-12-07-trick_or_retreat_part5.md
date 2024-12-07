@@ -1,5 +1,5 @@
 ---
-title: "Trick Or ReTreat: Building a Custom Environment - Phase 3 🍬"
+title: "Trick Or ReTreat: Building a Custom Environment - Phase 3 🚪"
 date: 2024-12-07
 ---
 
