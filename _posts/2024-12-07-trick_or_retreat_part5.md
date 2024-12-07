@@ -24,7 +24,7 @@ Like in the previous post, I will only be including code snippets of methods I h
 #### **1)	`init`: Initialises Environment**
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/trick-or-retreat/phase_3/init_1.png" alt="init method updates" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/trick-or-retreat/phase_3/init.png" alt="init method updates" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 -	Removed the static positions of ghosts and set all ghosts to be out of bounds.
@@ -34,7 +34,7 @@ Like in the previous post, I will only be including code snippets of methods I h
 #### **2)	`reset`: Resets the Environment to an Initial State**
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/trick-or-retreat/phase_3/reset_1.png" alt="reset method updates" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/trick-or-retreat/phase_3/reset.png" alt="reset method updates" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 -	In the reset, I am already setting the agent to a random position on the grid, I use the same method to randomise the initial positions of each ghost.
@@ -44,7 +44,7 @@ Like in the previous post, I will only be including code snippets of methods I h
 #### **3)	`step`: Agent takes action**
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/trick-or-retreat/phase_3/step_1.png" alt="step method updates" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/trick-or-retreat/phase_3/step.png" alt="step method updates" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 -	I fine-tuned the reward structure for better performance using a trial-and-error approach.
@@ -235,7 +235,7 @@ If you’re interested in seeing my attempt to build the DQN from scratch, I've 
 #### **Step 1: Create a vectorised environment**
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/trick-or-retreat/phase_3/impl_step_1.png" alt="impl 1" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/trick-or-retreat/phase_3/impl_1.png" alt="impl 1" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 The first step in implementing DQN was to create my environment and then vectorise it using the `DummyVecEnv` wrapper from Stable Baselines 3. In this phase, I decided to use 5 instances of my environment, allowing the agent to be trained on all 5 environments at the same time.
@@ -247,7 +247,7 @@ The step penalty requires careful balancing, so I decided to set it to `–0.6` 
 -	_Not too lenient:_ To discourage wandering and ensure the agent focuses on efficient paths toward the target.
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/trick-or-retreat/phase_3/impl_step_2.png" alt="impl 2" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/trick-or-retreat/phase_3/impl_2.png" alt="impl 2" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 I then wrapped my vectorised environment using `VecMonitor` instead of `Monitor` since I have multiple environments. This wrapper allows access to the training logs of my agent, which I will share and analyse later in this post.
@@ -255,7 +255,7 @@ I then wrapped my vectorised environment using `VecMonitor` instead of `Monitor`
 #### **Step 2: Define the DQN model**
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/trick-or-retreat/phase_3/impl_step_3.png" alt="impl 3" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/trick-or-retreat/phase_3/impl_3.png" alt="impl 3" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 I called `DQN` from Stable Baselines library and set my paramters:
@@ -297,7 +297,7 @@ To see the DQN network architecture, visit the final_environment [notebook](http
 #### **Step 3: Train the agent and save the model**
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/trick-or-retreat/phase_3/impl_step_4.png" alt="impl 4" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/trick-or-retreat/phase_3/impl_4.png" alt="impl 4" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 Use `.learn` to train the agent and save the model for easy access if needed in the future 
