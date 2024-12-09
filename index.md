@@ -21,13 +21,14 @@ After finishing a data science bootcamp, I’m excited to dive into the world of
 
 ## Upcoming Posts
   
-### **Trick or ReTreat 🍬 🏃 👻** 
+### **12 Days of Data 🎄🎅** 
 
-In my next project, I’ll be using Reinforcement Learning to create a model where a trick-or-treater must escape a haunted mansion!
+For my next project, I am diving into the world of LLMs (Large Language Models) to create short, tailored Christmas stories.
 
-The trick-or-treater will learn strategies through trial and error, aiming to find the optimal path to escape while avoiding ghosts and gathering as many treats as possible.
+Given inputs such as characters and locations, the LLM will create unique holiday stories.
 
-Leading up to Halloween, I'll be sharing updates on the model’s progress!
+I’m challenging myself to complete this project in just 12 days! Follow along as I explore prompt engineering and share daily updates.
+
 
 <br>  
 
