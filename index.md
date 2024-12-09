@@ -25,7 +25,7 @@ After finishing a data science bootcamp, I’m excited to dive into the world of
 
 For my next project, I am diving into the world of LLMs (Large Language Models) to create short, tailored Christmas stories.
 
-Given inputs such as characters and locations, the LLM will create unique holiday stories.
+Given inputs such as characters and locations, the LLM will create personalised stories.
 
 I’m challenging myself to complete this project in just 12 days! Follow along as I explore prompt engineering and share daily updates.
 
