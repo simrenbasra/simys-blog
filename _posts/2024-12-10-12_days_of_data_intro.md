@@ -9,7 +9,7 @@ With that in mind, I’ve decided to cap my next project to 12 days!
 
 **Introducing the 12 Days of Data!**
 
-This Thursday _(12/12)_, I will start work on this project with the goal of having a working prototype ready by Christmas Eve! I’m excited to see how well I can progress over the next 12 days.
+This Thursday _(12/12)_, I will start work on this project with the goal of having a working solution ready by Christmas Eve! I’m excited to see how well I can progress over the next 12 days.
 
 In this post, I’ll introduce the project objective and outline how I plan to document the process and share updates!
 
