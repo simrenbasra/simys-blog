@@ -3,7 +3,7 @@ title: "12 Days of Data: An Introduction 🌟"
 date: 2024-12-10
 ---
 
-One challenge I often face when working on my projects is that I tend to spend more time completing them then planned. I like to thoroughly explore solutions, starting with simple approaches and gradually increase the complexity. This method helps me gain a deeper understanding of the data and problem at hand. While this is ideal for personal projects, it’s not always a possibility in the real-world. Often, you’re required to deliver results within a tight timeline.
+One challenge I often face when working on my projects is that I tend to spend more time completing them then planned. I like to thoroughly explore solutions, starting with simple approaches and gradually increasing the complexity. This method helps me gain a deeper understanding of the data and problem at hand. While this is ideal for personal projects, it’s not always a possibility in the real-world. Often, you’re required to deliver results within a tight timeline.
 
 With that in mind, I’ve decided to cap my next project to 12 days!
 
