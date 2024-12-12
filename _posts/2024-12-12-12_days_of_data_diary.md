@@ -17,11 +17,24 @@ In each entry, I’ll highlight my main goals, what I’ve accomplished, any cha
 
 #### **🎯 Main Objective**
 
+- To successfully connect to the Open AI API and start to send requests.
+
 #### **✅ Accomplished Tasks**
+
+- Set up Open AI account and generated my API key.
+- Set up a secure way to pass the API key using environment variables (as recommeded by OpenAI).
+- Tested the connection to the API and model.
+- Gained experience in using the Chat Completion objects.
 
 #### **🛑 Blockers/Challenges**
 
-#### **👣 Next Steps:** 
+- No blockers as of yet.
+
+#### **👣 Next Steps** 
+
+- Design and build Streamlit to gather user inputs.
+- Implement prompt engineering based on inputs from Streamlit.
+- Display the model (gpt-4o) output in Streamlit.
 
 <br>
 
@@ -37,7 +50,7 @@ In each entry, I’ll highlight my main goals, what I’ve accomplished, any cha
 
 #### **🛑 Blockers/Challenges**
 
-#### **👣 Next Steps:** 
+#### **👣 Next Steps** 
 
 <br>
 
@@ -69,7 +82,7 @@ In each entry, I’ll highlight my main goals, what I’ve accomplished, any cha
 
 #### **🛑 Blockers/Challenges**
 
-#### **👣 Next Steps:** 
+#### **👣 Next Steps** 
 
 <br>
 
@@ -85,4 +98,4 @@ In each entry, I’ll highlight my main goals, what I’ve accomplished, any cha
 
 #### **🛑 Blockers/Challenges**
 
-#### **👣 Next Steps:** 
+#### **👣 Next Steps** 
