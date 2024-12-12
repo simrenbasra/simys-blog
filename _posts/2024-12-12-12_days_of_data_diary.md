@@ -1,5 +1,5 @@
 ---
-title: "12 Days of Data: Sharing Updates 📓"
+title: "12 Days of Data: Project Updates 📓"
 date: 2024-12-12
 ---
 
