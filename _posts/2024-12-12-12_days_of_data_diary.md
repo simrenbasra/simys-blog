@@ -13,7 +13,7 @@ In each entry, I’ll highlight my main goals, what I’ve accomplished, any cha
 
 <br>
 
-## Day 1 (12/12)
+## Day 1: 12/12
 
 #### **🎯 Main Objective**
 
@@ -42,7 +42,7 @@ In each entry, I’ll highlight my main goals, what I’ve accomplished, any cha
 
 <br>
 
-## Day 3 (15/12)
+## Day 3: 15/12
 
 #### **🎯 Main Objective**
 
@@ -58,7 +58,7 @@ In each entry, I’ll highlight my main goals, what I’ve accomplished, any cha
 
 <br>
 
-## Day 6 (18/12)
+## Day 6: 18/12
 
 #### **🎯 Main Objective**
 
@@ -74,7 +74,7 @@ In each entry, I’ll highlight my main goals, what I’ve accomplished, any cha
 
 <br>
 
-## Day 9 (21/12)
+## Day 9: 21/12
 
 #### **🎯 Main Objective**
 
@@ -90,7 +90,7 @@ In each entry, I’ll highlight my main goals, what I’ve accomplished, any cha
 
 <br>
 
-## Day 12 (24/12)
+## Day 12: 24/12
 
 #### **🎯 Main Objective**
 
