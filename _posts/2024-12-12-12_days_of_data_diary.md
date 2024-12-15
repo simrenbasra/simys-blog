@@ -46,11 +46,24 @@ In each entry, I’ll highlight my main goals, what I’ve accomplished, any cha
 
 #### **🎯 Main Objective**
 
+- To set up Streamlit app and begin prompt engineering with user inputs.
+
 #### **✅ Accomplished Tasks**
 
+- Developed a basic Streamlit app to take user inputs such as character type and genre.
+- Created two functions: one to build prompts from user inputs and another to get responses from GPT passing generated prompts as input.
+- Added a button in Streamlit to display output of the GPT model.
+- Added a button in Streamlit for users to download the stories.
+- Experimented with different prompts and language to see the effects on the output.
+   
 #### **🛑 Blockers/Challenges**
 
+- No blockers. However for this project, I am ahead of schedule and may finish before Christmas Eve (12 days). 
+  
 #### **👣 Next Steps** 
+
+- Refine prompts futher and explore tuning of the GPT parameters to increase the quality of the model's outputs.
+- Improve on the design and user interface of the Streamlit app.
 
 <br>
 
