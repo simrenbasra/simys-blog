@@ -75,12 +75,23 @@ In each entry, I’ll highlight my main goals, what I’ve accomplished, any cha
 
 #### **🎯 Main Objective**
 
+- To build on the design of my web app and further refine the output of the GPT model by tuning parameters and further refining prompts.
+
 #### **✅ Accomplished Tasks**
+
+- Added in some display features to make the web app more appealing to users while they wait for their story to be generated.
+- Experimented with the different parameters of the GPT model to refine the output - with a close focus on temperature.
+- Further refined the prompts.
 
 #### **🛑 Blockers/Challenges**
 
+- No blockers but I will most likely finish the project by the end of the week.
+
 #### **👣 Next Steps:** 
 
+- The main focus for me now is to improve the web app and add in some formatting.
+- Clean up the project repository as wrap up the project.
+  
 <br>
 
 ----
