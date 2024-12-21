@@ -102,11 +102,23 @@ In each entry, I’ll highlight my main goals, what I’ve accomplished, any cha
 
 #### **🎯 Main Objective**
 
+To wrap up any loose ends of the project and improve Streamlit display.
+
 #### **✅ Accomplished Tasks**
+
+- Added extra inputs for the user to enter to further personalise stories. 
+- Added in a button where inputs are randomly selected, for cases where users does not want to choose inputs.
+- Personalised Streamlit display.
+- Refactored code and added in comments since the repository will be made public soon.
 
 #### **🛑 Blockers/Challenges**
 
+- No blockers.
+
 #### **👣 Next Steps** 
+
+- To record video of Streamlit to show how the web app works.
+- Repository to be made public on Christmas Eve.
 
 <br>
 
