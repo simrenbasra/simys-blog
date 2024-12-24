@@ -139,6 +139,6 @@ Deploy the Streamlit app for public use without requiring users to download the 
 #### **🛑 Blockers/Challenges**
 - Despite thorough debugging efforts, deployment using Streamlit Cloud was unsuccessful.
 
-#### **👣 Next Steps** 
+#### **💡 Reflection** 
 - Going forward, I think it best to explore other ways to create and deploy apps outside of Streamlit. This will likely become my next project for the new year, as I’ve faced deployment challenges with Streamlit apps in previous projects as well.
 - To write a blog post summarising key concepts of prompt engineering and sharing implementation steps of this project.
