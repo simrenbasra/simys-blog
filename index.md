@@ -21,14 +21,9 @@ After finishing a data science bootcamp, I’m excited to dive into the world of
 
 ## Upcoming Posts
   
-### **12 Days of Data 🎄🎅** 
+### **Email Genie 🧞‍♂️**
 
-For my next project, I am diving into the world of LLMs (Large Language Models) to create short, tailored Christmas stories.
-
-Given inputs such as characters and locations, the LLM will create personalised stories.
-
-I’m challenging myself to complete this project in just 12 days! Follow along as I explore prompt engineering and share daily updates.
-
+This is a classification project where I explore the Enron dataset and experiment with clustering and classification models to classify emails based on their content.
 
 <br>  
 
