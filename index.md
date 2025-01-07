@@ -23,7 +23,7 @@ After finishing a data science bootcamp, I’m excited to dive into the world of
   
 ### **Email Genie 🧞‍♀️**
 
-This is a classification project where I explore the Enron dataset and experiment with clustering and classification models to classify emails based on their content. This project will also include a web app where users can enter a dummy email to test the model’s classification abilities in real-time.
+This is a classification project where I explore the Enron dataset and experiment with clustering and classification models to classify emails based on their content. This project will also include a web app where users can enter a dummy email to test the model in real-time.
 
 <br>  
 
