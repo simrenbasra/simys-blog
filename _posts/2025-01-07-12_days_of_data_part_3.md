@@ -5,7 +5,7 @@ date: 2025-01-07
 
 So far in my 12 Days of Data blog series, I’ve covered the project scope and shared a diary to track the progress made over the 12 days.
 
-Now the project is complete, I thought it would be nice to explain some key insights regarding prompt engineering from my experience. I’ll explore how even the smallest changes can have a dramatic impact, either improving or hindering the quality of GPT model output.
+Now the project is complete, I thought it would be nice to explain some key insights into prompt engineering. I’ll explore how even the smallest changes can have a dramatic impact, either improving or hindering the quality of GPT model output.
 
 <br>
 
@@ -17,21 +17,21 @@ Now the project is complete, I thought it would be nice to explain some key insi
 
 *So, what exactly is prompt engineering?*
 
-Prompt engineering is the process of crafting the best possible prompts to pass into LLMs (like GPT) to get the best possible output. It’s about finding the most effective way to communicate instructions to LLMs to get quality results.
+Prompt engineering is the process of building the best possible prompts to pass into Large Language Models (LLMs) to get the best possible output. It’s about finding the most effective way to communicate instructions to LLMs to get quality results.
 
 *How to craft prompts?*
 
-Everyone who has used ChatGPT has had practice in creating prompts! Here are a few key points I found most useful when refining my prompts:
+Everyone who has used ChatGPT has had practice in creating prompts! Here are a few key points I found most useful when building prompts:
 
 **1.	Set Goals**
    
-To begin with, I found it most useful to clearly define the key areas I wanted included in the model's output. For example, in this project, there were four key user inputs: Character Type, Genre, Location, and Theme. I needed all the generated stories to include each input the user set. For example, the prompt for a comedy genre would be different from the one for a horror genre. To address this, I used if statements and added specific sentences to my prompts depending on the user's inputs. This allowed me to tailor the generated story to each user.
+To begin with, I found it helpful to define key areas I wanted to be included in the model's output. For example, in this project, there were four key user inputs: Character Type, Genre, Location, and Theme. I needed all the generated stories to include each input the user set. For example, the prompt for a comedy genre would be different from the one for a horror genre. To address this, I used if statements and added specific sentences to my prompts depending on the user's inputs. This allowed me to tailor the generated story to each user.
 
 I had other goals for the output too. Since LLMs can sometimes produce random and illogical output, I wanted to control both the language style and structure to ensure stories were imaginative but also relatable. I also thought about other important elements of a good story, such as a clear plot, character development, and character interaction.
 
 **2.	Be Clear and Concise**
 
-Through experimenting with prompt language, one thing became clear to me: concise, well-structured prompts typically produce the best output. I like to think that each word included in the prompt must have purpose and repetition should be avoided. When I added reworded phrases or redundant details to the prompt, the output became less clear and confusing at times. LLM’s can struggle with ambiguity and if prompts are not concise the output can be off-track. 
+Through experimenting with prompt language, one thing became clear to me: concise, well-structured prompts typically produce the best output. I like to think that each word included in the prompt must have purpose and repetition should be avoided. When I added reworded phrases or redundant details to the prompt, the output became less clear and confusing at times. LLM’s can struggle with ambiguity and if prompts are not concise, the output can be off-track. 
 
 **3.	To Experiment and Refine**
 
@@ -39,7 +39,7 @@ For me, the most important aspect to prompt engineering is to experiment and pla
 
 **4.	Understanding Model Limits**
 
-Prompt engineering is a great way to improve the output of LLMs but it’s important to note that LLMs are models and come with their own limitations. Aside from refining prompts, there are other factors that you affect the quality of LLM outputs. In the following section, I’ll discuss these factors and share how to connect to the GPT API to send and receive requests.
+Prompt engineering is a great way to improve the output of LLMs but it’s important to note that LLMs are models and come with their own limits. Aside from refining prompts, there are other factors that you affect the quality of LLM outputs. In the following section, I’ll discuss these factors and share how to connect to the GPT API to send and receive requests.
 
 <br>
 
@@ -52,13 +52,14 @@ Prompt engineering is a great way to improve the output of LLMs but it’s impor
 Let’s look at some good and bad prompts – for this, let’s assume there are only two user inputs: Character Type and Genre.
 
 **Character Type:** Elf
+
 **Genre:** Horror
 
 #### **Bad Prompt**
 
 _Write a short, Christmas themed horror story about an Elf._
 
-The prompt is not very specific and leaves too much room for interpretation. It simply asks for a ‘Christmas-themed horror story about an Elf,’ which can lead to vague and generic responses from the model. Without setting instructions on tone, structure, or character development, the story may lack depth and creativity. Also, Christmas and horror are typically conflicting genres, extra care needs to be taken to ensure that the story flows logically and blends well. To do this, further detailed in prompt is required to help guide the LLM. 
+The prompt is not very specific and leaves too much room for interpretation. It simply asks for a ‘Christmas-themed horror story about an Elf,’ which can lead to vague and generic responses from the model. Without setting instructions on tone, structure, or character development, the story may lack depth and creativity. Also, Christmas and horror are typically conflicting genres, extra care needs to be taken to ensure that the story flows logically and blends well. To do this, further details in the prompt is required to help guide the LLM. 
 
 #### **Good Prompt**
 
@@ -77,7 +78,7 @@ _Structure the plot with a clear beginning, middle, and end, connecting subplots
 
 _Conclude with a reflection on the lessons learned by the characters._
 
-_Use simple language to make the story accessible to all ages._    
+_Use simple language to make the story suitable for all ages._    
 
 This prompt is a lot better, it passes a lot more details to the LLM. It gives clear instructions on how to build tension, develop characters, and structure the plot. By specifying the introduction of ‘twists’, and balancing ‘creativity with realistic actions’, the prompt ensures that the story is engaging and logical. Also, the prompt states to only use simple language to ensure output includes common words – sometimes LLMs can output words which are not often used in everyday language.
 
@@ -94,6 +95,7 @@ This prompt is a lot better, it passes a lot more details to the LLM. It gives c
 First step is to set up an account with OpenAI and generate an API key. 
 
 Next, create a `.env` file and store the API key to a variable. 
+
 **Note**: Be mindful of formatting and use of spaces. 
 
 <div style="text-align: center;">
@@ -110,7 +112,7 @@ Environment files are used to store environment variables which are often used t
 
 #### **Test API Connection**
 
-First select the model you want to use - I chose to use GPT-4o and so needed to credit my account before using the API.
+First, select the model you want to use - I chose to use GPT-4o and so needed to credit my account before using the API.
 
 I followed the example in the OpenAI documentation to test my API connection, changing the prompts to stick to my Christmas theme! 
 
@@ -150,7 +152,7 @@ Let’s have a closer look at the code:
   
     **Content** is passed as text, it can be a prompt or some instruction to send to the model.
 
--	All messages are passed to the model as a list. I like to think of messages like a conversation between the user and model, with the user providing all information the model needs to generate a relevant reply.
+- All messages are passed to the model as a list. I like to think of messages like a conversation between the user and model, with the user providing all information the model needs to generate a relevant reply.
 
 To access the response generated by the model, use:
 
