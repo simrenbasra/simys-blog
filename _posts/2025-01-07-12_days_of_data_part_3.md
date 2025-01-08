@@ -174,17 +174,21 @@ As mentioned earlier in the post, you can play with the parameters of the GPT mo
   <img src="{{ site.baseurl }}/assets/12_days_of_data/my_API_func.png" alt="Get API response func" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
-1.	`max_tokens`: story_len + 800
+**1. `max_tokens`: story_len + 800**
 
--	Sets a limit on the total number of tokens passed to and from the model. 
--	I fixed this limit to length of story (a user input) + 800 tokens to ensure the generated response is not cut off.
--	I had to be careful when setting this to ensure that the total number of tokens (both prompt and response) would not exceed the `max_tokens` limit, which could result an unfinished story.
+- Sets a limit on the total number of tokens passed to and from the model.
+  
+- I fixed this limit to length of story (a user input) + 800 tokens to ensure the generated response is not cut off.
+  
+- I had to be careful when setting this to ensure that the total number of tokens (both prompt and response) would not exceed the `max_tokens` limit, which could result an unfinished story.
 
-2.	`temperature`: 0.8
+**2. `temperature`: 0.8**
 
--	Controls the randomness and creativity of the model’s responses.
--	Typically ranges from 0 to 1. With a lower value, the model’s responses are more factual and predictable, while a higher value introduces more creativity and randomness.
--	I set the temperature to 0.8 to balance creativity with coherence. This allowed the story to be imaginative while still including realistic events that readers could relate to.
+- Controls the randomness and creativity of the model’s responses.
+  
+- Typically ranges from 0 to 1. With a lower value, the model’s responses are more factual and predictable, while a higher value introduces more creativity and randomness.
+  
+-  I set the temperature to 0.8 to balance creativity with coherence. This allowed the story to be imaginative while still including realistic events that readers could relate to.
 
 <br>
 
