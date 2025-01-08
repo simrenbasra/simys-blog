@@ -198,4 +198,4 @@ As mentioned earlier in the post, you can play with the parameters of the GPT mo
 
 ## Summary
 
-I had a great time completing this project! Not only did I gain experience in prompt engineering, but it also helped me get into the festive spirit! This project wasn’t too complex to do and was the perfect challenge for the 12 days, especially in the run up to Christmas!
+I had a great time completing this project! Not only did I gain experience in prompt engineering, but it also helped me get into the festive spirit! This project wasn’t too complex to do and was the perfect challenge for the 12 days, especially in the run up to Christmas! To see the full project, visit the GitHub repository for [12 days of Data](https://github.com/simrenbasra/12_days_of_data)
