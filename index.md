@@ -25,18 +25,6 @@ After finishing a data science bootcamp, I’m excited to dive into the world of
 
 A classification project where I explore the Enron dataset and experiment with clustering and classification models to group emails based on their content. This project will also include a web app where users can enter a dummy email to test the model in real-time.
 
-_**Phase 1: Data Preprocessing & Initial Insights**_
-
-Clean and preprocess the Enron email dataset, removing noise such as email headers, stopwords, and irrelevant text. Extract meaningful features using TF-IDF and Word2Vec to gain preliminary insights into the content, identifying important tokens and potential groupings.
-
-_**Phase 2: Clustering**_
-
-Apply clustering techniques: K-Means, DBSCAN, Agglomerative Clustering, and Gaussian Mixture Models to group similar emails together. Analyse the clusters and compare performance between the different methods.
-
-_**Phase 3: Classification Modelling**_
-
-Use the clusters or other labeling methods (if clustering produces poor results) to train different classification models. Evaluate model performance using metrics like accuracy, precision, and recall. Use the best performing model in a web app where users can enter dummy emails to test the model's ability to classify emails.
-
 <br>  
 
 -----  
