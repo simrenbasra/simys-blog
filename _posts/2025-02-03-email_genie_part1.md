@@ -3,6 +3,10 @@ title: "Email Genie: Data Loading and Cleaning 🧹"
 date: 2025-02-03
 ---
 
+<div style="text-align: center;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_1/cover_image.jpg" alt="Cover Photo" style="max-width: 100%; height: auto; margin: 20px 0;">
+</div>
+
 Whenever I open my email, the number of emails I receive in a single day can be overwhelming. I started thinking: **_what if there was a way to better classify emails based on their content?_** This could be useful, especially in the corporate world, where managing large volumes of emails is a daily task for many. I decided to use my data science skills to build a classifier tailored to day-to-day business tasks. While I understand the challenges of working with unstructured data like text, I’m excited to give it a go!
 
 For this project, I’m using the Enron dataset. This project will be completed in the following phases:
