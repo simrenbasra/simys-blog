@@ -44,7 +44,7 @@ Initially, I attempted to use regular expressions to extract the data. However, 
 After some research, I came across an article about the `EmailParser` library, which seemed to deal with the complexities of email data. This library is specifically designed for parsing email data, even when it comes from raw email servers. Below is a screenshot with how I used this library to successfully extract the necessary data from the csv file.
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email-genie/phase_1/data_loading.png" alt="Data Loading" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_1/loading_func.png" alt="Data Loading" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 Let’s walk through the function part by part:
@@ -121,7 +121,7 @@ To begin, I first removed any rows with null values. This was important because,
 After addressing the null values, I addressed duplicated rows by dropping them. Duplicates not only add redundancy but could also confuse the model, potentially introducing bias and affecting the quality of insights generated.
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email-genie/phase_1/drop_duplicates.png" alt="Data Cleaning - drop duplicates" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_1/dropping_duplicates_1.png" alt="Data Cleaning - drop duplicates" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 After dropping rows, I reset the index to ensure index is continuous. 
@@ -221,7 +221,7 @@ The second removes file paths, like `FilePath: C:\Users\Name\Documents\file.txt`
 
 This regex matches any URL starting with `http://`, `https://`, or `www.` and removes it from the text.
 
-#### Removing Non-Alphanumeric Symbols, Non-ASCII Characters and Whitespaces
+#### **Removing Non-Alphanumeric Symbols, Non-ASCII Characters and Whitespaces**
 
 <div style="text-align: center;">
   <img src="{{ site.baseurl }}/assets/email-genie/phase_1/alpha_num_regexp.png" alt="Data Cleaning - remv non alpha num" style="max-width: 100%; height: auto; margin: 20px 0;">
