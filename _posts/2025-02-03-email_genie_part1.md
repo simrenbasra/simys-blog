@@ -44,7 +44,7 @@ Initially, I attempted to use regular expressions to extract the data. However, 
 After some research, I came across an article about the `EmailParser` library, which seemed to deal with the complexities of email data. This library is specifically designed for parsing email data, even when it comes from raw email servers. Below is a screenshot with how I used this library to successfully extract the necessary data from the csv file.
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email_genie/phase_1/data_loading.png" alt="Data Loading" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_1/data_loading.png" alt="Data Loading" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 Let’s walk through the function part by part:
@@ -52,7 +52,7 @@ Let’s walk through the function part by part:
 #### **1.	Instantiating the Parser class using `Parser()`**
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email_genie/phase_1/loading_step_1.png" alt="Data Loading Step 1" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_1/loading_step_1.png" alt="Data Loading Step 1" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 Creates an instance of the Parser class from EmailParser library. Once instantiated, it allows access to all the methods available for parsing emails and extracting data. 
@@ -60,7 +60,7 @@ Creates an instance of the Parser class from EmailParser library. Once instantia
 #### **2.	Create Message Object from Data using `.parsestr()`**
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email_genie/phase_1/loading_step_2.png" alt="Data Loading Step 2" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_1/loading_step_2.png" alt="Data Loading Step 2" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 Takes a string as input and converts the string to a Message object. I iterate over each row in the dataset transforming each email to a Message object.
@@ -68,7 +68,7 @@ Takes a string as input and converts the string to a Message object. I iterate o
 #### **3.	Create a Dict to Store Extracted Data**
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email_genie/phase_1/loading_step_3.png" alt="Data Loading Step 3" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_1/loading_step_3.png" alt="Data Loading Step 3" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 All extracted email data is stored in this dictionary. At the end of the function, this dictionary is returned. 
@@ -76,7 +76,7 @@ All extracted email data is stored in this dictionary. At the end of the functio
 #### **4.	Extract Information from Email Headers using `get()`**
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email_genie/phase_1/loading_step_4.png" alt="Data Loading Step 4" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_1/loading_step_4.png" alt="Data Loading Step 4" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 Retrieves values of specific fields from email headers like to, from, and subject. In some cases, certain headers (like To) were missing, so I included logic to check for alternate fields (e.g., X-To).
@@ -84,7 +84,7 @@ Retrieves values of specific fields from email headers like to, from, and subjec
 #### **5.	Extract Body of Emails Using `is_multipart()`**
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email_genie/phase_1/loading_step_5.png" alt="Data Loading Step 5" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_1/loading_step_5.png" alt="Data Loading Step 5" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 Here, I check if an email is multipart, meaning it contains multiple parts such as plain text and attachments. If it is, I loop over each part to concatenate all email parts together. 
@@ -111,23 +111,23 @@ _**Note:**_ Since the dataset is rather large, I have kept my analysis to 50,000
 To begin, I first removed any rows with null values. This was important because, in order to successfully group, cluster, or classify emails, I thought it best to have a complete dataset. Having missing data could affect the performance of the models and lead to inaccurate results. 
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email_genie/phase_1/drop_to.png" alt="Data Cleaning - drop na to" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_1/drop_to.png" alt="Data Cleaning - drop na to" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email_genie/phase_1/drop_subject.png" alt="Data Cleaning - drop na subject" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_1/drop_subject.png" alt="Data Cleaning - drop na subject" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 After addressing the null values, I addressed duplicated rows by dropping them. Duplicates not only add redundancy but could also confuse the model, potentially introducing bias and affecting the quality of insights generated.
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email_genie/phase_1/drop_duplicates.png" alt="Data Cleaning - drop duplicates" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_1/drop_duplicates.png" alt="Data Cleaning - drop duplicates" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 After dropping rows, I reset the index to ensure index is continuous. 
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email_genie/phase_1/reset_index.png" alt="Data Cleaning - reset_index" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_1/reset_index.png" alt="Data Cleaning - reset_index" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 #### **Email Cleaning Steps**
@@ -139,7 +139,7 @@ This process turned out to be more iterative than I initially expected. As I pro
 Below is the full cleaning function I developed:
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email_genie/phase_1/cleaning_func.png" alt="Data Cleaning - func" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_1/cleaning_func.png" alt="Data Cleaning - func" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 Let’s break down the cleaning function to understand which parts of the code addresses what noise.
@@ -149,7 +149,7 @@ Let’s break down the cleaning function to understand which parts of the code a
 At first, I didn’t expect HTML tags to be a significant issue in my data. However, when I vectorised the text on, I was surprised to find a high volume of HTML tags among the top tokens and so had to revisit data cleaning to remove them. To do this, I used BeautifulSoup.
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email_genie/phase_1/remv_html.png" alt="Data Cleaning - remv HTML" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_1/remv_html.png" alt="Data Cleaning - remv HTML" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 After instantiating BeautifulSoup, I used the `.get_text()` method to extract all the visible text from inside the HTML tags, stripping away any HTML elements. 
@@ -161,31 +161,31 @@ I used regular expressions to remove common email headers like "Forwarded By", "
 I used re.sub() to find these headers and replace them with an empty string. Here’s what each regex pattern does:
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email_genie/phase_1/fwrd_org_regexp.png" alt="Data Cleaning - remv headers" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_1/fwrd_org_regexp.png" alt="Data Cleaning - remv headers" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 Matches lines that contain "Forwarded by" or "Original Message" and removes them, along with any extra whitespaces and hypens.
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email_genie/phase_1/from_regexp.png" alt="Data Cleaning - remv headers" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_1/from_regexp.png" alt="Data Cleaning - remv headers" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 Matches the "From:" header and removes the line starting with it.
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email_genie/phase_1/to_regexp.png" alt="Data Cleaning - remv headers" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_1/to_regexp.png" alt="Data Cleaning - remv headers" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 Similar to the "From:" header, it removes the "To:" header.
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email_genie/phase_1/subject_regexp.png" alt="Data Cleaning - remv headers" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_1/subject_regexp.png" alt="Data Cleaning - remv headers" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 Removes the "Subject:" line.
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email_genie/phase_1/sent_regexp.png" alt="Data Cleaning - remv headers" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_1/sent_regexp.png" alt="Data Cleaning - remv headers" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 Removes the "Sent:" line and any other info like date/time the email was sent.
@@ -193,13 +193,13 @@ Removes the "Sent:" line and any other info like date/time the email was sent.
 #### **Removing Email Addresses and Phone Numbers**
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email_genie/phase_1/email_regexp.png" alt="Data Cleaning - remv emails" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_1/email_regexp.png" alt="Data Cleaning - remv emails" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 **Email addresses:** The regex `\S+@\S+` matches any text which has no whitespace and @ symbol. There were many email addresses in varying formats, not all of which ended with typical domains like .com or .co.uk.
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email_genie/phase_1/phone_nrs_regexp.png" alt="Data Cleaning - remv numbers" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_1/phone_nrs_regexp.png" alt="Data Cleaning - remv numbers" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 **Phone numbers:** The regex matches phone numbers in America like (123) 456-7890 or 123-456-7890, and removes them.
@@ -207,7 +207,7 @@ Removes the "Sent:" line and any other info like date/time the email was sent.
 #### **File Paths**
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email_genie/phase_1/file_filepath_regexp.png" alt="Data Cleaning - file and filepath" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_1/file_filepath_regexp.png" alt="Data Cleaning - file and filepath" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 The first `re.sub()` removes file names that include file extensions like `.docx`, `.pdf`, `.zip`. 
@@ -216,7 +216,7 @@ The second removes file paths, like `FilePath: C:\Users\Name\Documents\file.txt`
 #### **Removing URLs**
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email_genie/phase_1/web_addr_regexp.png" alt="Data Cleaning - remv URLS" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_1/web_addr_regexp.png" alt="Data Cleaning - remv URLS" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 This regex matches any URL starting with `http://`, `https://`, or `www.` and removes it from the text.
@@ -224,19 +224,19 @@ This regex matches any URL starting with `http://`, `https://`, or `www.` and re
 #### Removing Non-Alphanumeric Symbols, Non-ASCII Characters and Whitespaces
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email_genie/phase_1/alpha_num_regexp.png" alt="Data Cleaning - remv non alpha num" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_1/alpha_num_regexp.png" alt="Data Cleaning - remv non alpha num" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 Removes any non-alphanumeric characters (anything other than letters, numbers, and spaces).
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email_genie/phase_1/ascii_regexp.png" alt="Data Cleaning - remv non ascii chars" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_1/ascii_regexp.png" alt="Data Cleaning - remv non ascii chars" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 Removes any characters that are not part of the ASCII set.
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email_genie/phase_1/whitespace_regexp.png" alt="Data Cleaning - remv non whitespace" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_1/whitespace_regexp.png" alt="Data Cleaning - remv non whitespace" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 Removes extra spaces, tabs, and newline characters.
