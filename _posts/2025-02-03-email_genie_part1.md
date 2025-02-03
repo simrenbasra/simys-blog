@@ -44,7 +44,7 @@ Initially, I attempted to use regular expressions to extract the data. However, 
 After some research, I came across an article about the `EmailParser` library, which seemed to deal with the complexities of email data. This library is specifically designed for parsing email data, even when it comes from raw email servers. Below is a screenshot with how I used this library to successfully extract the necessary data from the csv file.
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email-genie/phase_1/loading_func.png" alt="Data Loading" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_1/loading_function.png" alt="Data Loading" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 Let’s walk through the function part by part:
