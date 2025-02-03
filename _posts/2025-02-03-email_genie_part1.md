@@ -5,7 +5,7 @@ date: 2025-02-03
 
 Whenever I open my email, the number of emails I receive in a single day can be overwhelming. I started thinking: **_what if there was a way to better classify emails based on their content?_** This could be useful, especially in the corporate world, where managing large volumes of emails is a daily task for many. I decided to use my data science skills to build a classifier tailored to day-to-day business tasks. While I understand the challenges of working with unstructured data like text, I’m excited to give it a go!
 
-For this project, I’m using the Enron dataset. This project will be competed in the following phases:
+For this project, I’m using the Enron dataset. This project will be completed in the following phases:
 
 **Phase 1: Data Preprocessing and Insights**
 
