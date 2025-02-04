@@ -115,17 +115,17 @@ _**Note:**_ Since the dataset is rather large, I have kept my analysis to 50,000
 To begin, I first removed any rows with null values. This was important because, in order to successfully group, cluster, or classify emails, I thought it best to have a complete dataset. Having missing data could affect the performance of the models and lead to inaccurate results. 
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email-genie/phase_1/drop_to.png" alt="Data Cleaning - drop na to" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_1/dropping_null_to.png" alt="Data Cleaning - drop na to" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email-genie/phase_1/drop_subject.png" alt="Data Cleaning - drop na subject" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_1/dropping_null_subject.png" alt="Data Cleaning - drop na subject" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 After addressing the null values, I addressed duplicated rows by dropping them. Duplicates not only add redundancy but could also confuse the model, potentially introducing bias and affecting the quality of insights generated.
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email-genie/phase_1/dropping_duplicates_1.png" alt="Data Cleaning - drop duplicates" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_1/dropping_duplicates.png" alt="Data Cleaning - drop duplicates" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 After dropping rows, I reset the index to ensure index is continuous. 
