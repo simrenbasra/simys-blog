@@ -191,7 +191,7 @@ In my case, my tokeniser:
    
 - Removes stop words and empty strings.
    
-- **Lemamtizes words:** Lemmatization is basically where words are cut to their root. For example, *“emailing”* and *“emails”* becomes *"email”*. This helps to standardise the data and can reduce the feature space by grouping different variations of words to one. The screenshot below shows how to instantiate the lemmatiser.
+- **Lemamtizes words:** Lemmatization is basically where words are cut to their root. For example, *“emailing”* and *“emails”* becomes *"email”*. This helps to standardise the data and can reduce the feature space by grouping different variations of words to one. The screenshot below shows how to instantiate the lemmatizer.
 
 <div style="text-align: center;">
   <img src="{{ site.baseurl }}/assets/email-genie/phase_1/nlp_lemm.png" alt="Lemmatiser" style="max-width: 100%; height: auto; margin: 20px 0;">
@@ -223,7 +223,7 @@ After this, we can then fit the vectoriser to the data and transform it.
   <img src="{{ site.baseurl }}/assets/email-genie/phase_1/tf-idf_2.png" alt="TF-IDF 2" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
-Once the vectorizer is fitted and the transformation is complete, we get the following outputs:
+Once the vectoriser is fitted and the transformation is complete, we get the following outputs:
 
 - `get_feature_names_out()`: This returns a list of all the tokens that the vectoriser has found.
   
@@ -319,7 +319,7 @@ The second topic seems to focus on operations, terms like *"shipping"*, *"handli
   <img src="{{ site.baseurl }}/assets/email-genie/phase_1/topic_3.png" alt="lda results 3" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
-**Terms:** privileged material property affiliate evidence binding binding enforceable material sole distribution disclosure affiliate party enforceable affiliate others authorized party relied
+**Terms:** privileged material property affiliate evidence binding binding enforceable material sole distribution disclosure affiliate party enforceable affiliate others authorised party relied
 
 The third topic points to legal and compliance concerns, with terms like *"binding"* and *"affiliate"* suggest it involves contracts. *"Disclosure"* suggests confidentiality, possibly related to compliance.
 
@@ -331,6 +331,6 @@ The third topic points to legal and compliance concerns, with terms like *"bindi
 
 ## Summary
 
-In this post, I introduced the process of vectorizing data with TF-IDF, including code snippets and a discussion of the results from the ENRON dataset. Due to the promising results of TF-IDF, the next step will be to explore word embeddings to see if we can achieve even better results.
+In this post, I introduced the process of vectorising data with TF-IDF, including code snippets and a discussion of the results from the ENRON dataset. Due to the promising results of TF-IDF, the next step will be to explore word embeddings to see if we can achieve even better results.
 
 While the original plan for this project was to identify groupings in corporate emails, the results from TF-IDF and topic modelling suggest that we could also gain valuable insights into Enron’s downfall by using NLP. I am excited to see what sort of insights word embeddings will uncover!
