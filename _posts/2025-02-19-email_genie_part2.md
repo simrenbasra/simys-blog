@@ -1,6 +1,6 @@
 ---
 title: "Email Genie: Vectorising Text Data 🔀"
-date: 2024-02-19
+date: 2025-02-19
 ---
 
 <div style="text-align: center;">
