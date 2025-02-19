@@ -168,7 +168,7 @@ Now, the remaining token positions no longer match the original start and end ch
 To solve this, I reversed the order in which entities are removed, starting with the last entity found in a document and then working backwards. 
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email-genie/phase_1/remove_entities.jpg" alt="NER implementation 2" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_1/remove_entities.png" alt="NER implementation 2" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 #### **Step 3: Preparing a Tokeniser**
@@ -176,7 +176,7 @@ To solve this, I reversed the order in which entities are removed, starting with
 Next, I prepared a custom tokeniser to pass to the TF-IDF vectoriser. A tokeniser is a function that tells the vectoriser how to process given text and split it into tokens. It can also include some cleaning of text before it is passed to the vectoriser.
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email-genie/phase_1/custom_tokeniser.jpg" alt="Custom Tokeniser" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_1/custom_tokeniser.png" alt="Custom Tokeniser" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 In my case, my tokeniser:
@@ -192,7 +192,7 @@ In my case, my tokeniser:
 - **Lemamtizes words:** Lemmatization is basically where words are cut to their root. For example, *“emailing”* and *“emails”* becomes *"email”*. This helps to standardise the data and can reduce the feature space by grouping different variations of words to one. The screenshot below shows how to instantiate the lemmatiser.
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email-genie/phase_1/nlp_lemm.jpg" alt="Lemmatiser" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_1/nlp_lemm.png" alt="Lemmatiser" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 The TF-IDF vectoriser will then use these tokens and represent them in a numerical format ready for further processing.
@@ -202,7 +202,7 @@ The TF-IDF vectoriser will then use these tokens and represent them in a numeric
 The next step is to instantiate the TF-IDF Vectoriser, when doing this you can set some parameters to refine the output.
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email-genie/phase_1/tf-idf_1.jpg" alt="TF-IDF 3" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_1/tf-idf_1.png" alt="TF-IDF 3" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 **Parameters explained:**
@@ -218,7 +218,7 @@ The next step is to instantiate the TF-IDF Vectoriser, when doing this you can s
 After this, we can then fit the vectoriser to the data and transform it. 
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email-genie/phase_1/tf-idf_2.jpg" alt="TF-IDF 2" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_1/tf-idf_2.png" alt="TF-IDF 2" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 Once the vectorizer is fitted and the transformation is complete, we get the following outputs:
@@ -228,7 +228,7 @@ Once the vectorizer is fitted and the transformation is complete, we get the fol
 - `text_transform.toarray()`: Since the TF-IDF vectoriser returns a sparse matrix, we use toarray()to convert the sparse matrix into an array. 
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email-genie/phase_1/tf-idf_3.jpg" alt="TF-IDF 3" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_1/tf-idf_3.png" alt="TF-IDF 3" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 To display the results clearly, we can create a dataframe where the columns are tokens, rows represents single emails and values are the TF-IDF scores.
@@ -244,7 +244,7 @@ To display the results clearly, we can create a dataframe where the columns are 
 To start, I wanted to see the most frequent tokens in the dataset to understand what appears most often in the emails and to see if there any themes emerging in the data.
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email-genie/phase_1/bar_chart.jpg" alt="TF-IDF results" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_1/bar_chart.png" alt="TF-IDF results" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 Already we can see some themes in the terms:
@@ -280,13 +280,13 @@ LDA follows a probabilistic approach to grouping documents. Initially each token
 First, we have to instantiate LDA:
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email-genie/phase_1/lda_1.jpg" alt="lda 1" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_1/lda_1.png" alt="lda 1" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 Then fit it to the transformed text:
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email-genie/phase_1/lda_2.jpg" alt="lda 2" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_1/lda_2.png" alt="lda 2" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 So far, we have seen the most common words in the dataset and assumed some possible themes based on the most frequent tokens. Let’s take a look at the results:
@@ -294,7 +294,7 @@ So far, we have seen the most common words in the dataset and assumed some possi
 #### **Topic #1: Finance**
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email-genie/phase_1/topic_1.jpg" alt="lda results 1" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_1/topic_1.png" alt="lda results 1" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 **Terms:** risk book demand letter global market cash flow associate analyst west desk read directory real estate super bowl natural analysis.
@@ -304,7 +304,7 @@ This topic revolves around finance and trading, with key terms like risk, book, 
 #### **Topic #2: Operations**
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email-genie/phase_1/topic_2.jpg" alt="lda results 2" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_1/topic_2.png" alt="lda results 2" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 **Terms:** operational risk risk operation mark calendar greatly appreciated yahoo yahoo shipping handling short notice security approver advise interest listed security
@@ -314,7 +314,7 @@ The second topic seems to focus on operations, terms like *"shipping"*, *"handli
 #### **Topic #3: Legal**
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email-genie/phase_1/topic_3.jpg" alt="lda results 3" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_1/topic_3.png" alt="lda results 3" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 **Terms:** privileged material property affiliate evidence binding binding enforceable material sole distribution disclosure affiliate party enforceable affiliate others authorized party relied
