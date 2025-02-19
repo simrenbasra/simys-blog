@@ -101,6 +101,8 @@ $$
 IDF = \log \left( \frac{\text{Total number of documents}}{\text{Number of documents containing the word}} \right)
 $$
 
+**TF-IDF**: Putting both together:
+
 $$
 TF\text{-}IDF = TF \times IDF
 $$
