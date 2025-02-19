@@ -7,7 +7,7 @@ date: 2025-02-19
   <img src="{{ site.baseurl }}/assets/email-genie/phase_1/cover_image_part2.jpg" alt="Cover Photo" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
-In my previous post, I shared the steps for loading email data, extracting features, and cleaning text. Now that the data is cleaned, the next step is to transform all text into a numerical format that machine learning models can interpret - this process is called vectorisation. Essentially, vectorisation is a way of converting text into mathematical representations. 
+In my previous post, I shared the steps for loading email data, extracting features, and cleaning text. Now that the data is cleaned, the next step is to transform all text into a numerical format that machine learning models can interpret - this is called vectorisation. Essentially, vectorisation is a way of converting text into mathematical representations. 
 
 <br>
 
@@ -21,13 +21,13 @@ When it comes to text data, one of the first things we need to do is convert it 
 
 Before I go into to more detail, here are a few key terms commonly used in Natural Language Processing (NLP):
 
-- **Document:** Refers to any piece of text that we are analysing. This could be a single sentence, an email, or even a blog post.
+- **Document:** Refers to any piece of text that we are analysing. This could be a single sentence or an email.
   
 - **Corpus:** A collection of multiple documents.
   
-- **Token:**  A single unit of a document that has meaning, usually this is a word, but it can also represent a group of words or numbers.
+- **Token:**  A single unit of a document that has meaning, usually this is a word, but it can also represent a group of words.
 
-Now that we have a basic understanding of these terms, let’s take a look at transforming text using Bag of Words (BoW) model!
+Now that we have a basic understanding of these terms, let’s take a look at transforming text using the Bag of Words (BoW) model!
 
 Consider the following sentences:
 
@@ -72,7 +72,7 @@ After some processing, we get this:
 
 There are some limitations to using BoW model. This method treats each word as a single feature, meaning it ignores the word order and context. For example, the word *"great"* is used in a positive way, but words *"great”* and *“fun"* can also be used negatively if *"not"* were placed in front.
 
-Another issue is that each word is treated equally. Common words like *"data"* and *"science"*, which appear in both sentences, may be redundant and don’t add much value to a machine learning model. Words which carry stronger meaning, such as *"great"* or *"boring"*, may be overshadowed because they occur less frequently.
+Another issue is that each word is treated equally. Common words like *"data"* and *"science"*, which appear in both sentences, may be redundant and don’t add much value to a machine learning model. Meanwhile, words which carry stronger meaning, such as *"great"* or *"boring"*, may be overshadowed because they occur less frequently.
 
 Let’s move to TF-IDF to see how it addresses these some of the issues above.
 
@@ -101,7 +101,7 @@ $$
 IDF = \log \left( \frac{\text{Total number of documents}}{\text{Number of documents containing the word}} \right)
 $$
 
-**TF-IDF**: Putting both together:
+**TF-IDF**: Putting the two together...
 
 $$
 TF\text{-}IDF = TF \times IDF
@@ -142,7 +142,7 @@ To improve this list, I created a custom stop word list by adding domain-specifi
 
 #### **Step 2: Named Entity Recognition (NER)**
 
-Emails often contain employee names, organisations, locations and dates. For my project, this information is not relevant to my end goal and so thought it best to remove them to avoid unnecessary noise. To do this, I used spaCy’s NER to find and remove words related to these entities **PERSON**, **ORG**, **GPE** and **DATE** before passing data to the TF-IDF vectoriser. 
+Emails often contain employee names, organisations, locations and dates. For my project, this information is not relevant to my end goal and so thought it best to remove them to avoid unnecessary information. To do this, I used spaCy’s NER to find and remove words related to these entities **PERSON**, **ORG**, **GPE** and **DATE** before passing data to the TF-IDF vectoriser. 
 
 NER works based on positions of tokens within a document. SpaCy automatically tokenises the text into tokens. Each token is assigned a start and end character, essentially marking their position in the document.
 
@@ -187,11 +187,11 @@ In my case, my tokeniser:
    
 - **Removing numbers:** Removes any remaining digits in an email.
    
-- Splits an email into tokens.
+- **Splits an email into tokens.**
    
-- Removes stop words and empty strings.
+- **Removes stop words and empty strings.**
    
-- **Lemamtizes words:** Lemmatization is basically where words are cut to their root. For example, *“emailing”* and *“emails”* becomes *"email”*. This helps to standardise the data and can reduce the feature space by grouping different variations of words to one. The screenshot below shows how to instantiate the lemmatizer.
+- **Lemamtizes words:** Lemmatization is basically where words are cut to their root. For example, *“emailing”* and *“emails”* becomes *"email”*. This helps to standardise the data and can reduce the feature space by grouping different variations of words to one. The screenshot below shows how to instantiate the `wordnet` lemmatizer.
 
 <div style="text-align: center;">
   <img src="{{ site.baseurl }}/assets/email-genie/phase_1/nlp_lemm.png" alt="Lemmatiser" style="max-width: 100%; height: auto; margin: 20px 0;">
@@ -263,7 +263,7 @@ Already we can see some themes in the terms:
 
 -	Suggests many emails discuss risk management and financial transactions.
 
-After reading more on Enron and its downfall, these findings seem to align. The company faced issues in risky trading, compliance issues and even dodgy affiliations to hide losses. High scoring terms in the dataset seems to revolve around these issues and so I moved to topic modelling to see if we can get any further insights. 
+After reading about Enron, these findings seem to align. The company faced issues in risky trading, compliance issues and even dodgy affiliations to hide losses. High scoring terms in the dataset seems to revolve around these issues and so I moved to topic modelling for further insights. 
 
 <br>
 
@@ -301,7 +301,7 @@ So far, we have seen the most common words in the dataset and assumed some possi
 
 **Terms:** risk book demand letter global market cash flow associate analyst west desk read directory real estate super bowl natural analysis.
 
-This topic revolves around finance and trading, with key terms like risk, book, and cash flow. We also see terms like real estate and analysis appear for the first topic, perhaps this could be some sort of investments. Term super bowl is interesting, this could be some noise or indicate some sort of financial impact perhaps some advertising or a partnership.
+This topic revolves around finance and trading, with key terms like risk, book, and cash flow. We also see terms like real estate and analysis appear for the first topic, perhaps this could be some sort of investments. Term super bowl is interesting, this could be some noise or indicate some sort of affiliation with a financial impact perhaps some advertising or a partnership.
 
 #### **Topic #2: Operations**
 
@@ -331,6 +331,6 @@ The third topic points to legal and compliance concerns, with terms like *"bindi
 
 ## Summary
 
-In this post, I introduced the process of vectorising data with TF-IDF, including code snippets and a discussion of the results from the ENRON dataset. Due to the promising results of TF-IDF, the next step will be to explore word embeddings to see if we can achieve even better results.
+In this post, I introduced the process of vectorising data with TF-IDF, including code snippets and a some preliminary insights into the ENRON dataset. Due to the promising results of TF-IDF, the next step will be to explore word embeddings to see if we can achieve even better results.
 
-While the original plan for this project was to identify groupings in corporate emails, the results from TF-IDF and topic modelling suggest that we could also gain valuable insights into Enron’s downfall by using NLP. I am excited to see what sort of insights word embeddings will uncover!
+While the original plan for this project was to identify groupings in corporate emails, the results from TF-IDF and topic modelling suggest that we could also gain valuable insights into Enron’s downfall using NLP. I am excited to see what sort of insights word embeddings will uncover!
