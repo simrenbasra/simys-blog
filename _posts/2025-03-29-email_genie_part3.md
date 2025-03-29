@@ -128,7 +128,7 @@ For my project, I used the Word2Vec model, as it is a well-known model for creat
 
 Word2Vec was created by Google to learn word embeddings from large datasets. It has two main approaches:
 
-1.	**Continuous Bag of Words (CBOW)**
+**1. Continuous Bag of Words (CBOW)**
 
 Predicts the middle word given the surrounding words.
 
@@ -138,7 +138,7 @@ Predicts the middle word given the surrounding words.
 
 **Output:** [“sat”]
 
-2.	**Skip-Gram:** 
+**2. Skip-Gram:**
 
 Predicts the surrounding word given the middle word.
 
