@@ -329,7 +329,7 @@ Results from t-SNE visualisation show there is some slight groupings of embeddin
 
 **Financial** terms such as *"stock"*, *"revenue"*, *"investment"*, *"equity"*, and *"cash"* are close to each other, indicating that Word2Vec has captured some semantic relationships between financial terms.
 
-**Operational** terms like *"logistics"*, *"efficiency"*, *"warehouse"*, and *"transport"* also appear relatively close, suggesting that the model recognises their similarity in meaning.
+**Operational** terms like *"logistics"*, *"efficiency"*, and *"warehouse"* also appear relatively close, suggesting that the model recognises their similarity in meaning.
 
 **Legal** terms including *"contract"*, *"litigation"*, *"jurisdiction"*, *"liability"*, *"binding"*, and *"confidentiality"* show some grouping suggesting the model understands these words are related to each other.
 
