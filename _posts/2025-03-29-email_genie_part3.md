@@ -4,7 +4,7 @@ date: 2025-03-29
 ---
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email-genie/phase_3/word_embedding_cover_photo.jpg" alt="cover photo" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_2/word_embedding_cover_photo.jpg" alt="cover photo" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 In the previous post, I introduced the concept of vectorising text to gain insights into the Enron dataset using TF-IDF. This allowed me to explore the most important terms and themes in the data, providing a deeper understanding of the factors contributing to the downfall of Enron. While TF-IDF revealed a lot about the data, its insights were somewhat limited. The method primarily focuses on word frequency and importance, without capturing the broader context or relationships between words.
@@ -38,7 +38,7 @@ In document B bank is related to a river.
 And so, in the vector space bank will have two vectors: one will be close to vectors for money and finance, the other closer to vectors for rivers and nature. 
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email-genie/phase_3/bank_vectors.png" alt="bank vectors" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_2/bank_vectors.png" alt="bank vectors" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 Another interesting thing you can do with word embeddings is word arithmetic. Word arithmetic describes process of performing operations with words to find relationships.
@@ -76,7 +76,7 @@ Take the example below, let’s break it down step by step.
 To help understand this process, I have created a diagram:
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email-genie/phase_3/word_embedding_diagram.png" alt="word embedding diagram" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_2/word_embedding_diagram.png" alt="word embedding diagram" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 #### **Step 1:** 
@@ -169,7 +169,7 @@ After a few rounds of training, the model begins to understand semantically simi
 Like implementing TF-IDF, the first step is to prepare the dataset for processing. I began by combining the subject and body of each email. I did this as I thought it would help the model to understand more context of an email. Usually, the subject provides a summary of an email, which can help models understand key themes in an email.
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email-genie/phase_3/preprocess_1.png" alt=" preprocess_1" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_2/preprocess_1.png" alt=" preprocess_1" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 Like I did in implementing TF-IDF, I also used NER to remove the employee names, dates, and organisations from emails to reduce noise.
@@ -179,12 +179,12 @@ Like I did in implementing TF-IDF, I also used NER to remove the employee names,
 Before training the Word2Vec model, emails need to be tokenised. Unlike TF-IDF, where I tokenise individual words, here I tokenise entire emails since Word2Vec requires context to learn embeddings. 
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email-genie/phase_3/tokeniser.png" alt="tokeniser" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_2/tokeniser.png" alt="tokeniser" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email-genie/phase_3/tokenising_emails.png" alt="tokenising each email" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_2/tokenising_emails.png" alt="tokenising each email" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 **Note:** I decided not to use stop words here, this is as small words such as “with”, “and”, “for” could be quite important for the model to understand context. 
@@ -194,7 +194,7 @@ Before training the Word2Vec model, emails need to be tokenised. Unlike TF-IDF, 
 With each email tokenised, I implemented the Word2Vec model using the `genism` library.
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email-genie/phase_3/training_w2v.png" alt="training word2vec" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_2/training_w2v.png" alt="training word2vec" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 Let’s look at some of the parameters I set:
@@ -254,7 +254,7 @@ First, I needed a list of words that I could use to evaluate the embeddings. I t
 I used the most_similar function, which uses cosine similarity to find words that are contextually similar to a given word. I wrote a function to take a word as an input and output the 5 most similar words according to the model:
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email-genie/phase_3/most_similar.png" alt="most similar words function" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_2/most_similar.png" alt="most similar words function" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 #### **Overview of Results:**
@@ -305,17 +305,17 @@ To visualise word relationships, I reduced the dimensionality of the word vector
 
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email-genie/phase_3/tsne_init.png" alt="tsne 1" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_2/tsne_init.png" alt="tsne 1" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email-genie/phase_3/tsne_get_embeddings.png" alt="tsne 2" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_2/tsne_get_embeddings.png" alt="tsne 2" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email-genie/phase_3/tsne_fit_transform.png" alt="tsne 3" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_2/tsne_fit_transform.png" alt="tsne 3" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 
@@ -324,7 +324,7 @@ To visualise word relationships, I reduced the dimensionality of the word vector
 Results from t-SNE visualisation show there is some slight groupings of embeddings.
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email-genie/phase_3/visualising_embeddings.png" alt="visualising embeddings" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_2/visualising_embeddings.png" alt="visualising embeddings" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 **Financial** terms such as *"stock"*, *"revenue"*, *"investment"*, *"equity"*, and *"cash"* are close to each other, indicating that Word2Vec has captured some semantic relationships between financial terms.
