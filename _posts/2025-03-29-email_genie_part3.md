@@ -26,6 +26,7 @@ Word embeddings are another way to turn words into vectors, allowing Machine Lea
 Let’s take a look at a simple example:
 
 **Document A:** *“Today, I went to the bank to deposit some money”*
+
 **Document B:** *“Today, I sat by the bank of a river and had lunch”*
 
 TF-IDF treats the word *“bank”* the same in both documents. It fails to recognise the two different meanings and only considers the word without any context.
@@ -33,6 +34,7 @@ TF-IDF treats the word *“bank”* the same in both documents. It fails to reco
 However, word embeddings look at the surrounding words to understand a word’s meaning:
 
 In document A bank is related to money.
+
 In document B bank is related to a river.
 
 And so, in the vector space bank will have two vectors: one will be close to vectors for money and finance, the other closer to vectors for rivers and nature. 
