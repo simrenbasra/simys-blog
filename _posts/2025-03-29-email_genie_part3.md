@@ -7,14 +7,6 @@ date: 2025-03-29
   <img src="{{ site.baseurl }}/assets/email-genie/phase_2/word_embedding_cover_photo.jpg" alt="cover photo" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
-<div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email-genie/phase_1/cover_image_part2.jpg" alt="Cover Photo" style="max-width: 100%; height: auto; margin: 20px 0;">
-</div>
-
-<div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email-genie/phase_2/word_embedding_cover_photo.jpg" alt="Cover Photo" style="max-width: 100%; height: auto; margin: 20px 0;">
-</div>
-
 In the previous post, I introduced the concept of vectorising text to gain insights into the Enron dataset using TF-IDF. This allowed me to explore the most important terms and themes in the data, providing a deeper understanding of the factors contributing to the downfall of Enron. While TF-IDF revealed a lot about the data, its insights were somewhat limited. The method primarily focuses on word frequency and importance, without capturing the broader context or relationships between words.
 
 Since the goal of this project is to build a classifier, leveraging/understanding semantic relationships between words can help models perform better. This is where word embeddings come in!
