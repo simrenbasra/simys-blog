@@ -299,7 +299,7 @@ These results seem quite strong and meaningful. Words like *"confidential"*, *"a
 
 Not bad results, words like *"price"*, *"flow"*, and *"realtime"* are closely related to trading and finance. 
 
-**2. Visualise the Embeddings**
+#### **2. Visualise the Embeddings**
 
 To visualise word relationships, I reduced the dimensionality of the word vectors using t-SNE and plotted them. This helped determine whether semantically similar words were grouped close together in the vector space.
 
