@@ -1,5 +1,5 @@
 ---
-title: # Email Genie: Word Embeddings 🧩 
+title: "#Email Genie: Word Embeddings 🧩"
 date: 2025-03-29
 ---
 
