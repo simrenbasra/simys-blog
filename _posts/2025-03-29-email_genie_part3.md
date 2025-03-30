@@ -207,7 +207,7 @@ Let’s look at some of the parameters I set:
 
 -	`vector_size = 300` 
 
-    Defines the size of the embeddings, larger this value is the more context is captured.
+    Defines the size of the embeddings, in this case the network would have 300 nodes.
 
 -	`window = 10` 
 
