@@ -90,7 +90,7 @@ Like any other neural network, weights are randomly initialised.
 
 -	Weights connecting the input layer to the hidden layer form the word embedding for *“cat”*
 
--	The number of nodes in the hidden layer determine the size of the word embeddings, here there are 7 nodes and so the embeddings have a length of 7.
+-	The number of nodes in the hidden layer determines the size of the word embeddings, here there are 7 nodes and so the embeddings have a length of 7.
 
 #### **Step 3:**  
 
