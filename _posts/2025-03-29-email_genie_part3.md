@@ -9,7 +9,7 @@ date: 2025-03-29
 
 In the previous post, I introduced the concept of vectorising text to gain insights into the Enron dataset using TF-IDF. This allowed me to explore the most important terms and themes in the data, providing a deeper understanding of the factors contributing to the downfall of Enron. While TF-IDF revealed a lot about the data, its insights were somewhat limited. The method primarily focuses on word frequency and importance, without capturing the broader context or relationships between words.
 
-Since the goal of this project is to build a classifier, leveraging/understanding semantic relationships between words can help models perform better. This is where word embeddings come in!
+Since the goal of this project is to build a classifier, leveraging semantic relationships between words can help models perform better. This is where word embeddings come in!
 
 In this post, I will explain word embeddings and explore a common embedding model:  Word2Vec!
 
@@ -148,7 +148,7 @@ Predicts the surrounding word given the middle word.
 
 Both methods use a similar network to the one described above with the main difference in what we’re predicting. 
 
-In my project I chose to use Skip-Gram as with email data there are more specific, rare words like domain specific terms. Since skip-gram predicts context from a single word, I thought it be better at capturing relationships in the email data. 
+In my project I chose to use Skip-Gram as with email data there are more specific, rare words like domain specific terms. Since Skip-Gram predicts context from a single word, I thought it be better at capturing relationships in the email data. 
 
 #### **Negative Sampling**
 
@@ -189,7 +189,7 @@ Before training the Word2Vec model, emails need to be tokenised. Unlike TF-IDF, 
   <img src="{{ site.baseurl }}/assets/email-genie/phase_2/tokenising_emails.png" alt="tokenising each email" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
-**Note:** I decided not to use stop words here, this is as small words such as “with”, “and”, “for” could be quite important for the model to understand context. 
+**Note:** I decided not to use stop words here, this is as small words such as _“with”_, _“and”_, _“for”_ could be quite important for the model to understand context. 
 
 **Step 3: Instantiate the model and run!**
 
@@ -211,7 +211,7 @@ Let’s look at some of the parameters I set:
 
 -	`window = 10` 
 
-	Defines the number of words before/after the target word the model should consider when learning. 
+    Defines the number of words before/after the target word the model should consider when learning. 
 
 -	`min_count = 15`
     
