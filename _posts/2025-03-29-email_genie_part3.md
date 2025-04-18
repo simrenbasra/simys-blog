@@ -195,7 +195,7 @@ The model uses these pairs to learn what is *not* related to the target word, re
 Like implementing TF-IDF, the first step is to prepare the dataset for processing. I began by combining the subject and body of each email. I did this as I thought it would help the model to understand more context of an email. Usually, the subject provides a summary of an email, which can help models understand key themes in an email.
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email-genie/phase_2/preprocess_1.png" alt=" preprocess_1" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_2/all_text.png" alt=" preprocess_1" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 Like I did in implementing TF-IDF, I also used NER to remove the employee names, dates, and organisations from emails to reduce noise.
