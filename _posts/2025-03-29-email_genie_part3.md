@@ -303,7 +303,7 @@ In other cases, the results were less meaningful and contained some irrelevant t
 
 - "Evidence" produced words such as *"create"* and *"acceptance"* which don't really git into legal context.
 
-Overall, these results aren't all terrible, but the embeddings could be better. These issues may stem from training the Word2Vec model on a relatively small subset of data. Some unusual terms, like *"gidlct"* and *"reftws"* likely due to some remaining noise in the data.
+Overall, these results aren't all terrible, but the embeddings could be better. Some unusual terms, like *"gidlct"* and *"reftws"* likely due to some remaining noise in the data.
 
 Another way to assess semantic similarity is through word arithmetic. Here are some formulas I tested and the results:
 
