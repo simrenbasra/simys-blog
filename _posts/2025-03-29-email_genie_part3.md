@@ -78,7 +78,7 @@ Take the example below, let’s break it down step by step.
 To help understand this process, I have created a diagram:
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email-genie/phase_2/word_embedding_diagram.png" alt="word embedding diagram" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_2/updated_w2v_diagram.png" alt="word embedding diagram" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 #### **Step 1:** 
