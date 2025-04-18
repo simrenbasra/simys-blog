@@ -210,7 +210,7 @@ Before training the Word2Vec model, emails need to be tokenised. Unlike TF-IDF, 
 
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email-genie/phase_2/tokenising_emails.png" alt="tokenising each email" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_2/tokenising_all_emails.png" alt="tokenising each email" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 **Note:** I decided not to use stop words here, this is as small words such as _“with”_, _“and”_, _“for”_ could be quite important for the model to understand context. 
