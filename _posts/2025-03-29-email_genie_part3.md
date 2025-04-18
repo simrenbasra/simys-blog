@@ -83,14 +83,26 @@ To help understand this process, I have created a diagram:
 
 #### **Step 1:** 
 
-Each word in the vocabulary is represented as a one-hot encoded vector. For this example we are focusing on "cat" and its one-hot vector is:`[1,0,0,0,0,0,0]`
+Each word in the vocabulary is represented as a one-hot encoded vector. For this example we are focusing on "cat" and its one-hot vector is:`[1,0,0,0,0,0,0]`.
+
+Before training begins, we prepare the training data by creating word pairs of target and context words based on the window size.
+
+In our example where the window size is 1, the target word will have two context words: one to the left and one to the right. So, the word pairs for this example are:
+
+- (cat, the)
+
+- (cat, sat)
+
+The model starts with no understanding of words. These word pairs help the model learn patterns of which words appear together.
+
+For example, the pair *(cat, sat)* tells the model that *"cat"* and *"sat"* often appear close to each other. Over time, the model pulls the vector for *"cat"* closer to relevant context words like *"sat"* and pushes it away from unrelated words. As training continues, the model becomes better at recognising these patterns and the embeddings become more meaningful.
 
 #### **Step 2:** 
 Like any other neural network, weights are randomly initialised.
 
--	Weights connecting the input layer to the hidden layer form the word embedding for *“cat”*
+-	Weights connecting the input layer to the hidden layer form the word embedding for “cat”. These weights control how much each input word shapes the word embedding for the target word. 
 
--	The number of nodes in the hidden layer determines the size of the word embeddings, here there are 7 nodes and so the embeddings have a length of 7.
+-	The number of nodes in the hidden layer determine the size of the word embeddings, here there are 7 nodes and so the embeddings have a length of 7.
 
 #### **Step 3:**  
 
@@ -112,7 +124,7 @@ After a few epochs of training, the word embeddings starts to reflect more meani
 
 Once training is complete, the word embedding for cat looks something like this:
 
-`[0.0, 0.3, 0.3, 0.1, 0.15, 0.15]`
+`[0.0, 0.3, 0.2, 0.3, 0.1, 0.5]`
 
 <br>
 
@@ -152,16 +164,28 @@ In my project I chose to use Skip-Gram as with email data there are more specifi
 
 #### **Negative Sampling**
 
-When dealing with large datasets, updating the weights for every word can be very time-consuming. Word2Vec speeds up the training process by using negative sampling.
-Instead of updating all words in the dataset, negative sampling focuses on a smaller set of relevant words while ignoring irrelevant ones. Like this:
+When dealing with large datasets, updating the weights for every word can be quite time consuming. Word2Vec speeds up the training process by using negative sampling.
+Instead of updating all words in the dataset, negative sampling focuses on a smaller set of relevant words while ignoring irrelevant ones. 
 
-- **Target word:** "cat"
+For this explanation assume the corpus has expanded to include words not in document A or B. So, we now have:
 
-- **Relevant words:** "sat", "on", "the"
+**Target word**: "cat"
 
-- **Irrelevant words:** "sky", "computer", "apple" 
+**Document A**: "The cat sat on the chair"
 
-After a few rounds of training, the model begins to understand semantically similar words. It then randomly selects a few negative words (from the irrelevant words) and adjusts the weights to decrease the similarity between the target word and words in the sample. At the same time, the weights of the positive related words are adjusted to increase the similarity to the target word.
+**Document B**: "The cat sat on the sofa"
+
+**Document C**: “The sky is blue”
+
+**Document D**: “Computers are fast”
+
+Word pairs created during training only come from documents where the target word appears (A and B). These are called positive word pairs and represent relevant context words for “cat”.
+
+Now, for the irrelevant words. Word2Vec randomly selects words from the entire corpus from documents that don't have the target word. These are negative word pairs:
+
+(cat, sky), (cat, computer)
+
+The model uses these pairs to learn what is *not* related to the target word, reducing the probability of predicting these words. The number of negative pairs is controlled by a `negative_sampling_rate` parameter. The parameter determines how many negative samples are selected for each positive pair, so if `negative_sampling_rate = 2` that means for every positive word pair, the model will randomly select 2 negative pairs.
 
 
 #### **How to Implement Word2Vec**
