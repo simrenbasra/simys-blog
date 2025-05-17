@@ -51,7 +51,7 @@ Since my project is based on understanding the semantics of the emails and gener
 
 The purpose of BERT is to create context-based embeddings, where similar words used in similar contexts have similar vectors. Unlike Word2Vec that generates static word embeddings, BERT understands the meaning of words and so is great for tasks requiring semantic similarity or classification.
 
-#### How does BERT work?
+#### **How does BERT work?**
 
 BERT is a pre-trained model, trained on millions of documents to understand the context of words by considering not just their position but also their meaning within the sentence. 
 
