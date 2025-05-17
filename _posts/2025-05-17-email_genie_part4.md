@@ -7,7 +7,9 @@ date: 2025-05-17
   <img src="{{ site.baseurl }}/assets/email-genie/phase_3/transformer_cover_photo.jpg" alt="BERT Cover Photo" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
-In the previous post, I explored using Word2Vec’s Skip-Gram to generate embeddings for emails in the Enron dataset. While Word2Vec was able to capture some semantic relationships, such as grouping financial, operational and legal terms together, it struggled with understanding context of words with multiple meanings, like _"risk"_ or _"market"_. In this blog post, I will try a different approach by using a transformer model (BERT) to create the embeddings. Transformers are better at capturing the relationships between words and have a deeper network that can pick up more nuanced relationships, especially for words with multiple meanings.
+In the previous post, I explored using Word2Vec’s Skip-Gram to generate embeddings for emails in the Enron dataset. While Word2Vec was able to capture some semantic relationships, such as grouping financial, operational and legal terms together, it struggled with understanding context of words with multiple meanings, like _"risk"_ or _"market"_. 
+
+In this blog post, I will try a different approach by using a transformer model (BERT) to create the embeddings. Transformers are better at capturing the relationships between words and have a deeper network that can pick up more nuanced relationships, especially for words with multiple meanings.
 
 <br>
 
