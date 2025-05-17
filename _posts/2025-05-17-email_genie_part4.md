@@ -142,7 +142,7 @@ If the input is a single segment (like the one in our diagram), the segment embe
 
 Once the embeddings are ready, they passed to a number of transformer encoder blocks, typically BERT has 12. Each transformer block is made up of: 
 
-#### Self-Attention
+#### **Self-Attention**
 
 Self-Attention allows BERT to understand how each word in a sentence relates to every other word, regardless of distance.
 
@@ -154,7 +154,7 @@ _“The bird didn’t catch the worm because it was too tired”_
 
 Here, _“it”_ could refer to _“bird”_ or _“worm”_, if _“bird”_ has a higher attention score than _“worm”_ and so learns _“it”_ is most likely referring to _“bird”_.
 
-#### Feed Forward
+#### **Feed Forward**
 
 After self-attention, each token is then passed through a small fully connected neural network. This network helps the model learn more complex features such as:
 
@@ -166,13 +166,13 @@ After self-attention, each token is then passed through a small fully connected 
 
 **Note:** It’s called Feed Forward since the model is using what it has learnt during training to enhance it’s understanding.
 
-#### Normalisation
+#### **Normalisation**
 
 Layer normalisation is used to stabilise and increase training speed. It works by scaling inputs to each layer in the block like self-attention and feed forward networks so that the mean is 0 and variance is 1 for each token’s embedding vector.
 
 The purpose of this is to prevent exploding or vanishing gradients which is a risk to deep models like BERT where there are a lot of layers. Normalising the output of each sublayer ensures gradients are more stable, making it more likely for the model to reach convergence.
 
-#### Residual Connections
+#### **Residual Connections**
 
 Vanishing gradients are a common issue in deep networks like BERT as the gradients can shrink a lot as they pass through all layers. When this happens, weight updates are tiny and learning is slow. 
 
@@ -194,17 +194,17 @@ So for: _“Data science is great.”_
 
 The output will be something like:
 
-[CLS]     → [0.12, -0.34, 0.56, ..., 0.78]
+`[CLS]     → [0.12, -0.34, 0.56, ..., 0.78]`
 
-data      → [0.14, -0.31, 0.52, ..., 0.65]
+`data      → [0.14, -0.31, 0.52, ..., 0.65]`
 
-science   → [0.11, -0.38, 0.53, ..., 0.77]
+`science   → [0.11, -0.38, 0.53, ..., 0.77]`
 
-is        → [0.13, -0.32, 0.54, ..., 0.70]
+`is        → [0.13, -0.32, 0.54, ..., 0.70]`
 
-great     → [0.10, -0.35, 0.55, ..., 0.72]
+`great     → [0.10, -0.35, 0.55, ..., 0.72]`
 
-[SEP]     → [0.15, -0.36, 0.51, ..., 0.74]
+`[SEP]     → [0.15, -0.36, 0.51, ..., 0.74]`
 
 To get a single embedding for a given sentence, you need to pool these embeddings. Pooling is the process of combining all token embeddings into a single vector. 
 
@@ -220,11 +220,11 @@ There are different pooling methods each combine the embeddings in different way
 
 Since I am running this project on my computer and working with a small dataset, I chose to use DistilBERT instead of BERT. DistilBERT is basically a lighter and faster version of BERT.
 
-#### Step 1: Preparing Text
+#### **Step 1: Preparing Text**
 
 Like the other methods, the first step is to combine the subject and body of each email and to use NER to remove any mentions of employee names, organisations and dates to reduce noise.
 
-#### Step 2: Tokenising Text
+#### **Step 2: Tokenising Text**
 
 Before passing the emails into the model, the text must be tokenized. For this, I use the DistilBERT tokenizer from the Hugging Face transformers library.
 
@@ -252,7 +252,7 @@ Once a chunk is created, if it is smaller than the `chunk_size`, I pad it with t
 
 I then create an attention mask for each chunk. The attention mask is a list that tells the model which tokens are real (1), and which are padding (0). This helps the model to focus on the meaningful parts.
 
-#### Step 3: Create tensor objects
+#### **Step 3: Create tensor objects**
 
 The DistilBERT transformer requires inputs to be in the form of tensor objects.
 
@@ -268,7 +268,7 @@ After that, I create a TensorDataset to help organise the data, speed up trainin
   <img src="{{ site.baseurl }}/assets/email-genie/phase_3/tesnor_dataset.png" alt="Tensor Dataset" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
-#### Step 4: Creating the embeddings
+#### **Step 4: Creating the embeddings**
 
 For generating the embeddings, I’m using the pre-trained weights of DistilBERT. This means I’m just passing each email through the DistilBERT model and extracting the embeddings.
 
@@ -294,7 +294,7 @@ I pass the tensor inputs through the model and access the output from the last h
 
 **Note:** After evaluating the embeddings, I realised that mean pooling may not be the best method to use. This is because mean pooling treats every token the same meaning padding tokens contribute just as much as meaningful tokens. This could affect the quality of the embeddings, especially when using them to assess semantic similarity. Ideally, I would have experimented with different pooling methods such as weighted pooling, but each time I tried, my kernel crashed.
 
-#### Step 5: Unbatch and save the embeddings
+#### **Step 5: Unbatch and save the embeddings**
 
 Before saving the embeddings, I needed to unbatch them back into individual email embeddings:
 
