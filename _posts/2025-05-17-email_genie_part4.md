@@ -27,7 +27,7 @@ Transformers are different as they crate context-aware embeddings, let’s revis
 
 Word2Vec generates only a single embedding for _"bank"_. As a result, its vector would likely be positioned somewhere between the finance and nature clusters in the vector space. On the other hand, transformers generate different embeddings for each instance of _"bank"_ as seen in the graph in the previous post. Using transformers to create the embeddings for this project can help to better understand the nuances in the emails which Word2Vec missed. 
 
-#### Encoders VS Decoders
+#### **Encoders VS Decoders**
 
 There are two important parts to transformers: encoders and decoders. When transformers first came out, most thought both were necessary to perform tasks. After some time, it became clear that transformers could be made up of both encoders and decoders but also work with just an encoder or decoder. 
 
@@ -226,13 +226,13 @@ Like the other methods, the first step is to combine the subject and body of eac
 
 #### **Step 2: Tokenising Text**
 
-Before passing the emails into the model, the text must be tokenized. For this, I use the DistilBERT tokenizer from the Hugging Face transformers library.
+Before passing the emails into the model, the text must be tokenised. For this, I use the DistilBERT tokeniser from the Hugging Face transformers library.
 
 <div style="text-align: center;">
   <img src="{{ site.baseurl }}/assets/email-genie/phase_3/init_tokeniser.png" alt="BERT Tokeniser Init" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
-One important note is that the tokenizer has a maximum output limit of 512 tokens. Some emails in the dataset are longer than this and so I chunked the emails into smaller parts to handle this. Chunking basically means splitting a long email into smaller chunks so that each chunk fits within the model's token limit.
+One important note is that the tokeniser has a maximum output limit of 512 tokens. Some emails in the dataset are longer than this and so I chunked the emails into smaller parts to handle this. Chunking basically means splitting a long email into smaller chunks so that each chunk fits within the model's token limit.
 
 Let’s walk through my function step by step:
 
