@@ -1,5 +1,5 @@
 ---
-title: "Email Genie: Transformers Part 1 🤖"
+title: "Email Genie: Transformers BERT 🤖"
 date: 2025-05-17
 ---
 
