@@ -99,9 +99,7 @@ The FFNN outputs a vector of logits, which are real numbers that can be positive
 
 For example:
 
-$$
-\text{logits} = [1.2,\ 4.5,\ 1.7]
-$$
+$$\text{logits} = [1.2,\ 4.5,\ 1.7]$$
 
 Each value corresponds to a class:
 
