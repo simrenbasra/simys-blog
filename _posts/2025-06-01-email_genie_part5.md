@@ -185,7 +185,7 @@ A key limitation of KMeans is it assumes that all clusters are spherical, which 
 While sentence transformers generally offer stronger embeddings than traditional BERT, the lack of fine-tuning on this specific dataset may contribute to the weak clustering performance.
 Given these factors, it would be worth exploring alternative clustering methods that don’t assume spherical clusters. 
 
-#### Assessing Clusters
+#### **Assessing Clusters**
 
 To better understand the results, I reviewed example emails from several clusters to assess whether any meaningful themes emerged:
 
@@ -214,7 +214,7 @@ The clusters that do form appear quite sparse and spread out. Given the relative
 
 Sentence Transformers can struggle with semantics in generic emails especially without fine-tuning. This might explain why many Enron emails, which are often brief, repetitive, or generic, end up classified as noise.
 
-#### Assessing Clusters
+#### **Assessing Clusters**
 
 As with KMeans, I reviewed a sample of emails from each of the clusters.
 
