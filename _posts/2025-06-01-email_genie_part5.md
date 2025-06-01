@@ -3,6 +3,11 @@ title: "Email Genie: Sentence Transformers 🦾"
 date: 2025-06-01
 ---
 
+<script type="text/javascript"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
 <div style="text-align: center;">
   <img src="{{ site.baseurl }}/assets/email-genie/phase_4/st_cover_photo.jpg" alt="ST Cover Photo" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
