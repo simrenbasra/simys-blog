@@ -207,6 +207,7 @@ Emails here are longer and more detailed regarding updates about ongoing issues,
   <img src="{{ site.baseurl }}/assets/email-genie/phase_4/hdbscan_plot.png" alt="HDBSCAN Plot" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
+
 The plot shows that HDBSCAN identifies a large set of points as "noise" which suggests that many embeddings are very close to each other and don’t form well-defined groups. I decided to use HDBSCAN instead of DBSCAN since it doesn't require setting the number of clusters and is better suited for noisy data like Enron dataset.
 
 The clusters that do form appear quite sparse and spread out. Given the relatively high number of clusters, it’s likely that some of these clusters are not particularly meaningful or useful.
