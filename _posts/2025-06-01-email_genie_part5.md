@@ -61,7 +61,7 @@ The model is fine-tuned by updating BERT’s weights based on the loss calculate
 
 - For unlabelled sentence pairs (like my project): 
 
-I use pre-trained Sentence Transformers where all weights are fixed. These models are trained on large, diverse datasets and have already learned to produce high-quality semantic embeddings. That’s why out-of-the-box they work much better than out-of-the-box BERT embeddings for tasks like semantic similarity. 
+I use pre-trained Sentence Transformers where all weights are fixed. These models are trained on large, diverse datasets and have already learned to produce high-quality semantic embeddings. That’s why out-of-the-box Sentence Transformers work much better than out-of-the-box BERT embeddings for tasks like semantic similarity. 
 
 #### **Step 2: Pass sentences to BERT**
 
@@ -185,10 +185,10 @@ There is visible overlap between clusters, suggesting the embeddings are not wel
 
 A key limitation of KMeans is it assumes that all clusters are spherical, which is unlikely for noisy email data such as the Enron dataset. I would expect clusters for emails not to be uniform and have the same size and shape. 
 
-While sentence transformers generally offer stronger embeddings than traditional BERT, the lack of fine-tuning on this specific dataset may contribute to the weak clustering performance.
+While Sentence Transformers generally offer stronger embeddings than traditional BERT, the lack of fine-tuning on this specific dataset may contribute to the weak clustering performance.
 Given these factors, it would be worth exploring alternative clustering methods that don’t assume spherical clusters. 
 
-#### **Assessing Clusters**
+#### **Assessing KMeans Clusters**
 
 To better understand the results, I reviewed example emails from several clusters to assess whether any meaningful themes emerged:
 
@@ -217,11 +217,11 @@ The clusters that do form appear quite sparse and spread out. Given the relative
 
 Sentence Transformers can struggle with semantics in generic emails especially without fine-tuning. This might explain why many Enron emails, which are often brief, repetitive, or generic, end up classified as noise.
 
-#### **Assessing Clusters**
+#### **Assessing HDBSCAN Clusters**
 
 As with KMeans, I reviewed a sample of emails from each of the clusters.
 
-*Note:* I ignored the -1 noise cluster and clusters with fewer than 100 emails as I wanted to focus on the most meaningful groups.
+**Note:** I ignored the -1 noise cluster and clusters with fewer than 100 emails as I wanted to focus on the most meaningful groups.
 
 **Cluster 0: Legal** 
 
@@ -253,7 +253,7 @@ Relates to tax-related communications, specifically regarding tax treaties and j
 
 #### **Results Wrap Up**
 
-Overall, there is noticeable overlap between emails across clusters, but this was expected—TF-IDF results had already hinted that emails often touch on multiple general topics. This is a common challenge with email data, where a single message can reference operations, legal matters, and financial details all at once.
+Overall, there is noticeable overlap between emails across clusters, but this was expected. TF-IDF results had already hinted that emails often touch on multiple general topics. This is a common challenge with email data, where a single message can reference operations, legal matters, and financial details all at once.
 
 Despite this, the clustering results align reasonably well with the initial TF-IDF findings, which suggested three main topic areas: Operations, Legal, and Finance. These themes emerged again in both KMeans and HDBSCAN evaluations, indicating that the Sentence Transformer embeddings are capturing some meaningful structure in the data.
 
@@ -273,7 +273,8 @@ It’s important to remember that the UMAP plots used for visualisation may not 
 In this post, I used Sentence Transformers to generate embeddings for the Enron emails, which captured meaningful topics like Operations, Legal, and Finance better than previous BERT embeddings. 
 
 Clustering with KMeans and HDBSCAN showed some overlaps and a large noise cluster likely due to the model not being fine-tuned on this dataset. 
-Overall, these embeddings provide a solid starting point for moving forward with email classification.
+
+Overall, while the embeddings have their limitations, I thought they provide a reasonable starting point for exploring classification!
 
     
 
