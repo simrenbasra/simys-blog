@@ -46,7 +46,7 @@ In the next section, I’ll walk through a diagram to show how Sentence Transfor
 ## How do Sentence Transformers Work
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email-genie/phase_4/sentence_transformers.drawio.png" alt="ST Diagram" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_4/st_diagram.drawio.png" alt="ST Diagram" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 #### **Step 1: Input Sentence Pair**
@@ -57,7 +57,7 @@ Each input consists of a pair of sentences: sentence A and sentence B.
 
 - For labelled sentence pairs: 
 
-The model is fine-tuned by updating BERT’s weights based on the loss calculated from comparing predicted and actual classes. Backpropagation flows from the output, through the feedforward network (FFNN), and all the way back to the BERT. This fine-tuning helps BERT learn semantic relationships specific to the dataset.
+The model is fine-tuned by updating BERT’s weights based on the loss calculated from comparing predicted and actual classes. Backpropagation flows from the output, through the feedforward network (FFNN), and all the way back to BERT. This fine-tuning helps BERT learn semantic relationships specific to the dataset.
 
 - For unlabelled sentence pairs (like my project): 
 
