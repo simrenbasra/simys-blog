@@ -40,7 +40,7 @@ First, I needed to decide on some topics to categorise the emails into. Initiall
 Now that I had my categories finalised with clear definitions, I needed to decide how many emails would be needed in my training set for the classification model to perform well. Obviously, I didn’t want to sift through all the emails and label each one manually. So in the end, I decided to aim for around 200 emails per category. I thought this was a good number, not so many that labelling would take too long, but enough to give the model sufficient data to learn. 
 Note: I’m still not sure if this is enough, but the model’s results will help me decide if I need to increase this later.
 
-#### **Quick and Dirty Labelling **
+#### **Quick and Dirty Labelling**
 
 Even with restricting the categories to 200 emails each, that still left me with 1000 emails to label manually. A rather daunting and painstaking task that would take too long, especially with no guarantee my model would perform well.
 So, I decided to use regular expressions to speed up the process. My idea was to create a set of regex patterns for each category, label the emails automatically where possible, and then review each email’s category to correct any mistakes. It was still a long process, but much faster than labelling everything from scratch! In hindsight, there are probably more accurate ways to help speed this process up but at the time this approach seemed the simplest.
