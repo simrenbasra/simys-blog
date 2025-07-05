@@ -45,7 +45,7 @@ Note: I’m still not sure if this is enough, but the model’s results will hel
 Even with restricting the categories to 200 emails each, that still left me with 1000 emails to label manually. A rather daunting and painstaking task that would take too long, especially with no guarantee my model would perform well.
 So, I decided to use regular expressions to speed up the process. My idea was to create a set of regex patterns for each category, label the emails automatically where possible, and then review each email’s category to correct any mistakes. It was still a long process, but much faster than labelling everything from scratch! In hindsight, there are probably more accurate ways to help speed this process up but at the time this approach seemed the simplest.
 
-#### Code Snippet 
+#### **Code Snippet** 
 
 <div style="text-align: center;">
   <img src="{{ site.baseurl }}/assets/email-genie/phase_5/categories.png" alt="Email Categories" style="max-width: 100%; height: auto; margin: 20px 0;">
