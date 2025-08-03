@@ -8,9 +8,9 @@ date: 2025-07-05
 </div>
 
 
-In the last post of the Email Genie series, I used a pre-trained Sentence Transformer to create embeddings for Enron emails and evaluated their quality. The next step is to begin the classification phase. To do this, I first need to label my emails to create a reliable ground truth for the classification models to learn from. 
+In the last post of the Email Genie series, I used a pre-trained Sentence Transformer to create embeddings for Enron emails and evaluated their quality. The next step is to begin the classification phase. To do this, I needed to label my emails to create a ground truth for the classification models to learn from. 
 
-In this post, I’ll share the different topics I classified the emails into, explain how I completed the labelling process, and share some things I did to speed it up. While accuracy in labelling was important, I wanted to avoid spending too long on it.
+In this post, I’ll share the different categories I classified the emails into, explain how I completed the labelling process and share some things I did to speed it up. While accuracy in labelling was important, I wanted to avoid spending too long on it...
 
 <br>
 
@@ -20,7 +20,7 @@ In this post, I’ll share the different topics I classified the emails into, ex
 
 ## Labelling Emails
 
-First, I needed to decide on some topics to categorise the emails into. Initially, I considered using more granular topics that would translate across most organisations. However, conscious of not wanting to spend too long on this phase, I decided to restrict the categories to five: Finance, Operations, Legal, Spam, and Personal. You may recognise that the first three topics were identified at the start of the project, and I thought this would be a good place to begin since I had already used them when evaluating the embeddings.
+First, I needed to decide on some topics to categorise the emails into. Initially, I considered using more granular topics that are common across most businesses. However, conscious of not wanting to spend too long on this phase, I decided to restrict the categories to the following: Finance, Operations, Legal, Spam, and Personal. You may recognise that the first three topics were identified at the start of the project, and I thought this would be a good place to begin since I had already used them when evaluating the embeddings.
 
 #### **Category Descriptions**
 
@@ -38,11 +38,13 @@ First, I needed to decide on some topics to categorise the emails into. Initiall
 #### **How many emails to email**
 
 Now that I had my categories finalised with clear definitions, I needed to decide how many emails would be needed in my training set for the classification model to perform well. Obviously, I didn’t want to sift through all the emails and label each one manually. So in the end, I decided to aim for around 200 emails per category. I thought this was a good number, not so many that labelling would take too long, but enough to give the model sufficient data to learn. 
-Note: I’m still not sure if this is enough, but the model’s results will help me decide if I need to increase this later.
+
+**Note:** I’m still not sure if this is enough, but the model’s results will help me decide if I need to increase this later.
 
 #### **Quick and Dirty Labelling**
 
 Even with restricting the categories to 200 emails each, that still left me with 1000 emails to label manually. A rather daunting and painstaking task that would take too long, especially with no guarantee my model would perform well.
+
 So, I decided to use regular expressions to speed up the process. My idea was to create a set of regex patterns for each category, label the emails automatically where possible, and then review each email’s category to correct any mistakes. It was still a long process, but much faster than labelling everything from scratch! In hindsight, there are probably more accurate ways to help speed this process up but at the time this approach seemed the simplest.
 
 #### **Code Snippet** 
