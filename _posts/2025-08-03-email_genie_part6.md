@@ -8,7 +8,7 @@ date: 2025-08-03
 </div>
 
 
-In the Email Genie series so far, I began by cleaning up the messy email data, removing as much noise as possible. After that, I tried out different methods to vectorise the emails and found that Sentence Transformers gave the best results. Next, I manually labelled a subset of ~1,000 emails into five categories, based on recurring themes I noticed during my analysis.
+In the Email Genie series so far, I began by cleaning up the messy email data, removing as much noise as possible. After that, I tried out different methods to vectorise the emails and found that Sentence Transformers gave the best results. Next, I manually labelled a subset of ~1,000 emails into six categories, based on recurring themes I noticed during my analysis.
 
 Now comes the part I always look forward to the most… modelling! In this post, I’ll walk through the different classification models I experimented with, share how I implemented them, and talk about some of the challenges I ran into along the way.
 
