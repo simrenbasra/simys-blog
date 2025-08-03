@@ -44,7 +44,7 @@ Below I’ll walk through how I trained each model and compared their performanc
 #### **Step 1: Load Embeddings**
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email-genie/phase_6/classif_load_embeddings" alt="Classif step 1" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_6/classif_load_embeddings.png" alt="Classif step 1" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 I started by loading embeddings for my labelled dataset. To do this, I used a Sentence Transformer model to generate embeddings for all the emails. (If you want to know more about how embeddings work, I covered that in earlier Email Genie posts).
@@ -52,7 +52,7 @@ I started by loading embeddings for my labelled dataset. To do this, I used a Se
 #### **Step 2: Encoded Labels**
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email-genie/phase_6/classif_encode_labels" alt="Classif step 2" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_6/classif_encode_labels.png" alt="Classif step 2" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 I decided to encode the labels by using `LabelEncoder`. This essentially transforms my categorical labels into numeric labels.
@@ -60,7 +60,7 @@ I decided to encode the labels by using `LabelEncoder`. This essentially transfo
 #### **Step 3: Split X and y**
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email-genie/phase_6/classif_split_X_y" alt="Classif step 3" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_6/classif_split_X_y.png" alt="Classif step 3" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 Split the data into X and y, and use stratify when creating training and validation sets to ensure the label distribution stays the same in both splits to help minimise bias.
@@ -68,7 +68,7 @@ Split the data into X and y, and use stratify when creating training and validat
 #### **Step 4: Define models to train**
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email-genie/phase_6/classif_define_models" alt="Classif step 4" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_6/classif_define_models.png" alt="Classif step 4" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 Rather than writing separate code blocks for each model, I defined all the models in a single dictionary making it easier to loop through and train them using the same block of code.
@@ -76,7 +76,7 @@ Rather than writing separate code blocks for each model, I defined all the model
 #### **Step 5: Train models and store results**
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email-genie/phase_6/classif_training_loop" alt="Classif step 5" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_6/classif_training_loop.png" alt="Classif step 5" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 Finally, I trained each model in a loop, storing their predictions and metrics for comparison. 
@@ -86,7 +86,7 @@ Finally, I trained each model in a loop, storing their predictions and metrics f
 Let’s take a look at how the three models did:
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email-genie/phase_6/classif_results" alt="Classif results" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_6/classif_results.png" alt="Classif results" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 Performance across all three was similar, with Logistic Regression slightly outperforming the others. Using more complex models didn’t seem to offer any improvement in results. This suggests the issue is likely with the dataset, I think it may be too small for what I’m trying to do and the labels may not be reliable enough.
@@ -117,7 +117,7 @@ In previous posts, I’ve explained BERT’s architecture and how it produces em
 Below, I’ve expanded my previous BERT diagram to show the extra parts needed to turn BERT into a classifier.
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email-genie/phase_6/bert_classif_diagram" alt="Classif BERT diagram" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_6/bert_classif_diagram.png" alt="Classif BERT diagram" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 _**Note:** The process is the same for DistilBERT._
@@ -137,7 +137,7 @@ As with training the classifier models before, I start by separating the emails 
 #### **Step 2:** Split X and y
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email-genie/phase_6/bert_x_y_split" alt="Classif BERT step 2" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_6/bert_x_y_split.png" alt="Classif BERT step 2" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 Next, I split the dataset into training and validation sets using a stratified split. Stratifying by labels ensures that the distribution of labels remains balanced across both training and validation data. This helps the model learn better and minimises bias.
@@ -151,7 +151,7 @@ Like before, I chunked the emails since most exceed the 512-token limit of Disti
 **a)	Training Set**
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email-genie/phase_6/bert_tokenise_train_data" alt="Classif BERT step 3a" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_6/bert_tokenise_train_data.png" alt="Classif BERT step 3a" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 Here, I loop over each email and its label, pass the text through my `tokenise_and_chunk` function, and collect all the chunks and attention masks. I had to be careful here to be sure all chinks form the same email also shared the same email!
@@ -159,7 +159,7 @@ Here, I loop over each email and its label, pass the text through my `tokenise_a
 **b)	Validation Set**
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email-genie/phase_6/bert_tokenise_val_data" alt="Classif BERT step 3b" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_6/bert_tokenise_val_data.png" alt="Classif BERT step 3b" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 For the validation set, I use the same approach but here, I also store an email_id for each chunk. This is because the model makes a single prediction for each chunk (since long emails are split). 
@@ -171,7 +171,7 @@ To get a true sense of how well the model performs, I needed to group all the ch
 #### **Step 4:** Build Datasets
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email-genie/phase_6/bert_datasets" alt="Classif BERT step 4" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_6/bert_datasets.png" alt="Classif BERT step 4" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 The classifier requires data as a Dataset object. Using the Hugging Face documentation, I created Dataset objects for the training and validation sets.
@@ -179,7 +179,7 @@ The classifier requires data as a Dataset object. Using the Hugging Face documen
 #### **Step 5:** Define model and training args 
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email-genie/phase_6/bert_define_classifier" alt="Classif BERT step 5a" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_6/bert_define_classifier.png" alt="Classif BERT step 5a" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 I defined the classification model (a DistilBERT with an added classification layer on top) and set the training arguments.
@@ -187,7 +187,7 @@ I defined the classification model (a DistilBERT with an added classification la
 The `TrainingArguments` define how training should run for example how big each batch should be and how many epochs to train for. Here are the arguments I set:
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email-genie/phase_6/bert_training_args" alt="Classif BERT step 5b" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_6/bert_training_args.png" alt="Classif BERT step 5b" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 •	**`output_dir`**: Directory to store the trained model
@@ -203,7 +203,7 @@ The `TrainingArguments` define how training should run for example how big each 
 I also then needed to define a `Trainer` object. This basically handles the whole training and evaluation loop by feeding batched data into the model, running forward and backward passes, updating weights, etc… Here are the parameters I set:
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email-genie/phase_6/bert_trainer" alt="Classif BERT step 5c" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_6/bert_trainer.png" alt="Classif BERT step 5c" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 •	**`model`**: The model to fine-tune
@@ -219,11 +219,11 @@ I also then needed to define a `Trainer` object. This basically handles the whol
 As discussed earlier, I chose to partially freeze DistilBERT’s weights to help minmise the risk of overfitting on my small dataset. Since the `[CLS]` embedding is updated during fine-tuning, we need to make sure this part remains unfrozen. By freezing/unfreezing, I mean allowing the weights to be updated during training or keeping them fixed.
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email-genie/phase_6/bert_freeze_1" alt="Classif BERT step 6a" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_6/bert_freeze_1.png" alt="Classif BERT step 6a" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email-genie/phase_6/bert_freeze_2" alt="Classif BERT step 6b" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_6/bert_freeze_2.png" alt="Classif BERT step 6b" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 If we look at the diagram, we can see that the `[CLS]` embedding is updated in the transformer block, this means the last few layers must be unfrozen to allow the embedding for CLS to be updated. Of course, the classification layer on top must also be unfrozen and trainable. So, I froze all layers and only allowed the top layers and the classifier layer to update during training.
@@ -233,7 +233,7 @@ If we look at the diagram, we can see that the `[CLS]` embedding is updated in t
 With everything set up, it’s time to train the model! To do this, I called the `Trainer` object and used `.train()`.
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email-genie/phase_6/bert_train" alt="Classif BERT step 7" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_6/bert_train.png" alt="Classif BERT step 7" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 This step can take a fair while to run!
@@ -245,7 +245,7 @@ Since I chunked my emails, I had to evaluate my results manually.
   **a)	Run `.predict`**
   
   <div style="text-align: center;">
-    <img src="{{ site.baseurl }}/assets/email-genie/phase_6/bert_predict" alt="Classif BERT step 8a" style="max-width: 100%; height: auto; margin: 20px 0;">
+    <img src="{{ site.baseurl }}/assets/email-genie/phase_6/bert_predict.png" alt="Classif BERT step 8a" style="max-width: 100%; height: auto; margin: 20px 0;">
   </div>
   
   This outputs predictions as an array of logits for each chunk, along with label_ids which are the ground-truth labels.
@@ -253,7 +253,7 @@ Since I chunked my emails, I had to evaluate my results manually.
   **b)	Extract predictions**
   
   <div style="text-align: center;">
-    <img src="{{ site.baseurl }}/assets/email-genie/phase_6/bert_extract_preds" alt="Classif BERT step 8b" style="max-width: 100%; height: auto; margin: 20px 0;">
+    <img src="{{ site.baseurl }}/assets/email-genie/phase_6/bert_extract_preds.png" alt="Classif BERT step 8b" style="max-width: 100%; height: auto; margin: 20px 0;">
   </div>
   
   From the logits, I convert each chunk’s output into a predicted label and also extract the true label for each chunk.
@@ -263,11 +263,11 @@ Since I chunked my emails, I had to evaluate my results manually.
   Since each email is split into multiple chunks, I group the chunk predictions by email_id and combine them into a single email-level prediction using majority voting.
 
   <div style="text-align: center;">
-    <img src="{{ site.baseurl }}/assets/email-genie/phase_6/bert_preds_df" alt="Classif BERT step 8c1" style="max-width: 100%; height: auto; margin: 20px 0;">
+    <img src="{{ site.baseurl }}/assets/email-genie/phase_6/bert_preds_df.png" alt="Classif BERT step 8c1" style="max-width: 100%; height: auto; margin: 20px 0;">
   </div>
 
   <div style="text-align: center;">
-    <img src="{{ site.baseurl }}/assets/email-genie/phase_6/bert_agg_preds" alt="Classif BERT step 8c2" style="max-width: 100%; height: auto; margin: 20px 0;">
+    <img src="{{ site.baseurl }}/assets/email-genie/phase_6/bert_agg_preds.png" alt="Classif BERT step 8c2" style="max-width: 100%; height: auto; margin: 20px 0;">
   </div>
   
   •	the `agg` function does majority voting by:
@@ -281,7 +281,7 @@ Since I chunked my emails, I had to evaluate my results manually.
   **d)	Calculate metrics email level**
 
   <div style="text-align: center;">
-    <img src="{{ site.baseurl }}/assets/email-genie/phase_6/bert_metrics" alt="Classif BERT step 8d" style="max-width: 100%; height: auto; margin: 20px 0;">
+    <img src="{{ site.baseurl }}/assets/email-genie/phase_6/bert_metrics.png" alt="Classif BERT step 8d" style="max-width: 100%; height: auto; margin: 20px 0;">
   </div>
     
   -	Pass in email level predictions and labels to the classification metrics
@@ -305,7 +305,7 @@ Overall, DistilBERT, even with fine-tuning, is not outperforming the simpler cla
 
 <br>
 
-##**Summary**
+## **Summary**
 
 Classifying a sample of emails from the Enron dataset proved to be quite challenging. I wasn’t expecting great performance since email text is very noisy, but I did hope that different classification models would improve on the logistic regression baseline. This wasn’t really seen, I think the main reason for this was the dataset. It wasn’t large enough for the models to learn well enough, especially with text as nuanced as emails.
 
