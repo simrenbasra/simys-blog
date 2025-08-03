@@ -109,7 +109,7 @@ For a while, I wasn’t too sure what the next step for this project should be. 
 
 So instead of expanding the dataset, I started thinking about how to make the most of the data I already had. That’s when I decided to try fine-tuning DistilBERT, not for generating embeddings, but for training it as a classifier.
 
-Even though I only had around 1,300 labelled examples, I thought fine-tuning was still worth trying. DistilBERT already has a strong understanding of language, so I can fine-tune to guide it with the labels and let it learn specific patterns in my dataset.
+Even though I only had around 1,000 labelled examples, I thought fine-tuning was still worth trying. DistilBERT already has a strong understanding of language, so I can fine-tune to guide it with the labels and let it learn specific patterns in my dataset.
 
 #### **How Fine-Tuning for Classification Works**
 
