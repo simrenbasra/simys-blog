@@ -87,7 +87,7 @@ Finally, I trained each model in a loop, storing their predictions and metrics f
 Let’s take a look at how the three models did:
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email-genie/phase_6/classif_results.png" alt="Classif results" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_6/classif_updated_results.png" alt="Classif results" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 Performance across all three was similar, with Logistic Regression slightly outperforming the others. Using more complex models didn’t seem to offer any improvement in results. This suggests the issue is likely with the dataset, I think it may be too small for what I’m trying to do and the labels may not be reliable enough.
