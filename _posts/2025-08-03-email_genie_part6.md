@@ -18,7 +18,7 @@ Now comes the part I always look forward to the most… modelling! In this post,
 
 <br>
 
-## **Classification Models**
+## Classification Models
 
 First, let’s talk about which models I decided to experiment with and why.
 
@@ -37,7 +37,7 @@ The last model I wanted to try was Random Forest. This model is quite different 
 
 I thought it would be interesting to try Random Forest to see if a non-linear model could capture patterns that the previous models might miss, especially if there were any patterns between features that weren’t captured by straight-line class boundaries. 
 
-## **Implementation**
+## Implementation
 
 Below I’ll walk through how I trained each model and compared their performance.
 
@@ -81,7 +81,7 @@ Rather than writing separate code blocks for each model, I defined all the model
 
 Finally, I trained each model in a loop, storing their predictions and metrics for comparison. 
 
-## **Results**
+## Results
 
 Let’s take a look at how the three models did:
 
@@ -102,7 +102,7 @@ Originally, I planned to do hyperparameter tuning on the best-performing model, 
 <br>
 
 
-## **Fine Tuning with DistilledBERT (with labels)**
+## Fine Tuning DistilledBERT Classifier
 
 For a while, I wasn’t too sure what the next step for this project should be. I wanted to avoid going back and manually labelling another 1,000 emails it’s rather time-consuming and for me mentally draining…
 
@@ -128,7 +128,7 @@ Inside the embedding and transformer blocks of DistilBERT are weights that have 
 
 During fine-tuning, the embedding for the `[CLS]` token is updated so that it acts like a summary of the input text. This updated [CLS] embedding is the only one passed to the classifier layer. Previously, this `[CLS]` token indicates the start of an embedding and does not provide a summary. By only passing the CLS embedding, the classifier can be fairly simple (single dense layer).
 
-## **Implementation**
+## Implementation
 
 #### **Step 1: Separate out the emails and labels**
 
@@ -288,7 +288,7 @@ Since I chunked my emails, I had to evaluate my results manually.
     
   -	Results look more realistic, let's take a closer look at...
     
-## **Results**
+## Results
 
 Out of curiosity, I also experimented with fully fine-tuning the entire model to compare performance. 
 
@@ -305,7 +305,7 @@ Overall, DistilBERT, even with fine-tuning, is not outperforming the simpler cla
 
 <br>
 
-## **Summary**
+## Summary
 
 Classifying a sample of emails from the Enron dataset proved to be quite challenging. I wasn’t expecting great performance since email text is very noisy, but I did hope that different classification models would improve on the logistic regression baseline. This wasn’t really seen, I think the main reason for this was the dataset. It wasn’t large enough for the models to learn well enough, especially with text as nuanced as emails.
 
