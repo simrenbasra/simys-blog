@@ -267,7 +267,7 @@ Since I chunked my emails, I had to evaluate my results manually.
   </div>
 
   <div style="text-align: center;">
-    <img src="{{ site.baseurl }}/assets/email-genie/phase_6/bert_agg_preds.png" alt="Classif BERT step 8c2" style="max-width: 100%; height: auto; margin: 20px 0;">
+    <img src="{{ site.baseurl }}/assets/email-genie/phase_6/bert_agg_preds" alt="Classif BERT step 8c2" style="max-width: 100%; height: auto; margin: 20px 0;">
   </div>
   
   `agg` function does majority voting by:
