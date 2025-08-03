@@ -293,7 +293,7 @@ Since I chunked my emails, I had to evaluate my results manually.
 
 | Accuracy | Precision | Recall | F1-Score |
 |----------|-----------|--------|----------|
-| 62.1     | 63.3      | 62.1   | 62.2     |
+| 67.7     | 68.2      | 67.7   | 67.7     |
 
 
 Overall, DistilBERT, even with fine-tuning, is not really outperforming the simpler classification models I tested. This confirmed my initial concern: there simply isn’t enough labelled data for any model to learn effectively. Since I’m not planning to spend time labelling more data, I may need to reconsider the scope of the project to better suit the data I have.
