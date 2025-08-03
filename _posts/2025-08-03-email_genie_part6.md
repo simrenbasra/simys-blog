@@ -110,7 +110,7 @@ So instead of expanding the dataset, I started thinking about how to make the mo
 
 Even though I only had around 1,300 labelled examples, I thought fine-tuning was still worth trying. DistilBERT already has a strong understanding of language, so I can fine-tune to guide it with the labels and let it learn specific patterns in the dataset.
 
-##### **How Fine-Tuning for Classification Works**
+#### **How Fine-Tuning for Classification Works**
 
 In previous posts, I’ve explained BERT’s architecture and how it produces embeddings. DistilBERT follows the same process but with a more lightweight architecture like fewer layer, no poling, etc. It’s designed to be faster and perfect for cases where a GPU isn’t available.
 
