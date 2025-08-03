@@ -270,13 +270,13 @@ Since I chunked my emails, I had to evaluate my results manually.
     <img src="{{ site.baseurl }}/assets/email-genie/phase_6/bert_agg_preds.png" alt="Classif BERT step 8c2" style="max-width: 100%; height: auto; margin: 20px 0;">
   </div>
   
-  •	the `agg` function does majority voting by:
+  `agg` function does majority voting by:
   
-    o	`np.bincount(x)`: counts how many times each predicted label appears among the chunks of that email.
+    - `np.bincount(x)`: counts how many times each predicted label appears among the chunks of that email.
     
-    o	`.argmax()`: selects the label with the highest count
+    - `.argmax()`: selects the label with the highest count
   
-  •	For true labels, since all chunks of the same email share the same true label, I do `.first()`
+  For true labels, since all chunks of the same email share the same true label, I do `.first()`
   
   **d)	Calculate metrics email level**
 
