@@ -130,11 +130,11 @@ During fine-tuning, the embedding for the `[CLS]` token is updated so that it ac
 
 ## **Implementation**
 
-#### **Step 1:** Separate out the emails and labels
+#### **Step 1: Separate out the emails and labels**
 
 As with training the classifier models before, I start by separating the emails and their labels. I also encode the labels as before.
 
-#### **Step 2:** Split X and y
+#### **Step 2: Split X and y**
 
 <div style="text-align: center;">
   <img src="{{ site.baseurl }}/assets/email-genie/phase_6/bert_x_y_split.png" alt="Classif BERT step 2" style="max-width: 100%; height: auto; margin: 20px 0;">
@@ -142,7 +142,7 @@ As with training the classifier models before, I start by separating the emails 
 
 Next, I split the dataset into training and validation sets using a stratified split. Stratifying by labels ensures that the distribution of labels remains balanced across both training and validation data. This helps the model learn better and minimises bias.
 
-#### **Step 3:** Tokenize the emails
+#### **Step 3: Tokenize the emails**
 
 Similar to when creating embeddings, I tokenise the emails using the DistilBERT tokenizer. 
 
@@ -168,7 +168,7 @@ At first, my evaluation results looked rather low with most metrics under 50% an
 
 To get a true sense of how well the model performs, I needed to group all the chunks that have the same email_id before evaluating the model!
 
-#### **Step 4:** Build Datasets
+#### **Step 4: Build Datasets**
 
 <div style="text-align: center;">
   <img src="{{ site.baseurl }}/assets/email-genie/phase_6/bert_datasets.png" alt="Classif BERT step 4" style="max-width: 100%; height: auto; margin: 20px 0;">
@@ -176,7 +176,7 @@ To get a true sense of how well the model performs, I needed to group all the ch
 
 The classifier requires data as a Dataset object. Using the Hugging Face documentation, I created Dataset objects for the training and validation sets.
 
-#### **Step 5:** Define model and training args 
+#### **Step 5: Define model and training args** 
 
 <div style="text-align: center;">
   <img src="{{ site.baseurl }}/assets/email-genie/phase_6/bert_define_classifier.png" alt="Classif BERT step 5a" style="max-width: 100%; height: auto; margin: 20px 0;">
@@ -214,7 +214,7 @@ I also then needed to define a `Trainer` object. This basically handles the whol
 
 •	**`eval_dataset`**: The dataset used for evaluation
 
-#### **Step 6:** Freeze weights  
+#### **Step 6: Freeze weights**  
 
 As discussed earlier, I chose to partially freeze DistilBERT’s weights to help minmise the risk of overfitting on my small dataset. Since the `[CLS]` embedding is updated during fine-tuning, we need to make sure this part remains unfrozen. By freezing/unfreezing, I mean allowing the weights to be updated during training or keeping them fixed.
 
@@ -228,7 +228,7 @@ As discussed earlier, I chose to partially freeze DistilBERT’s weights to help
 
 If we look at the diagram, we can see that the `[CLS]` embedding is updated in the transformer block, this means the last few layers must be unfrozen to allow the embedding for CLS to be updated. Of course, the classification layer on top must also be unfrozen and trainable. So, I froze all layers and only allowed the top layers and the classifier layer to update during training.
 
-#### **Step 7:** Train the model
+#### **Step 7: Train the model**
 
 With everything set up, it’s time to train the model! To do this, I called the `Trainer` object and used `.train()`.
 
@@ -238,7 +238,7 @@ With everything set up, it’s time to train the model! To do this, I called the
 
 This step can take a fair while to run!
 
-#### **Step 8:** Assess results
+#### **Step 8: Assess results**
 
 Since I chunked my emails, I had to evaluate my results manually.
 
