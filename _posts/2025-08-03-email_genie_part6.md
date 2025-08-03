@@ -272,9 +272,9 @@ Since I chunked my emails, I had to evaluate my results manually.
   
   `agg` function does majority voting by:
   
-    - `np.bincount(x)`: counts how many times each predicted label appears among the chunks of that email.
+  - `np.bincount(x)`: counts how many times each predicted label appears among the chunks of that email.
     
-    - `.argmax()`: selects the label with the highest count
+  - `.argmax()`: selects the label with the highest count
   
   For true labels, since all chunks of the same email share the same true label, I do `.first()`
   
