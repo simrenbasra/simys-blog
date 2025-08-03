@@ -180,7 +180,7 @@ The classifier requires data as a `Dataset` object. Using the Hugging Face docum
 #### **Step 5: Define model and training args** 
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email-genie/phase_6/bert_define_classifier.png" alt="Classif BERT step 5a" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_6/updated_bert_define_model.png" alt="Classif BERT step 5a" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 I defined the classification model (a DistilBERT with an added classification layer on top) and set the training arguments.
