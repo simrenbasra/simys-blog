@@ -290,8 +290,6 @@ Since I chunked my emails, I had to evaluate my results manually.
     
 ## Results
 
-Out of curiosity, I also experimented with fully fine-tuning the entire model to compare performance. 
-
 | Accuracy | Precision | Recall | F1-Score |
 |----------|-----------|--------|----------|
 | 62.1     | 63.3      | 62.1   | 62.2     |
