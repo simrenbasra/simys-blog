@@ -142,9 +142,9 @@ As with training the classifier models before, I start by separating the emails 
 
 Next, I split the dataset into training and validation sets using a stratified split. Stratifying by labels ensures that the distribution of labels remains balanced across both training and validation data. This helps the model learn better and minimises bias.
 
-#### **Step 3: Tokenize the emails**
+#### **Step 3: Tokenise the emails**
 
-Similar to when creating embeddings, I tokenise the emails using the DistilBERT tokenizer. 
+Similar to when creating embeddings, I tokenise the emails using the DistilBERT tokeniser. 
 
 Like before, I chunked the emails since most exceed the 512-token limit of DistilBERT. I reused the same chunking function I shared in an earlier post.
 
