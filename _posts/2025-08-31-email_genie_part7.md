@@ -31,8 +31,6 @@ Let’s first recap what vector embeddings are and get a better understanding of
 
 ## Vector Databases
 
-#### **Recap: Vector Embeddings**
-
 Before diving into Vector Databases, I thought it a good idea to give a bit of a recap to vector embeddings and what they represent using a simple example:
 
 | Sentence                          | Embedding                        |
@@ -50,7 +48,13 @@ Each number in the array represents a certain feature, its value signals how str
 
 Now that we understand embeddings, let’s see how vector databases use them to do semantic search!
 
-#### **What are Vector Databases?**
+<br>
+
+----
+
+<br>
+
+### **What are Vector Databases?**
 
 Databases are used to store and query data. The most common type many have come across is the relational database, where data is organised into tables with rows and columns. Each row has a unique primary key and we can query the data using SQL.
 
@@ -66,19 +70,25 @@ This is where vector databases come in. Instead of storing text in its raw form,
 
 Because of this, vector databases can perform semantic search, returning results ranked by meaning, not just exact matches. They can answer queries like “show me emails about bankruptcies” even if the word “bankruptcies” never appears in the text, something a traditional relational database can’t do.
 
-#### **How Is Data Stored?** 
+<br>
+
+----
+
+<br>
+
+### **How Is Data Stored?** 
 
 When you store data in a vector database, you can’t just write to the database and dump the data there, you need to:
 
-**1. Convert the data into embeddings**
+#### **1. Convert the data into embeddings**
 
 As discussed, all data must be represented as a vector. To do this we use an embedding model to create the embeddings.
 
-**2. Metadata**
+#### **2. Metadata**
 
 Usually store some metadata alongside the embeddings, includes things like a timestamp or date, email id and sender id (in this case), and any other information which could be important to the project.
 
-**3. Vector Indexing**
+#### **3. Vector Indexing**
 
 Just like other databases use primary keys to speed up searches. Vector databases also use indexes but not the traditional kind since they are not matching exact values.
 
@@ -142,20 +152,25 @@ For HNSW, the concept is the same. To help understand, we can think of searching
 **c). IVF (Inverted File)**
 
 IVF first groups vectors into k clusters (called buckets) using a clustering algorithm like k-means. For a given query vector, it calculates which bucket is closest using a similarity metric like cosine similarity. Only vectors in those clusters are searched reducing the total search space. 
+<br>
 
-#### **Similarity Search**
+----
+
+<br>
+
+### **Similarity Search**
 
 Now that our vectors are grouped by similarity, we can now use similarity search to return vectors most like the input. Here is how it works:
 
-**1. Convert your search query into a vector**
+#### **1. Convert your search query into a vector**
 
 Just like with the data in the vector database, the search input is passed through the same embedding mode turning the input query into a vector. 
 
-**2. Search the vector index for nearest neighbours**
+#### **2. Search the vector index for nearest neighbours**
 
 The vector databases don’t do a one-by-one comparison of every vector to the search vector.  Instead, it uses vector indexes to quickly find vectors that are close in semantic meaning.
 
-**3. Calculate similarity scores**
+#### **3. Calculate similarity scores**
 
 For all candidate vectors found by the index, the database calculates a similarity score. There are lots of different ways to do this, there are the most common:
 
@@ -167,7 +182,7 @@ For all candidate vectors found by the index, the database calculates a similari
 
 Vectors with higher similarity scores are more related in meaning. 
 
-**4. Return top results with metadata**
+#### **4. Return top results with metadata**
 
 The database returns the top n most similar vectors along with their metadata, ready for evaluation. 
 In cases where you have a labelled dataset, you could use majority voting on the labels of the returned vectors to determine the label of the input query. This was an option I considered for my project but ultimately decided to limit my project to semantic search. I did this as I had concerns over the quality of my embeddings. Further down in the post I explain why this is.
@@ -182,15 +197,15 @@ In cases where you have a labelled dataset, you could use majority voting on the
 
 **Note:** My implementation wasn’t as smooth as the steps below, I did iterate over the process quite a few times in an attempt to get results as strong as possible!
 
-**Step 1: Choosing a Vector Database**
+#### **Step 1: Choosing a Vector Database**
 
 I considered two popular options: FAISS and Pinecone. I chose FAISS because it’s fast, easy to set up, and low maintenance. Ideal for quick development and integration into a web app. Plus, it’s open-source, lightweight, and gives me full control for experimenting with different index types!
 
-**Step 2: Load Dataset**
+#### **Step 2: Load Dataset**
 
 After installing FAISS on my conda environment, I loaded in my dataset and prepared it data for the next step.
 
-**Step 3: Chunk Emails**
+#### **Step 3: Chunk Emails**
 
 Previously, when I used Sentence Transformers, I didn’t chunk my embeddings. However, since my project focuses on similarity search, I thought chunking emails was important.
 
@@ -212,7 +227,7 @@ I applied the chunking function to the lablled dataset:
   <img src="{{ site.baseurl }}/assets/email-genie/phase_7/chunking_emails.png" alt="Chunking Emails" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
-**Step 4: Create Embeddings**
+#### **Step 4: Create Embeddings**
 
 With the emails chunked, I then created embeddings using Sentence Transformers. 
 
@@ -228,7 +243,7 @@ I chose a different, larger model than before because the smaller mini transform
 
 I also set the normalisation parameter when creating embeddings. Normalising embeddings helps improve similarity search by ensuring that comparisons like cosine similarity focus on the direction of the vectors rather than their magnitude. It also speeds up retrieval since cosine similarity becomes dot product when vectors are normalised. 
 
-**Step 5: Build Index**
+#### **Step 5: Build Index**
 
 Now it was time to move to the vector database!
 
@@ -273,7 +288,7 @@ I used my labelled dataset to decide which index worked best for this project.
 
 For the similarity metric, I chose cosine similarity instead of the default L2 (Euclidean) distance. Since embeddings have the same dimensions but can vary in magnitude, cosine similarity normalises the vectors and focuses solely on their direction, making semantic similarity more accurate. 
 
-**Step 6: Evaluation**
+#### **Step 6: Evaluation**
 
 For evaluation, I decided to use the nearest neighbours approach.
 
