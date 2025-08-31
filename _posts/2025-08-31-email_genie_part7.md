@@ -4,7 +4,7 @@ date: 2025-08-31
 ---
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email-genie/phase_7/cover_photo.png" alt="Cover photo" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_7/cover_photo.jpg" alt="Cover photo" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 In my last post, I explored different modelling techniques in an attempt to build a classifier for emails. Despite trying a range of traditional methods and even fine-tuning a DistilBERT model, the results weren’t great… all models struggled - with performance less than 70%. I think the main reason for this was either: lack of data in the labelled dataset for the model to learn well or lack of separation in vector space between the embeddings.
