@@ -66,19 +66,19 @@ This is where vector databases come in. Instead of storing text in its raw form,
 
 Because of this, vector databases can perform semantic search, returning results ranked by meaning, not just exact matches. They can answer queries like “show me emails about bankruptcies” even if the word “bankruptcies” never appears in the text, something a traditional relational database can’t do.
 
-#### **How data is stored** 
+#### **How Is Data Stored?** 
 
 When you store data in a vector database, you can’t just write to the database and dump the data there, you need to:
 
-#### 1.	Convert the data into embeddings
+##### **1.	Convert the data into embeddings**
 
 As discussed, all data must be represented as a vector. To do this we use an embedding model to create the embeddings.
 
-#### 2.	Metadata
+##### **2.	Metadata**
 
 Usually store some metadata alongside the embeddings, includes things like a timestamp or date, email id and sender id (in this case), and any other information which could be important to the project.
 
-#### 3.	Vector Indexing 
+##### **3.	Vector Indexing**
 
 Just like other databases use primary keys to speed up searches. Vector databases also use indexes but not the traditional kind since they are not matching exact values.
 
@@ -86,12 +86,12 @@ A vector index organises vectors so that the database can find vectors that are 
 
 To do this, we use an approach called Approximate Nearest Neighbour (ANN) search. ANN methods organise the vector data so similar vectors are grouped together. There are different ANN techniques to choose from:
 
-#### a). Flat Index
+##### **a). Flat Index**
 
 A brute-force approach for vector search. For a query vector, it calculates the similarity metric with every vector in the dataset and returns the top n closest vectors.
 It is simple and precise but not efficient for large datasets since each vector is compared to the query vector.
 
-#### b). HNSW (Hierarchical Navigable Small World graphs)
+##### **b). HNSW (Hierarchical Navigable Small World graphs)**
 
 HNSW essentially uses multiple layers of maps to search the vector space. Understanding how exactly HNSW works took me a while to get my head around… For me, it helped to start with the concept of skip lists.
 
@@ -103,7 +103,7 @@ Suppose we have a sequence: 1, 2, 3, …, 10, and we are querying for the number
 
 The brute force approach is to iterate over each number until reaching 8, this isn’t efficient especially with large datasets. Skipped linked lists speeds things up by using multiple layers. 
 
-**Search process**
+##### **Search process**
 
 1.	Start at the top level (Level 3). Move forward until the next number is larger than the query.
 
