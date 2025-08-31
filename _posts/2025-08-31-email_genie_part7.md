@@ -219,7 +219,7 @@ My chunking method is similar to how I chunked emails for BERT embeddings, with 
 
 - **Include Overlap:** I avoid strict boundaries between chunks so that context isn’t lost. Overlapping chunks can help preserve information that spans across multiple chunks.
 
-- **No Masking/Tags/Padding:** Sentence Transformers don’t need attention masks, special tokens like BERT’s [CLS], [SEP], or padding, as these are handled internally. So, I removed them.
+- **No Masking/Tags/Padding:** Sentence Transformers don’t need attention masks, special tokens like BERT’s `[CLS]`, `[SEP]`, or padding, as these are handled internally. So, I removed them.
 
 I applied the chunking function to the lablled dataset: 
 
