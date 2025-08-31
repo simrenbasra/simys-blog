@@ -273,7 +273,8 @@ Before adding embeddings to an IVF index, we need to train the index so that it 
 
 **HNSW Graph Index**
 
-Like the other indexes, we pass the embedding dimension and set the similarity metric to cosine similarity.
+Like the other indexes, we pass the embedding dimension and set the similarity metric to cosine similarity. For HNSW, we also set the parameter `M` to 32, which controls the maximum number of connections per node. More connections per node increases accuracy but also requires more memory.
+
 <div style="text-align: center;">
   <img src="{{ site.baseurl }}/assets/email-genie/phase_7/HNSW_1.png" alt="HNSW Index 1" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
