@@ -121,7 +121,7 @@ The brute force approach is to iterate over each number until reaching 8, this i
 
 3.	Repeat until the query number is reached.
 
-For HNSW, the concept is the same. To help understand, we can think of searching for a city on a map, where each level provides more detail: 
+For HNSW, the concept is the same: 
 
 <div style="text-align: center;">
   <img src="{{ site.baseurl }}/assets/email-genie/phase_7/hnsw_diagram.png" alt="HNSW Diagram" style="max-width: 100%; height: auto; margin: 20px 0;">
@@ -129,7 +129,7 @@ For HNSW, the concept is the same. To help understand, we can think of searching
 
 - **Level 3 (highest layer)**
 
-    - A zoomed-out map of countries
+    - A zoomed-out map
 
     - Each point is connected to a few other points
 
@@ -137,7 +137,7 @@ For HNSW, the concept is the same. To help understand, we can think of searching
 
 - **Level 2 (middle layer)**
 
-    - A more detailed map showing major cities connected by motorways
+    - A more detailed map showing more nodes and connections
 
     - Repeat similarity calculates to find nodes closest to the query
 
@@ -145,7 +145,7 @@ For HNSW, the concept is the same. To help understand, we can think of searching
 
 - **Level 0 (bottom layer)**
 
-    - The most detailed map, showing all streets and roads
+    - The most detailed map, showing all nodes and connections
 
     - Here, we can find the exact nearest neighbours of the query
     
