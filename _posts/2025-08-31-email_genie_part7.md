@@ -255,17 +255,17 @@ In this project, I experimented with three common FAISS index types uisng their 
   <img src="{{ site.baseurl }}/assets/email-genie/phase_7/flat_index.png" alt="Flat Index" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
-All index types need the dimension of the embeddings as input. After creating the index, we use `add()` to insert the embeddings. For the Flat index this just stores all vectors, ready for search.
+All index types need the dimension of the embeddings as input. After creating the index, I use `add()` to insert the embeddings. For the Flat index this just stores all vectors, ready for search.
 
 **IVF Index**
 
-For IVF, we pass in the embedding dimension and set the similarity metric to cosine similarity. We also set the number of buckets to divide the embeddings into, for this project I chose 10.
+For IVF, I pass in the embedding dimension and set the similarity metric to cosine similarity. I also set the number of buckets to divide the embeddings into, for this project I chose 10.
 
 <div style="text-align: center;">
   <img src="{{ site.baseurl }}/assets/email-genie/phase_7/IVF_1.png" alt="IVF Index 1" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
-Before adding embeddings to an IVF index, we need to train the index so that it can calculate the cluster centres. Once trained, we can add the embeddings to their clusters.
+Before adding embeddings to an IVF index, I needed to train the index so that it could calculate the cluster centres. Once trained, I added the embeddings to their clusters.
 
 <div style="text-align: center;">
   <img src="{{ site.baseurl }}/assets/email-genie/phase_7/IVF_2.png" alt="IVF Index 2" style="max-width: 100%; height: auto; margin: 20px 0;">
@@ -273,7 +273,7 @@ Before adding embeddings to an IVF index, we need to train the index so that it 
 
 **HNSW Graph Index**
 
-Like the other indexes, we pass the embedding dimension and set the similarity metric to cosine similarity. For HNSW, we also set the parameter `M` to 32, which controls the maximum number of connections per node. More connections per node increases accuracy but also requires more memory.
+Like the other indexes, I pass the embedding dimension and set the similarity metric to cosine similarity. For HNSW, I also set the parameter `M` to 32, which controls the maximum number of connections per node. More connections per node increases accuracy but also requires more memory.
 
 <div style="text-align: center;">
   <img src="{{ site.baseurl }}/assets/email-genie/phase_7/HNSW_1.png" alt="HNSW Index 1" style="max-width: 100%; height: auto; margin: 20px 0;">
