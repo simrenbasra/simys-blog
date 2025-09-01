@@ -325,11 +325,13 @@ Even after all the tweaks I tried, performance still struggled to get pass 60%. 
 
 - Since the main goal of this project was a web app where users could search across emails, this felt like a good real-world test
 
+Unfortunately, the qualitative results were also weak. To understand why, I plotted the embeddings in 2D space. As I expected, there was a lot of overlap between different categories. The lack of distinct boundaries between the labels makes it harder to return semantically similar emails. 
+
+
 <div style="text-align: center;">
   <img src="{{ site.baseurl }}/assets/email-genie/phase_7/umap_plot.png" alt="Label umap plot" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
-Unfortunately, the qualitative results were also weak. To understand why, I plotted the embeddings in 2D space. As I expected, there was a lot of overlap between different categories. The lack of distinct boundaries between the labels makes it harder to return semantically similar emails. 
 
 This kind of confirmed what’s been coming up again and again in this project, the embeddings just aren’t strong enough. The embeddings I’m using come from a pre-trained Sentence Transformer model, and I haven’t fine-tuned them at all. That means they’re pretty good at understanding general language, but struggle with the nuances of stuff like finance, legal or business/company jargon.
 
