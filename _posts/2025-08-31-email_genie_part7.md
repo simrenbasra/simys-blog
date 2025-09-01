@@ -60,7 +60,9 @@ Databases are used to store and query data. The most common type many have come 
 
 For example, to return all rows where the colour is pink:
 
-`SELECT * FROM MY_TABLE WHERE COLOUR.LOWER()= “pink”`
+`SELECT * 
+ FROM MY_TABLE 
+ WHERE LOWER(COLOUR)= 'pink';`
 
 This works perfectly for structured data (data that can be defined by columns like dates, amounts, short strings).
 
