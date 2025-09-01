@@ -105,7 +105,7 @@ It is simple and precise but not efficient for large datasets since each vector 
 
 HNSW essentially uses multiple layers of maps to search the vector space. Understanding how exactly HNSW works took me a while to get my head around… For me, it helped to start with the concept of skip lists.
 
-Suppose we have a sequence: 1, 2, 3, …, 10, and we are querying for the number 8.
+Suppose we have a sequence: 1, 2, 3, …, 9, and we are querying for the number 8.
 
 <div style="text-align: center;">
   <img src="{{ site.baseurl }}/assets/email-genie/phase_7/skipped_list.png" alt="Skipped List" style="max-width: 100%; height: auto; margin: 20px 0;">
