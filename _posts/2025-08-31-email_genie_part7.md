@@ -42,7 +42,7 @@ Before diving into Vector Databases, I thought it a good idea to give a bit of a
 
 Embeddings are a way to represent unstructured data like text and even images by an array of numbers. In the example above, we’ve created embeddings for three sentences. There are many different embedding models we could use for this, to learn more about the different types, you can revisit some of the previous posts in the Email Genie series.
 
-Sentences with similar meanings have similar embeddings. In our example, sentences 0 and 1 are both about rain - notice how their first numbers (0.88 and 0.92) are close to each other. Sentence 2, however, doesn’t mention the rain at all, and its first number is much lower (0.05), showing it’s less related in meaning to the first two.
+Sentences with similar meanings have similar embeddings. In our example, sentences 0 and 1 are both about rain, notice how their first numbers (0.88 and 0.92) are close to each other. Sentence 2, however, doesn’t mention the rain at all, and its first number is much lower (0.05), showing it’s less related in meaning to the first two.
 
 Each number in the array represents a certain feature, its value signals how strongly the data relates to that feature. Values closer to 1 indicate a stronger relationship and values closer to 0 indicate a weak relationship. Knowing this, we can say that vector embeddings which are grouped closely together have similar meanings. This idea is at the core of how vector databases work, they store these embeddings and when given an input, find and return the items most like it.
 
