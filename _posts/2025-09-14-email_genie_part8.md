@@ -55,24 +55,24 @@ For the full notebook, please refer to the GitHub repo (to be made public on com
 #### **Step 1: Chunk Emails**
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email-genie/phase_8/chunk_emails_1.png" alt="Chunk Method" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_8/chunk_all_emails.png" alt="Chunking all emails" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 As in my previous posts, I first chunk the emails into smaller chunks. This is especially useful for fine-tuning because chunks from the same email can be assumed to be semantically related and used to create positive pairs.
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email-genie/phase_8/chunk_emails_2.png" alt="Chunk Applied" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_8/chunk_dict.png" alt="Store in dict" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 #### **Step 2: Create input pairs**
 
 Next, we generate the input pairs. To improve fine-tuning, I created a mix of easy and hard pairs:
 
-- Easy pairs (90%)
+- Easy pairs (80%)
 
     - Straightforward cases that allow the model to learn simple semantic similarity.
 
-- Hard pairs (10%)
+- Hard pairs (20%)
 
     - More challenging cases that help the model generalise better.
 
@@ -85,7 +85,7 @@ Initially, I started with only easy positive and negative pairs, but I realised 
 For easy positives, I iterated over `chunks_by_email`, a dictionary with the original email index as the key and a list of chunks as the value.
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email-genie/phase_8/easy_pos.png" alt="Easy positives" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_8/easy_positive_pairs.png" alt="Easy positives" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 Only emails with at least 2 chunks were considered, This is since a minimum of two different chunks from the same email are needed make a pair.
@@ -105,7 +105,7 @@ All positive pairs are stored in a list, ready for processing.
 For easy negatives, I:
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email-genie/phase_8/easy_neg.png" alt="Easy negatives" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_8/easy_negative_pairs.png" alt="Easy negatives" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 - Randomly sampled two different emails.
@@ -125,13 +125,13 @@ Before diving into the implementation, I thought it would be useful to define ha
 To save time, hard pairs were created for both positive and negative cases simultaneously.
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email-genie/phase_8/random_sample_hard.png" alt="Random Sample" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_8/random_hard_pairs.png" alt="Random Sample" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
-I first generated embeddings for 1,000 emails, (~10% of the dataset) and calculated cosine similarities between chunks.
+I first generated embeddings for 2,000 emails, (~20% of the dataset) and calculated cosine similarities between chunks.
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email-genie/phase_8/hard_pos_neg.png" alt="Hard pos/neg pairs" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_8/create_hard_pairs.png" alt="Hard pos/neg pairs" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 Using a similarity score threshold, I selected pairs to form the hard positive and hard negative lists.
@@ -141,7 +141,7 @@ I think this concept would work even better if the emails were organised into th
 #### **Step 3: Add in labels**
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email-genie/phase_8/label_pos_neg_pairs.png" alt="Label pos/neg pairs" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_8/label_pairs.png" alt="Label pos/neg pairs" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 Assign a label of 1 for positive pairs and 0 for negative pairs.
@@ -160,7 +160,7 @@ Shuffling prevents the model from seeing all positive or all negative pairs cons
 First, I split the data into train/test sets: 80% for fine-tuning, 20% for testing.
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email-genie/phase_8/train:val_split.png" alt="Train test split" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_8/train_val_split.png" alt="Train test split" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 Next, I formatted the training data for the Sentence Transformer model:
@@ -168,19 +168,13 @@ Next, I formatted the training data for the Sentence Transformer model:
 Input pairs should be of type `InputExample`.
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email-genie/phase_8/input_examples.png" alt="Input Examples" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_8/train_val_examples.png" alt="Input Examples" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 - Wrap the data in a `DataLoader` and create batches for faster training. Processing batches instead of single pairs stabilises learning and prevents the model from overreacting to unusual examples.
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email-genie/phase_8/data_loader.png" alt="Data Loader" style="max-width: 100%; height: auto; margin: 20px 0;">
-</div>
-
-I used `CosineSimilarityLoss` as the training loss function, which measures the similarity between embeddings of positive and negative pairs.
-
-<div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email-genie/phase_8/train_loss.png" alt="Train loss" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_8/dataloader.png" alt="Data Loader" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 I also created an evaluator using `EmbeddingSimilarityEvaluator`, which assesses performance after each epoch. 
@@ -193,16 +187,18 @@ It calculates metrics such as Pearson and Spearman correlation between the predi
 
 #### **Step 6: Train**
 
-I decided to use the smaller model as the dataset (~10,000 emails) was too small for a larger transformers and risk of  overfiring would be higher. 
+I decided to use the smaller model as the dataset (~10,000 emails) was too small for a larger transformers and risk of overfiring would be higher. 
+
+I also used `CosineSimilarityLoss` as the training loss function, which measures the similarity between embeddings of positive and negative pairs.
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email-genie/phase_8/define_model.png" alt="Define Model" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_8/define_model_and_loss.png" alt="Model" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 The model was fine-tuned for 3 epochs, giving an effective training size of ~30,000 rows. Below, are some of the params I set:
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email-genie/phase_8/model_training.png" alt="model_train" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_8/model_train.png" alt="model_train" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 Below, are some of the params I set:
@@ -253,7 +249,7 @@ During fine-tuning, I used validation pairs to check how well the model was perf
 
 - Spearman similarity stayed around 0.865, showing ranking performance was already decent.
 
-These results seemed almost too good to be true, which I realised was because the validation set consisted mostly of easy pairs (since only 10% of the dataset consists of hard pairs). To better evaluate generalisation, I set aside 200 hard positive and 200 hard negative pairs as a separate test set.
+These results seemed almost too good to be true, which I realised was because the validation set consisted mostly of easy pairs (since only 20% of the dataset consists of hard pairs). To better evaluate generalisation, I set aside 200 hard positive and 200 hard negative pairs as a separate test set.
 
 Using the fine-tuned model, I generated embeddings for each chunk in a pair and calculated cosine similarity. High similarity for hard positives and low similarity for hard negatives indicated the model correctly captured subtle semantic relationships.
 
@@ -306,9 +302,9 @@ Surprisingly, the fine-tuned embeddings performed slightly worse than the out-of
 
 **1). Hard Pairs**
 
-I created both positive and negative hard pairs so the model could learn from some challenging cases. However, these made up less than 10% of the dataset (with some reserved for testing).
+I created both positive and negative hard pairs so the model could learn from some challenging cases. However, these made up less than 20% of the dataset (with some reserved for testing).
 
-While the model performed well on the test set of hard pairs, 10% likely wasn’t enough to influence how the model positions all vectors in the embedding space (which is needed for better retrieval).
+While the model performed well on the test set of hard pairs, 20% likely wasn’t enough to influence how the model positions all vectors in the embedding space (which is needed for better retrieval).
 
 **2). Dataset size**
 Fine-tuning on ~10,000 emails is relatively small for a transformer model, even a smaller Sentence Transformer.
