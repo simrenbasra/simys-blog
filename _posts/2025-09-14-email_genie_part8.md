@@ -220,7 +220,7 @@ I also used `CosineSimilarityLoss` as the training loss function, which measures
   <img src="{{ site.baseurl }}/assets/email-genie/phase_8/define_model_and_loss.png" alt="Model" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
-The model was fine-tuned for 3 epochs, giving an effective training size of ~30,000 rows. Below, are some of the params I set:
+The model was fine-tuned for 3 epochs, giving a training size of ~30,000 rows. Below, are some of the params I set:
 
 <div style="text-align: center;">
   <img src="{{ site.baseurl }}/assets/email-genie/phase_8/model_train.png" alt="model_train" style="max-width: 100%; height: auto; margin: 20px 0;">
