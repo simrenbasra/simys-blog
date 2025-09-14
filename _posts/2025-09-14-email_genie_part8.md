@@ -208,29 +208,36 @@ The model was fine-tuned for 3 epochs, giving an effective training size of ~30,
 Below, are some of the params I set:
 
 **`train_objectives=[(train_dataloader, train_loss)]`**
-    - Defines what the model will train on.
-    - train_dataloader contains the input pairs.
-    - train_loss is the loss function used to update the model weights
+
+- Defines what the model will train on.
+- train_dataloader contains the input pairs.
+- train_loss is the loss function used to update the model weights
 
 **`epochs=3`**
-    - Number of times the model will iterate over the entire training dataset.
+
+- Number of times the model will iterate over the entire training dataset.
 
 **`evaluator = val_evalutaor`**
-    - Defines evaluation method to use during training.
+
+- Defines evaluation method to use during training.
 
 **`evaluation_steps=0`**
-    - Set to 0 so evaluation is performed at the end of each epoch.
+
+- Set to 0 so evaluation is performed at the end of each epoch.
 
 **`warmup_steps=50`**
-    - The number of steps at the start of training where the learning rate gradually increases from 0 to the set value (below)
-    - Helps prevent sudden large updates at the beginning and so stabilises learning.
+
+- The number of steps at the start of training where the learning rate gradually increases from 0 to the set value (below)
+- Helps prevent sudden large updates at the beginning and so stabilises learning.
 
 **`optimizer_params={'lr': 0.00002}`**
-    - lr is the learning rate, controlling how large each weight update is.
-    - 0.00002 is small learning rate, I didn’t want to take too much away form what the model has learnt already.
+
+- lr is the learning rate, controlling how large each weight update is.
+- 0.00002 is small learning rate, I didn’t want to take too much away form what the model has learnt already.
 
 **`use_amp=True`**  
-    - Added top speed up training, instead of using full float 32 uses float 16 to reduce memory usage for GPU.
+  
+- Added top speed up training, instead of using full float 32 uses float 16 to reduce memory usage for GPU.
 
 #### **Step 7: Quick Assessment of Results**
 
@@ -317,6 +324,6 @@ From the steps I’ve already taken and the impact they made, I expect any other
 
 <br>
 
-## **Summary** 
+## Summary
 
 My next step is to build out the webapp for users to try similarity search. This will include using Docker to make my app easy to deploy and access for users. I also plan to reflect on the project, discussing some of the challenges I faced and sharing key lessons learned along the way.
