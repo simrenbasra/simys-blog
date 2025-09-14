@@ -119,9 +119,9 @@ For easy negatives, I:
 
 Before diving into the implementation, I thought it would be useful to explain concept of hard pairs, as they can be tricky to understand:
 
-- **Hard positives:** Pairs from the same email that have low similarity scores. The model may initially think they are not similar since the wording is very different. However, since they come from the same email, we know they are semantically related.
+- **Hard positives:** Pairs that initially seem different but are actually similar in meaning.
 
-- **Hard negatives:** Pairs from different emails that have high similarity scores. These chunks may look alike on the surface since they both have similar phrases but because they come from different emails, they are not actually semantically related.
+- **Hard negatives:** Pairs that look similar on the surface but are actually unrelated.
 
 To save time, hard pairs were created for both positive and negative cases simultaneously.
 
