@@ -80,7 +80,7 @@ Next, we generate the input pairs. To improve fine-tuning, I created a mix of ea
 
 Initially, I started with only easy positive and negative pairs, but I realised that including hard pairs is needed for the embedding model to generalise better.
 
-##### **Positive Pairs**
+#### **Positive Pairs**
 
 For easy positives, I iterated over `chunks_by_email`, a dictionary with the original email index as the key and a list of chunks as the value.
 
@@ -92,15 +92,15 @@ Only emails with at least 2 chunks were considered, This is since a minimum of t
 
 I used Python’s `combinations` to generate all possible pairings of chunks for that email. 
 
-For example:
+**For example:**
 
-**Email 1:** `chunk a`, `chunk b`, `chunk c`
+_**Email 1:**_ `chunk a`, `chunk b`, `chunk c`
 
-**Positive pairs for Email 1:** `(chunk a, chunk b)`, `(chunk a, chunk c)`, `(chunk b, chunk c)`
+_**Positive pairs for Email 1:**_ `(chunk a, chunk b)`, `(chunk a, chunk c)`, `(chunk b, chunk c)`
 
 All positive pairs are stored in a list, ready for processing.
 
-##### **Negative Pairs**
+#### **Negative Pairs**
 
 For easy negatives, I:
 
@@ -114,7 +114,7 @@ For easy negatives, I:
 
 - Repeated this process until the number of negative pairs equalled the number of positive pairs, ensuring a balanced dataset.
 
-##### **Hard Pairs**
+#### **Hard Pairs**
 
 Before diving into the implementation, I thought it would be useful to define hard pairs, as they can be tricky to understand:
 
