@@ -77,7 +77,7 @@ Next, we generate the input pairs. To improve fine-tuning, I created a mix of ea
 
     - More challenging cases that help the model generalise better.
 
-    - These pairs are tricky since they may appear similar but are actually different (hard positive), or appear different but are actually similar (hard negative).
+    - These pairs are tricky since they may appear similar but are actually different (hard negative), or appear different but are actually similar (hard positive).
 
 Initially, I started with only easy positive and negative pairs, but I realised that including hard pairs is needed for the embedding model to generalise better.
 
