@@ -147,7 +147,7 @@ I then set aside a small test set of hard pairs to evaluate the model on challen
 The remaining pairs were used for fine-tuning:
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email-genie/phase_8/hard_pair_remaining.png" alt="Hard pair remaining style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_8/hard_pair_remaining.png" alt="Hard pair remaining" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 I thought doing this would let me to assess how well the model performs on known difficult examples and give a realistic measure of its performance.
