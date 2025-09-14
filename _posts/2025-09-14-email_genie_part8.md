@@ -141,7 +141,7 @@ I think this concept would work even better if the emails were organised into th
 I then set aside a small test set of hard pairs to evaluate the model on challenging cases. This test set includes 200 hard positive pairs and 200 hard negative pairs. 
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email-genie/phase_8/create_hard_pair_test_set.png" alt="Hard pair test set" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_8/craete_hard_pair_test_set.png" alt="Hard pair test set" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 The remaining pairs were used for fine-tuning:
