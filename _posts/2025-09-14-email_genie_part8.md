@@ -72,6 +72,7 @@ Next, we generate the input pairs. To improve fine-tuning, I created a mix of ea
 
     - Straightforward cases that allow the model to learn simple semantic similarity.
 
+
 - Hard pairs (20%)
 
     - More challenging cases that help the model generalise better.
@@ -104,15 +105,15 @@ All positive pairs are stored in a list, ready for processing.
 
 For easy negatives, I:
 
-<div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email-genie/phase_8/easy_negative_pairs.png" alt="Easy negatives" style="max-width: 100%; height: auto; margin: 20px 0;">
-</div>
-
 - Randomly sampled two different emails.
 
 - Selected a random chunk from each email to form a negative pair.
 
 - Repeated this process until the number of negative pairs equalled the number of positive pairs, ensuring a balanced dataset.
+
+<div style="text-align: center;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_8/easy_negative_pairs.png" alt="Easy negatives" style="max-width: 100%; height: auto; margin: 20px 0;">
+</div>
 
 #### **Hard Pairs**
 
