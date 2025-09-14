@@ -11,7 +11,7 @@ In my previous post, I wrote about vector databases. I explained how they work, 
 
 To address this, I fine-tuned a Sentence Transformer model on a subset of the Enron email dataset. The goal was to create embeddings that better understand the nuances of email text and corporate jargon, and in turn improve vector search. 
 
-In this post, I’ll walk you through the fine-tuning process and share what I learnt along the way! Let’s start with the process of fine-tuning embeddings and see what impact it had on the results.
+In this post, I’ll walk you through the fine-tuning process and share what I learnt along the way! Let’s start with the process of fine-tuning embeddings and see what impact it had.
 
 
 <br>
