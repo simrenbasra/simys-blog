@@ -38,7 +38,7 @@ Positive pairs are given label 1 and negative pairs label 0.  During training, t
 
 Looking at the diagram, the main trainable weights are in the transformer blocks of BERT. Since we are only using Sentence Transformer to create the embeddings we exit at step 3 (the output of the BERT model).
 
-Fine-tuning “unfreezes” these weights and updates them using a loss function, allowing the model to adapt to email text and corporate jargon. Out-of-the-box Sentence Transformers keep these weights fixed and so generate general purpose embeddings trained on massive datasets. 
+Fine-tuning “unfreezes” these weights and updates them using a loss function, allowing the model to adapt to input text. Out-of-the-box Sentence Transformers keep these weights fixed and so generate general purpose embeddings trained on massive datasets. 
  
 <br>
 
