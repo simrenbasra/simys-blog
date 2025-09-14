@@ -40,8 +40,13 @@ Looking at the diagram, the main trainable weights are in the transformer blocks
 
 Fine-tuning “unfreezes” these weights and updates them using a loss function, allowing the model to adapt to email text and corporate jargon. Out-of-the-box Sentence Transformers keep these weights fixed and so generate general purpose embeddings trained on massive datasets. 
  
+<br>
 
-### Implementation Steps for Fine-Tuning
+----
+
+<br>
+
+## Implementation Steps for Fine-Tuning
 
 For the full notebook, please refer to the GitHub repo (to be made public on completing the project). I also used Google Colab to complete fine-tuning for my embeddings as I needed access to a GPU.
 
@@ -67,7 +72,7 @@ Next, we generate the input pairs. To improve fine-tuning, I created a mix of ea
 
 Initially, I started with only easy positive and negative pairs, but I realised that including hard pairs is needed for the embedding model to generalise better.
 
-**Positive Pairs**
+### **Positive Pairs**
 
 For easy positives, I iterated over `chunks_by_email`, a dictionary with the original email index as the key and a list of chunks as the value.
 
@@ -83,7 +88,7 @@ For example:
 
 All positive pairs are stored in a list, ready for processing.
 
-**Negative Pairs**
+### **Negative Pairs**
 
 For easy negatives, I:
 
@@ -93,7 +98,7 @@ For easy negatives, I:
 
 - Repeated this process until the number of negative pairs equalled the number of positive pairs, ensuring a balanced dataset.
 
-**Hard Pairs**
+### **Hard Pairs**
 
 Before diving into the implementation, I thought it would be useful to define hard pairs, as they can be tricky to understand:
 
@@ -144,35 +149,28 @@ The model was fine-tuned for 3 epochs, giving an effective training size of ~30,
 Below, are some of the params I set:
 
 **`train_objectives=[(train_dataloader, train_loss)]`**
-
     - Defines what the model will train on.
     - train_dataloader contains the input pairs.
     - train_loss is the loss function used to update the model weights
 
 **`epochs=3`**
-
     - Number of times the model will iterate over the entire training dataset.
 
 **`evaluator = val_evalutaor`**
-
     - Defines evaluation method to use during training.
 
 **`evaluation_steps=0`**
-
     - Set to 0 so evaluation is performed at the end of each epoch.
 
 **`warmup_steps=50`**
-
     - The number of steps at the start of training where the learning rate gradually increases from 0 to the set value (below)
     - Helps prevent sudden large updates at the beginning and so stabilises learning.
 
 **`optimizer_params={'lr': 0.00002}`**
-
     - lr is the learning rate, controlling how large each weight update is.
     - 0.00002 is small learning rate, I didn’t want to take too much away form what the model has learnt already.
 
 **`use_amp=True`**  
-
     - Added top speed up training, instead of using full float 32 uses float 16 to reduce memory usage for GPU.
 
 #### **Step 7: Quick Assessment of Results**
