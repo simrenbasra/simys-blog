@@ -117,7 +117,7 @@ For easy negatives, I:
 
 #### **Hard Pairs**
 
-Before diving into the implementation, I thought it would be useful to define hard pairs, as they can be tricky to understand:
+Before diving into the implementation, I thought it would be useful to explain concept of hard pairs, as they can be tricky to understand:
 
 - **Hard positives:** Pairs from the same email that have low similarity scores. The model may initially think they are not similar since the wording is very different. However, since they come from the same email, we know they are semantically related.
 
