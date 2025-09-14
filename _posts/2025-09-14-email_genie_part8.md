@@ -196,7 +196,7 @@ Input pairs should be of type `InputExample`.
   <img src="{{ site.baseurl }}/assets/email-genie/phase_8/train_val_examples.png" alt="Input Examples" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
-- Wrap the data in a `DataLoader` and create batches for faster training. Processing batches instead of single pairs stabilises learning and prevents the model from overreacting to unusual examples.
+Wrap the data in a `DataLoader` and create batches for faster training. Processing batches instead of single pairs stabilises learning and prevents the model from overreacting to unusual examples.
 
 <div style="text-align: center;">
   <img src="{{ site.baseurl }}/assets/email-genie/phase_8/dataloader.png" alt="Data Loader" style="max-width: 100%; height: auto; margin: 20px 0;">
