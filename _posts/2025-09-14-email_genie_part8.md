@@ -193,7 +193,7 @@ Input pairs should be of type `InputExample`.
 I also created an evaluator using `EmbeddingSimilarityEvaluator`, which assesses performance after each epoch. 
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email-genie/phase_8/val_evaluator.png" alt="val_evaluator" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_8/define_val_evaluator.png" alt="val_evaluator" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 It calculates metrics such as Pearson and Spearman correlation between the predicted similarities and the ground truth labels (1/0). This let me to track whether the model improved across epochs.
