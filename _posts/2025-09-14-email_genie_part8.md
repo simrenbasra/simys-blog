@@ -328,9 +328,10 @@ Surprisingly, the fine-tuned embeddings performed slightly worse than the out-of
 
 I created both positive and negative hard pairs so the model could learn from some challenging cases. However, these made up less than 20% of the dataset (with some reserved for testing).
 
-While the model performed well on the test set of hard pairs, 20% likely wasn’t enough to influence how the model positions all vectors in the embedding space (which is needed for better retrieval).
+While the model performed well on the test set of hard pairs, 10,000 emails likely wasn’t enough to influence how the model positions all vectors in the embedding space (which is needed for better retrieval).
 
 **2). Dataset size**
+
 Fine-tuning on ~10,000 emails is relatively small for a transformer model, even a smaller Sentence Transformer.
 
 Expanding beyond 10,000 emails could improve results, as more data usually helps models generalise better. However, training was slow and I often ran into Colab GPU timeouts, which made increasing the dataset difficult. 
