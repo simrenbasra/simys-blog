@@ -85,7 +85,7 @@ Initially, I started with only easy positive and negative pairs, but I realised 
 For easy positives, I iterated over `chunks_by_email`, a dictionary with the original email index as the key and a list of chunks as the value.
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email-genie/phase_8/easy_positive_pairs.png" alt="Easy positives" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_8/easy_postive_pairs.png" alt="Easy positives" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 Only emails with at least 2 chunks were considered, This is since a minimum of two different chunks from the same email are needed make a pair.
@@ -138,7 +138,19 @@ Using a similarity score threshold, I selected pairs to form the hard positive a
 
 I think this concept would work even better if the emails were organised into threads, However, since the Enron dataset is not threaded, we can only assume that chunks from the same email are semantically similar.
 
-#### **Step 3: Add in labels**
+I then set aside a small test set of hard pairs to evaluate the model on challenging cases. This test set includes 200 hard positive pairs and 200 hard negative pairs. 
+
+<div style="text-align: center;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_8/create_hard_pair_test_set.png" alt="Hard pair test set" style="max-width: 100%; height: auto; margin: 20px 0;">
+</div>
+
+The remaining pairs were used for fine-tuning:
+
+<div style="text-align: center;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_8/hard_pair_remaining.png" alt="Hard pair remaining style="max-width: 100%; height: auto; margin: 20px 0;">
+</div>
+
+I thought doing this would let me to assess how well the model performs on known difficult examples and give a realistic measure of its performance.
 
 <div style="text-align: center;">
   <img src="{{ site.baseurl }}/assets/email-genie/phase_8/label_pairs.png" alt="Label pos/neg pairs" style="max-width: 100%; height: auto; margin: 20px 0;">
@@ -263,7 +275,6 @@ Overall, the model performed strongly on the hard pair test set. Precision for h
 **Note:** Strong performance on hard pairs does not guarantee equally strong performance in a vector database. Vector search tests how well embeddings position all emails in vector space, which determines nearest-neighbour retrieval. Good results on hard pairs show the model learned subtle semantic cues but doesn’t necessarily imply high vector search performance.
 
 #### **Step 8: Create the Embeddings and Output**
-
 
 Finally, I used the fine-tuned model to generate embeddings for the labelled dataset and saved them for use in my Vector Database notebook. I then loaded these embeddings to recreate the vector database and evaluate their impact on search performance.
 
