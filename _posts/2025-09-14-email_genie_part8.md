@@ -162,7 +162,8 @@ Assign a label of 1 for positive pairs and 0 for negative pairs.
 
 <div style="text-align: center;">
   <img src="{{ site.baseurl }}/assets/email-genie/phase_8/all_pairs.png" alt="All pairs" style="max-width: 100%; height: auto; margin: 20px 0;">
-</div> 
+</div>
+
 Concatenate all positive and negative pairs into a single list, then shuffle it. 
 
 Shuffling prevents the model from seeing all positive or all negative pairs consecutively, which reduces bias and stabilises training.
