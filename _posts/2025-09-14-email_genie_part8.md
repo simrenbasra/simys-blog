@@ -129,16 +129,23 @@ To save time, hard pairs were created for both positive and negative cases simul
   <img src="{{ site.baseurl }}/assets/email-genie/phase_8/random_hard_pairs.png" alt="Random Sample" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
-I first generated embeddings for 2,000 emails, (~20% of the dataset) and calculated cosine similarities between chunks.
+I first generated embeddings for 2,000 emails, (~20% of the dataset) and then iterated over pairs of different emails from this sample. The reason for this is that comparing chunks within the same email usually produces trivial pairs, whereas comparing chunks across emails creates more challenging pairs.
+
+For each email, I generate embeddings using the same Sentence Transformer model that I later use for fine-tuning. With these embeddings, I constructed a similarity matrix between all chunks in one email and all chunks in the other email, using the `cos_sim` method from the `sentence_transformers` package.
 
 <div style="text-align: center;">
   <img src="{{ site.baseurl }}/assets/email-genie/phase_8/create_hard_pairs.png" alt="Hard pos/neg pairs" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
-Using a similarity score threshold, I selected pairs to form the hard positive and hard negative lists.
+Based on this similarity matrix, I used thresholds to select hard positive and negative pairs:
+
+- **Hard positives:** `similarity ≥ 0.7`. These are chunks that are clearly related in meaning but not identical, making them useful for training the model to recognise semantic similarity.
+
+- **Hard negatives:** `similarity >= 0.4 and <= 0.6`. These are pairs that appear somewhat similar but actually come from different contexts, making them distractors for the model.
+
+This way, the model is trained not only on obvious examples but also on ambiguous cases which provides a more realistic training set.
 
 I think this concept would work even better if the emails were organised into threads, However, since the Enron dataset is not threaded, we can only assume that chunks from the same email are semantically similar.
-
 
 #### **Step 3: Add labels and Set Aside Hard Pair Test Set**
 
