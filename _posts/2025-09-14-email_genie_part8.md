@@ -138,6 +138,15 @@ Using a similarity score threshold, I selected pairs to form the hard positive a
 
 I think this concept would work even better if the emails were organised into threads, However, since the Enron dataset is not threaded, we can only assume that chunks from the same email are semantically similar.
 
+
+#### **Step 3: Add labels and Set Aside Hard Pair Test Set**
+
+Assign a label of 1 for positive pairs and 0 for negative pairs.
+
+<div style="text-align: center;">
+  <img src="{{ site.baseurl }}/assets/email-genie/phase_8/label_pairs.png" alt="Label pos/neg pairs" style="max-width: 100%; height: auto; margin: 20px 0;">
+</div>
+
 I then set aside a small test set of hard pairs to evaluate the model on challenging cases. This test set includes 200 hard positive pairs and 200 hard negative pairs. 
 
 <div style="text-align: center;">
@@ -152,11 +161,6 @@ The remaining pairs were used for fine-tuning:
 
 I thought doing this would let me to assess how well the model performs on known difficult examples and give a realistic measure of its performance.
 
-<div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/email-genie/phase_8/label_pairs.png" alt="Label pos/neg pairs" style="max-width: 100%; height: auto; margin: 20px 0;">
-</div>
-
-Assign a label of 1 for positive pairs and 0 for negative pairs.
 
 #### **Step 4: Combine positive and negative pairs**
 
