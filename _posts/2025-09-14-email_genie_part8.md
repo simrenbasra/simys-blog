@@ -167,7 +167,7 @@ The remaining pairs were used for fine-tuning:
   <img src="{{ site.baseurl }}/assets/email-genie/phase_8/hard_pair_remaining.png" alt="Hard pair remaining" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
-I thought doing this would let me to assess how well the model performs on known difficult examples and give a realistic measure of its performance.
+I thought doing this would let me assess how well the model performs on known difficult examples and give a realistic measure of its performance.
 
 
 #### **Step 4: Combine positive and negative pairs**
@@ -212,7 +212,7 @@ It calculates metrics such as Pearson and Spearman correlation between the predi
 
 #### **Step 6: Train**
 
-I decided to use the smaller model as the dataset (~10,000 emails) was too small for a larger transformers and risk of overfiring would be higher. 
+I decided to use the smaller model as the dataset (~10,000 emails) was too small for a larger transformers and risk of overfitting would be higher. 
 
 I also used `CosineSimilarityLoss` as the training loss function, which measures the similarity between embeddings of positive and negative pairs.
 
@@ -238,7 +238,7 @@ Below, are some of the params I set:
 
 - Number of times the model will iterate over the entire training dataset.
 
-**`evaluator = val_evalutaor`**
+**`evaluator = val_evaluator`**
 
 - Defines evaluation method to use during training.
 
@@ -254,11 +254,11 @@ Below, are some of the params I set:
 **`optimizer_params={'lr': 0.00002}`**
 
 - lr is the learning rate, controlling how large each weight update is.
-- 0.00002 is small learning rate, I didn’t want to take too much away form what the model has learnt already.
+- 0.00002 is small learning rate, I didn’t want to take too much away from what the model has learnt already.
 
 **`use_amp=True`**  
   
-- Added top speed up training, instead of using full float 32 uses float 16 to reduce memory usage for GPU.
+- Added to speed up training, instead of using full float 32 uses float 16 to reduce memory usage for GPU.
 
 #### **Step 7: Quick Assessment of Results**
 
