@@ -180,7 +180,7 @@ Concatenate all positive and negative pairs into a single list, then shuffle it.
 
 Shuffling prevents the model from seeing all positive or all negative pairs consecutively, which reduces bias and stabilises training.
 
-#### **Step 5: Prepare Data for FineTuning**
+#### **Step 5: Prepare Data for Fine-Tuning**
 
 First, I split the data into train/test sets: 80% for fine-tuning, 20% for testing.
 
@@ -322,13 +322,13 @@ The scores below represent the proportion of nearest neighbours that shared the 
 
 Surprisingly, the fine-tuned embeddings performed slightly worse than the out-of-the-box Sentence Transformer embeddings. It could be that fine-tuning process may have actually overwritten some of the general knowledge the base model had learned during pretraining leading to some information loss. 
 
-#### Why Fine-Tuning Didn’t Improve Results
+#### **Why Fine-Tuning Didn’t Improve Results**
 
 **1). Hard Pairs**
 
 I created both positive and negative hard pairs so the model could learn from some challenging cases. However, these made up less than 20% of the dataset (with some reserved for testing).
 
-While the model performed well on the test set of hard pairs, 10,000 emails likely wasn’t enough to influence how the model positions all vectors in the embedding space (which is needed for better retrieval).
+While the model performed well on the test set of hard pairs, 10,000 emails likely wasn’t enough to influence how the model positions all vectors in the embedding space (which is needed for better retrieval).Even increasing the proportion of hard pairs from 20% to 50% would probably not have made much of difference.
 
 **2). Dataset size**
 
@@ -347,4 +347,4 @@ From the steps I’ve already taken and the impact they made, I expect any other
 
 ## Summary
 
-My next step is to build out the webapp for users to try similarity search. This will include using Docker to make my app easy to deploy and access for users. I also plan to reflect on the project, discussing some of the challenges I faced and sharing key lessons learned along the way.
+Next, I’ll focus on building the web app so users can try out similarity search themselves. I’ll use Docker to make the app easy to deploy and access. I also plan to reflect on the project, covering the challenges I faced and sharing the key lessons I learned along the way.
