@@ -19,11 +19,19 @@ After finishing a data science bootcamp, I’m excited to dive into the world of
 
 <br>
 
-## Subscribe to My Newsletter 📰
+## Want to Learn AI from Scratch? 🤖
+
+Subscribe to my newsletterm Simy Says!
 
 <div style="text-align: center;">
   <iframe src="https://simrenbasra.substack.com/embed" width="480" height="320" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe>
 </div>
+
+**First Newsletter Series: Foundation**
+
+This 5-part series is designed for complete novices to introduce the basics of AI and machine learning in a fun, beginner-friendly way.
+
+Releasing in the New Year!
 
 <br>
 
