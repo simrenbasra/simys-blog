@@ -15,7 +15,19 @@ After finishing a data science bootcamp, I’m excited to dive into the world of
 
 <br>  
 
------  
+---
+
+<br>
+
+## Subscribe to My Newsletter 📰
+
+<div style="text-align: center;">
+  <iframe src="https://simrenbasra.substack.com/embed" width="480" height="320" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe>
+</div>
+
+<br>
+
+---
 
 <br>
 
