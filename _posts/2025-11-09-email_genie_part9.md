@@ -38,7 +38,7 @@ I plan to dockerise this app and host it on a private server. Once that’s done
 
 <br>
 
-##  Web App Considerations
+## Web App Considerations
 
 - **Noise in search results**: Early tests returned some irrelevant emails, often with a lot of disclaimers or confidentiality notices.
 
