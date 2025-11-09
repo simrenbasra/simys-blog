@@ -15,11 +15,18 @@ I then developed a Flask-based web application that takes a user’s search quer
 
 Let’s take a closer look my web app!
 
+<br>
+
+----
+
+<br>
+
 ## **Web Application Demo**
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0;">
   <iframe src="https://www.loom.com/embed/e3fa5a746ec54072bb87189e5846548b" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
+
 
 The demo walks through how the app takes a user query and returns semantically similar emails from the vector database (with concise summaries for easier reading).
 
@@ -66,17 +73,17 @@ This project has definitely been my largest project to date; from cleaning email
 
 Let’s discuss some of the many challenges I faced throughout this project:
 
-#### Cleaning and Data Quality 
+**Cleaning and Data Quality **
 
 Emails are a messy dataset and required multiple rounds of cleaning before I could make meaningful progress. Although I removed a lot of noise, some still remains and I now believe that residual dataset noise was the biggest stumbling block for retrieval quality.
 
 Throughout the project I worried that embeddings or chunking were the cause, but in hindsight the noisy text (disclaimers, forwarded headers, repeated signatures, embedded attachments, etc.) had the largest negative impact on vector similarity and ranking. If I were to take on another NLP project, I would dedicate far more time to data cleaning. Spending more time exploring the dataset and carefully assessing which parts of the emails could cause problems down the line. For example, I would make sure to view the emails in a way that clearly highlights disclaimers and signatures, so I could handle them appropriately before generating embeddings.
 
-#### Web App Development
+**Web App Development**
 
 Designing a clear UI for email results turned out to be trickier than expected. Especially when making considerations like using LLMs to expand user queries or for generating summaries of emails.
 
-#### Time Management
+**Time Management**
 
 Unlike my previous continuous projects, this stop/start rhythm slowed me down a bit and I underestimated how long tasks would take.
 
