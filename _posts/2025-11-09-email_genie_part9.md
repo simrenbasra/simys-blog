@@ -46,11 +46,11 @@ I plan to dockerise this app and host it on a private server. Once that’s done
 
 - **Query length issues:** Short queries sometimes fail to retrieve semantically relevant results.
   
-  **Solution:** Used an LLM to enhance queries, expanding them with related terms
+  **Solution:** Used an LLM to enhance queries, expanding them with related terms.
   
 - **Long emails:** At times, returned emails can be quite lengthy to read…
 
-  **Solution:** Used an LLM to generate summaries, highlighting the information most relevant to the query.
+  **Solution:** Used an LLM to generate summaries.
 
 - **Layout inconsistencies:** The structure of emails in results wasn’t always clear.
   
@@ -73,11 +73,13 @@ This project has definitely been my largest project to date; from cleaning email
 
 Let’s discuss some of the many challenges I faced throughout this project:
 
-**Cleaning and Data Quality **
+**Cleaning and Data Quality**
 
 Emails are a messy dataset and required multiple rounds of cleaning before I could make meaningful progress. Although I removed a lot of noise, some still remains and I now believe that residual dataset noise was the biggest stumbling block for retrieval quality.
 
-Throughout the project I worried that embeddings or chunking were the cause, but in hindsight the noisy text (disclaimers, forwarded headers, repeated signatures, embedded attachments, etc.) had the largest negative impact on vector similarity and ranking. If I were to take on another NLP project, I would dedicate far more time to data cleaning. Spending more time exploring the dataset and carefully assessing which parts of the emails could cause problems down the line. For example, I would make sure to view the emails in a way that clearly highlights disclaimers and signatures, so I could handle them appropriately before generating embeddings.
+Throughout the project I worried that embeddings or chunking were the cause, but in hindsight the noisy text (disclaimers, forwarded headers, repeated signatures, embedded attachments, etc.) had the largest negative impact on vector similarity and ranking. 
+
+If I were to take on another NLP project, I would dedicate far more time to data cleaning. Spending more time exploring the dataset and carefully assessing which parts of the emails could cause problems down the line. For example, I would make sure to view the emails in a way that clearly highlights disclaimers and signatures, so I could handle them appropriately before generating embeddings.
 
 **Web App Development**
 
@@ -85,7 +87,7 @@ Designing a clear UI for email results turned out to be trickier than expected. 
 
 **Time Management**
 
-Unlike my previous continuous projects, this stop/start rhythm slowed me down a bit and I underestimated how long tasks would take.
+Unlike my previous projects, this stop/start rhythm slowed me down a bit and I underestimated how long tasks would take.
 
 #### **What went well?**
 
@@ -95,13 +97,13 @@ This project stretched me the most in terms of learning, from embedding techniqu
 
 #### **Key Learnings**
 
-- Cleaning and preprocessing data are so important to NLP projects. Without it, progress is nearly impossible.
+- **Cleaning and preprocessing data are so important to NLP projects.** Without it, progress is nearly impossible.
   
-- Fine-tuning isn’t always the answer. With large transformer models like Sentence Transformers, fine-tuning without many or carefully curated positive/negative pairs can actually hurt performance.
+- **Fine-tuning isn’t always the answer.** With large transformer models like Sentence Transformers, fine-tuning without many or carefully curated positive/negative pairs can actually hurt performance.
 
-- Noisy data is hard to remove. Even after multiple passes, I found areas where my cleaning could have been stronger. For example, I could have excluded sign-offs or replaced dates, times and amounts with placeholders instead of removing them entirely.
+- **Noisy data is hard to remove.** Even after multiple passes, I found areas where my cleaning could have been stronger. For example, I could have excluded sign-offs or replaced dates, times and amounts with placeholders instead of removing them entirely.
   
-- Iteration isn’t bad, its part of the process. Revisiting earlier steps (like data cleaning) was often necessary and did at times help further downstream. A lot of the time, noisy elements which were showing up wasn’t actually something I myself anticipated until I saw it, impossible with NLP to be sure of all possible noise dependent to the task.
+- **Iteration isn’t bad, its part of the process.** Revisiting earlier steps (like data cleaning) was often necessary and did at times help further downstream. A lot of the time, noisy elements which were showing up wasn’t actually something I myself anticipated until I saw it, impossible with NLP to be sure of all possible noise dependent to the task.
 
 <br>
 
