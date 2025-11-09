@@ -21,7 +21,7 @@ Let’s take a closer look my web app!
 
 <br>
 
-## **Web Application Demo**
+## Web Application Demo
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0;">
   <iframe src="https://www.loom.com/embed/e3fa5a746ec54072bb87189e5846548b" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
@@ -38,7 +38,7 @@ I plan to dockerise this app and host it on a private server. Once that’s done
 
 <br>
 
-##  **Web App Considerations**
+##  Web App Considerations
 
 - **Noise in search results**: Early tests returned some irrelevant emails, often with a lot of disclaimers or confidentiality notices.
 
@@ -65,7 +65,7 @@ I plan to dockerise this app and host it on a private server. Once that’s done
 
 <br>
 
-## **Project Retro**
+## Project Retro
 
 This project has definitely been my largest project to date; from cleaning emails, to experimenting with different embedding methods, to classification and finally, to vector search. So, I thought it would be quite nice to go through some of the challenges and takeaways!
 
@@ -111,7 +111,7 @@ This project stretched me the most in terms of learning, from embedding techniqu
 
 <br>
 
-## **Summary** 
+## Summary
 
 Even if the end product isn’t working as well I hoped, I’m proud of what I accomplished with the EmailGenie project. Working with messy, real-world data like emails reminded me that retrieval isn’t always perfect. In fact, inconsistency in results shows how sensitive semantic search is to things like data quality, chunking and embedding choice. While the web app doesn’t always return the most relevant emails, I now have a much better understanding of the challenges of NLP on real-world data and how small decisions, like how to chunk text, can affect performance.
 
