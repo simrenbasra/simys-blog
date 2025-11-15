@@ -31,7 +31,7 @@ Subscribe to my newsletter, Simy Says!
 
 This 5-part series is designed for complete novices to introduce the basics of AI and machine learning in a fun, beginner-friendly way.
 
-**Releasing in the New Year!**
+**Releasing Soon!**
 
 <br>
 
