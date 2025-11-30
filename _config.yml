@@ -5,5 +5,7 @@ url: "https://simrenbasra.github.io" # Base URL of your GitHub Pages site
 
 header_pages:
   - about_me.md
+  - my_projects.md
+
 
 
