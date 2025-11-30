@@ -46,7 +46,9 @@ I’m building a custom chatbot for my blog that can answer questions and guide 
 
 <br>
 
-{% for post in site.posts limit:3 %}
+## Most Recent Posts
+
+{% for post in site.posts limit:5 %}
 <div style="display:flex; align-items:center; margin-bottom:20px;">
   <img src="{{ post.thumbnail }}" alt="{{ post.title }}" style="width:120px; height:auto; margin-right:15px;">
   <div>
