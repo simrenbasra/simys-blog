@@ -1,6 +1,7 @@
 ---
 layout: page 
 title: ""
+permalink: /
 ---
 
 <div style="text-align: center; margin: 20px 0;">
