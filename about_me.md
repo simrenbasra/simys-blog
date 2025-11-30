@@ -32,8 +32,8 @@ Outside of my full-time role, I’m working on a new project called SimBot, a cu
 
 ### Connect With Me
 
-[LinkedIn: ](https://www.linkedin.com/in/simrenbasra/)
+[LinkedIn](https://www.linkedin.com/in/simrenbasra/)
 
-[Substack: ](https://simrenbasra.substack.com/?utm_campaign=profile_chips)
+[Substack](https://simrenbasra.substack.com/?utm_campaign=profile_chips)
 
-[GitHub: ](https://github.com/simrenbasra)
+[GitHub](https://github.com/simrenbasra)
