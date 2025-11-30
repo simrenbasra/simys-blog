@@ -46,7 +46,7 @@ This 5-part series is designed for complete novices to introduce the basics of A
 
 <br> 
 
-### Upcoming Posts
+## Upcoming Posts
   
 #### **SimBot 💬**
 
@@ -58,7 +58,7 @@ I’m building a custom chatbot for my blog that can answer questions and guide 
 
 <br>
 
-### Most Recent Posts
+## Most Recent Posts
 
 <div class="home-post-excerpt">
 {% for post in site.posts limit:3 %}
