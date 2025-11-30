@@ -47,7 +47,12 @@ I’m building a custom chatbot for my blog that can answer questions and guide 
 <br>
 
 {% for post in site.posts limit:3 %}
-  <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
-  <p>{{ post.excerpt }}</p>
+<div style="display:flex; align-items:center; margin-bottom:20px;">
+  <img src="{{ post.thumbnail }}" alt="{{ post.title }}" style="width:120px; height:auto; margin-right:15px;">
+  <div>
+    <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+    <p>{{ post.excerpt | strip_html }}</p>
+  </div>
+</div>
 {% endfor %}
 <a href="/my_projects/">View all posts →</a>
