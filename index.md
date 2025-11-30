@@ -45,3 +45,8 @@ I’m building a custom chatbot for my blog that can answer questions and guide 
 
 <br>
 
+{% for post in site.posts limit:3 %}
+  <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+  <p>{{ post.excerpt }}</p>
+{% endfor %}
+<a href="/projects">View all posts →</a>
