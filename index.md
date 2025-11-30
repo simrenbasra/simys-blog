@@ -55,4 +55,4 @@ I’m building a custom chatbot for my blog that can answer questions and guide 
   </div>
 </div>
 {% endfor %}
-<a href="/my_projects/">View all posts →</a>
+<a href="/simys-blog/my_projects/">View all posts →</a>
