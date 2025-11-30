@@ -9,7 +9,7 @@ title: ""
        style="width: 100%; max-width: 1200px; height: auto;">
 </div>
 
-### Hey, I’m Simy - welcome to my blog! 
+### **Hey, I’m Simy - welcome to my blog!** 
 
 I build AI projects, explain what I learn, and try not to break too many things along the way...
 
