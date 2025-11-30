@@ -3,13 +3,15 @@ layout: page
 title: ""
 permalink: /
 ---
+
 <style>
-  /* Resize images inside excerpts */
-  .home-post-excerpt img {
-    max-width: 200px;
-    height: auto;
+  /* Resize all images inside post excerpts */
+  .home-post-excerpt img, 
+  .home-post-excerpt p img {
+    max-width: 200px !important;
+    height: auto !important;
     display: block;
-    margin: 10px 0;
+    margin: 10px auto; /* center the images */
   }
 </style>
 
@@ -20,15 +22,15 @@ permalink: /
        style="width: 100%; max-width: 1200px; height: auto;">
 </div>
 
-<h2 style="text-align:center;">
+<h3 style="text-align:center;">
   <strong>Hey, I’m Simy - welcome to my blog!</strong>
-</h2>
+</h3>
 
 I build AI projects, explain what I learn, and try not to break too many things along the way...
 
 <br> 
 
-## **Want to Learn AI from Scratch? 🤖**
+### **Want to Learn AI from Scratch? 🤖**
 
 Subscribe to my newsletter, Simy Says!
 
@@ -44,9 +46,9 @@ This 5-part series is designed for complete novices to introduce the basics of A
 
 <br> 
 
-## Upcoming Posts
+### Upcoming Posts
   
-### **SimBot 💬**
+#### **SimBot 💬**
 
 I’m building a custom chatbot for my blog that can answer questions and guide readers through my past posts!
 
@@ -56,7 +58,7 @@ I’m building a custom chatbot for my blog that can answer questions and guide 
 
 <br>
 
-## Most Recent Posts
+### Most Recent Posts
 
 <div class="home-post-excerpt">
 {% for post in site.posts limit:3 %}
