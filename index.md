@@ -58,7 +58,7 @@ I’m building a custom chatbot for my blog that can answer questions and guide 
 
 <br>
 
-## Most Recent Posts
+## Recent Posts
 
 {% for post in site.posts limit:5 %}
   <div style="margin-bottom: 20px;">
