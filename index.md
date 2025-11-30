@@ -31,12 +31,7 @@ This 5-part series is designed for complete novices to introduce the basics of A
 
 **Out Now!**
 
-
 <br> 
-
------ 
-
-<br>
 
 ## Upcoming Posts
   
