@@ -9,9 +9,7 @@ title: ""
        style="width: 100%; max-width: 1200px; height: auto;">
 </div>
 
-<div style="text-align: center;">
-  ## Welcome to my blog!
-</div>
+<h2 style="text-align:center; margin-top: 20px;">Welcome to my blog!</h2>
 
 <br>  
 
