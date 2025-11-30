@@ -3,6 +3,16 @@ layout: page
 title: ""
 permalink: /
 ---
+<style>
+  /* Resize images inside excerpts */
+  .home-post-excerpt img {
+    max-width: 200px;
+    height: auto;
+    display: block;
+    margin: 10px 0;
+  }
+</style>
+
 
 <div style="text-align: center; margin: 20px 0;">
   <img src="{{ site.baseurl }}/assets/index/index_cover_banner.png" 
@@ -48,13 +58,15 @@ I’m building a custom chatbot for my blog that can answer questions and guide 
 
 ## Most Recent Posts
 
-{% for post in site.posts limit:5 %}
-<div style="display:flex; align-items:center; margin-bottom:20px;">
-  <img src="{{ post.thumbnail }}" alt="{{ post.title }}" style="width:120px; height:auto; margin-right:15px;">
-  <div>
+<div class="home-post-excerpt">
+{% for post in site.posts limit:3 %}
+  <div style="margin-bottom: 20px;">
     <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
-    <p>{{ post.excerpt | strip_html }}</p>
+    <p>{{ post.excerpt }}</p>
   </div>
-</div>
 {% endfor %}
+</div>
+
+
+
 <a href="/simys-blog/my_projects/">View all posts →</a>
