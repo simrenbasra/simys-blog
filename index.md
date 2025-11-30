@@ -61,14 +61,20 @@ I’m building a custom chatbot for my blog that can answer questions and guide 
 ### Most Recent Posts
 
 <div class="home-post-excerpt">
-{% for post in site.posts limit:3 %}
-  <div style="margin-bottom: 20px;">
-    <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
-    <p>{{ post.excerpt }}</p>
-  </div>
-{% endfor %}
+  {% for post in site.posts limit:3 %}
+    <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 30px; gap: 20px;">
+      <!-- Text on the left -->
+      <div style="max-width: 400px; text-align: left;">
+        <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+        <p>{{ post.excerpt | strip_html }}</p>
+      </div>
+      <!-- Image on the right -->
+      {% if post.thumbnail %}
+        <img src="{{ post.thumbnail }}" alt="{{ post.title }}" style="max-width: 150px; height: auto;">
+      {% endif %}
+    </div>
+  {% endfor %}
 </div>
-
 
 
 <a href="/simys-blog/my_projects/">View all posts →</a>
