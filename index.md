@@ -17,10 +17,6 @@ I build AI projects, explain what I learn, and try not to break too many things 
 
 <br> 
 
------ 
-
-<br>
-
 ## **Want to Learn AI from Scratch? 🤖**
 
 Subscribe to my newsletter, Simy Says!
@@ -41,9 +37,9 @@ Subscribe to my newsletter, Simy Says!
 
 ## Upcoming Posts
   
-### **Email Genie 🧞‍♀️**
+### **SimBot 💬**
 
-A classification project where I explore the Enron dataset and experiment with clustering and classification models to group emails based on their content. This project will also include a web app where users can enter a dummy email to test the model in real-time.
+I’m building a custom chatbot for my blog that can answer questions and guide readers through my past posts!
 
 <br> 
 
