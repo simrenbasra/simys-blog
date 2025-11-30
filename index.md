@@ -4,7 +4,7 @@ title: ""
 ---
 
 <div style="text-align: center; margin: 20px 0;">
-  <img src="{{ site.baseurl }}/assets/index/cover_banner.png" 
+  <img src="{{ site.baseurl }}/assets/index/simys_data_bytes.png" 
        alt="Banner" 
        style="width: 100%; max-width: 1200px; height: auto;">
 </div>
