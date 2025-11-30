@@ -1,6 +1,7 @@
 ---
 title: Simy's Data Bytes
 ---
+
 <style>
   /* Hide Minima page title on homepage */
   .page-title {
@@ -9,7 +10,7 @@ title: Simy's Data Bytes
 </style>
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/index/banner.png" alt="Photo 1" style="max-width: 50%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/index/cover_banner.png" alt="Photo 1" style="max-width: 50%; height: auto; margin: 20px 0;">
 </div>
 
 
