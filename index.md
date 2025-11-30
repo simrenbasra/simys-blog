@@ -1,19 +1,13 @@
 ---
 layout: home 
-title: Simy's Data Bytes
+title: ""
 ---
 
-<!-- Hide default page title -->
-<style>
-.page-title {
-  display: none;
-}
-</style>
-
-<div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/index/cover_banner.png" alt="Photo 1" style="max-width: 100%; height: auto; margin: 20px 0;">
+<div style="text-align: center; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/index/cover_banner.png" 
+       alt="Banner" 
+       style="width: 100%; max-width: 1200px; height: auto;">
 </div>
-
 
 ## Welcome to my blog!
 
