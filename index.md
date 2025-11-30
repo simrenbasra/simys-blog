@@ -2,10 +2,15 @@
 title: Simy's Data Bytes
 ---
 
+<div style="text-align: center;">
+  <img src="{{ site.baseurl }}/assets/index/banner.jpg" alt="Photo 1" style="max-width: 50%; height: auto; margin: 20px 0;">
+</div>
+
+
 ## Welcome to my blog!
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/index/cover_photo.jpg" alt="Photo" style="max-width: 50%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/index/cover_photo.jpg" alt="Photo 2" style="max-width: 50%; height: auto; margin: 20px 0;">
 </div>
 
 
