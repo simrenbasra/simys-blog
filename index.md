@@ -50,4 +50,4 @@ I’m building a custom chatbot for my blog that can answer questions and guide 
   <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
   <p>{{ post.excerpt }}</p>
 {% endfor %}
-<a href="/my_projects">View all posts →</a>
+<a href="/my_projects/">View all posts →</a>
