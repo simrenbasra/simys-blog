@@ -1,6 +1,12 @@
 ---
 title: Simy's Data Bytes
 ---
+<style>
+  /* Hide Minima page title on homepage */
+  .page-title {
+    display: none;
+  }
+</style>
 
 <div style="text-align: center;">
   <img src="{{ site.baseurl }}/assets/index/banner.png" alt="Photo 1" style="max-width: 50%; height: auto; margin: 20px 0;">
