@@ -3,4 +3,5 @@ baseurl: "/simys-blog" # This is crucial for correct path resolution
 url: "https://simrenbasra.github.io" # Base URL of your GitHub Pages site
 
 header_pages:
-  - about.md
+  - about_me.md
+
