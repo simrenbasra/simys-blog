@@ -9,9 +9,9 @@ title: ""
        style="width: 100%; max-width: 1200px; height: auto;">
 </div>
 
-<h3 style="text-align:center;">
+<h2 style="text-align:center;">
   <strong>Hey, I’m Simy - welcome to my blog!</strong>
-</h3>
+</h2>
 
 I build AI projects, explain what I learn, and try not to break too many things along the way...
 
