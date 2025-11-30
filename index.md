@@ -63,6 +63,9 @@ I’m building a custom chatbot for my blog that can answer questions and guide 
 {% for post in site.posts limit:5 %}
   <div style="margin-bottom: 20px;">
     <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+    <p style="color: #555; font-size: 0.9em; margin-bottom: 5px;">
+      {{ post.date | date: "%b %-d, %Y" }}
+    </p>
     <p>{{ post.excerpt | strip_html }}</p>
   </div>
 {% endfor %}
