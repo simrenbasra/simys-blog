@@ -28,7 +28,7 @@ Subscribe to my newsletter, Simy Says!
 </div>
 
 <p>
-<strong>First Series: Foundation</strong> — a 5-part beginner-friendly intro to AI and machine learning.
+<strong>First Series: Foundation -</strong> a 5-part beginner-friendly intro to AI and machine learning.
 </p>
 
 <br> 
