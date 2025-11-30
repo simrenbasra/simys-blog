@@ -1,12 +1,13 @@
 ---
+layout: home 
 title: Simy's Data Bytes
 ---
 
+<!-- Hide default page title -->
 <style>
-  /* Hide Minima page title on homepage */
-  .page-title {
-    display: none;
-  }
+.page-title {
+  display: none;
+}
 </style>
 
 <div style="text-align: center;">
