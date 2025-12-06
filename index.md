@@ -70,4 +70,4 @@ I’m building a custom chatbot for my blog that can answer questions and guide 
   </div>
 {% endfor %}
 
-<a href="/simys-blog/my_projects/">View all posts →</a>
+<a href="/simys-blog/my_posts/">View all posts →</a>
