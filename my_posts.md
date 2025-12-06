@@ -1,6 +1,7 @@
 ---
 layout: page
 title: "All Posts"
+permalink: /my_posts/
 ---
 
 All posts, listed in order and grouped by project:
