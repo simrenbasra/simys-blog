@@ -71,3 +71,5 @@ I’m building a custom chatbot for my blog that can answer questions and guide 
 {% endfor %}
 
 <a href="/simys-blog/my_posts/">View all posts →</a>
+
+{% include footer.html %}
