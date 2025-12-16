@@ -30,7 +30,7 @@ I build AI projects, explain what I learn, and try not to break too many things 
 
 <br> 
 
-### **Want to Learn AI from Scratch? 🤖**
+### **Curious about AI? 🤖**
 
 Subscribe to my newsletter, Simy Says!
 
@@ -38,11 +38,11 @@ Subscribe to my newsletter, Simy Says!
   <iframe src="https://simrenbasra.substack.com/embed" width="480" height="320" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe>
 </div>
 
-**First Newsletter Series: Foundation**
+**Foundation Series: OUT NOW**
 
 This 5-part series is designed for complete novices to introduce the basics of AI and machine learning in a fun, beginner-friendly way.
 
-**Out Now!**
+**Inside ChatGPT: Coming Soon...**
 
 <br> 
 
