@@ -8,6 +8,10 @@ These are some of the projects I’ve completed so far, and each has its own blo
 
 Projects are listed in chronological order, with the most recent first.
 
+## SimBot 💬
+
+Coming Soon!!
+
 ## Email Genie 🧞‍♀️
 
 Semantic search app for ~30,000 Enron emails using vector embeddings, FAISS and a GPT-powered interface.
