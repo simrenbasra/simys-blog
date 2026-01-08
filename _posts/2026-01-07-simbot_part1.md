@@ -11,7 +11,7 @@ Most of my blog posts build on previous ones and I know it can be tricky to foll
 
 That’s when I started thinking: wouldn’t it be great to have something on my blog that can catch readers up, summarise past posts or answer questions without them needing to reread everything?
 
-Introducing my next project SimBot! A custom chatbot that helps readers understand past content, ask questions and navigate my blog without having to dig through older posts (which, I’ll admit, can get a little hefty…).
+Introducing my next project SimBot! A custom chatbot that helps readers ask questions and understand past content without having to dig through older posts (which, I’ll admit, can get a little hefty…).
 
 <br>
 
@@ -21,7 +21,7 @@ Introducing my next project SimBot! A custom chatbot that helps readers understa
 
 ## Project Overview
 
-The end goal of this project is to add a working chatbot to my blog that can answer questions about my previous posts. The idea is to have the chatbot built right into my blog, so readers can ask questions about past posts and get answers instantly without jumping to another site.
+The end goal of this project is to add a working chatbot to my blog so readers can easily interact with it and get responses instantly without jumping to another site.
 
 Since this is my first time building a custom chatbot, I’m breaking the project down into phases:
 
@@ -31,13 +31,14 @@ This first phase focuses on creating a basic chatbot without any document parsin
 
 #### **Phase 2: Experimenting with RAG**
 
-For the second phase, my plan is to experiment with Retrieval-Augmented Generation (RAG). This includes preprocessing my blog posts, chunking and embedding the text, and experimenting with different retrieval methods. I’ll also start evaluating how well each setup performs.
+For the second phase, my plan is to experiment with Retrieval-Augmented Generation (RAG). This includes preprocessing my blog posts, chunking and embedding the text and experimenting with different retrieval methods. I’ll also start evaluating how well each setup performs.
 
 The goal of this phase is to figure out which approach works best for the final chatbot, SimBot.
 
 #### **Phase 3: SimBot development**
 
 In the final phase, I’ll bring everything together to build SimBot. Using the insights from the earlier phases, I’ll refine the prompts, improve retrieval and build the final chatbot.
+
 By the end of this phase, I hope to have a chatbot ready to be integrated into my blog!
 
 <br>
@@ -95,7 +96,7 @@ Most posts already describe processes step by step and I am assuming most user q
 
 #### **3. Evaluating the Chatbot**
    
-There are no easy quantitative metrics I can use to evaluate responses of the chatbots. Most likely will need to qualitative metrics like:
+There are no easy quantitative metrics I can use to evaluate responses of the chatbots. Most likely will evaluate models by:
 
 - Asking the same questions to different chatbots
   
