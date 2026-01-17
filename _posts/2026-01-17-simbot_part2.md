@@ -42,7 +42,7 @@ At a high level, the chatbot follows these steps:
 
 3.	Matches patterns learned during training to return a likely response
 
-    **NOTE:** Different models have different training data and so respond differently.
+    **NOTE:** Different models have different training data and so, respond differently.
     
 4.	Decodes tokens back into readable language
 
