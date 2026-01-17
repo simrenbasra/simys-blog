@@ -90,7 +90,7 @@ I chose a small set of lightweight and easy-to-load models to experiment with an
 </div>
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/simbot/phase_1/define_+.png" alt="Step 2b" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/simbot/phase_1/define_models.png" alt="Step 2b" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 #### **Step 3: Define a Variety of Prompts / Roles**
