@@ -28,7 +28,7 @@ I often hear people say, “Wow, working with AI must be so hard!” but it’s 
 
 ### Current Focus
 
-Outside of my full-time role, I’m working on a new project called SimBot, a custom chatbot designed to help readers navigate my blog and posts. I’ve also launched my newsletter, Simy Says, aimed at complete beginners who want to build a better understanding of AI and machine learning. My aim is to still grow as an AI engineer and keep learning!
+Outside of my full-time role, I’m working on a new project called SimBot, a custom chatbot designed to help readers navigate my blog and posts. I’ve also launched my newsletter, Simy Says, aimed at complete beginners who want to build a better understanding of AI and machine learning. My aim is to continue to grow as an AI Engineer and keep learning!
 
 ### Connect With Me
 
