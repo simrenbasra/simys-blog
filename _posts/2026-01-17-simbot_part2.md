@@ -81,7 +81,7 @@ The three most common types of chatbots are:
 Instead of relying only on what the model learned during training, a RAG chatbot first retrieves relevant information and uses it as added context when generating a response. The process of generating responses is a little different: 
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/simbot/rag_chatbot.png" alt="Chatbot 2" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/simbot/chatbot_rag.png" alt="Chatbot 2" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 1.	A user sends a prompt to the chatbot.
