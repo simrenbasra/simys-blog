@@ -14,7 +14,9 @@ A custom chatbot for my blog.
 
 - [SimBot: Project Introduction 📝](https://simrenbasra.github.io/simys-blog/2026/01/07/simbot_part1.html)
 
-- [SimBot: A Simple Chatbot 💬](https://simrenbasra.github.io/simys-blog/2026/01/17/simbot_part2.html)
+- [SimBot: Chatbots Explained 💡](https://simrenbasra.github.io/simys-blog/2026/01/17/simbot_part2.html)
+
+- [SimBot: A Simple Chatbot 🗨️](https://simrenbasra.github.io/simys-blog/2026/01/18/simbot_part3.html)
 
 ## Email Genie 🧞‍♀️
 
