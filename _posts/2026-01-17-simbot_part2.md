@@ -41,17 +41,17 @@ This process looks like:
 
 1.	The user sends a prompt to the chatbot.
 
-2.	The text is tokenised into smaller units the model can process.
+2.	The text is tokenised into smaller parts the model can process.
 
 3.	The model predicts the most likely next token based on the input and its training.
 
 4.	This process repeats until a full response is generated.
 
-5.	Tokens are decoded back into readable text 
+5.	Tokens are decoded back into readable text. 
 
-6.	Response returned to user.
+6.	A response is returned to the user.
 
-These chatbots work really well for general conversation, but they do have limitations. Since the model is only generating text based on what it learned during training, it cannot retrieve external information on its own. The use case of a chatbot influences how it is designed and built. To understand this better, let’s look at the different types of chatbots.
+These chatbots work really well for general conversation, but they do have limitations. Since the model is only generating text based on what it learnt during training, it cannot retrieve external information on its own. The use case of a chatbot influences how it is designed and built. To understand this better, let’s look at the different types of chatbots.
 
 
 <br>
@@ -64,9 +64,9 @@ These chatbots work really well for general conversation, but they do have limit
 
 The three most common types of chatbots are:
 
-**1.	Rule-Based Chatbots:** These are non-AI chatbots that use predefined rules and decision trees to generate responses. They are limited to what has been explicitly programmed. For example, a customer service bot that only answers questions about a list of predefined categories, such as returns, store locations, exchanges, etc.
+**1.	Rule-Based Chatbots:** These are non-AI chatbots that use predefined rules to generate responses. They are limited to what has been programmed. For example, a customer service bot that only answers questions from a list of predefined categories, such as returns, store locations, exchanges, etc.
 
-**2.	Generative AI Chatbots:** These chatbots use AI models, like GPT, to generate responses by predicting the next word in a conversation. They can handle a wide range of topics and provide more human-like interactions.
+**2.	Generative AI Chatbots:** These chatbots use AI models (LLMs) to generate responses by predicting the next word in a conversation. They can handle a wide range of topics and provide more human-like interactions.
 
 **3.	RAG (Retrieval-Augmented Generation) Chatbots:** These chatbots combine generative AI with access to external knowledge bases. By retrieving relevant information and using it to generate responses, they can provide more accurate answers.
 
@@ -86,18 +86,17 @@ Instead of relying only on what the model learned during training, a RAG chatbot
 
 1.	A user sends a prompt to the chatbot.
 
-2.	The prompt is pre-processed and embedded. 
+2.	The prompt is preprocessed and embedded. 
 
-3.	Embedded query is used to search a vectorised knowledge base (for example, blog posts or documents).
+3.	Embedded prompt is used to search a vectorised knowledge base (for example, blog posts or documents).
 
 4.	Most relevant snippets or documents are returned.
 
 5.	Retrieved snippets are added to the prompt.
 
-6.	Response is generated (following steps above).
+6.	A response is generated (following steps above).
 
-7.	Response returned to user.
-
+7.	A response is returned to the user.
 
 This approach allows the chatbot to answer questions about specific or private content. As part of this series I will share implementation steps to build my own RAG chatbot (SimBot) using previous blog posts.
 
