@@ -89,14 +89,16 @@ Instead of relying only on what the model learned during training, a RAG chatbot
 2.	The prompt is preprocessed and embedded. 
 
 3.	Embedded prompt is used to search a vectorised knowledge base (for example, blog posts or documents).
+    
+    **NOTE:** All text in knowledge base is vectorised prior to retriveal. Embeddings for the knowledge base are created during the implementation of the RAG chatbot. The same embedding model is used to vectorise both knowledge base content and user prompts, this is done to ensure consistency for similarity matching. 
 
-4.	Most relevant snippets or documents are returned.
+5.	Most relevant snippets or documents are returned.
 
-5.	Retrieved snippets are added to the prompt.
+6.	Retrieved snippets are added to the prompt.
 
-6.	A response is generated (following steps above).
+7.	A response is generated (following steps above).
 
-7.	A response is returned to the user.
+8.	A response is returned to the user.
 
 This approach allows the chatbot to answer questions about specific or private content. As part of this series I will share implementation steps to build my own RAG chatbot (SimBot) using previous blog posts.
 
