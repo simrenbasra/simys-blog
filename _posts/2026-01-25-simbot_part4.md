@@ -37,19 +37,14 @@ Here’s the typical structure of a blog post:
   <img src="{{ site.baseurl }}/assets/simbot/phase_2/blog_structure.png" alt="Blog structure" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
  
-- **Title and Date**
+- **Title and Date**  
+- **Cover Image**  
+- **Introduction**  
+- **Subheadings and Content**  
+  - `##` for main sections  
+  - `####` for subsections  
 
-- **Cover Image**
-
-- **Introduction**
-
-- **Subheadings and Content**
-
-    a.	## for main sections
-    
-    b.	#### for subsections
-  
-    **Note:** A post can contain multiple ## and #### subheadings and all posts are written in markdown
+**Note:** A post can contain multiple `##` and `####` subheadings, and all posts are written in Markdown.
 
 <br>
 
