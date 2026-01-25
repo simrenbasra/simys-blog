@@ -198,11 +198,9 @@ A chunk counter is used to number multiple chunks within the same section.
 
 Each sub-section is processed as follows:
 
--	If the sub-section starts with a `####` heading:
-
-    -	Extract the subheading
-      
-    -	Extract the sub-section body
+- If the sub-section starts with a `####` heading:
+  - Extract the subheading
+  - Extract the sub-section body
 
 -	Otherwise, treat the entire sub-section as the body.
 
