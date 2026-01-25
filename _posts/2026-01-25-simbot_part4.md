@@ -153,11 +153,11 @@ The post is divided into main sections, with the first section treated as the in
 
 #### **2) Separate Headings from Content**
 
-After splitting the post into sections, each section’s heading is separated from its body using `extract_heading_body`:
-
 <div style="text-align: center;">
   <img src="{{ site.baseurl }}/assets/simbot/phase_2/extract_heading_body.png" alt="Extract heading and body" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
+
+After splitting the post into sections, each section’s heading is separated from its body using `extract_heading_body`:
 
 -	The first line becomes the chunk heading.
 
@@ -170,11 +170,11 @@ Giving each chunk a meaningful title helps the chatbot reference sections accura
 
 #### **3) Check if the Section Fits Within the Token Limit**
 
-Next, I check the token count of each section using `count_tokens`:
-
 <div style="text-align: center;">
   <img src="{{ site.baseurl }}/assets/simbot/phase_2/count_tokens.png" alt="Count tokens" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
+
+Next, I check the token count of each section using `count_tokens`:
 
 - If the section is short enough, it is added as a single chunk.
   
@@ -200,9 +200,9 @@ Each sub-section is processed as follows:
 
 -	If the sub-section starts with a `####` heading:
 
-  -	Extract the subheading
-    
-  -	Extract the sub-section body
+    -	Extract the subheading
+      
+    -	Extract the sub-section body
 
 -	Otherwise, treat the entire sub-section as the body.
 
