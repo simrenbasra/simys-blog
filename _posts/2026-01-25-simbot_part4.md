@@ -37,19 +37,19 @@ Here’s the typical structure of a blog post:
   <img src="{{ site.baseurl }}/assets/simbot/phase_2/blog_structure.png" alt="Blog structure" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
  
-1.	Title and Date
+- **Title and Date**
 
-2.	Cover Image
+- **Cover Image**
 
-3.	Introduction
+- **Introduction**
 
-4.	Subheadings and Content
+- **Subheadings and Content**
 
-  a.	## for main sections
+    a.	## for main sections
+    
+    b.	#### for subsections
   
-  b.	#### for subsections
-  
-  **Note:** A post can contain multiple ## and #### subheadings and all posts are written in markdown
+    **Note:** A post can contain multiple ## and #### subheadings and all posts are written in markdown
 
 <br>
 
@@ -182,11 +182,11 @@ Next, I check the token count of each section using `count_tokens`:
   
 #### **4) Split Large Sections into Sub-Sections**
 
-For sections that are too long, `split_sub_sections` is used to divide the content:
-
 <div style="text-align: center;">
   <img src="{{ site.baseurl }}/assets/simbot/phase_2/split_sub_sections.png" alt="Split sub sections" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
+
+For sections that are too long, `split_sub_sections` is used to divide the content:
 
 -	By `####` subheadings if they exist
   
