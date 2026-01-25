@@ -204,6 +204,7 @@ Each sub-section is processed as follows:
 -	If a sub-section is still too long, it is split into paragraphs.
   
 -	Paragraphs are grouped into chunks until the token limit is reached.
+  - My approach here does assumes individual paragraphs are always shorter than the maximum token limit, which is true for all previous posts. May be worth adding to this function when building final product and split by sentence if `current_chunk = p` and `current_chunk > max_token_length`.
   
 -	Each chunk is given a heading, combining the main section heading, the subheading (if any) and the chunk number.
 
