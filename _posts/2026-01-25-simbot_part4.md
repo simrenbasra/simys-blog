@@ -178,7 +178,7 @@ Next, I check the token count of each section using `count_tokens`:
 #### **4) Split Large Sections into Sub-Sections**
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/simbot/phase_2/split_sub_sections.png" alt="Split sub sections" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/simbot/phase_2/split_subsections.png" alt="Split sub sections" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 For sections that are too long, `split_sub_sections` is used to divide the content:
