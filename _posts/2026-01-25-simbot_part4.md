@@ -185,7 +185,7 @@ For sections that are too long, `split_sub_sections` is used to divide the conte
 
 -	By `####` subheadings if they exist
   
--	By paragraphs if no subheadings exist
+-	If no subheadings exist, the section is treated as a single block and later broken down by paragraphs only when needed to stay within the token limit.
 
 A chunk counter is used to number multiple chunks within the same section.
 
