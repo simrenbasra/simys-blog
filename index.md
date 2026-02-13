@@ -30,22 +30,6 @@ I build AI projects, explain what I learn, and try not to break too many things 
 
 <br> 
 
-### **Curious about AI? 🤖**
-
-Subscribe to my newsletter, Simy Says!
-
-<div style="text-align: center;">
-  <iframe src="https://simrenbasra.substack.com/embed" width="480" height="320" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe>
-</div>
-
-**Foundation Series: OUT NOW**
-
-This 5-part series is designed for complete novices to introduce the basics of AI and machine learning in a fun, beginner-friendly way.
-
-**Inside ChatGPT: Coming Soon...**
-
-<br> 
-
 ## Upcoming Posts
   
 #### **SimBot 💬**
