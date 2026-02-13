@@ -23,7 +23,8 @@ permalink: /
 </div>
 
 <h3 style="text-align:center;">
-  <strong>Hey, I’m Simy! Welcome to my blog!</strong>
+  <strong>Hey, I’m Simy!<br>
+  Welcome to my blog!</strong>
 </h3>
 
 I build AI projects, explain what I learn, and try not to break too many things along the way...
