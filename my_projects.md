@@ -20,6 +20,8 @@ A custom chatbot for my blog.
 
 - [SimBot: Document Processing 📑](https://simrenbasra.github.io/simys-blog/2026/01/25/simbot_part4.html)
 
+- [SimBot: Retrieval 🔍](https://simrenbasra.github.io/simys-blog/2026/02/15/simbot_part5.html)
+
 ## Email Genie 🧞‍♀️
 
 Semantic search app for ~30,000 Enron emails using vector embeddings, FAISS and a GPT-powered interface.
