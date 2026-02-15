@@ -104,44 +104,11 @@ To test:
 
 1.	I define a query and embed it using the same OpenAI embedding model that I used to create the vectors.
 
-<div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/simbot/phase_3/define_query.png" alt="Define query" style="max-width: 100%; height: auto; margin: 20px 0;">
-</div>
-
-<div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/simbot/phase_3/embed_query.png" alt="Embed query" style="max-width: 100%; height: auto; margin: 20px 0;">
-</div>
-
 2.	I query the Pinecone vector database and return the top 3 results.
-
-<div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/simbot/phase_3/return_top_3.png" alt="Get top 3 output" style="max-width: 100%; height: auto; margin: 20px 0;">
-</div>
-
-<div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/simbot/phase_3/output_retrieval.png" alt="Output of retrieval" style="max-width: 100%; height: auto; margin: 20px 0;">
-</div>
 
 3.	To mimic the final RAG chatbot process (see the diagram in the [Chatbot Explained](https://simrenbasra.github.io/simys-blog/2026/01/17/simbot_part2.html) post), I add these top 3 chunks to the original user prompt and parse the LLM’s response.
 
-<div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/simbot/phase_3/define_top_3_output.png" alt="Get top 3 output" style="max-width: 100%; height: auto; margin: 20px 0;">
-</div>
-
-
-<div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/simbot/phase_3/expand_prompt.png" alt="Append user prompt" style="max-width: 100%; height: auto; margin: 20px 0;">
-</div>
-
-<div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/simbot/phase_3/parse_response.png" alt="Parse response" style="max-width: 100%; height: auto; margin: 20px 0;">
-</div>
-
 The results are promising! Retrieval is much more accurate than in my Email Genie project. I think taking extra time to carefully decide how to chunk my data really paid off here!
-
-<div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/simbot/phase_3/test_response.png" alt="Response" style="max-width: 100%; height: auto; margin: 20px 0;">
-</div>
 
 <br>
 
