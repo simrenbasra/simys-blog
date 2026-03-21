@@ -30,11 +30,11 @@ This helps ensure that the final system can:
 1.	Return the latest information
 2.	Search across multiple posts to generate responses
 
-#### Step 1: Define prompts 
+#### **Step 1: Define prompts**
 
 I created my set of prompts with the help of ChatGPT to make sure all the scenarios I wanted were included in the dataset.
 
-#### Step 2: Expected Chunks
+#### **Step 2: Expected Chunks**
 
 Next, I stored the chunks I expect the chatbot to return. I used basic retrieval (set up in previous post) as a baseline to see whether the extra methods I explore below actually add value.
 
@@ -48,7 +48,7 @@ To do this, I get the existing Pinecone index and store the top 3 chunks for eac
 
 ## Different Retrieval Methods to Evaluate
 
-#### Keyword and Vector Retrieval
+#### **Keyword and Vector Retrieval**
 
 In my last blog post, I mentioned the idea of combining keyword and vector search. 
 
@@ -58,7 +58,7 @@ On the other hand, vector search understands semantics of text and how words rel
 
 Hopefully, by combining both approaches we get the best of both worlds!
 
-#### Recency Aware Vector Retrieval
+#### **Recency Aware Vector Retrieval**
 
 I also mentioned experimenting with recency-aware retrieval. The basic idea is to look at the dates of posts and prioritise content from newer posts.
 
@@ -68,7 +68,7 @@ Note: Most blog posts include a date but some pages like About Me or My Projects
 
 Works similar to base retrieval but now recent documents are assigned a higher weight, so they are more likely to appear at the top of results, while older content is assigned a lower weight and deprioritised.
 
-#### Keyword and Recency Aware Vector Retrieval
+#### **Keyword and Recency Aware Vector Retrieval**
 
 I was also curious to see if performance improves if I combined keyword search with recency-aware retrieval!
 
@@ -269,7 +269,7 @@ Finally:
   
 -	The `top_k` results are returned
 
-#### Using classes to try different retrieval methods 
+#### **Using classes to try different retrieval methods** 
 
 Now that classes are set up, we can run keyword search, vector retrieval and recency-aware retrieval. The next step is to start combining different approaches.
 
@@ -292,7 +292,11 @@ The first step is to run keyword and vector search. We want to return more than 
 -	Compute the final score using matrix multiplication, sort in descending order, and return the top k results.
 
 **2.	Recency Aware Retrieval**
-   
+
+<div style="text-align: center;">
+  <img src="{{ site.baseurl }}/assets/simbot/phase_4/recency_retrieval.png" alt="keyword search init" style="max-width: 100%; height: auto; margin: 20px 0;">
+</div>
+
 This is straightforward, call the `VectorRetrieval` class and set the alpha parameter to a value < 0.5 (e.g., 0.4). This controls how much weight we give to the date of a post versus relevance. The lower alpha is, the more we prioritise recent posts.
 
 **Note:** alpha becomes a hyperparameter that can be tuned.
@@ -300,7 +304,7 @@ This is straightforward, call the `VectorRetrieval` class and set the alpha para
 **3.	Keyword Search with Recency Aware Retrieval**
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/simbot/phase_4/recency_retrieval.png" alt="keyword search init" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/simbot/phase_4/recency_and_keyword_search.png" alt="keyword search init" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 This process is similar to Keyword and Vector Search, but now we incorporate the alpha parameter in the vector retrieval step to account for recency.
@@ -315,7 +319,7 @@ This process is similar to Keyword and Vector Search, but now we incorporate the
 
 To evaluate my retrieval system, I used a simple baseline approach to return the top 3 chunks using a vector retrieval. The goal was to compare whether combining retrieval methods could outperform the baseline.
 
-#### How I calculate precision 
+#### **How I calculate precision** 
 
 To measure performance, I focused on precision, since I care most about how accurate the retrieved chunks are.
 
@@ -345,7 +349,7 @@ Precision = (Number of correct retrieved chunks) / (Total retrieved chunks)
 
 This tells me how many of the returned results are actually relevant.
 
-#### Results
+#### **Results**
 
 Earlier, I mentioned hyperparameter tuning, which is the process of finding the best parameter values to maximise performance. In this case, the key parameters I can tune are:
 
@@ -357,7 +361,7 @@ Earlier, I mentioned hyperparameter tuning, which is the process of finding the 
   
 To evaluate which combination works best, I use precision on a test set as my metric.
 
-#### Grid Search 
+#### **Grid Search** 
 
 To find the best parameters, I needed to explore different parameter combinations, I used a grid search.
 
