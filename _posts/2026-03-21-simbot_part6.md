@@ -397,11 +397,11 @@ I calculated precision using only vector search, which serves as my baseline for
 
 -	Iterate over the test dataset 
 
- 	For each test example:
+For each test example:
      
-    - I generated all parameter combinations using a grid (via product)
-    	
-    -	I skipped the case where the setup reduces to pure vector search, since that’s already my baseline
+  - I generated all parameter combinations using a grid (via product)
+    
+  -	I skipped the case where the setup reduces to pure vector search, since that’s already my baseline
       
     -	I ensured that keyword weight + vector weight = 1
 
