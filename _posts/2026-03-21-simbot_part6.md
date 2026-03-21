@@ -294,7 +294,7 @@ The first step is to run keyword and vector search. We want to return more than 
 **2.	Recency Aware Retrieval**
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/simbot/phase_4/recency_retrieval.png" alt="keyword search init" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/simbot/phase_4/regency_retrieval.png" alt="keyword search init" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 This is straightforward, call the `VectorRetrieval` class and set the alpha parameter to a value < 0.5 (e.g., 0.4). This controls how much weight we give to the date of a post versus relevance. The lower alpha is, the more we prioritise recent posts.
