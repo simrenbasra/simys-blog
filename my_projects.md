@@ -22,6 +22,8 @@ A custom chatbot for my blog.
 
 - [SimBot: Retrieval 🔍](https://simrenbasra.github.io/simys-blog/2026/02/15/simbot_part5.html)
 
+- [SimBot: Improving Retrieval 🔧](https://simrenbasra.github.io/simys-blog/2026/03/21/simbot_part6.html)
+
 ## Email Genie 🧞‍♀️
 
 Semantic search app for ~30,000 Enron emails using vector embeddings, FAISS and a GPT-powered interface.
