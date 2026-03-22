@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Chat with SimyBot
+title: SimBot
 permalink: /chat/
 ---
 
