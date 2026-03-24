@@ -234,7 +234,9 @@ Combines the vector similarity score with the recency score.
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
-\( final\_score = \alpha \cdot vector\_score + (1 - \alpha) \cdot recency\_score \)
+$$
+final\_score = \alpha \cdot vector\_score + (1 - \alpha) \cdot recency\_score
+$$
 
 - Where:
   
@@ -347,7 +349,9 @@ Finally, I calculate precision using a set-based comparison:
 
 In other words:
 
-\( \text{Precision} = \frac{\text{Number of correct retrieved chunks}}{\text{Total retrieved chunks}} \)
+$$
+\text{precision} = \frac{\text{Number of correct retrieved chunks}}{\text{Total retrieved chunks}}
+$$
 
 This tells me how many of the returned results are actually relevant.
 
@@ -390,27 +394,20 @@ Each pair is evaluated, and the one with the highest precision is selected.
 </div>
 
 -	Set parameter ranges
-  
-I defined ranges for keyword weight, vector weight and alpha. 
+  - I defined ranges for keyword weight, vector weight and alpha. 
 
 -	Establish a baseline
-  
-I calculated precision using only vector search, which serves as my baseline for comparison. 
+  - I calculated precision using only vector search, which serves as my baseline for comparison. 
 
--	Iterate over the test dataset 
-
-For each test example:
+-	Iterate over the test dataset, for each test example:
      
   - I generated all parameter combinations using a grid (via product)
   -	I skipped the case where the setup reduces to pure vector search, since that’s already my baseline
-   -	I ensured that keyword weight + vector weight = 1
+  -	I ensured that keyword weight + vector weight = 1
+  -	Run retrieval 
+ 	    - For each parameter combination, I called: `combine_recency_and_keyword_search` (this is the function that uses all three components: keyword, vector and recency) 
 
--	Run retrieval 
-
- 	For each parameter combination, I called: `combine_recency_and_keyword_search` (this is the function that uses all three components: keyword, vector and recency) 
-
--	Evaluate performance
-  
+-	Evaluate performance  
   -	I calculated precision by comparing retrieved chunks with expected chunks
   -	I then computed the difference from the baseline precision (vector-only search) 
 
