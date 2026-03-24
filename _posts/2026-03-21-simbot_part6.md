@@ -48,7 +48,7 @@ To do this, I get the existing Pinecone index and store the top 3 chunks for eac
 
 ## Different Retrieval Methods to Evaluate
 
-#### **Keyword and Vector Retrieval**
+#### **1. Keyword and Vector Retrieval**
 
 In my last blog post, I mentioned the idea of combining keyword and vector search. 
 
@@ -58,17 +58,17 @@ On the other hand, vector search understands semantics of text and how words rel
 
 Hopefully, by combining both approaches we get the best of both worlds!
 
-#### **Recency Aware Vector Retrieval**
+#### **2. Recency Aware Vector Retrieval**
 
 I also mentioned experimenting with recency-aware retrieval. The basic idea is to look at the dates of posts and prioritise content from newer posts.
 
 **Note:** Most blog posts include a date but some pages like About Me or My Projects are not dated. Since I update these pages regularly, I backfilled these dates to `today` so they are prioritised!
 
-**How does Recency Aware Retrieval work?**
+_**How does Recency Aware Retrieval work?**_
 
 Works similar to base retrieval but now recent documents are assigned a higher weight, so they are more likely to appear at the top of results, while older content is assigned a lower weight and deprioritised.
 
-#### **Keyword and Recency Aware Vector Retrieval**
+#### **3. Keyword and Recency Aware Vector Retrieval**
 
 I was also curious to see if performance improves if I combined keyword search with recency-aware retrieval!
 
@@ -98,17 +98,12 @@ Initialises the class and vectorises all chunks using TF-IDF.
   <img src="{{ site.baseurl }}/assets/simbot/phase_4/keyword_search_init.png" alt="keyword search init" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
-- Stores the input dataframe
-  
-- Calls `_vectorise_chunks_with_tfidf`
-  
--  Saves:
-
+- **Stores the input dataframe**
+- **Calls** `_vectorise_chunks_with_tfidf`
+- **Saves:**
   - `vectoriser`: fitted TF-IDF vectoriser
-    
   - `tfidf_matrix`: vector representation of each chunk
-    
-  - `metadata_df`: metadata linking vectors back to original chunks.
+  - `metadata_df`: metadata linking vectors back to original chunks
   
 Vectorisation is done once during initialisation to avoid recomputing it for every query (costly).
 
