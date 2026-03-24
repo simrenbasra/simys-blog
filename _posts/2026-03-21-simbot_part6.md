@@ -62,7 +62,7 @@ Hopefully, by combining both approaches we get the best of both worlds!
 
 I also mentioned experimenting with recency-aware retrieval. The basic idea is to look at the dates of posts and prioritise content from newer posts.
 
-Note: Most blog posts include a date but some pages like About Me or My Projects are not dated. Since I update these pages regularly, I backfilled these dates to `today` so they are prioritised!
+**Note:** Most blog posts include a date but some pages like About Me or My Projects are not dated. Since I update these pages regularly, I backfilled these dates to `today` so they are prioritised!
 
 **How does Recency Aware Retrieval work?**
 
@@ -80,9 +80,9 @@ I was also curious to see if performance improves if I combined keyword search w
 
 ## Implementation
 
-I am always looking at ways to improve my coding skills, and I realised a lot of my personal projects are built in notebooks. This makes sense since I like to experiment with different approaches to see which one suits the projects best. However, even in notebooks, I should make use of class-based development. This will also help when I later come to deploy my chatbot!
+I am always looking at ways to improve my coding skills, and I realised a lot of my personal projects are built in notebooks. This makes sense since I like to experiment with different approaches to see which one suits the projects best. However, even in notebooks, I should make use of class-based development. This will also help when I delpoy my chatbot later!
 
-#### Classes
+#### **Classes**
 
 I create two classes: `KeywordSearch` and `VectorSearch`. Each uses a different method to return the most relevant text chunks for a given prompt.
 
@@ -132,10 +132,10 @@ Vectorises all chunks using TF-IDF and returns the vectoriser, TF-IDF matrix, an
   <img src="{{ site.baseurl }}/assets/simbot/phase_4/keyword_search_vectorise_chunks.png" alt="keyword search init" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
-- Initialises vectoriser, set n grams to 1,2
+- Initialises vectoriser:
   
   - 	`lowercase = True` converts all tokens to lower case so words such as Vector and vector are treated the same.
-  - `ngram_range=(1,2)’ includes both single words (unigrams) and two word phrases (bigrams). Allows phrases such as "vector database" to be treated as a single token rather than two separate words ("vector" and "database").
+  - `ngram_range=(1,2)` includes both single words (unigrams) and two word phrases (bigrams). Allows phrases such as "vector database" to be treated as a single token rather than two separate words ("vector" and "database").
   - `stop_words` = ‘english’ removes common words (e.g. the, at, a). These words appear frequently so generally don’t help distinguish relevant
 
 -	Iterate through dataframe rows, extract chunk titles and texts
@@ -160,11 +160,11 @@ Returns the most relevant chunks for a given prompt.
 
 - Apply `_preprocess_text` to the input prompt.
   
-- Vectorise the prompt using the same fitted vectoriser from _vectorise_chunks_with_tfidf.
+- Vectorise the prompt using the same fitted vectoriser from `_vectorise_chunks_with_tfidf`.
   
 - Calculate similarity between the prompt vector and each chunk vector using cosine similarity.
   
-- Sort similarity scores and return the top k most relevant chunks.
+- Sort similarity scores and return the `top_k` most relevant chunks.
   
 - For each result:
   
@@ -184,7 +184,7 @@ Initialises vector search
   <img src="{{ site.baseurl }}/assets/simbot/phase_4/vector_search_init.png" alt="keyword search init" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
-- Connects to the Pinecone index using index_name
+- Connects to the Pinecone index using `index_name`
   
 - Stores the index so it can be used by other methods
 
@@ -197,7 +197,7 @@ Converts raw date metadata into a valid datetime object.
 </div>
 
 - Attempts to parse the date using `datetime.fromisoformat`
-- 
+
 - If the date is missing or invalid, the current date is returned
 
 **Assumption:**
@@ -216,7 +216,7 @@ Calculates a recency score based on the date of posts
 
 -	First calculates the number of days between the post date and the current date
   
--	Calculate recency score, idea is that id a post is very recent score approaches one if post is older days_old increases and score moves to 0
+-	Calculate recency score, idea is that id a post is very recent score approaches one if post is older `days_old` increases and score moves to 0
   
 -	Ensures more recent posts are assigned higher scores
 
@@ -228,14 +228,18 @@ Combines the vector similarity score with the recency score.
   <img src="{{ site.baseurl }}/assets/simbot/phase_4/vector_search_score_with_recency.png" alt="keyword search init" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
--	Uses alpha to control weighting
-  
-final_score = α * vector_score + (1 − α) * recency_score
+-	Uses `alpha` to control weighting
+
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+\( final\_score = \alpha \cdot vector\_score + (1 - \alpha) \cdot recency\_score \)
 
 - Where:
   
-  -	α = 1.0: only vector similarity is used (no recency influence)
-  -	α = 0.0:  only recency is considered
+  -	`α = 1.0`: only vector similarity is used (no recency influence)
+  -	`α = 0.0`:  only recency is considered
   
 This allows the method to support both semantic only and recency aware retrieval.
 
@@ -279,7 +283,7 @@ Now that classes are set up, we can run keyword search, vector retrieval and rec
   <img src="{{ site.baseurl }}/assets/simbot/phase_4/vector_and_keyword_search.png" alt="keyword search init" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
-The first step is to run keyword and vector search. We want to return more than top_k results, since later we will combine results and need to rerank them.
+The first step is to run keyword and vector search. We want to return more than `top_k` results, since later we will combine results and need to rerank them.
 
 -	Iterate over the keyword results. For each result, add the score (along with other metadata) to combined_results.
    
@@ -289,7 +293,7 @@ The first step is to run keyword and vector search. We want to return more than 
   
 -	Apply weightings to the vector and keyword scores. Use these weights to control how much influence each method has.
   
--	Compute the final score using matrix multiplication, sort in descending order, and return the top k results.
+-	Compute the final score using matrix multiplication, sort in descending order and return the `top_k` results.
 
 **2.	Recency Aware Retrieval**
 
@@ -317,21 +321,19 @@ This process is similar to Keyword and Vector Search, but now we incorporate the
 
 ## Evaluation 
 
-To evaluate my retrieval system, I used a simple baseline approach to return the top 3 chunks using a vector retrieval. The goal was to compare whether combining retrieval methods could outperform the baseline.
+To evaluate my retrieval system, I used a simple baseline approach to return the top 3 chunks using basic vector search. The goal was to compare whether combining retrieval methods could outperform the baseline.
 
 #### **How I calculate precision** 
 
 To measure performance, I focused on precision, since I care most about how accurate the retrieved chunks are.
 
-First, I created a ground truth dataset. For each expected chunk, I created a unique identifier by combining:
+First, I created a ground truth dataset. For each expected chunk, I created a unique ID by combining:
 
 -	post_title 
 
 -	chunk_index 
 
-This results in IDs like:
-
-"From Zero to Data Hero_0"
+This results in IDs like: _"From Zero to Data Hero_0"_
 
 This format makes the results easy to generate, compare and interpret.
 
@@ -345,7 +347,7 @@ Finally, I calculate precision using a set-based comparison:
 
 In other words:
 
-Precision = (Number of correct retrieved chunks) / (Total retrieved chunks)
+\( \text{Precision} = \frac{\text{Number of correct retrieved chunks}}{\text{Total retrieved chunks}} \)
 
 This tells me how many of the returned results are actually relevant.
 
@@ -407,7 +409,7 @@ For each test example:
 
 -	Run retrieval 
 
- 	For each parameter combination, I called: `combine_recency_and_keyword_search` (this is the function that integrates all three components: keyword, vector, and recency) 
+ 	For each parameter combination, I called: `combine_recency_and_keyword_search` (this is the function that uses all three components: keyword, vector and recency) 
 
 -	Evaluate performance
   
