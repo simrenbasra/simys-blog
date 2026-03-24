@@ -98,9 +98,9 @@ Initialises the class and vectorises all chunks using TF-IDF.
   <img src="{{ site.baseurl }}/assets/simbot/phase_4/keyword_search_init.png" alt="keyword search init" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
-- **Stores the input dataframe**
-- **Calls** `_vectorise_chunks_with_tfidf`
-- **Saves:**
+- Stores the input dataframe
+- Calls `_vectorise_chunks_with_tfidf`
+- Saves:
   - `vectoriser`: fitted TF-IDF vectoriser
   - `tfidf_matrix`: vector representation of each chunk
   - `metadata_df`: metadata linking vectors back to original chunks
@@ -126,7 +126,7 @@ Vectorises all chunks using TF-IDF and returns the vectoriser, TF-IDF matrix, an
   <img src="{{ site.baseurl }}/assets/simbot/phase_4/keyword_search_vectorise_chunks.png" alt="keyword search init" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
-- **Initialises vectoriser**:
+- Initialises vectoriser:
   - `lowercase = True` converts all tokens to lower case so words such as Vector and vector are treated the same.
   - `ngram_range=(1,2)` includes both single words (unigrams) and two word phrases (bigrams). Allows phrases such as "vector database" to be treated as a single token rather than two separate words ("vector" and "database").
   - `stop_words` = ‘english’ removes common words (e.g. the, at, a). These words appear frequently so generally don’t help distinguish relevant
@@ -134,9 +134,7 @@ Vectorises all chunks using TF-IDF and returns the vectoriser, TF-IDF matrix, an
 -	Iterate through dataframe rows, extract chunk titles and texts
 - Apply preprocessing to chunk text
 -	Store processed chunks along with metadata
-
 -	Apply `fit_transform` on chunk_texts
-  
 - This returns a TF-IDF matrix where:
   - rows represent chunks  
   - columns represent vocabulary terms  
@@ -214,7 +212,6 @@ Combines the vector similarity score with the recency score.
 
 -	Uses `alpha` to control weighting
 
-
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
@@ -238,26 +235,20 @@ Returns the most relevant chunks based on semantic similarity and optional recen
 </div>
 
 - Embed the given prompt using the same model used to generate vectors stored in the vector database.
-  
--	Unlike keyword search:
-  
-  -	no preprocessing
-    
-  -	No stop word removal since embedding models rely on full context to capture semantic meaning of text
-    
--	The prompt embedding is then used to query the Pinecone index.
-  
-More results than required are retrieved initially:
 
-- This is done because results will later be re-ranked using the recency score.
-  
-- Retrieving more candidates ensures that relevant results are not dropped before recency scoring is applied.
-  
-Finally:
+- **Unlike keyword search:**
+  - No preprocessing
+  - No stop word removal (embedding models rely on full context to capture semantic meaning)
 
--	Results are sorted by the combined score
-  
--	The `top_k` results are returned
+- The prompt embedding is then used to query the Pinecone index.
+
+- **More results than required are retrieved initially:**
+  - Ensures results can be re-ranked using the recency score
+  - Prevents relevant results from being dropped before recency scoring
+
+- **Finally:**
+  - Results are sorted by the combined score
+  - The `top_k` results are returned
 
 #### **Using classes to try different retrieval methods** 
 
@@ -315,9 +306,9 @@ To measure performance, I focused on precision, since I care most about how accu
 
 First, I created a ground truth dataset. For each expected chunk, I created a unique ID by combining:
 
--	post_title 
+-	`post_title` 
 
--	chunk_index 
+-	`chunk_index` 
 
 This results in IDs like: _"From Zero to Data Hero_0"_
 
