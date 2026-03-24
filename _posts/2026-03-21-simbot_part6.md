@@ -393,26 +393,26 @@ Each pair is evaluated, and the one with the highest precision is selected.
   <img src="{{ site.baseurl }}/assets/simbot/phase_4/evaluate.png" alt="keyword search init" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
--	Set parameter ranges
-  - I defined ranges for keyword weight, vector weight and alpha. 
+- **Set parameter ranges**
+  - Defined ranges for keyword weight, vector weight, and alpha
 
--	Establish a baseline
-  - I calculated precision using only vector search, which serves as my baseline for comparison. 
+- **Establish a baseline**
+  - Calculated precision using only vector search (serves as the baseline)
 
--	Iterate over the test dataset, for each test example:
-     
-  - I generated all parameter combinations using a grid (via product)
-  -	I skipped the case where the setup reduces to pure vector search, since that’s already my baseline
-  -	I ensured that keyword weight + vector weight = 1
-  -	Run retrieval 
- 	    - For each parameter combination, I called: `combine_recency_and_keyword_search` (this is the function that uses all three components: keyword, vector and recency) 
+- **Iterate over the test dataset (for each test example)**
+  - Generated all parameter combinations using a grid (via `product`)
+  - Skipped cases that reduce to pure vector search (already covered by baseline)
+  - Ensured `keyword_weight + vector_weight = 1`
+  - Ran retrieval:
+    - For each parameter combination, called `combine_recency_and_keyword_search`
+    - (This function uses keyword, vector, and recency components)
 
--	Evaluate performance  
-  -	I calculated precision by comparing retrieved chunks with expected chunks
-  -	I then computed the difference from the baseline precision (vector-only search) 
+- **Evaluate performance**
+  - Calculated precision by comparing retrieved chunks with expected chunks
+  - Computed the difference from the baseline precision (vector-only search)
 
--	Store results
-  -	I recorded all scores and parameter combinations for later analysis.
+- **Store results**
+  - Recorded all scores
 
 <br>
 
