@@ -402,10 +402,8 @@ I calculated precision using only vector search, which serves as my baseline for
 For each test example:
      
   - I generated all parameter combinations using a grid (via product)
-    
   -	I skipped the case where the setup reduces to pure vector search, since that’s already my baseline
-      
-    -	I ensured that keyword weight + vector weight = 1
+   -	I ensured that keyword weight + vector weight = 1
 
 -	Run retrieval 
 
@@ -414,11 +412,9 @@ For each test example:
 -	Evaluate performance
   
   -	I calculated precision by comparing retrieved chunks with expected chunks
-    
   -	I then computed the difference from the baseline precision (vector-only search) 
 
 -	Store results
-  
   -	I recorded all scores and parameter combinations for later analysis.
 
 <br>
