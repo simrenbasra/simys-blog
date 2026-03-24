@@ -116,7 +116,6 @@ Cleans text before vectorisation.
 </div>
 
 - Removes excessive whitespace and non-ASCII characters
-  
 - Ensures consistent formatting before tokenisation and helps prevent noisy tokens
   
 `_vectorise_chunks_with_tfidf`
@@ -127,22 +126,22 @@ Vectorises all chunks using TF-IDF and returns the vectoriser, TF-IDF matrix, an
   <img src="{{ site.baseurl }}/assets/simbot/phase_4/keyword_search_vectorise_chunks.png" alt="keyword search init" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
-- Initialises vectoriser:
-  
-  - 	`lowercase = True` converts all tokens to lower case so words such as Vector and vector are treated the same.
+- **Initialises vectoriser**:
+  - `lowercase = True` converts all tokens to lower case so words such as Vector and vector are treated the same.
   - `ngram_range=(1,2)` includes both single words (unigrams) and two word phrases (bigrams). Allows phrases such as "vector database" to be treated as a single token rather than two separate words ("vector" and "database").
   - `stop_words` = ‘english’ removes common words (e.g. the, at, a). These words appear frequently so generally don’t help distinguish relevant
 
 -	Iterate through dataframe rows, extract chunk titles and texts
-  
 - Apply preprocessing to chunk text
-  
 -	Store processed chunks along with metadata
-  
+
 -	Apply `fit_transform` on chunk_texts
   
--	This returns a TF-IDF matrix where each rows represents a chunk, columns represent vocab terms and values represent TF-IDF weights.
-
+- This returns a TF-IDF matrix where:
+  - rows represent chunks  
+  - columns represent vocabulary terms  
+  - values represent TF-IDF weights
+    
 **Note:** Metadata dataframe index is reset before vectorisation to ensure alignment!
 
 `retrieve` 
@@ -154,17 +153,12 @@ Returns the most relevant chunks for a given prompt.
 </div>
 
 - Apply `_preprocess_text` to the input prompt.
-  
 - Vectorise the prompt using the same fitted vectoriser from `_vectorise_chunks_with_tfidf`.
-  
 - Calculate similarity between the prompt vector and each chunk vector using cosine similarity.
-  
 - Sort similarity scores and return the `top_k` most relevant chunks.
   
 - For each result:
-  
   - Retrieve the corresponding metadata row.
-    
   - Return the chunk information along with the similarity score.
   
 **VectorSearch**
@@ -180,7 +174,6 @@ Initialises vector search
 </div>
 
 - Connects to the Pinecone index using `index_name`
-  
 - Stores the index so it can be used by other methods
 
 `clean_date`
@@ -192,13 +185,11 @@ Converts raw date metadata into a valid datetime object.
 </div>
 
 - Attempts to parse the date using `datetime.fromisoformat`
-
 - If the date is missing or invalid, the current date is returned
 
 **Assumption:**
 
 - Most posts contain valid dates.
-
 -	Posts with missing dates are (to date) regularly maintained and updated so backfilling date to current date seems logical.
 
 `recency_score`
@@ -210,9 +201,7 @@ Calculates a recency score based on the date of posts
 </div>
 
 -	First calculates the number of days between the post date and the current date
-  
 -	Calculate recency score, idea is that id a post is very recent score approaches one if post is older `days_old` increases and score moves to 0
-  
 -	Ensures more recent posts are assigned higher scores
 
 `combine_vector_score_with_recency`
