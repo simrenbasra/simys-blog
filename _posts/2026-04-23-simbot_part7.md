@@ -27,7 +27,7 @@ SimBot is designed to help users better understand and navigate my blog content.
 - **Source linking**: Returns links to relevant posts when requested
 - **Multi-post understanding**: Combines information from multiple posts into one answer
 
-#### Try it yourself!
+#### **Try it yourself!**
 
 🤖 [SimBot](https://simrenbasra.github.io/simys-blog/chat/) 
 
