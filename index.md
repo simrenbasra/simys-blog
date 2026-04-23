@@ -33,7 +33,7 @@ I build AI projects, explain what I learn, and try not to break too many things 
 
 ## Upcoming Posts
   
-#### **Brainstorming Ideas 🧠**
+#### _Brainstorming Ideas 🧠_
 
 
 <br> 
