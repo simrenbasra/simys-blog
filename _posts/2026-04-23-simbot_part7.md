@@ -9,11 +9,17 @@ date: 2026-04-23
 
 In my last post, I focused on improving retrieval for SimBot by experimenting with different methods to see what worked best. While that helped to refine performance, getting SimBot ready for real use turned out to be a very different process altogether.
 
-#### As a recap: What do I expect from SimBot?
+<br>
+
+----
+
+<br>
+
+## Recap: What do I expect from SimBot?
 
 SimBot is designed to help users better understand and navigate my blog content. It retrieves information from my previous posts and uses this to generate responses.
 
-#### Core Features
+#### **Core Features**
 
 - **Memory:** Ask follow-up questions without needing to repeat context
 - **Hybrid retrieval:** Combines keyword, vector and recency-aware search
@@ -21,9 +27,9 @@ SimBot is designed to help users better understand and navigate my blog content.
 - **Source linking**: Returns links to relevant posts when requested
 - **Multi-post understanding**: Combines information from multiple posts into one answer
 
-👉 Give it a try here!
+👉 Give it a try [here](https://simrenbasra.github.io/simys-blog/chat/)!
 
-Suggested prompts:
+**Suggested prompts:**
 
 - _“What are vector databases? How do they work?”_
 - _“Explain recommendation systems”_
