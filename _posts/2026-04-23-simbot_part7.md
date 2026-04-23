@@ -15,7 +15,7 @@ In my last post, I focused on improving retrieval for SimBot by experimenting wi
 
 <br>
 
-## Recap: What do I expect from SimBot?
+## Recap: What to expect from SimBot?
 
 SimBot is designed to help users better understand and navigate my blog content. It retrieves information from my previous posts and uses this to generate responses.
 
