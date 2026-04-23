@@ -33,9 +33,8 @@ I build AI projects, explain what I learn, and try not to break too many things 
 
 ## Upcoming Posts
   
-#### **SimBot 💬**
+#### **Brainstorming Ideas 🧠**
 
-I’m building a custom chatbot for my blog that can answer questions and guide readers through my past posts!
 
 <br> 
 
