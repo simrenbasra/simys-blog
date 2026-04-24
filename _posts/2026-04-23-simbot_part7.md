@@ -80,7 +80,7 @@ Improve the chatbot’s ability to explain through diagrams without image embedd
 
 This project felt a lot smoother than my previous ones, usually projects have taken different directions and at times taken a lot longer than I initially planned. One thing that felt different this time was that I had some previous experience with embeddings and was more aware of what could go wrong in chunking and how these early decisions shape the end product. I am someone who learns best by doing and I really did see that here. 
 
-My main challenge was productionising the chatbot. While it worked well in notebooks, a few issues only really showed up once I built the app and started testing it properly. Things like memory handling, returning links to posts and setting up automated ingestion all came up at that stage.
+My main challenge was productionising the chatbot. While it worked well in notebooks, a few issues only really showed up once I built the app and started testing it properly. Things like memory handling, returning links to posts and setting up automated ingestion.
 
 Looking back, I should have thought more carefully about the actual use cases earlier on. That would have made productionising a lot easier. Instead, I ended up making changes directly in Hugging Face, which sometimes felt like two steps forward and one step back because new features occasionally broke existing functionality.
 
