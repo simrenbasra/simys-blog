@@ -90,7 +90,7 @@ Assess user answers, explain mistakes and suggest corrections.
 
 Adjust explanations and questions depending on how well the user is doing.
 
-**End goal**
+#### **End goal**
 
 A tutor mode that combines all of these skills into a single system, allowing SimBot to act as a tutor while still keeping simple retrieval for quick questions. This likely means adding an optional “tutor mode”, so users can choose between simple retrieval and more structured learning.
 
