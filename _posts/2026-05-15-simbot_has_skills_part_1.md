@@ -45,7 +45,9 @@ I’ll explain skills in more detail in the next post and go into how they inter
 
 ## How Skills Work in SimBot
 
-As is, SimBot is a RAG chatbot. This means when a user sends a message, the chatbot retrieves the `top_n` most similar chunks using vector search. These are then added to the user’s query and passed to an LLM, which generates a response that is returned to the user. To help visualise this, here is an overview of a RAG pipeline:
+As is, SimBot is a RAG chatbot. This means when a user sends a message, the chatbot retrieves the `top_n` most similar chunks using vector search. These are then added to the user’s query and passed to an LLM, which generates a response that is returned to the user. 
+
+To help visualise this, here is an overview of a RAG pipeline:
 
 <div style="text-align: center;">
   <img src="{{ site.baseurl }}/assets/simbot/chatbot_rag.png" alt="RAG Chatbot" style="max-width: 100%; height: auto; margin: 20px 0;">
