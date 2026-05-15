@@ -4,7 +4,7 @@ date: 2026-05-15
 ---
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/simbot_has_skills/cover_image.jpg" alt="Cover photo" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/simbot_has_skills/cover_photo.jpg" alt="Cover photo" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 SimBot has been working great so far! There are still some improvements I want to make, but overall I’m happy with how things are working. 
