@@ -8,6 +8,13 @@ These are some of the projects I’ve completed so far, and each has its own blo
 
 Projects are listed in chronological order, with the most recent first.
 
+## SimBot Has Skills 😎
+
+From search to learning assistant
+
+- [SimBot Has Skills: Project Introduction 😎](https://simrenbasra.github.io/simys-blog/2026/05/15/simbot_has_skills_part_1.html)
+
+
 ## SimBot 💬
 
 A custom chatbot for my blog.
