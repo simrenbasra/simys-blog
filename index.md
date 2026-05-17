@@ -35,7 +35,7 @@ I build AI projects, explain what I learn, and try not to break too many things 
   
 #### SimBot Has Skills 😎
 
-Levelling up my chatbot into an interactive learning tutor
+Levelling up my chatbot into a tutor-like assistant.
 
 <br> 
 
