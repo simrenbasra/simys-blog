@@ -13,7 +13,7 @@ That said, I started to wonder… instead of just retrieving information, could 
 
 Introducing my next project: **SimBot Has Skills!**
 
-The idea is to add skills to SimBot, taking it from a retrieval chatbot to a tutor-like system. It will be able to:
+The idea is to add skills to SimBot, taking it from a retrieval chatbot to a tutor-like assisstant. It will be able to:
 
 - Recommend relevant reading from my blog posts
 
@@ -35,7 +35,7 @@ You can think of skills like functions that allow a system to carry out specific
 
 For SimBot, one skill might generate quiz questions, another could recommend relevant blog posts for reading, while another might evaluate a user’s answers. By combining different skills together, SimBot can support all stages of a typical learning process, from explanation to practice and feedback.
 
-I’ll explain skills in more detail in the next post and go into how they interact with LLMs/agents, as well as how I plan to integrate them into the chatbot.
+I’ll explain skills in more detail in the next post and go into how they interact with LLMs/agents, as well as how I plan to integrate them into my chatbot.
 
 <br>
 
@@ -45,7 +45,7 @@ I’ll explain skills in more detail in the next post and go into how they inter
 
 ## How Skills Work in SimBot
 
-As is, SimBot is a RAG chatbot. This means when a user sends a message, the chatbot retrieves the `top_n` most similar chunks using vector search. These are then added to the user’s query and passed to an LLM, which generates a response that is returned to the user. 
+As is, SimBot is a RAG chatbot. This means when a user sends a message, the chatbot retrieves the `top_n` most similar chunks using vector search. These are then added to the user’s prompt and passed to an LLM, which generates a response that is returned to the user. 
 
 To help visualise this, here is an overview of a RAG pipeline:
 
@@ -55,7 +55,7 @@ To help visualise this, here is an overview of a RAG pipeline:
 
 With skills, this flow changes. When a user sends a message, SimBot first interprets what they are asking and decides which skill or skills are most relevant.
 
-The chatbot itself (the LLM component of SimBot) acts as an orchestrator, deciding which skills to use and how to combine their outputs into a final response.
+The chatbot itself (the LLM part of SimBot) acts as an orchestrator, deciding which skills to use and how to combine their outputs into a final response.
 
 <br>
 
@@ -66,6 +66,7 @@ The chatbot itself (the LLM component of SimBot) acts as an orchestrator, decidi
 ## Project Plan
 
 The end goal is to add a tutor mode to SimBot, where users can follow a more structured learning path, get quizzed and ask questions to clarify their understanding.
+
 A key assumption here is that the content in my blog posts is correct (a bold claim but I will be reviewing posts over time). This may change but for now the blog acts as the main knowledge base for the system.
 
 Since I haven’t worked much with skills before, I will break the project into phases, where each phase focuses on building a specific skill:
@@ -92,7 +93,7 @@ Adjust explanations and questions depending on how well the user is doing.
 
 #### **End goal**
 
-A tutor mode that combines all of these skills into a single system, allowing SimBot to act as a tutor while still keeping simple retrieval for quick questions. This likely means adding an optional “tutor mode”, so users can choose between simple retrieval and more structured learning.
+A tutor mode that combines all of these skills into a single system, allowing SimBot to act as a tutor while still keeping simple retrieval for quick questions. This likely means adding an optional mode, so users can choose between simple retrieval and more structured learning.
 
 <br>
 
