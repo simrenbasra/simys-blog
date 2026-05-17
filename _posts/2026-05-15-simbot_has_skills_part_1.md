@@ -35,7 +35,7 @@ You can think of skills like functions that allow a system to carry out specific
 
 For SimBot, one skill might generate quiz questions, another could recommend relevant blog posts for reading, while another might evaluate a user’s answers. By combining different skills together, SimBot can support all stages of a typical learning process, from explanation to practice and feedback.
 
-I’ll explain skills in more detail in the next post and go into how they interact with LLMs/agents, as well as how I plan to integrate them into my chatbot.
+In the next post, I’ll explain what skills mean in the context of this project and how they interact with LLMs, as well as how I plan to integrate them into SimBot.
 
 <br>
 
