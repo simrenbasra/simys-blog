@@ -13,7 +13,7 @@ That said, I started to wonder… instead of just retrieving information, could 
 
 Introducing my next project: **SimBot Has Skills!**
 
-The idea is to add skills to SimBot, taking it from a retrieval chatbot to a tutor-like assisstant. It will be able to:
+The idea is to add skills to SimBot, taking it from a retrieval chatbot to a tutor-like assistant. It will be able to:
 
 - Recommend relevant reading from my blog posts
 
