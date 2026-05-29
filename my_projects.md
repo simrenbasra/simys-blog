@@ -14,6 +14,8 @@ From search to learning assistant
 
 - [SimBot Has Skills: Project Introduction 😎](https://simrenbasra.github.io/simys-blog/2026/05/15/simbot_has_skills_part_1.html)
 
+- [SimBot Has Skills: What are Skills? ⚙️](https://simrenbasra.github.io/simys-blog/2026/05/28/simbot_has_skills_part_2.html)
+
 
 ## SimBot 💬
 
