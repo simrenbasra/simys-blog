@@ -55,18 +55,20 @@ for i, row in df.iterrows():
         model="text-embedding-3-small",
         input=row["chunk_text"]
     ).data[0].embedding
-
-    index.upsert([
-        (
-            vector_id,
-            embedding,
+    
+    index.upsert(
+        vectors=[
             {
-                "chunk_text": row["chunk_text"],
-                "post_title": row["post_title"],
-                "date": row["date"]
+                "id": vector_id,
+                "values": embedding,
+                "metadata": {
+                    "chunk_text": row["chunk_text"],
+                    "post_title": row["post_title"],
+                    "date": row["date"]
+                }
             }
-        )
-    ])
+        ]
+    )
 
     print(f"Upserted: {row['post_title']} - chunk {i}")
 
