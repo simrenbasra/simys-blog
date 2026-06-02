@@ -22,6 +22,8 @@ pc.create_index(
     )
 )
 
+index = pc.Index(INDEX_NAME)
+
 print("Index reset complete")
 # -------------------------
 # PIPELINE
