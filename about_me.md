@@ -8,7 +8,7 @@ permalink: /about/
   <img src="{{ site.baseurl }}/assets/index/cover_photo.jpg" alt="Photo 2" style="max-width: 50%; height: auto; margin: 20px 0;">
 </div>
 
-Hey, I’m Simy and I believe that data can be fun for everyone! 
+Hi, I’m Simy and I believe that data can be fun for everyone! 
 
 From finishing a data science bootcamp to nearly a year as a junior AI engineer, I’ve been building AI projects, learning new things and figuring out how to make complex concepts simple for myself and others! This blog is where I share what I’m learning, give project updates and experiment along the way.
 
