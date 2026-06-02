@@ -1,7 +1,7 @@
 import os
 import hashlib
 from openai import OpenAI
-from pinecone import Pinecone
+from pinecone import Pinecone, ServerlessSpec
 from pipeline import BlogChatbotPipeline
 
 # -------------------------
