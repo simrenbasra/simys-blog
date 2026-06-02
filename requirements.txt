@@ -1,0 +1,7 @@
+openai
+pinecone
+requests
+pandas
+python-frontmatter
+emoji
+tiktoken
