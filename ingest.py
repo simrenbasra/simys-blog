@@ -3,6 +3,7 @@ import hashlib
 from openai import OpenAI
 from pinecone import Pinecone, ServerlessSpec
 from pipeline import BlogChatbotPipeline
+import time
 
 # -------------------------
 # CLIENTS
@@ -12,15 +13,16 @@ pc = Pinecone(api_key=os.getenv("PINECONE_API_KEY"))
 
 INDEX_NAME = "blog-embeddings-v2"
 
-pc.create_index(
-    name=INDEX_NAME,
-    dimension=1536,
-    metric="cosine",
-    spec=ServerlessSpec(
-        cloud="aws",
-        region="us-east-1"
+if INDEX_NAME not in [i.name for i in pc.list_indexes()]:
+    pc.create_index(
+        name=INDEX_NAME,
+        dimension=1536,
+        metric="cosine",
+        spec=ServerlessSpec(
+            cloud="aws",
+            region="us-east-1"
+        )
     )
-)
 
 index = pc.Index(INDEX_NAME)
 
