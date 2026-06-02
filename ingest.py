@@ -15,7 +15,11 @@ INDEX_NAME = "blog-embeddings-v2"
 pc.create_index(
     name=INDEX_NAME,
     dimension=1536,
-    metric="cosine"
+    metric="cosine",
+    spec=ServerlessSpec(
+        cloud="aws",
+        region="us-east-1"
+    )
 )
 
 print("Index reset complete")
