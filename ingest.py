@@ -67,8 +67,7 @@ for i, row in df.iterrows():
                     "post_title": row["post_title"],
                     "date": row["date"],
                     "source": row["source"],
-                    "chunk_index": int(row["chunk_index"]),
-                    "chunk_hash": chunk_hash 
+                    "chunk_index": int(row["chunk_index"]) 
                 }
             }
         ]
