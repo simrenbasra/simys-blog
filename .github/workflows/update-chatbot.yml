@@ -1,5 +1,8 @@
 name: Blog Ingestion Pipeline
 
+permissions:
+  contents: write
+  
 on:
   push:
     branches:
