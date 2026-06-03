@@ -34,3 +34,14 @@ jobs:
           PINECONE_API_KEY: ${{ secrets.PINECONE_API_KEY }}
         run: |
           python ingest.py
+
+      - name: Check parquet exists
+        run: ls -lh chunks.parquet
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: chunks-${{ github.run_number }}
+          files: chunks.parquet
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
