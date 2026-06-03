@@ -5,13 +5,14 @@ from pinecone import Pinecone, ServerlessSpec
 from pipeline import BlogChatbotPipeline
 import time
 
-# -------------------------
-# CLIENTS
-# -------------------------
+## Load OpenAI and Pinecone Keys
+
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 pc = Pinecone(api_key=os.getenv("PINECONE_API_KEY"))
 
 INDEX_NAME = "blog-embeddings-v2"
+
+## Create pinecone index (if not already created)
 
 if INDEX_NAME not in [i.name for i in pc.list_indexes()]:
     pc.create_index(
@@ -25,11 +26,10 @@ if INDEX_NAME not in [i.name for i in pc.list_indexes()]:
     )
 
 index = pc.Index(INDEX_NAME)
+print("Index ready")
 
-print("Index reset complete")
-# -------------------------
-# PIPELINE
-# -------------------------
+## Build dataframe 
+
 pipeline = BlogChatbotPipeline(
     github_user="simrenbasra",
     repo="simys-blog",
@@ -40,6 +40,7 @@ pipeline = BlogChatbotPipeline(
 )
 
 df = pipeline.build_dataframe()
+
 print(f"Chunks created: {len(df)}")
 
 # -------------------------
@@ -48,8 +49,22 @@ print(f"Chunks created: {len(df)}")
 for i, row in df.iterrows():
 
     vector_id = hashlib.md5(
-        (row["post_title"] + row["chunk_text"]).encode("utf-8")
+        (row["source"] + str(row["chunk_index"])).encode("utf-8")
     ).hexdigest()
+
+    chunk_hash = hashlib.md5(
+        row["chunk_text"].encode("utf-8")
+    ).hexdigest()
+
+    # fetch existing vector
+    existing = index.fetch([vector_id]).get("vectors", {})
+
+    if vector_id in existing:
+        old_hash = existing[vector_id]["metadata"].get("chunk_hash")
+
+        if old_hash == chunk_hash:
+            print("Skipping unchanged chunk")
+            continue
 
     embedding = client.embeddings.create(
         model="text-embedding-3-small",
@@ -64,7 +79,10 @@ for i, row in df.iterrows():
                 "metadata": {
                     "chunk_text": row["chunk_text"],
                     "post_title": row["post_title"],
-                    "date": row["date"]
+                    "date": row["date"],
+                    "source": row["source"],
+                    "chunk_index": int(row["chunk_index"]),
+                    "chunk_hash": chunk_hash 
                 }
             }
         ]
@@ -72,4 +90,4 @@ for i, row in df.iterrows():
 
     print(f"Upserted: {row['post_title']} - chunk {i}")
 
-print("✅ INGESTION COMPLETE")
+print("INGESTION DONE")
