@@ -40,6 +40,9 @@ pipeline = BlogChatbotPipeline(
 )
 
 df = pipeline.build_dataframe()
+df["ingestion_version"] = time.strftime("%Y-%m-%d_%H-%M-%S")
+
+df.to_parquet("chunks.parquet")
 
 print(f"Chunks created: {len(df)}")
 
@@ -48,8 +51,8 @@ print(f"Chunks created: {len(df)}")
 # -------------------------
 for i, row in df.iterrows():
 
-    vector_id = hashlib.md5(
-        (row["source"] + str(row["chunk_index"])).encode("utf-8")
+    vector_id = hashlib.sha256(
+        (row["source"] + "::" + row["chunk_text"]).encode("utf-8")
     ).hexdigest()
 
     embedding = client.embeddings.create(
