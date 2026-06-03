@@ -7,3 +7,4 @@ emoji
 tiktoken
 python-dotenv
 scikit-learn
+pyarrow
