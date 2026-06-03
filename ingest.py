@@ -52,20 +52,6 @@ for i, row in df.iterrows():
         (row["source"] + str(row["chunk_index"])).encode("utf-8")
     ).hexdigest()
 
-    chunk_hash = hashlib.md5(
-        row["chunk_text"].encode("utf-8")
-    ).hexdigest()
-
-    # fetch existing vector
-    existing = index.fetch([vector_id]).get("vectors", {})
-
-    if vector_id in existing:
-        old_hash = existing[vector_id]["metadata"].get("chunk_hash")
-
-        if old_hash == chunk_hash:
-            print("Skipping unchanged chunk")
-            continue
-
     embedding = client.embeddings.create(
         model="text-embedding-3-small",
         input=row["chunk_text"]
