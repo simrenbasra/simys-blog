@@ -50,7 +50,7 @@ Here is a screenshot of the skill logic:
   <img src="{{ site.baseurl }}/assets/simbot_has_skills/rec_blog_skill.png" alt="Recommend blog post skill" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
-#### **Step 1: Retrieval **
+#### **Step 1: Retrieval**
 
 We start by retrieving the most relevant chunks for a given user query using vector-based search and the `top_n` chunks are returned.
 
@@ -67,6 +67,8 @@ Build a list of candidate blog posts.
 #### **Step 4: Ranking**
 
 I added this step after some testing and may refactor or remove it later.
+
+
 
 Candidates are re-ranked based on how useful they are for the user’s query. By passing candidates to the LLM, we can use the titles and scores to improve the final ranking of posts to recommend.
 
