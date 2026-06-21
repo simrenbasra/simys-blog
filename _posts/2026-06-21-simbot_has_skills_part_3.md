@@ -23,18 +23,17 @@ The purpose of this skill is twofold:
 
 #### **1. Defining a learning path**
    
-The main goal is to recommend blog posts based on the user’s query. For example, if a user asks “I want to learn about embeddings”, the system suggests relevant posts covering embeddings and closely related topics.
+The main goal is to recommend blog posts based on the user’s query. For example, if a user asks _“I want to learn about embeddings”_, the system suggests relevant posts about embeddings and closely related topics.
 
 This is important for the tutor mode, where users will be able to select a topic and then follow a structured learning path.
 
 #### **2. Follow-up reading after questions**
    
-When answering a question, users may benefit from suggestions on what to read next. This helps them continue exploring topics, especially if they are not sure what to ask after receiving an answer.
+When answering a question, users may benefit from suggestions on what to read next. This helps them continue exploring topics, especially if they are not sure what to ask next.
 
-For now, this skill is called within the question-answering skill so that after generating an answer, the system can recommend what to read next.
+For now, this skill is called within the RAG retrieval skill so that after generating an answer, the system can recommend what to read next.
 
-**NOTE:** The RAG logic has now been moved into its own dedicated skill. This is because the orchestrator will be calling each skill independently.
-
+_**NOTE:** The RAG logic has now been moved into its own dedicated skill. This is because the orchestrator will be calling each skill independently._
 
 <br>
 
@@ -56,9 +55,9 @@ We start by retrieving the most relevant chunks for a given user query using vec
 
 #### **Step 2: Aggregate posts**
 
-Retrieved chunks are grouped back into their “parent” blog posts. 
+Retrieved chunks are grouped back into their _“parent”_ blog posts. 
 
-Each post receives an aggregated score based on its chunks. This helps determine which full posts are most relevant to the user’s query, since we want recommendation at a post level not a chunk level.
+Each post receives an aggregated score based on its chunks. This helps determine which full posts are most relevant to the user’s query, since we want recommendation at post level not at chunk level.
 
 #### **Step 3: Create candidates** 
 
@@ -68,9 +67,7 @@ Build a list of candidate blog posts.
 
 I added this step after some testing and may refactor or remove it later.
 
-
-
-Candidates are re-ranked based on how useful they are for the user’s query. By passing candidates to the LLM, we can use the titles and scores to improve the final ranking of posts to recommend.
+Candidates are re-ranked based on how useful they are for the user’s query. By passing candidates to the LLM, we can use the titles **and** scores from vecotr search to improve the final ranking of posts to recommend.
 
 <br>
 
@@ -86,10 +83,9 @@ The orchestrator is responsible for deciding which skill to call based on the us
   <img src="{{ site.baseurl }}/assets/simbot_has_skills/orchestrator.png" alt="Orchestrator" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
+The basic idea is to first identify the intent behind the user’s message, for example, whether they are asking a question or wanting to learn about a topic. Based on the intent, the orchestrator chooses the appropriate skill to call.
 
-The basic idea is to first identify the intent behind the user’s message, for example, whether they are asking a question or wanting to learn about a topic. Based on the intent, the orchestrator chooses the appropriate skill/s to call.
-
-As I continue building more skills, I’ll keep the orchestrator simple and will refactor it once all skills are ready. In the future, the orchestrator should be able to call a chain of skills for a single query when needed.
+As I continue building more skills, I’ll keep the orchestrator simple. In the future, the orchestrator should be able to call a chain of skills for a single query when needed.
 
 <br>
 
