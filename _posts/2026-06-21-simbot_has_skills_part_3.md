@@ -1,5 +1,5 @@
 ---
-title: "SimBot Has Skills: Recommend Blog Post Skill 📖"
+title: "SimBot Has Skills: Recommend Blog Posts 📖"
 date: 2026-06-21
 ---
 
