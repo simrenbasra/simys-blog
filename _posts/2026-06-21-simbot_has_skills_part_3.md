@@ -46,7 +46,7 @@ _**NOTE:** The RAG logic has now been moved into its own dedicated skill. This i
 Here is a screenshot of the skill logic:
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/simbot_has_skills/rec_blog_skill.png" alt="Recommend blog post skill" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/simbot_has_skills/recommend_blog_skill.png" alt="Recommend blog post skill" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 #### **Step 1: Retrieval**
