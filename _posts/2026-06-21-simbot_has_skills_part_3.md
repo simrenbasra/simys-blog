@@ -90,3 +90,13 @@ The orchestrator is responsible for deciding which skill to call based on the us
 The basic idea is to first identify the intent behind the user’s message, for example, whether they are asking a question or wanting to learn about a topic. Based on the intent, the orchestrator chooses the appropriate skill/s to call.
 
 As I continue building more skills, I’ll keep the orchestrator simple and will refactor it once all skills are ready. In the future, the orchestrator should be able to call a chain of skills for a single query when needed.
+
+<br>
+
+----
+
+<br>
+
+## Summary
+
+Next, I will focus on building the second skill: the Explanation Skill. This skill is designed to help users understand concepts more deeply rather than just retrieving information through RAG-based search!
