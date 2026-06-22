@@ -17,7 +17,7 @@ In this post, I introduce my first skill: Recommend Blog Posts. I’ll share why
 
 <br>
 
-## Skill Overview: Recommend Blog Post
+## Skill Overview: Recommend Blog Posts
 
 The purpose of this skill is twofold:
 
@@ -75,7 +75,7 @@ Build a list of candidate blog posts.
 
 I added this step after some testing and may refactor or remove it later.
 
-Candidates are re-ranked based on how useful they are for the user’s query. By passing candidates to the LLM, we can use the titles **and** scores from vecotr search to improve the final ranking of posts to recommend.
+Candidates are re-ranked based on how useful they are for the user’s query. By passing candidates to the LLM, we can use the titles **and** scores from vector search to improve the final ranking of posts to recommend.
 
 <br>
 
