@@ -23,7 +23,13 @@ The purpose of this skill is twofold:
 
 #### **1. Defining a learning path**
    
-The main goal is to recommend blog posts based on the user’s query. For example, if a user asks _“I want to learn about embeddings”_, the system suggests relevant posts about embeddings and closely related topics.
+The main goal is to recommend blog posts based on the user’s query. For example, if a user asks _“I want to learn about embeddings”_, the chatbot should return something like:
+
+**Recommended Reading:**
+
+[Email Genie: Word Embeddings](https://simrenbasra.github.io/simys-blog/2025/03/29/email_genie_part3.html)
+[Email Genie: BERT](https://simrenbasra.github.io/simys-blog/2025/05/17/email_genie_part4.html)
+[Email Genie: Vector Databases](https://simrenbasra.github.io/simys-blog/2025/08/31/email_genie_part7.html)
 
 This is important for the tutor mode, where users will be able to select a topic and then follow a structured learning path.
 
@@ -92,6 +98,7 @@ As I continue building more skills, I’ll keep the orchestrator simple. In the 
 ----
 
 <br>
+
 
 ## Summary
 
