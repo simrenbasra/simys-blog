@@ -28,7 +28,9 @@ The main goal is to recommend blog posts based on the user’s query. For exampl
 **Recommended Reading:**
 
 [Email Genie: Word Embeddings](https://simrenbasra.github.io/simys-blog/2025/03/29/email_genie_part3.html)
+
 [Email Genie: BERT](https://simrenbasra.github.io/simys-blog/2025/05/17/email_genie_part4.html)
+
 [Email Genie: Vector Databases](https://simrenbasra.github.io/simys-blog/2025/08/31/email_genie_part7.html)
 
 This is important for the tutor mode, where users will be able to select a topic and then follow a structured learning path.
