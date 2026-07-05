@@ -66,7 +66,7 @@ There are no changes to how retrieval currently works in SimBot.
 
 #### **Step 3: Prompt for response**
 
-This is the most important part of the skill, as it defines how the model teaches concepts. I thought that setting a fixed layout for explanations would help ensure better understandin and it’s a format that I personally would find useful.
+This is the most important part of the skill, as it defines how the model teaches concepts. I thought that setting a fixed layout for explanations would help ensure better understanding and it’s a format that I personally would find useful.
 
 **Note:** One thing to improve in the future would be adding difficulty levels to the responses.
 
