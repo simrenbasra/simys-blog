@@ -18,6 +18,7 @@ From search to learning assistant
   
 - [SimBot Has Skills: Recommend Blog Post Skill 📖](https://simrenbasra.github.io/simys-blog/2026/06/21/simbot_has_skills_part_3.html)
 
+- [SimBot Has Skills: Explain Concepts 🗣️](https://simrenbasra.github.io/simys-blog/2026/07/05/simbot_has_skills_part_4.html)
 
 ## SimBot 💬
 
