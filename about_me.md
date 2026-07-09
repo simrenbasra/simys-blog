@@ -5,7 +5,7 @@ permalink: /about/
 ---
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/index/cover_photo.jpg" alt="Photo 2" style="max-width: 50%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/index/new_cover_photo.jpg" alt="Photo 2" style="max-width: 50%; height: auto; margin: 20px 0;">
 </div>
 
 Hi, I’m Simy and I believe that data can be fun for everyone! 
