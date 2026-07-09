@@ -17,7 +17,7 @@ permalink: /
 
 
 <div style="text-align: center; margin: 20px 0;">
-  <img src="{{ site.baseurl }}/assets/index/index_banner.png" 
+  <img src="{{ site.baseurl }}/assets/index/new_banner.png" 
        alt="Banner" 
        style="width: 100%; max-width: 1200px; height: auto;">
 </div>
