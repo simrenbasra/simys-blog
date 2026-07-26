@@ -20,6 +20,8 @@ From search to learning assistant
 
 - [SimBot Has Skills: Explain Concepts 🗣️](https://simrenbasra.github.io/simys-blog/2026/07/05/simbot_has_skills_part_4.html)
 
+- [SimBot Has Skills: Quiz Users 📝](https://simrenbasra.github.io/simys-blog/2026/07/26/simbot_has_skills_part_5.html)
+
 ## SimBot 💬
 
 A custom chatbot for my blog.
