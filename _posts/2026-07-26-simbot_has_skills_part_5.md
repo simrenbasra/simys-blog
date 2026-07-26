@@ -31,7 +31,7 @@ The Quiz Skill generates five multiple-choice questions, along with the correct 
 Below is a screenshot of the skill logic:
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/simbot_has_skills/quiz_skill.jpg" alt="Quiz users skill" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/simbot_has_skills/quiz_skill.png" alt="Quiz users skill" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 #### **Step 1: Retrieval**
@@ -61,7 +61,7 @@ Finally, the generated quiz questions, answers, explanations and extracted sourc
 Added a new `QUIZ_SKILL` category so quiz-related requests can be correctly routed to the new skill.
 
 <div style="text-align: center;">
-  <img src="{{ site.baseurl }}/assets/simbot_has_skills/orchestrator_3.jpg" alt="Orchestrator update" style="max-width: 100%; height: auto; margin: 20px 0;">
+  <img src="{{ site.baseurl }}/assets/simbot_has_skills/orchestrator_3.png" alt="Orchestrator update" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
 <br>
