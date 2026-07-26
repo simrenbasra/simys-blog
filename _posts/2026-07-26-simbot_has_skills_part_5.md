@@ -75,5 +75,6 @@ Added a new `QUIZ_SKILL` category so quiz-related requests can be correctly rout
 This skill is the last one I plan to develop for now. I think these three skills provide the core functionality needed for a tutor-like system. There may be more skills to add in the future, but at this stage, I want to focus on refining the overall design.
 
 Building these skills in a simple way has really helped me think more deeply about how I want the final system to work and how the different skills need to interact with each other to create a more realistic tutor experience.
+
 Over the next few weeks, I will focus on designing the overall tutor system, including how the different skills should work together and how the chatbot should function as a useful learning tool.
 
