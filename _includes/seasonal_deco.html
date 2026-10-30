@@ -1,10 +1,10 @@
 
-<div class="hanging-spider" aria-hidden="true">
-  <div class="spider-thread"></div>
+<div class="hanging-" aria-hidden="true">
+  <div class="-thread"></div>
   <img
-    src="{{ '/assets/images/spider.png' | relative_url }}"
+    src="{{ '.png' | relative_url }}"
     alt=""
-    class="spider-character"
+    class="-character"
   >
 </div>
 
@@ -31,22 +31,22 @@
 .spider-character {
   width: 65px;
   height: auto;
-  animation: spider-bob 2s ease-in-out infinite;
+  animation: -bob 2s ease-in-out infinite;
 }
 
-@keyframes spider-swing {
+@keyframes -swing {
   0%, 100% { transform: rotate(-5deg); }
   50% { transform: rotate(5deg); }
 }
 
-@keyframes spider-bob {
+@keyframes -bob {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(12px); }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hanging-spider,
-  .spider-character {
+  .hanging-,
+  .-character {
     animation: none;
   }
 }
