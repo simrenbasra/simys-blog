@@ -1,0 +1,53 @@
+
+<div class="hanging-spider" aria-hidden="true">
+  <div class="spider-thread"></div>
+  <img
+    src="{{ '/assets/images/spider.png' | relative_url }}"
+    alt=""
+    class="spider-character"
+  >
+</div>
+
+<style>
+.hanging-spider {
+  position: fixed;
+  top: 0;
+  right: 55px;
+  z-index: 9999;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: spider-swing 3s ease-in-out infinite;
+  transform-origin: top center;
+}
+
+.spider-thread {
+  width: 1px;
+  height: 100px;
+  background: #777;
+}
+
+.spider-character {
+  width: 65px;
+  height: auto;
+  animation: spider-bob 2s ease-in-out infinite;
+}
+
+@keyframes spider-swing {
+  0%, 100% { transform: rotate(-5deg); }
+  50% { transform: rotate(5deg); }
+}
+
+@keyframes spider-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(12px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hanging-spider,
+  .spider-character {
+    animation: none;
+  }
+}
+</style>
