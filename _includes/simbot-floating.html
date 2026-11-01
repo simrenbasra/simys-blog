@@ -126,7 +126,10 @@ body.simbot-open .page-content {
   const close = document.getElementById('simbot-close');
   const iframe = document.getElementById('simbot-iframe');
 
-  if (!toggle || !panel || !close || !iframe) return;
+  if (!toggle || !panel || !close || !iframe) {
+    console.error('[SimBot] Widget elements not found');
+    return;
+  }
 
   const chatbotOrigin = 'https://simrenbasra-simbot-chatbot.hf.space';
 
@@ -134,26 +137,26 @@ body.simbot-open .page-content {
     const title = document.getElementById('simbot-post-title');
     const url = document.getElementById('simbot-post-url');
     const article = document.getElementById('simbot-post-text');
-  
+
     if (!title || !url || !article) {
       console.log('[SimBot] No blog post context found');
       return;
     }
-  
+
     const postTitle = title.textContent.trim();
-  
+
     const context = `
-  Article title: ${postTitle}
-  
-  Article URL: ${url.textContent.trim()}
-  
-  Article text:
-  ${article.textContent.trim()}
-  `;
-  
+Article title: ${postTitle}
+
+Article URL: ${url.textContent.trim()}
+
+Article text:
+${article.textContent.trim()}
+`;
+
     console.log('[SimBot] Sending article:', postTitle);
     console.log('[SimBot] Article length:', context.length);
-  
+
     iframe.contentWindow.postMessage(
       {
         type: 'SIMBOT_CONTEXT',
@@ -162,27 +165,6 @@ body.simbot-open .page-content {
           heading: "Let's explore this article.",
           description: "Ask me questions about its ideas, key points, or anything you'd like to understand better."
         }
-      },
-      chatbotOrigin
-    );
-  }
-
-    const context = `
-Article title: ${title.textContent.trim()}
-
-Article URL: ${url.textContent.trim()}
-
-Article text:
-${article.textContent.trim()}
-`;
-
-    console.log('[SimBot] Sending article:', title.textContent.trim());
-    console.log('[SimBot] Article length:', context.length);
-
-    iframe.contentWindow.postMessage(
-      {
-        type: 'SIMBOT_CONTEXT',
-        context: context
       },
       chatbotOrigin
     );
@@ -204,7 +186,6 @@ ${article.textContent.trim()}
     document.body.classList.add('simbot-open');
     toggle.setAttribute('aria-expanded', 'true');
 
-    // Send the current article when the reader opens the chat
     sendPostContext();
   }
 
@@ -216,6 +197,8 @@ ${article.textContent.trim()}
 
   toggle.addEventListener('click', openChat);
   close.addEventListener('click', closeChat);
+
+  console.log('[SimBot] Floating widget initialised');
 
 })();
 </script>
