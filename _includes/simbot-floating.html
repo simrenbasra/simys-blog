@@ -122,8 +122,44 @@ body.simbot-open .page-content {
   const toggle = document.getElementById('simbot-toggle');
   const panel = document.getElementById('simbot-panel');
   const close = document.getElementById('simbot-close');
+  const iframe = document.getElementById('simbot-iframe');
 
-  if (!toggle || !panel || !close) return;
+  if (!toggle || !panel || !close || !iframe) return;
+
+  const chatbotOrigin = 'https://simrenbasra-simbot-chatbot.hf.space';
+
+  function sendPostContext() {
+    const title = document.getElementById('simbot-post-title');
+    const url = document.getElementById('simbot-post-url');
+    const article = document.getElementById('simbot-post-text');
+
+    if (!title || !url || !article) return;
+
+    const context = `
+    Article title: ${title.innerText}
+    Article URL: ${url.innerText}
+
+    Article text:
+    ${article.innerText}
+    `;
+
+    iframe.contentWindow.postMessage(
+      {
+        type: 'SIMBOT_CONTEXT',
+        context: context
+      },
+      chatbotOrigin
+    );
+  }
+
+  window.addEventListener('message', function (event) {
+    if (event.origin !== chatbotOrigin) return;
+    if (event.source !== iframe.contentWindow) return;
+
+    if (event.data && event.data.type === 'SIMBOT_READY') {
+      sendPostContext();
+    }
+  });
 
   function openChat() {
     panel.hidden = false;
