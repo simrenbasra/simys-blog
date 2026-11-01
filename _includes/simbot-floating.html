@@ -53,7 +53,7 @@
   justify-content: center;
   cursor: pointer;
   box-shadow: 0 4px 15px rgba(80, 40, 60, 0.22);
-  animation: simbot-pulse 1.8s ease-in-out infinite;
+  animation: simbot-bounce 2.5s ease-in-out infinite;
   transition: background 0.25s ease;
 }
 
@@ -69,15 +69,21 @@
   line-height: 1;
 }
 
-/* Stronger pulse */
-@keyframes simbot-pulse {
-  0%, 100% {
-    transform: scale(1);
-    box-shadow: 0 4px 15px rgba(80, 40, 60, 0.22);
+@keyframes simbot-bounce {
+  0%, 70%, 100% {
+    transform: translateY(0);
   }
-  50% {
-    transform: scale(1.15);
-    box-shadow: 0 6px 30px rgba(169, 86, 123, 0.7);
+  8% {
+    transform: translateY(-12px);
+  }
+  16% {
+    transform: translateY(0);
+  }
+  24% {
+    transform: translateY(-6px);
+  }
+  32% {
+    transform: translateY(0);
   }
 }
 
