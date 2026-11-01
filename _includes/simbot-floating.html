@@ -118,6 +118,7 @@ body.simbot-open .page-content {
 }
 </style>
 
+
 <script>
 (function () {
   const toggle = document.getElementById('simbot-toggle');
@@ -134,15 +135,22 @@ body.simbot-open .page-content {
     const url = document.getElementById('simbot-post-url');
     const article = document.getElementById('simbot-post-text');
 
-    if (!title || !url || !article) return;
+    if (!title || !url || !article) {
+      console.log('[SimBot] No blog post context found');
+      return;
+    }
 
     const context = `
-    Article title: ${title.innerText}
-    Article URL: ${url.innerText}
+Article title: ${title.textContent.trim()}
 
-    Article text:
-    ${article.innerText}
-    `;
+Article URL: ${url.textContent.trim()}
+
+Article text:
+${article.textContent.trim()}
+`;
+
+    console.log('[SimBot] Sending article:', title.textContent.trim());
+    console.log('[SimBot] Article length:', context.length);
 
     iframe.contentWindow.postMessage(
       {
@@ -153,11 +161,13 @@ body.simbot-open .page-content {
     );
   }
 
+  // Listen for Gradio announcing that it is ready
   window.addEventListener('message', function (event) {
     if (event.origin !== chatbotOrigin) return;
     if (event.source !== iframe.contentWindow) return;
 
     if (event.data && event.data.type === 'SIMBOT_READY') {
+      console.log('[SimBot] Chatbot is ready');
       sendPostContext();
     }
   });
@@ -166,6 +176,9 @@ body.simbot-open .page-content {
     panel.hidden = false;
     document.body.classList.add('simbot-open');
     toggle.setAttribute('aria-expanded', 'true');
+
+    // Send the current article when the reader opens the chat
+    sendPostContext();
   }
 
   function closeChat() {
@@ -176,5 +189,7 @@ body.simbot-open .page-content {
 
   toggle.addEventListener('click', openChat);
   close.addEventListener('click', closeChat);
+
 })();
 </script>
+
