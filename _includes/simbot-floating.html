@@ -6,11 +6,9 @@
           aria-label="Got a question?"
           aria-expanded="false">
   
-    <svg viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8A8.5 8.5 0 0 1 8.7 3.9a8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8z"/>
-    </svg>
+    <span class="simbot-icon" aria-hidden="true">💬</span>
   
-    <span class="simbot-tooltip">Ask a question</span>
+    <span class="simbot-tooltip">Got a question?</span>
   </button>
 
   <section id="simbot-panel" class="simbot-panel" hidden>
@@ -32,7 +30,7 @@
 </div>
 
 <style>
-/* Floating message button */
+/* Floating widget */
 .simbot-widget {
   position: fixed;
   right: 20px;
@@ -41,6 +39,7 @@
   font-family: Arial, sans-serif;
 }
 
+/* Circular speech-bubble button */
 .simbot-toggle {
   position: relative;
   width: 58px;
@@ -54,35 +53,35 @@
   justify-content: center;
   cursor: pointer;
   box-shadow: 0 4px 15px rgba(80, 40, 60, 0.22);
-  animation: simbot-bounce 0.8s ease 1s 1;
-  transition: transform 0.25s ease, background 0.25s ease;
+  animation: simbot-pulse 1.8s ease-in-out infinite;
+  transition: background 0.25s ease;
 }
 
 .simbot-toggle:hover {
   background: #914365;
-  transform: scale(1.1);
+  animation-play-state: paused;
+  transform: scale(1.12);
 }
 
-.simbot-toggle svg {
-  width: 27px;
-  height: 27px;
-  fill: none;
-  stroke: white;
-  stroke-width: 1.7;
-  stroke-linecap: round;
-  stroke-linejoin: round;
+/* Speech-bubble emoji */
+.simbot-icon {
+  font-size: 27px;
+  line-height: 1;
 }
 
-/* Initial gentle bounce */
-
-@keyframes simbot-bounce {
-  0%, 100% { transform: translateY(0); }
-  35% { transform: translateY(-9px); }
-  65% { transform: translateY(2px); }
+/* Stronger pulse */
+@keyframes simbot-pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 4px 15px rgba(80, 40, 60, 0.22);
+  }
+  50% {
+    transform: scale(1.15);
+    box-shadow: 0 6px 30px rgba(169, 86, 123, 0.7);
+  }
 }
 
-/* Hover label */
-
+/* Hover tooltip */
 .simbot-tooltip {
   position: absolute;
   right: 70px;
@@ -106,20 +105,12 @@
 }
 
 /* Keyboard accessibility */
-
 .simbot-toggle:focus-visible {
   outline: 3px solid #DDA9BF;
   outline-offset: 4px;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .simbot-toggle {
-    animation: none;
-    transition: none;
-  }
-}
-
-/* Vertical chat panel */
+/* Chat panel */
 .simbot-panel {
   position: fixed;
   top: 20px;
@@ -175,7 +166,7 @@ body.simbot-open .page-content {
   transition: padding-right 0.3s ease;
 }
 
-/* On smaller screens, use an overlay instead */
+/* Mobile layout */
 @media (max-width: 800px) {
   body.simbot-open .page-content {
     padding-right: 0;
@@ -189,8 +180,15 @@ body.simbot-open .page-content {
     max-width: none;
   }
 }
-</style>
 
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .simbot-toggle {
+    animation: none;
+    transition: none;
+  }
+}
+</style>
 
 <script>
 (function () {
