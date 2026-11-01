@@ -9,6 +9,14 @@
         {{ content }}
       </div>
     </main>
+    
+    {% if page.layout == 'post' %}
+      <div id="simbot-page-context" hidden>
+        <span id="simbot-post-title">{{ page.title | escape }}</span>
+        <span id="simbot-post-url">{{ page.url | absolute_url }}</span>
+        <div id="simbot-post-text">{{ content | strip_html | normalize_whitespace | escape }}</div>
+      </div>
+    {% endif %}
 
     {% include footer.html %}
 
