@@ -12,7 +12,7 @@
 
     {% include footer.html %}
 
-    {% if page.url contains '/posts/' %}
+    {% if page.layout == 'post' %}
       {% include simbot-floating.html %}
     {% endif %}
   </body>
